@@ -3,11 +3,16 @@
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
+/[Bb]uilds
+
+# Visual Studio cache directory
+/.vs/
  
 # unity ignore file
 *.csproj
 *.unityproj
 *.sln
+*.suo
 *.user
 *.userprefs
 *.tmp
