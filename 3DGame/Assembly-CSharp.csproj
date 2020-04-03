@@ -63,55 +63,59 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\AssetStoreModels\amusedART\StoneMonster\Script\Animation_Test.cs" />
+    <Compile Include="Assets\HandTorch\Scripts\RotateObject.cs" />
+    <Compile Include="Assets\HandTorch\Scripts\ToggleLight.cs" />
     <Compile Include="Assets\Scripts\Monster\DetectPlayer.cs" />
     <Compile Include="Assets\Scripts\Monster\FollowAndAttack.cs" />
+    <None Include="Assets\HandTorch\Credits.txt" />
+    <None Include="Assets\Realistic Rock\Shaders\Rock.shader" />
     <None Include="Assets\AssetStoreModels\Fantasy Chess RPG Character - Arthur\readme.txt" />
     <None Include="Assets\Samples\Terrain Tools\0.1.0-preview\Terrain Assets\ThirdPartyNotices.txt" />
     <None Include="Assets\Casual RPG Character - 4 Avelyn\readme.txt" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>D:/3D動畫/期末專案/3D-RPG-Game/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>D:/UnityClassProject/FinalProject/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Cinemachine">
-      <HintPath>D:/3D動畫/期末專案/3D-RPG-Game/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+      <HintPath>D:/UnityClassProject/FinalProject/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>D:/3D動畫/期末專案/3D-RPG-Game/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>D:/UnityClassProject/FinalProject/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Recorder.Editor">
-      <HintPath>D:/3D動畫/期末專案/3D-RPG-Game/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.Recorder.Editor.dll</HintPath>
+      <HintPath>D:/UnityClassProject/FinalProject/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.Recorder.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/3D動畫/期末專案/3D-RPG-Game/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:/UnityClassProject/FinalProject/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Recorder">
-      <HintPath>D:/3D動畫/期末專案/3D-RPG-Game/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.Recorder.dll</HintPath>
+      <HintPath>D:/UnityClassProject/FinalProject/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.Recorder.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>D:/3D動畫/期末專案/3D-RPG-Game/3D-RPG-Game/3DGame/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>D:/UnityClassProject/FinalProject/3D-RPG-Game/3DGame/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>D:/3D動畫/期末專案/3D-RPG-Game/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>D:/UnityClassProject/FinalProject/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>D:/3D動畫/期末專案/3D-RPG-Game/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>D:/UnityClassProject/FinalProject/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Editor">
-      <HintPath>D:/3D動畫/期末專案/3D-RPG-Game/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+      <HintPath>D:/UnityClassProject/FinalProject/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>D:/3D動畫/期末專案/3D-RPG-Game/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>D:/UnityClassProject/FinalProject/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>D:/3D動畫/期末專案/3D-RPG-Game/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
+      <HintPath>D:/UnityClassProject/FinalProject/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.cinemachine.editor">
-      <HintPath>D:/3D動畫/期末專案/3D-RPG-Game/3D-RPG-Game/3DGame/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+      <HintPath>D:/UnityClassProject/FinalProject/3D-RPG-Game/3DGame/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/3D動畫/期末專案/3D-RPG-Game/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:/UnityClassProject/FinalProject/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>D:/3D動畫/期末專案/3D-RPG-Game/3D-RPG-Game/3DGame/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>D:/UnityClassProject/FinalProject/3D-RPG-Game/3DGame/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.8f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
