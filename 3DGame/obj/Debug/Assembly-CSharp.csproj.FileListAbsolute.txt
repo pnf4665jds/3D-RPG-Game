@@ -267,3 +267,15 @@ D:\UnityClassProject\FinalProject\3D-RPG-Game\3DGame\obj\Debug\Assembly-CSharp.c
 D:\UnityClassProject\FinalProject\3D-RPG-Game\3DGame\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 D:\UnityClassProject\FinalProject\3D-RPG-Game\3DGame\obj\Debug\Assembly-CSharp.dll
 D:\UnityClassProject\FinalProject\3D-RPG-Game\3DGame\obj\Debug\Assembly-CSharp.pdb
+D:\UnityClassProject\FinalProject\3D-RPG-Game\3DGame\Temp\bin\Debug\Cinemachine.dll
+D:\UnityClassProject\FinalProject\3D-RPG-Game\3DGame\Temp\bin\Debug\com.unity.cinemachine.editor.dll
+D:\UnityClassProject\FinalProject\3D-RPG-Game\3DGame\Temp\bin\Debug\Unity.Postprocessing.Editor.dll
+D:\UnityClassProject\FinalProject\3D-RPG-Game\3DGame\Temp\bin\Debug\Unity.Postprocessing.Runtime.dll
+D:\UnityClassProject\FinalProject\3D-RPG-Game\3DGame\Temp\bin\Debug\Unity.Recorder.dll
+D:\UnityClassProject\FinalProject\3D-RPG-Game\3DGame\Temp\bin\Debug\Unity.Recorder.Editor.dll
+D:\UnityClassProject\FinalProject\3D-RPG-Game\3DGame\Temp\bin\Debug\Cinemachine.pdb
+D:\UnityClassProject\FinalProject\3D-RPG-Game\3DGame\Temp\bin\Debug\Unity.Recorder.Editor.pdb
+D:\UnityClassProject\FinalProject\3D-RPG-Game\3DGame\Temp\bin\Debug\Unity.Recorder.pdb
+D:\UnityClassProject\FinalProject\3D-RPG-Game\3DGame\Temp\bin\Debug\Unity.Postprocessing.Editor.pdb
+D:\UnityClassProject\FinalProject\3D-RPG-Game\3DGame\Temp\bin\Debug\Unity.Postprocessing.Runtime.pdb
+D:\UnityClassProject\FinalProject\3D-RPG-Game\3DGame\Temp\bin\Debug\com.unity.cinemachine.editor.pdb
