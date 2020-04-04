@@ -222,9 +222,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4788319935855200}
   - component: {fileID: 111495423891279680}
-  - component: {fileID: 114489361866395698}
+  - component: {fileID: 8024649797562101706}
   - component: {fileID: 324850865}
   - component: {fileID: 324850864}
+  - component: {fileID: 7688301293043695552}
+  - component: {fileID: 7364347008557810436}
   m_Layer: 0
   m_Name: StoneMonster
   m_TagString: Untagged
@@ -268,7 +270,7 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!114 &114489361866395698
+--- !u!114 &8024649797562101706
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -277,9 +279,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1713781036754730}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a8eeb9411d2d4e4180ec70be187c615, type: 3}
+  m_Script: {fileID: 11500000, guid: 34e5fea04bb708f4caa36b0ba88885ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HP: 1
+  MoveSpeed: 2
+  RotateSpeed: 5
+  AttackDistance: 0.5
+  Anim: {fileID: 111495423891279680}
 --- !u!114 &324850865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,6 +299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b036eb9c8a2b24d479d348662adb17f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Info: {fileID: 8024649797562101706}
   ShowInScene: 0
   DetectLength: 5
   StopLength: 10
@@ -308,9 +316,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DetectPlayer: {fileID: 324850865}
-  MoveSpeed: 1
-  RotateSpeed: 5
-  AttackDistance: 2
+  Info: {fileID: 8024649797562101706}
+--- !u!114 &7688301293043695552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713781036754730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 785dd6266f8f2a44d8248b9d6125184b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Info: {fileID: 8024649797562101706}
+  DetectPlayer: {fileID: 324850865}
+--- !u!114 &7364347008557810436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713781036754730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80e18b1290c5c3b489d3d142c92a21aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowInScene: 0
+  PatrolLength: 5
+  Info: {fileID: 8024649797562101706}
+  DetectPlayer: {fileID: 324850865}
 --- !u!1 &1753159918419610
 GameObject:
   m_ObjectHideFlags: 0

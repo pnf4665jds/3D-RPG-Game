@@ -1095,6 +1095,20 @@ PrefabInstance:
       propertyPath: AttackDistance
       value: 1.7
       objectReference: {fileID: 0}
+    - target: {fileID: 324850865, guid: 0f8a471e5537f864ebdb454fe82308eb, type: 3}
+      propertyPath: ShowInScene
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8024649797562101706, guid: 0f8a471e5537f864ebdb454fe82308eb,
+        type: 3}
+      propertyPath: AttackDistance
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364347008557810436, guid: 0f8a471e5537f864ebdb454fe82308eb,
+        type: 3}
+      propertyPath: ShowInScene
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f8a471e5537f864ebdb454fe82308eb, type: 3}
 --- !u!1 &324850863 stripped

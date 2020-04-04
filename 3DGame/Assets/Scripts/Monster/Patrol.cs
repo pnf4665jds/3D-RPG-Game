@@ -1,0 +1,75 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Patrol : MonoBehaviour
+{
+    public bool ShowInScene;    // 是否在場景中顯示範圍
+    public float PatrolLength;   // 以初始位置為中心的巡邏範圍
+    public MonsterInfo Info;
+    public DetectPlayer DetectPlayer;
+
+    private Vector3 initPos;
+    private Vector3 currentPos;
+    private Vector3 targetPos;
+    private bool startMove = false;
+
+    private void Start()
+    {
+        Init();
+    }
+
+    public void Init()
+    {
+        initPos = transform.position;
+        currentPos = initPos;
+        Info.CurrentState = ActionState.Patrol;
+        StartCoroutine(Process());
+    }
+
+    private void Update()
+    {
+        if (Info.CurrentState == ActionState.Patrol && startMove)
+            Move();
+    }
+
+    private IEnumerator Process()
+    {
+        while (Info.CurrentState == ActionState.Patrol)
+        {
+            // 先計算隨機的方向
+            Vector3 newDir = Quaternion.Euler(0, Random.Range(0, 360), 0) * new Vector3(0, 0, PatrolLength);
+            // 再計算佔最大移動量的比例
+            float rate = (PatrolLength - Vector3.Distance(currentPos, initPos)) / PatrolLength;
+            // 計算最後的移動目的地 = 目前位置 + 移動向量 * 佔最大移動量的比例 * 隨機變數
+            targetPos = currentPos + newDir * rate * Random.Range(0.5f, 1);
+            startMove = true;
+            yield return new WaitWhile(()=> transform.position != targetPos);
+            yield return new WaitForSeconds(2);
+            startMove = false;
+        }
+    }
+
+    /// <summary>
+    /// 巡邏移動
+    /// </summary>
+    private void Move()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, targetPos, Info.MoveSpeed * Time.deltaTime);
+        Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetPos - transform.position, Info.RotateSpeed * Time.deltaTime, 0.0f);
+        transform.rotation = Quaternion.LookRotation(newDirection);
+    }
+
+    /// <summary>
+    /// 在Scene中繪製對應的範圍
+    /// </summary>
+    private void OnDrawGizmosSelected()
+    {
+        if (!ShowInScene)
+            return;
+
+        Gizmos.color = new Color(1, 1, 0, 0.4f);
+        Vector3 target = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0) * new Vector3(0, 0, PatrolLength);
+        Gizmos.DrawSphere(transform.position, PatrolLength);
+    }
+}

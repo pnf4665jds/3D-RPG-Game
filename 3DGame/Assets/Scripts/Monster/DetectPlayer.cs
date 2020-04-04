@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class DetectPlayer : MonoBehaviour
 {
-    public bool ShowInScene;
-    public float DetectLength = 5;
+    public MonsterInfo Info;
+    public bool ShowInScene;        // 是否在場景中顯示範圍
+    public float DetectLength = 5;  // 偵測距離
     public float StopLength = 10;    // 偵測到玩家後，玩家與怪物距離多遠時停止偵測
-    public GameObject PlayerObj { get; set; }
+    public GameObject PlayerObj { get; set; }   // 偵測到的玩家物件
 
     private void Update()
     {
@@ -20,9 +21,10 @@ public class DetectPlayer : MonoBehaviour
     private void Detect()
     {
         Collider[] playerCollider = Physics.OverlapSphere(transform.position, DetectLength, LayerMask.GetMask("Player"));
-        if (playerCollider.Length > 0)
+        if (playerCollider.Length > 0 && Info.CurrentState != ActionState.Follow && Info.CurrentState != ActionState.Attack)
         {
             PlayerObj = playerCollider[0].gameObject;
+            Info.CurrentState = ActionState.Follow;
         }
         else if(PlayerObj != null && Vector3.Distance(transform.position, PlayerObj.transform.position) > StopLength)
         {
