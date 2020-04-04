@@ -9,7 +9,7 @@ public class MonsterInfo : MonoBehaviour
     public float RotateSpeed;
     public float AttackDistance;
     public ActionState CurrentState { get; set; }
-    public Animation Anim;
+    public Animator animator;
 
     private void Start()
     {
@@ -20,16 +20,42 @@ public class MonsterInfo : MonoBehaviour
     {
         if(CurrentState == ActionState.Attack)
         {
-            Anim.Play("Anim_Attack");   
+            animator.SetTrigger("Attack");
         }
-        else if (CurrentState == ActionState.Follow || CurrentState == ActionState.Patrol)
+
+        if (Input.GetKeyDown(KeyCode.Z))
         {
-            Anim.Play("Anim_Run");
+            GetDamage(100);
         }
-        else
+    }
+
+    /// <summary>
+    /// 呼叫後扣血
+    /// </summary>
+    /// <param name="value"></param>
+    public void GetDamage(float value)
+    {
+        animator.SetTrigger("Damage");  
+        HP = HP - value;
+
+        // 血量低於0時死亡
+        if (HP <= 0)
         {
-            Anim.Play("Anim_Idle");
+            CurrentState = ActionState.Dead;
+            StartCoroutine(DeathAnim());
         }
+    }
+
+    /// <summary>
+    /// 死亡動畫
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator DeathAnim()
+    {
+        GetComponent<Collider>().enabled = false;
+        animator.SetBool("Dead", true);
+        yield return new WaitForSeconds(2);
+        Destroy(gameObject);
     }
 }
 
@@ -37,5 +63,6 @@ public enum ActionState
 {
     Follow,
     Patrol,
-    Attack
+    Attack,
+    Dead
 }
