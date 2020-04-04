@@ -1,12 +1,12 @@
 # unity ignore dir
-/[Bb]in/
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uilds
+[Bb]in/
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uilds
 
 # Visual Studio cache directory
-/.vs/
+.vs/
  
 # unity ignore file
 *.csproj
@@ -16,3 +16,5 @@
 *.user
 *.userprefs
 *.tmp
+*.pidb
+*.booproj
