@@ -14,8 +14,13 @@ public class Attack : MonoBehaviour
 
     void Update()
     {
-        if(Info.CurrentState == ActionState.Attack && Mathf.Abs(transform.position.z - DetectPlayer.PlayerObj.transform.position.z) > Info.AttackDistance)
+        if (Info.CurrentState == ActionState.Attack)
         {
+
+        }
+        else if(Info.CurrentState == ActionState.Attack && Mathf.Abs(transform.position.z - DetectPlayer.PlayerObj.transform.position.z) > Info.AttackDistance)
+        {
+            // 脫離攻擊範圍
             Info.CurrentState = ActionState.Follow;
         }
     }

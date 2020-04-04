@@ -19,6 +19,7 @@ public class Follow : MonoBehaviour
         {
             target = DetectPlayer.PlayerObj;
             FollowPlayer();
+            // 進入攻擊範圍
             if (Mathf.Abs(transform.position.z - target.transform.position.z) <= Info.AttackDistance)
             {
                 Info.CurrentState = ActionState.Attack;
