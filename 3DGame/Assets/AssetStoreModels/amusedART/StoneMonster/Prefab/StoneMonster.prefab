@@ -286,7 +286,7 @@ MonoBehaviour:
   HP: 1000
   MoveSpeed: 2
   RotateSpeed: 5
-  AttackDistance: 1.2
+  AttackDistance: 0.8
   animator: {fileID: 329668562437908815}
 --- !u!114 &324850865
 MonoBehaviour:

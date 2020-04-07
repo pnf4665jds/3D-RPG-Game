@@ -19,7 +19,8 @@ public class Follow : MonoBehaviour
         {
             target = DetectPlayer.PlayerObj;
             FollowPlayer();
-            float colliderWidth = target.GetComponent<BoxCollider>().size.z / 2;
+            //float colliderWidth = target.GetComponent<BoxCollider>().size.z / 2;
+            float colliderWidth = target.GetComponent<CapsuleCollider>().radius;
             // 進入攻擊範圍
             if (Mathf.Abs(transform.position.z - target.transform.position.z) <= Info.AttackDistance + colliderWidth)
             {
