@@ -80,12 +80,21 @@
     <Compile Include="Assets\Scripts\UI\MonsterBlood.cs" />
     <Compile Include="Assets\Scripts\UI\MP.cs" />
     <Compile Include="Assets\Scripts\UI\PlayerBlood.cs" />
+    <Compile Include="Assets\Scripts\UI\startUIManager.cs" />
+    <None Include="Assets\RealisticWater\Shaders\WaterPC.shader" />
+    <None Include="Assets\RealisticWater\Shaders\WaterLighting.shader" />
+    <None Include="Assets\RealisticWater\Shaders\WaterMobile.shader" />
     <None Include="Assets\Fantasy Chess RPG Character - Kumata\readme.txt" />
+    <None Include="Assets\RealisticWater\Shaders\WaterMobileWithRipples.shader" />
+    <None Include="Assets\RealisticWater\Shaders\CausticPC.shader" />
+    <None Include="Assets\RealisticWater\Shaders\RipplesCausticPC.shader" />
+    <None Include="Assets\RealisticWater\Shaders\CausticMobile.shader" />
     <None Include="Assets\HandTorch\Credits.txt" />
     <None Include="Assets\Realistic Rock\Shaders\Rock.shader" />
     <None Include="Assets\AssetStoreModels\Fantasy Chess RPG Character - Arthur\readme.txt" />
     <None Include="Assets\Samples\Terrain Tools\0.1.0-preview\Terrain Assets\ThirdPartyNotices.txt" />
     <None Include="Assets\Casual RPG Character - 4 Avelyn\readme.txt" />
+    <None Include="Assets\RealisticWater\Shaders\DistortionParticlesCutout.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/unity/3D電腦動畫Final Project/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
