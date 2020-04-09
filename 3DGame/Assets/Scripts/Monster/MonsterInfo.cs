@@ -18,11 +18,6 @@ public class MonsterInfo : MonoBehaviour
 
     private void Update()
     {
-        if(CurrentState == ActionState.Attack)
-        {
-            animator.SetTrigger("Attack");
-        }
-
         if (Input.GetKeyDown(KeyCode.Z))
         {
             GetDamage(100);

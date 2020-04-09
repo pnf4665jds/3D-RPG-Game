@@ -2,40 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Patrol : MonoBehaviour
+public class Patrol : ActionBase
 {
     public bool ShowInScene;    // 是否在場景中顯示範圍
     public float PatrolLength;   // 以初始位置為中心的巡邏範圍
-    public MonsterInfo Info;
-    public DetectPlayer DetectPlayer;
 
+    private MonsterInfo info;
     private Vector3 initPos;
     private Vector3 currentPos;
     private Vector3 targetPos;
     private bool startMove = false;
 
-    private void Start()
+    /// <summary>
+    /// 初始化
+    /// </summary>
+    public override void Init()
     {
-        Init();
-    }
-
-    public void Init()
-    {
+        info = GetComponent<MonsterInfo>();
         initPos = transform.position;
         currentPos = initPos;
-        Info.CurrentState = ActionState.Patrol;
-        StartCoroutine(Process());
+        StartCoroutine(Calculate());
     }
 
-    private void Update()
+    /// <summary>
+    /// 計算移動位置
+    /// </summary>
+    /// <returns></returns>
+    public IEnumerator Calculate()
     {
-        if (Info.CurrentState == ActionState.Patrol && startMove)
-            Move();
-    }
-
-    private IEnumerator Process()
-    {
-        while (Info.CurrentState == ActionState.Patrol)
+        while (true)
         {
             // 先計算隨機的方向
             Vector3 newDir = Quaternion.Euler(0, Random.Range(0, 360), 0) * new Vector3(0, 0, PatrolLength);
@@ -43,11 +38,14 @@ public class Patrol : MonoBehaviour
             float rate = (PatrolLength - Vector3.Distance(currentPos, initPos)) / PatrolLength;
             // 計算最後的移動目的地 = 目前位置 + 移動向量 * 佔最大移動量的比例 * 隨機變數
             targetPos = currentPos + newDir * rate * Random.Range(0.5f, 1);
-            startMove = true;
-            yield return new WaitWhile(()=> transform.position != targetPos);
+            yield return new WaitUntil(() => transform.position == targetPos);
             yield return new WaitForSeconds(2);
-            startMove = false;
         }
+    }
+
+    public override void Process()
+    {
+        Move();
     }
 
     /// <summary>
@@ -55,9 +53,15 @@ public class Patrol : MonoBehaviour
     /// </summary>
     private void Move()
     {
-        transform.position = Vector3.MoveTowards(transform.position, targetPos, Info.MoveSpeed * Time.deltaTime);
-        Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetPos - transform.position, Info.RotateSpeed * Time.deltaTime, 0.0f);
+        transform.position = Vector3.MoveTowards(transform.position, targetPos, info.MoveSpeed * Time.deltaTime);
+        Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetPos - transform.position, info.RotateSpeed * Time.deltaTime, 0.0f);
         transform.rotation = Quaternion.LookRotation(newDirection);
+    }
+
+    public override void Exit()
+    {
+        StopCoroutine(Calculate());
+
     }
 
     /// <summary>

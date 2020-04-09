@@ -224,14 +224,18 @@ GameObject:
   - component: {fileID: 329668562437908815}
   - component: {fileID: 8024649797562101706}
   - component: {fileID: 324850865}
+  - component: {fileID: 966466048675799226}
+  - component: {fileID: 7071659971909622108}
+  - component: {fileID: 4793961887149097813}
   - component: {fileID: 324850864}
-  - component: {fileID: 7688301293043695552}
   - component: {fileID: 7364347008557810436}
+  - component: {fileID: 7757978349363264088}
+  - component: {fileID: 8087613420217389440}
   - component: {fileID: 8650517194863206173}
   - component: {fileID: 2322792306581674664}
   m_Layer: 0
   m_Name: StoneMonster
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -300,10 +304,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b036eb9c8a2b24d479d348662adb17f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Info: {fileID: 8024649797562101706}
+  UseStateName: Patrol
   ShowInScene: 1
-  DetectLength: 8
-  StopLength: 12
+  DetectCenter: {x: 0, y: 0, z: 0}
+  DetectRadius: 5
+--- !u!114 &966466048675799226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713781036754730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b036eb9c8a2b24d479d348662adb17f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseStateName: Follow
+  ShowInScene: 1
+  DetectCenter: {x: 0, y: 0, z: 0}
+  DetectRadius: 10
+--- !u!114 &7071659971909622108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713781036754730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad5935af51adf6c4a967fc77756c7a39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseStateName: Follow
+  ShowInScene: 1
+  DetectCenter: {x: 0, y: 0.5, z: -1}
+  DetectSize: {x: 2, y: 1, z: 2}
+--- !u!114 &4793961887149097813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713781036754730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad5935af51adf6c4a967fc77756c7a39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseStateName: Attack
+  ShowInScene: 1
+  DetectCenter: {x: 0, y: 0.5, z: -1}
+  DetectSize: {x: 2, y: 1, z: 2}
 --- !u!114 &324850864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,22 +368,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89dedd5d77492dd41a2bf789553997b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DetectPlayer: {fileID: 324850865}
-  Info: {fileID: 8024649797562101706}
---- !u!114 &7688301293043695552
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1713781036754730}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 785dd6266f8f2a44d8248b9d6125184b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Info: {fileID: 8024649797562101706}
-  DetectPlayer: {fileID: 324850865}
 --- !u!114 &7364347008557810436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -346,8 +382,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowInScene: 0
   PatrolLength: 5
-  Info: {fileID: 8024649797562101706}
-  DetectPlayer: {fileID: 324850865}
+--- !u!114 &7757978349363264088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713781036754730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 785dd6266f8f2a44d8248b9d6125184b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8087613420217389440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713781036754730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a538505ec681fc4db7d622ade76a19a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentStateName: 
+  FirstStateName: Patrol
+  StateList:
+  - StateName: Patrol
+    Action: {fileID: 7364347008557810436}
+    TransList:
+    - Decider: {fileID: 324850865}
+      TrueState: Follow
+      FalseState: 
+  - StateName: Follow
+    Action: {fileID: 324850864}
+    TransList:
+    - Decider: {fileID: 966466048675799226}
+      TrueState: 
+      FalseState: Patrol
+    - Decider: {fileID: 7071659971909622108}
+      TrueState: Attack
+      FalseState: 
+  - StateName: Attack
+    Action: {fileID: 7757978349363264088}
+    TransList:
+    - Decider: {fileID: 4793961887149097813}
+      TrueState: Follow
+      FalseState: 
 --- !u!54 &8650517194863206173
 Rigidbody:
   m_ObjectHideFlags: 0

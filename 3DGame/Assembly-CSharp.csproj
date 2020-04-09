@@ -65,11 +65,17 @@
     <Compile Include="Assets\AssetStoreModels\amusedART\StoneMonster\Script\Animation_Test.cs" />
     <Compile Include="Assets\HandTorch\Scripts\RotateObject.cs" />
     <Compile Include="Assets\HandTorch\Scripts\ToggleLight.cs" />
-    <Compile Include="Assets\Scripts\Monster\Attack.cs" />
-    <Compile Include="Assets\Scripts\Monster\DetectPlayer.cs" />
-    <Compile Include="Assets\Scripts\Monster\Follow.cs" />
+    <Compile Include="Assets\Scripts\Monster\Action\Attack.cs" />
+    <Compile Include="Assets\Scripts\Monster\Action\Follow.cs" />
+    <Compile Include="Assets\Scripts\Monster\Action\Patrol.cs" />
+    <Compile Include="Assets\Scripts\Monster\Base\ActionBase.cs" />
+    <Compile Include="Assets\Scripts\Monster\Base\ActionController.cs" />
+    <Compile Include="Assets\Scripts\Monster\Base\DeciderBase.cs" />
+    <Compile Include="Assets\Scripts\Monster\Base\State.cs" />
+    <Compile Include="Assets\Scripts\Monster\Decider\DetectPlayerRect.cs" />
+    <Compile Include="Assets\Scripts\Monster\Decider\DetectPlayerSphere.cs" />
+    <Compile Include="Assets\Scripts\Monster\Decider\WaitTimer.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterInfo.cs" />
-    <Compile Include="Assets\Scripts\Monster\Patrol.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\UI\MonsterBlood.cs" />
     <Compile Include="Assets\Scripts\UI\MP.cs" />
@@ -81,49 +87,49 @@
     <None Include="Assets\Samples\Terrain Tools\0.1.0-preview\Terrain Assets\ThirdPartyNotices.txt" />
     <None Include="Assets\Casual RPG Character - 4 Avelyn\readme.txt" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>D:/3D動畫/期末專案/3D-RPG-Game/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>D:/unity/3D電腦動畫Final Project/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Cinemachine">
-      <HintPath>D:/3D動畫/期末專案/3D-RPG-Game/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+      <HintPath>D:/unity/3D電腦動畫Final Project/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>D:/3D動畫/期末專案/3D-RPG-Game/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>D:/unity/3D電腦動畫Final Project/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Recorder.Editor">
-      <HintPath>D:/3D動畫/期末專案/3D-RPG-Game/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.Recorder.Editor.dll</HintPath>
+      <HintPath>D:/unity/3D電腦動畫Final Project/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.Recorder.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/3D動畫/期末專案/3D-RPG-Game/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:/unity/3D電腦動畫Final Project/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Recorder">
-      <HintPath>D:/3D動畫/期末專案/3D-RPG-Game/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.Recorder.dll</HintPath>
+      <HintPath>D:/unity/3D電腦動畫Final Project/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.Recorder.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>D:/3D動畫/期末專案/3D-RPG-Game/3D-RPG-Game/3DGame/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>D:/unity/3D電腦動畫Final Project/3D-RPG-Game/3DGame/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>D:/3D動畫/期末專案/3D-RPG-Game/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>D:/unity/3D電腦動畫Final Project/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>D:/3D動畫/期末專案/3D-RPG-Game/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>D:/unity/3D電腦動畫Final Project/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Editor">
-      <HintPath>D:/3D動畫/期末專案/3D-RPG-Game/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+      <HintPath>D:/unity/3D電腦動畫Final Project/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>D:/3D動畫/期末專案/3D-RPG-Game/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>D:/unity/3D電腦動畫Final Project/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>D:/3D動畫/期末專案/3D-RPG-Game/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
+      <HintPath>D:/unity/3D電腦動畫Final Project/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.cinemachine.editor">
-      <HintPath>D:/3D動畫/期末專案/3D-RPG-Game/3D-RPG-Game/3DGame/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+      <HintPath>D:/unity/3D電腦動畫Final Project/3D-RPG-Game/3DGame/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/3D動畫/期末專案/3D-RPG-Game/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:/unity/3D電腦動畫Final Project/3D-RPG-Game/3DGame/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>D:/3D動畫/期末專案/3D-RPG-Game/3D-RPG-Game/3DGame/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>D:/unity/3D電腦動畫Final Project/3D-RPG-Game/3DGame/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.8f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -301,12 +307,6 @@
     </Reference>
     <Reference Include="UnityEngine.XRModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.8f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.8f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.8f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.8f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
