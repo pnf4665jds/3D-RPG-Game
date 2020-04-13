@@ -8,12 +8,14 @@ public class MonsterInfo : MonoBehaviour
     public float MoveSpeed;
     public float RotateSpeed;
     public float AttackDistance;
-    public ActionState CurrentState { get; set; }
-    public Animator animator;
+    //public ActionState CurrentState { get; set; }
+
+    private Animator animator;
 
     private void Start()
     {
-        CurrentState = ActionState.Patrol;
+        //CurrentState = ActionState.Patrol;
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -36,7 +38,7 @@ public class MonsterInfo : MonoBehaviour
         // 血量低於0時死亡
         if (HP <= 0)
         {
-            CurrentState = ActionState.Dead;
+            //CurrentState = ActionState.Dead;
             StartCoroutine(DeathAnim());
         }
     }
@@ -54,10 +56,10 @@ public class MonsterInfo : MonoBehaviour
     }
 }
 
-public enum ActionState
+/*public enum ActionState
 {
     Follow,
     Patrol,
     Attack,
     Dead
-}
+}*/

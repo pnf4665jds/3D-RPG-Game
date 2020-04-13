@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Attack : ActionBase
+public class ClawAttack : ActionBase
 {
     private bool colDetect = false;
 
     public override void Init()
     {
         colDetect = true;
-        animator.SetTrigger("Attack");
+        animator.SetTrigger("ClawAttack");
     }
 
     public override void Process()
@@ -27,7 +27,7 @@ public class Attack : ActionBase
         if (controller.CurrentStateName != UseStateName)
             return;
 
-        if (collision.gameObject.tag == "Player")
-            Debug.Log("Hit");
+        if(collision.gameObject.tag == "Player")
+            Debug.Log("Hit" + gameObject.name);
     }
 }

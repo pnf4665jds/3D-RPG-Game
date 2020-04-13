@@ -9,19 +9,22 @@ public class Follow : ActionBase
 
     public override void Init()
     {
-
         info = GetComponent<MonsterInfo>();
-        target = controller.CurrentTarget;
+        animator.SetBool("Walk", true);
     }
 
     public override void Process()
     {
+        if (controller.CurrentTarget)
+            target = controller.CurrentTarget;
+
         FollowPlayer();
     }
 
     public override void Exit()
     {
         target = null;
+        animator.SetBool("Walk", false);
     }
 
     /// <summary>
@@ -29,6 +32,9 @@ public class Follow : ActionBase
     /// </summary>
     private void FollowPlayer()
     {
+        if (target == null)
+            return;
+
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, info.MoveSpeed * Time.deltaTime);
         Vector3 newDirection = Vector3.RotateTowards(transform.forward, target.transform.position - transform.position, info.RotateSpeed * Time.deltaTime, 0.0f);
         transform.rotation = Quaternion.LookRotation(newDirection);

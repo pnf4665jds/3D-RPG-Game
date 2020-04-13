@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Attack : ActionBase
+public class FlameAttack : ActionBase
 {
     private bool colDetect = false;
 
     public override void Init()
     {
         colDetect = true;
-        animator.SetTrigger("Attack");
+        animator.SetTrigger("FlameAttack");
     }
 
     public override void Process()
     {
-        
+
     }
 
     public override void Exit()
@@ -28,6 +28,6 @@ public class Attack : ActionBase
             return;
 
         if (collision.gameObject.tag == "Player")
-            Debug.Log("Hit");
+            Debug.Log("Hit" + gameObject.name);
     }
 }

@@ -30,7 +30,7 @@ Transform:
   - {fileID: 4201210078927136}
   m_Father: {fileID: 4966007699546920}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -39.57966}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -60.650574}
 --- !u!1 &1215002072254110
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,7 +148,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4574649352997690}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 6.361361e-14, y: -3.2026665e-14, z: -1.9695334}
+  m_LocalEulerAnglesHint: {x: 5.086738e-14, y: -2.5487384e-14, z: -0.048364192}
 --- !u!1 &1467097521789780
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,7 +178,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4836351918659748}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -1.9695306}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.048364446}
 --- !u!1 &1497842698705604
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,7 +211,7 @@ Transform:
   - {fileID: 4836351918659748}
   m_Father: {fileID: 4788319935855200}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: -168.50537}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: -174.33627}
 --- !u!1 &1713781036754730
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,7 +226,7 @@ GameObject:
   - component: {fileID: 324850865}
   - component: {fileID: 966466048675799226}
   - component: {fileID: 7071659971909622108}
-  - component: {fileID: 4793961887149097813}
+  - component: {fileID: 5750884645848988401}
   - component: {fileID: 324850864}
   - component: {fileID: 7364347008557810436}
   - component: {fileID: 7757978349363264088}
@@ -291,7 +291,6 @@ MonoBehaviour:
   MoveSpeed: 2
   RotateSpeed: 5
   AttackDistance: 0.8
-  animator: {fileID: 329668562437908815}
 --- !u!114 &324850865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,6 +307,7 @@ MonoBehaviour:
   ShowInScene: 1
   DetectCenter: {x: 0, y: 0, z: 0}
   DetectRadius: 5
+  DetectPauseTime: 0
 --- !u!114 &966466048675799226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,6 +324,7 @@ MonoBehaviour:
   ShowInScene: 1
   DetectCenter: {x: 0, y: 0, z: 0}
   DetectRadius: 10
+  DetectPauseTime: 0
 --- !u!114 &7071659971909622108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,9 +339,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UseStateName: Follow
   ShowInScene: 1
-  DetectCenter: {x: 0, y: 0.5, z: -1}
-  DetectSize: {x: 2, y: 1, z: 2}
---- !u!114 &4793961887149097813
+  DetectCenter: {x: 0, y: 0.5, z: 0.8}
+  DetectSize: {x: 2, y: 1, z: 1}
+  DetectPauseTime: 0
+--- !u!114 &5750884645848988401
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -349,13 +351,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1713781036754730}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad5935af51adf6c4a967fc77756c7a39, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d81a937f1e55ad41b8427dc77f5f7ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Attack
-  ShowInScene: 1
-  DetectCenter: {x: 0, y: 0.5, z: -1}
-  DetectSize: {x: 2, y: 1, z: 2}
+  WaitTime: 0.8
 --- !u!114 &324850864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,6 +368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89dedd5d77492dd41a2bf789553997b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UseStateName: Follow
 --- !u!114 &7364347008557810436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,6 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80e18b1290c5c3b489d3d142c92a21aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UseStateName: Patrol
   ShowInScene: 0
   PatrolLength: 5
 --- !u!114 &7757978349363264088
@@ -394,6 +396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 785dd6266f8f2a44d8248b9d6125184b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UseStateName: Attack
 --- !u!114 &8087613420217389440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,6 +410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentStateName: 
+  CurrentTarget: {fileID: 0}
   FirstStateName: Patrol
   StateList:
   - StateName: Patrol
@@ -427,7 +431,7 @@ MonoBehaviour:
   - StateName: Attack
     Action: {fileID: 7757978349363264088}
     TransList:
-    - Decider: {fileID: 4793961887149097813}
+    - Decider: {fileID: 5750884645848988401}
       TrueState: Follow
       FalseState: 
 --- !u!54 &8650517194863206173
@@ -489,7 +493,7 @@ Transform:
   - {fileID: 4337812796121360}
   m_Father: {fileID: 4966007699546920}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 1.2060635e-15, y: 1.8357806e-16, z: 6.843372}
+  m_LocalEulerAnglesHint: {x: 9.63194e-16, y: 1.4849983e-16, z: 8.764532}
 --- !u!1 &1798525600516028
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,7 +523,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4372769990449160}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -1.9695306}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.048364446}
 --- !u!1 &1911034780301212
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,4 +554,4 @@ Transform:
   - {fileID: 4266849179980070}
   m_Father: {fileID: 4966007699546920}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -0.0000006240175, y: 0.0000022703887, z: 149.69377}
+  m_LocalEulerAnglesHint: {x: -0.0000005019786, y: 0.0000018127654, z: 151.61496}
