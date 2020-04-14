@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ClawAttack : ActionBase
 {
-    private bool colDetect = false;
+    // 是否已經攻擊到，防止過程中多次判定
+    private bool alreadyHit = false;
 
     public override void Init()
     {
-        colDetect = true;
         animator.SetTrigger("ClawAttack");
     }
 
@@ -19,15 +19,15 @@ public class ClawAttack : ActionBase
 
     public override void Exit()
     {
-        colDetect = false;
+        alreadyHit = false;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (controller.CurrentStateName != UseStateName)
-            return;
-
-        if(collision.gameObject.tag == "Player")
-            Debug.Log("Hit" + gameObject.name);
+        if (other.gameObject.tag == "Player" && !alreadyHit)
+        {
+            alreadyHit = true;
+            Debug.Log("Hit");
+        }
     }
 }

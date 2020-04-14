@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class MonsterInfo : MonoBehaviour
 {
-    public float HP;
+    public float MaxHP;
+    public float CurrentHP { get; private set; }
     public float MoveSpeed;
     public float RotateSpeed;
     public float AttackDistance;
@@ -15,6 +16,7 @@ public class MonsterInfo : MonoBehaviour
     private void Start()
     {
         //CurrentState = ActionState.Patrol;
+        CurrentHP = MaxHP;
         animator = GetComponent<Animator>();
     }
 
@@ -33,10 +35,10 @@ public class MonsterInfo : MonoBehaviour
     public void GetDamage(float value)
     {
         animator.SetTrigger("Damage");  
-        HP = HP - value;
+        CurrentHP = CurrentHP - value;
 
         // 血量低於0時死亡
-        if (HP <= 0)
+        if (CurrentHP <= 0)
         {
             //CurrentState = ActionState.Dead;
             StartCoroutine(DeathAnim());
@@ -55,11 +57,3 @@ public class MonsterInfo : MonoBehaviour
         Destroy(gameObject);
     }
 }
-
-/*public enum ActionState
-{
-    Follow,
-    Patrol,
-    Attack,
-    Dead
-}*/

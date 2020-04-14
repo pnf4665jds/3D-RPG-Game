@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FlameAttack : ActionBase
 {
+    public float Damage;
     // 火焰特效物件
     public GameObject FlameObject;
     // 龍的頭部
@@ -43,19 +44,12 @@ public class FlameAttack : ActionBase
     {
         yield return new WaitForSeconds(DelayBeforeEffect);
         flameObject = Instantiate(FlameObject, Head.transform);
+        ParticleDamager damager = flameObject.AddComponent<ParticleDamager>();
+        damager.SetValue(gameObject, Damage);
         yield return new WaitForSeconds(KeepTime);
         // 先停止產生粒子，並等待剩餘粒子消失後再破壞物體
         flameObject.GetComponent<ParticleSystem>().Stop();
         yield return new WaitForSeconds(5);
         Destroy(flameObject);
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (controller.CurrentStateName != UseStateName)
-            return;
-
-        if (collision.gameObject.tag == "Player")
-            Debug.Log("Hit" + gameObject.name);
     }
 }
