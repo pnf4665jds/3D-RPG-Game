@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Patrol : ActionBase
+public class ActionFlyPatrol : ActionBase
 {
     public bool ShowInScene;    // 是否在場景中顯示範圍
     public float PatrolLength;   // 以初始位置為中心的巡邏範圍
+    public float SpeedFactor = 1;
 
-    private MonsterInfo info;
     private Vector3 initPos;
     private Vector3 currentPos;
     private Vector3 targetPos;
@@ -18,10 +18,10 @@ public class Patrol : ActionBase
     /// </summary>
     public override void Init()
     {
-        info = GetComponent<MonsterInfo>();
         initPos = transform.position;
         currentPos = initPos;
         StartCoroutine(Calculate());
+        animator.SetBool("FlyForward", true);
     }
 
     /// <summary>
@@ -32,14 +32,14 @@ public class Patrol : ActionBase
     {
         while (true)
         {
+            float currentYRotate = transform.rotation.eulerAngles.y;
             // 先計算隨機的方向
-            Vector3 newDir = Quaternion.Euler(0, Random.Range(0, 360), 0) * new Vector3(0, 0, PatrolLength);
+            Vector3 newDir = Quaternion.Euler(0, Random.Range(currentYRotate + 105, currentYRotate + 255), 0) * new Vector3(0, 0, PatrolLength);
             // 再計算佔最大移動量的比例
             float rate = (PatrolLength - Vector3.Distance(currentPos, initPos)) / PatrolLength;
             // 計算最後的移動目的地 = 目前位置 + 移動向量 * 佔最大移動量的比例 * 隨機變數
-            targetPos = currentPos + newDir * rate * Random.Range(0.5f, 1);
+            targetPos = currentPos + newDir * rate;
             yield return new WaitUntil(() => transform.position == targetPos);
-            yield return new WaitForSeconds(2);
         }
     }
 
@@ -53,15 +53,14 @@ public class Patrol : ActionBase
     /// </summary>
     private void Move()
     {
-        transform.position = Vector3.MoveTowards(transform.position, targetPos, info.MoveSpeed * Time.deltaTime);
-        Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetPos - transform.position, info.RotateSpeed * Time.deltaTime, 0.0f);
+        transform.position = Vector3.MoveTowards(transform.position, targetPos, monsterInfo.MoveSpeed * Time.deltaTime * SpeedFactor);
+        Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetPos - transform.position, monsterInfo.RotateSpeed * Time.deltaTime, 0.0f);
         transform.rotation = Quaternion.LookRotation(newDirection);
     }
 
     public override void Exit()
     {
         StopCoroutine(Calculate());
-
     }
 
     /// <summary>

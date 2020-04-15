@@ -239,7 +239,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4788319935855200
 Transform:
   m_ObjectHideFlags: 0
@@ -287,7 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34e5fea04bb708f4caa36b0ba88885ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 1000
+  MaxHP: 0
   MoveSpeed: 2
   RotateSpeed: 5
   AttackDistance: 0.8
@@ -304,7 +304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Patrol
-  ShowInScene: 1
+  ShowInScene: 0
   DetectCenter: {x: 0, y: 0, z: 0}
   DetectRadius: 5
   DetectPauseTime: 0
@@ -321,7 +321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Follow
-  ShowInScene: 1
+  ShowInScene: 0
   DetectCenter: {x: 0, y: 0, z: 0}
   DetectRadius: 10
   DetectPauseTime: 0
@@ -416,22 +416,26 @@ MonoBehaviour:
   - StateName: Patrol
     Action: {fileID: 7364347008557810436}
     TransList:
-    - Decider: {fileID: 324850865}
+    - Order: 0
+      Decider: {fileID: 324850865}
       TrueState: Follow
       FalseState: 
   - StateName: Follow
     Action: {fileID: 324850864}
     TransList:
-    - Decider: {fileID: 966466048675799226}
+    - Order: 0
+      Decider: {fileID: 966466048675799226}
       TrueState: 
       FalseState: Patrol
-    - Decider: {fileID: 7071659971909622108}
+    - Order: 1
+      Decider: {fileID: 7071659971909622108}
       TrueState: Attack
       FalseState: 
   - StateName: Attack
     Action: {fileID: 7757978349363264088}
     TransList:
-    - Decider: {fileID: 5750884645848988401}
+    - Order: 0
+      Decider: {fileID: 5750884645848988401}
       TrueState: Follow
       FalseState: 
 --- !u!54 &8650517194863206173

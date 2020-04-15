@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DetectPlayerRect : DeciderBase
+public class DeciderDetectPlayerRect : DeciderBase
 {
     public bool ShowInScene;        // 是否在場景中顯示範圍
     public Vector3 DetectCenter;    // 偵測範圍中心

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClawAttack : ActionBase
+public class ActionClawAttack : ActionBase
 {
     // 是否已經攻擊到，防止過程中多次判定
     private bool alreadyHit = false;
@@ -27,7 +27,8 @@ public class ClawAttack : ActionBase
         if (other.gameObject.tag == "Player" && !alreadyHit)
         {
             alreadyHit = true;
-            Debug.Log("Hit");
+            monsterInfo.GetDamage(100);
+            Debug.Log(monsterInfo.CurrentHP);
         }
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Attack : ActionBase
+public class ActionAttack : ActionBase
 {
     private bool colDetect = false;
 

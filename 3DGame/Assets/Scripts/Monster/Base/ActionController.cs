@@ -24,6 +24,7 @@ public class ActionController : MonoBehaviour
     private void Awake()
     {
         ChangeState(FirstStateName);
+        OrderingList();
     }
 
     private void Update()
@@ -33,6 +34,17 @@ public class ActionController : MonoBehaviour
             // Update目前的Action
             currentState.Action?.Process();
             currentState.EvalTransition();
+        }
+    }
+
+    /// <summary>
+    /// 使Transition List可以透過設定Order改變判斷優先度，便於編輯。數字越小優先度越高。
+    /// </summary>
+    private void OrderingList()
+    {
+        foreach(State s in StateList)
+        {
+            s.TransList.Sort((t1, t2) => t1.Order.CompareTo(t2.Order));
         }
     }
 

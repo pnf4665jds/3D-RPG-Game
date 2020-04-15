@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Follow : ActionBase
+public class ActionFollow : ActionBase
 {
     private MonsterInfo info;
     private GameObject target;

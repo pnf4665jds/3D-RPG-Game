@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaitTimer : DeciderBase
+public class DeciderWaitTimer : DeciderBase
 {
     public float WaitTime;
 

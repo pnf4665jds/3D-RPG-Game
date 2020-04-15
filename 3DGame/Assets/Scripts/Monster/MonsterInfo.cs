@@ -22,10 +22,7 @@ public class MonsterInfo : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            GetDamage(100);
-        }
+
     }
 
     /// <summary>

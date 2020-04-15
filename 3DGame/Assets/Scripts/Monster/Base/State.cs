@@ -44,6 +44,7 @@ public class State
 [System.Serializable]
 public class Transition
 {
+    public int Order;
     public DeciderBase Decider;
     public string TrueState;
     public string FalseState;

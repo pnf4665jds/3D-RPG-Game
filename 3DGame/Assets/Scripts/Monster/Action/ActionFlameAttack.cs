@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlameAttack : ActionBase
+public class ActionFlameAttack : ActionBase
 {
     public float Damage;
     // 火焰特效物件
