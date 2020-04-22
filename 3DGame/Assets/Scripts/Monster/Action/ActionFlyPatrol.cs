@@ -9,9 +9,8 @@ public class ActionFlyPatrol : ActionBase
     public float SpeedFactor = 1;
 
     private Vector3 initPos;
-    private Vector3 currentPos;
     private Vector3 targetPos;
-    private bool startMove = false;
+    private bool keepForward = false;
 
     /// <summary>
     /// 初始化
@@ -19,7 +18,7 @@ public class ActionFlyPatrol : ActionBase
     public override void Init()
     {
         initPos = transform.position;
-        currentPos = initPos;
+        targetPos = initPos;
         StartCoroutine(Calculate());
         animator.SetBool("FlyForward", true);
     }
@@ -34,11 +33,10 @@ public class ActionFlyPatrol : ActionBase
         {
             float currentYRotate = transform.rotation.eulerAngles.y;
             // 先計算隨機的方向
-            Vector3 newDir = Quaternion.Euler(0, Random.Range(currentYRotate + 105, currentYRotate + 255), 0) * new Vector3(0, 0, PatrolLength);
-            // 再計算佔最大移動量的比例
-            float rate = (PatrolLength - Vector3.Distance(currentPos, initPos)) / PatrolLength;
-            // 計算最後的移動目的地 = 目前位置 + 移動向量 * 佔最大移動量的比例 * 隨機變數
-            targetPos = currentPos + newDir * rate;
+            float newYRotate = Random.value <= 0.5 ? Random.Range(currentYRotate + 90, currentYRotate + 150) : Random.Range(currentYRotate + 210, currentYRotate + 270);
+            Vector3 newDir = Quaternion.Euler(0, newYRotate, 0) * new Vector3(0, 0, PatrolLength);
+            // 再計算最後的移動目的地 = 初始位置 + 移動向量
+            targetPos = initPos + newDir;
             yield return new WaitUntil(() => transform.position == targetPos);
         }
     }

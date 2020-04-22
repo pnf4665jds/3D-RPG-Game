@@ -8,7 +8,6 @@ public class ActionPatrol : ActionBase
     public float PatrolLength;   // 以初始位置為中心的巡邏範圍
 
     private Vector3 initPos;
-    private Vector3 currentPos;
     private Vector3 targetPos;
     private bool startMove = false;
 
@@ -18,7 +17,6 @@ public class ActionPatrol : ActionBase
     public override void Init()
     {
         initPos = transform.position;
-        currentPos = initPos;
         StartCoroutine(Calculate());
     }
 
@@ -32,10 +30,8 @@ public class ActionPatrol : ActionBase
         {
             // 先計算隨機的方向
             Vector3 newDir = Quaternion.Euler(0, Random.Range(0, 360), 0) * new Vector3(0, 0, PatrolLength);
-            // 再計算佔最大移動量的比例
-            float rate = (PatrolLength - Vector3.Distance(currentPos, initPos)) / PatrolLength;
-            // 計算最後的移動目的地 = 目前位置 + 移動向量 * 佔最大移動量的比例 * 隨機變數
-            targetPos = currentPos + newDir * rate * Random.Range(0.5f, 1);
+            // 再計算最後的移動目的地 = 初始位置 + 移動向量 * 隨機變數
+            targetPos = initPos + newDir * Random.Range(0.7f, 1);
             yield return new WaitUntil(() => transform.position == targetPos);
             yield return new WaitForSeconds(2);
         }

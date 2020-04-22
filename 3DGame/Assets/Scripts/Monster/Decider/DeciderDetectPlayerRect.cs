@@ -8,6 +8,8 @@ public class DeciderDetectPlayerRect : DeciderBase
     public Vector3 DetectCenter;    // 偵測範圍中心
     public Vector3 DetectSize = new Vector3(1, 1, 1);      // 偵測範圍大小
     public float DetectPauseTime = 0;  // 偵測後幾秒內不再次偵測
+    public float MinDistanceLimit;      // 最小距離限制
+    public float MaxDistanceLimit;      // 最大距離限制
     //public Quaternion a = new Quaternion(1, 1, 1, 1);
 
     private bool PauseTimeFinish = true;
@@ -15,6 +17,15 @@ public class DeciderDetectPlayerRect : DeciderBase
     public override bool Decide()
     {
         return Detect();
+    }
+
+    /// <summary>
+    /// 取得偵測框的中心
+    /// </summary>
+    /// <returns></returns>
+    public Vector3 GetCenterVector()
+    {
+        return Quaternion.AngleAxis(transform.rotation.eulerAngles.y, Vector3.up) * DetectCenter;
     }
 
     /// <summary>
@@ -28,7 +39,13 @@ public class DeciderDetectPlayerRect : DeciderBase
         if (!PauseTimeFinish & DetectPauseTime > 0)
             return false;
 
-        Vector3 newDir = Quaternion.AngleAxis(transform.rotation.eulerAngles.y, Vector3.up) * DetectCenter;
+        if (MinDistanceLimit != 0 && controller.CurrentTarget && Vector3.Distance(controller.CurrentTarget.transform.position, transform.position) < MinDistanceLimit)
+            return false;
+
+        if (MaxDistanceLimit != 0 && controller.CurrentTarget && Vector3.Distance(controller.CurrentTarget.transform.position, transform.position) > MaxDistanceLimit)
+            return false;
+
+        Vector3 newDir = GetCenterVector();
         Collider[] playerCollider = Physics.OverlapBox(transform.position + newDir, DetectSize / 2, transform.rotation, LayerMask.GetMask("Player"));
         if (playerCollider.Length > 0)
         {
@@ -60,7 +77,7 @@ public class DeciderDetectPlayerRect : DeciderBase
         if (!ShowInScene)
             return;
 
-        Vector3 newDir = Quaternion.AngleAxis(transform.rotation.eulerAngles.y, Vector3.up) * DetectCenter;
+        Vector3 newDir = GetCenterVector();
         Gizmos.matrix = Matrix4x4.TRS(transform.position + newDir, transform.rotation, DetectSize);
         //Gizmos.matrix = transform.localToWorldMatrix;
         Gizmos.color = new Color(1, 0, 0, 0.4f);
