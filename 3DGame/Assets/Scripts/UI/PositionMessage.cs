@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PositionMessage : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class PositionMessage : MonoBehaviour
         isEntered = false;
         toMid = false;
         Init();
-        //showMessage();
+        //showMessage("123");
     }
 
     // Update is called once per frame
@@ -33,8 +34,10 @@ public class PositionMessage : MonoBehaviour
     public bool getIsGetPosition() {
         return this.isEntered;
     }
-    public void showMessage() {
+    
+    public void showMessage(string title) {
 
+        this.transform.GetChild(0).GetComponent<Text>().text = title;
         StartCoroutine(FadeMessage());
         StartCoroutine(transMessage());
     }
