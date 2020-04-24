@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Monster
+  - MonsterBloodUI
+  - PlayerBloodUI
+  - MPUI
   layers:
   - Default
   - TransparentFX
