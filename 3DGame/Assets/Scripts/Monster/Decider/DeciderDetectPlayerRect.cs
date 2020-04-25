@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class DeciderDetectPlayerRect : DeciderBase
 {
+    // 這個Decider會在"偵測到玩家進入範圍"後回傳true，反之回傳false
+
     public bool ShowInScene;        // 是否在場景中顯示範圍
     public Vector3 DetectCenter;    // 偵測範圍中心
     public Vector3 DetectSize = new Vector3(1, 1, 1);      // 偵測範圍大小
-    public float DetectPauseTime = 0;  // 偵測後幾秒內不再次偵測
     public float MinDistanceLimit;      // 最小距離限制
     public float MaxDistanceLimit;      // 最大距離限制
-    //public Quaternion a = new Quaternion(1, 1, 1, 1);
-
-    private bool PauseTimeFinish = true;
 
     public override bool Decide()
     {
@@ -36,9 +34,6 @@ public class DeciderDetectPlayerRect : DeciderBase
         if (controller.CurrentStateName != UseStateName)
             return false;
 
-        if (!PauseTimeFinish & DetectPauseTime > 0)
-            return false;
-
         if (MinDistanceLimit != 0 && controller.CurrentTarget && Vector3.Distance(controller.CurrentTarget.transform.position, transform.position) < MinDistanceLimit)
             return false;
 
@@ -49,24 +44,10 @@ public class DeciderDetectPlayerRect : DeciderBase
         Collider[] playerCollider = Physics.OverlapBox(transform.position + newDir, DetectSize / 2, transform.rotation, LayerMask.GetMask("Player"));
         if (playerCollider.Length > 0)
         {
-            if (DetectPauseTime > 0)
-                StartCoroutine(PauseTimer());
-
             controller.CurrentTarget = playerCollider[0].gameObject;
             return true;
         }
         return false;
-    }
-
-    /// <summary>
-    /// 偵測暫停計時器
-    /// </summary>
-    /// <returns></returns>
-    private IEnumerator PauseTimer()
-    {
-        PauseTimeFinish = false;
-        yield return new WaitForSeconds(DetectPauseTime);
-        PauseTimeFinish = true;
     }
 
     /// <summary>
@@ -79,13 +60,7 @@ public class DeciderDetectPlayerRect : DeciderBase
 
         Vector3 newDir = GetCenterVector();
         Gizmos.matrix = Matrix4x4.TRS(transform.position + newDir, transform.rotation, DetectSize);
-        //Gizmos.matrix = transform.localToWorldMatrix;
         Gizmos.color = new Color(1, 0, 0, 0.4f);
         Gizmos.DrawWireCube(Vector3.zero, Vector3.one);
-
-        //Gizmos.matrix = Matrix4x4.TRS(transform.position + DetectCenter, transform.rotation, DetectSize);
-        //Gizmos.color = Color.red;
-        //Gizmos.DrawWireCube(Vector3.zero, Vector3.one);
-        // to visualize this:
     }
 }

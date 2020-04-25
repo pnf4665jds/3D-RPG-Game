@@ -16,21 +16,23 @@ public class State
         if (controller.CurrentStateName != StateName)
             return;
 
-        foreach(Transition t in TransList)
+        foreach (Transition t in TransList)
         {
             if (t.Decider.Decide())
             {
                 // 如果判斷用script回傳true
-                if(t.TrueState != "")
+                if (t.TrueState != "" && t.Decider.IsPauseTimeFin())
                 {
+                    t.Decider.Exit();
                     controller.ChangeState(t.TrueState);
                 }
             }
             else
             {
                 // 如果判斷用script回傳false
-                if (t.FalseState != "")
+                if (t.FalseState != "" && t.Decider.IsPauseTimeFin())
                 {
+                    t.Decider.Exit();
                     controller.ChangeState(t.FalseState);
                 }
             }

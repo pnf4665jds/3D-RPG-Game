@@ -7,7 +7,7 @@ public class ActionController : MonoBehaviour
     /// <summary>
     /// 這個script用來管理這項怪物的Action狀態
     /// </summary>
-    
+
     // 當前狀態
     public string CurrentStateName;
     // 當前目標
@@ -42,7 +42,7 @@ public class ActionController : MonoBehaviour
     /// </summary>
     private void OrderingList()
     {
-        foreach(State s in StateList)
+        foreach (State s in StateList)
         {
             s.TransList.Sort((t1, t2) => t1.Order.CompareTo(t2.Order));
         }
@@ -67,6 +67,6 @@ public class ActionController : MonoBehaviour
                 break;
             }
         }
-        
+
     }
 }

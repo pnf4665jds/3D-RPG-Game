@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class DeciderWaitTimer : DeciderBase
 {
+    // 這個Decider會在"在這個狀態中持續WaitTime秒"後回傳true，反之回傳false
+
     public float WaitTime;
 
     private float currentTime = 0;
 
     public override bool Decide()
     {
-        if(currentTime >= WaitTime)
+        if (currentTime >= WaitTime)
         {
-            currentTime = 0;
             return true;
         }
         else
@@ -20,5 +21,11 @@ public class DeciderWaitTimer : DeciderBase
             currentTime += Time.deltaTime;
             return false;
         }
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+        currentTime = 0;
     }
 }

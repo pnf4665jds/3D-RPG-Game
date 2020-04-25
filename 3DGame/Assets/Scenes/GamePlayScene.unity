@@ -810,27 +810,27 @@ PrefabInstance:
     - target: {fileID: 8422892626600249584, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 296.8
+      value: 92.9
       objectReference: {fileID: 0}
     - target: {fileID: 8422892626600249584, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 40.8
+      value: 47
       objectReference: {fileID: 0}
     - target: {fileID: 8422892626600249584, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 119.5
+      value: 117.8
       objectReference: {fileID: 0}
     - target: {fileID: 8422892626600249584, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8422892626600249584, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9998809
+      value: 0.8660254
       objectReference: {fileID: 0}
     - target: {fileID: 8422892626600249584, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
         type: 3}
@@ -840,7 +840,7 @@ PrefabInstance:
     - target: {fileID: 8422892626600249584, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.015438182
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8422892626600249584, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
         type: 3}
@@ -855,7 +855,7 @@ PrefabInstance:
     - target: {fileID: 8422892626600249584, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 178.231
+      value: 240
       objectReference: {fileID: 0}
     - target: {fileID: 8422892626600249584, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
         type: 3}
@@ -10114,10 +10114,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Follow
-  ShowInScene: 0
+  DetectPauseTime: 0
+  ShowInScene: 1
   DetectCenter: {x: 0, y: 0, z: 0}
   DetectRadius: 35
-  DetectPauseTime: 0
 --- !u!114 &1448307985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10131,10 +10131,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Idle
+  DetectPauseTime: 0
   ShowInScene: 0
   DetectCenter: {x: 0, y: 0, z: 0}
   DetectRadius: 25
-  DetectPauseTime: 0
 --- !u!114 &1448307986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10148,6 +10148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: FlameAttack
+  DetectPauseTime: 0
   WaitTime: 6
 --- !u!114 &1448307987
 MonoBehaviour:
@@ -10195,6 +10196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: ClawAttack
+  DetectPauseTime: 0
   WaitTime: 3
 --- !u!114 &1448307990
 MonoBehaviour:
@@ -10209,10 +10211,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Follow
+  DetectPauseTime: 0
   ShowInScene: 0
   DetectCenter: {x: 0, y: 0, z: 5}
   DetectSize: {x: 2, y: 5, z: 15}
-  DetectPauseTime: 0
   MinDistanceLimit: 0
   MaxDistanceLimit: 0
 --- !u!114 &1448307991
@@ -10228,10 +10230,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Follow
+  DetectPauseTime: 15
   ShowInScene: 0
   DetectCenter: {x: 0, y: 0, z: 8}
   DetectSize: {x: 2, y: 5, z: 9}
-  DetectPauseTime: 15
   MinDistanceLimit: 0
   MaxDistanceLimit: 0
 --- !u!114 &1448307992
@@ -10428,6 +10430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Follow
+  DetectPauseTime: 50
   DecideHP: 900
 --- !u!114 &1448307999
 MonoBehaviour:
@@ -10456,6 +10459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Fly
+  DetectPauseTime: 0
   WaitTime: 2.5
 --- !u!114 &1448308001
 MonoBehaviour:
@@ -10486,6 +10490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: FlyFlameAttack
+  DetectPauseTime: 0
   WaitTime: 4.5
 --- !u!114 &1448308003
 MonoBehaviour:
@@ -10522,10 +10527,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: FlyFollow
+  DetectPauseTime: 10
   ShowInScene: 1
   DetectCenter: {x: 0, y: -10, z: 10}
   DetectSize: {x: 8, y: 30, z: 8}
-  DetectPauseTime: 10
   MinDistanceLimit: 0
   MaxDistanceLimit: 27
 --- !u!114 &1448308005
@@ -10541,10 +10546,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: FlyFollow
+  DetectPauseTime: 0
   ShowInScene: 0
   DetectCenter: {x: 0, y: -10, z: 0}
   DetectSize: {x: 120, y: 30, z: 120}
-  DetectPauseTime: 0
   MinDistanceLimit: 0
   MaxDistanceLimit: 0
 --- !u!114 &1448308006
@@ -10575,7 +10580,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: FlyPatrol
-  WaitTime: 15
+  DetectPauseTime: 0
+  WaitTime: 20
 --- !u!114 &1448308008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10589,10 +10595,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: FlyPatrol
+  DetectPauseTime: 15
   ShowInScene: 0
   DetectCenter: {x: 0, y: -10, z: 0}
   DetectSize: {x: 60, y: 30, z: 60}
-  DetectPauseTime: 15
   MinDistanceLimit: 8
   MaxDistanceLimit: 0
 --- !u!114 &1448308009
@@ -10622,6 +10628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Land
+  DetectPauseTime: 0
   WaitTime: 2
 --- !u!1001 &1454969647
 PrefabInstance:
