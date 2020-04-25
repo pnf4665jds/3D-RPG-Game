@@ -4,20 +4,23 @@ using UnityEngine;
 using UnityEngine.UI;
 public class MP : MonoBehaviour
 {
-    public float MaxMp;
-    public float curMp;
+    private float MaxMp;
+    private float curMp;
     private Image MpBar;
+    private GameObject player;
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindWithTag("player");
         MpBar = this.GetComponent<Image>();
         MaxMp = 100.0f;
-        curMp = 100.0f;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+       // curMp = player.GetComponent<Player>().
         MpBar.fillAmount = curMp / MaxMp;
         increaseMP();
     }
