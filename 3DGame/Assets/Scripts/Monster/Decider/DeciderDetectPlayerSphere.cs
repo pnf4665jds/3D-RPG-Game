@@ -7,8 +7,11 @@ public class DeciderDetectPlayerSphere : DeciderBase
     // 這個Decider會在"偵測到玩家進入範圍"後回傳true，反之回傳false
 
     public bool ShowInScene;        // 是否在場景中顯示範圍
+    public bool IsRangeStable;      // 範圍是否固定? 若不固定則會跟著怪物移動
     public Vector3 DetectCenter;    // 偵測範圍中心
     public float DetectRadius = 5;  // 偵測範圍半徑
+
+    private Collider[] playerCollider;
 
     public override bool Decide()
     {
@@ -23,7 +26,11 @@ public class DeciderDetectPlayerSphere : DeciderBase
         if (controller.CurrentStateName != UseStateName)
             return false;
 
-        Collider[] playerCollider = Physics.OverlapSphere(transform.position + DetectCenter, DetectRadius, LayerMask.GetMask("Player"));
+        if(IsRangeStable)
+            playerCollider = Physics.OverlapSphere(monsterInfo.InitPosition + DetectCenter, DetectRadius, LayerMask.GetMask("Player"));
+        else
+            playerCollider = Physics.OverlapSphere(transform.position + DetectCenter, DetectRadius, LayerMask.GetMask("Player"));
+
         if (playerCollider.Length > 0)
         {
             controller.CurrentTarget = playerCollider[0].gameObject;
@@ -41,7 +48,10 @@ public class DeciderDetectPlayerSphere : DeciderBase
             return;
 
         Gizmos.color = new Color(1, 0, 0, 0.4f);
-        Vector3 target = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0) * new Vector3(0, 0, DetectRadius);
-        Gizmos.DrawSphere(transform.position + DetectCenter, DetectRadius);
+
+        if(Application.isPlaying)
+            Gizmos.DrawSphere(monsterInfo.InitPosition + DetectCenter, DetectRadius);
+        else
+            Gizmos.DrawSphere(transform.position + DetectCenter, DetectRadius);
     }
 }

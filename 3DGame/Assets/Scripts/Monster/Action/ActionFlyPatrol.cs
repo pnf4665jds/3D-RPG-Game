@@ -5,7 +5,7 @@ using UnityEngine;
 public class ActionFlyPatrol : ActionBase
 {
     public bool ShowInScene;    // 是否在場景中顯示範圍
-    public float PatrolLength;   // 以初始位置為中心的巡邏範圍
+    public float PatrolLength;   // 以中心點為中心的巡邏範圍
     public float SpeedFactor = 1;
 
     private Vector3 initPos;
@@ -17,7 +17,7 @@ public class ActionFlyPatrol : ActionBase
     /// </summary>
     public override void Init()
     {
-        initPos = transform.position;
+        initPos = new Vector3(monsterInfo.InitPosition.x, transform.position.y, monsterInfo.InitPosition.z);
         targetPos = initPos;
         StartCoroutine(Calculate());
         animator.SetBool("FlyForward", true);
