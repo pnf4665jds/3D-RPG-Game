@@ -5,11 +5,12 @@ using UnityEngine;
 public class ActionClawAttack : ActionBase
 {
     // 是否已經攻擊到，防止過程中多次判定
-    private bool alreadyHit = false;
+    private bool alreadyHit = true;
 
     public override void Init()
     {
         animator.SetTrigger("ClawAttack");
+        alreadyHit = false;
     }
 
     public override void Process()
@@ -19,7 +20,7 @@ public class ActionClawAttack : ActionBase
 
     public override void Exit()
     {
-        alreadyHit = false;
+
     }
 
     private void OnTriggerEnter(Collider other)

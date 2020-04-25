@@ -5,10 +5,9 @@ using UnityEngine;
 public abstract class DeciderBase : MonoBehaviour
 {
     public abstract bool Decide();
-    // 這個判斷script使用在哪個state
-    public string UseStateName;
-    // 偵測到後幾秒內不再次偵測
-    public float DetectPauseTime = 0;
+
+    public string UseStateName;     // 這個Decider使用在哪個state
+    public float DetectPauseTime = 0;     // 偵測到後幾秒內不再次偵測
 
     protected ActionController controller { get; set; }
     protected MonsterInfo monsterInfo { get; set; }

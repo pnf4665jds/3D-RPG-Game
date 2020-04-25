@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class MonsterInfo : MonoBehaviour
 {
-    public float MaxHP;
-    public float CurrentHP { get; private set; }
-    public float MoveSpeed;
-    public float RotateSpeed;
-    public float AttackDistance;
-    //public ActionState CurrentState { get; set; }
+    public float MaxHP;     // 最大血量
+    public float CurrentHP { get; private set; }    // 目前血量
+    public float MoveSpeed;         // 移動速度
+    public float RotateSpeed;       // 旋轉速度
+    public float AttackDistance;    // 攻擊距離
+    public Vector3 InitPosition { get; private set; }   // 怪物的初始位置
+    public Quaternion InitRotation { get; private set; }    // 怪物的初始旋轉
 
     private Animator animator;
 
     private void Start()
     {
-        //CurrentState = ActionState.Patrol;
         CurrentHP = MaxHP;
+        InitPosition = transform.position;
+        InitRotation = transform.rotation;
         animator = GetComponent<Animator>();
     }
 
@@ -37,9 +39,20 @@ public class MonsterInfo : MonoBehaviour
         // 血量低於0時死亡
         if (CurrentHP <= 0)
         {
-            //CurrentState = ActionState.Dead;
             StartCoroutine(DeathAnim());
         }
+    }
+
+    /// <summary>
+    /// 呼叫後回血
+    /// </summary>
+    /// <param name="value"></param>
+    public void GetHeal(float value)
+    {
+        CurrentHP = CurrentHP + value;
+        Debug.Log(CurrentHP);
+        if (CurrentHP > MaxHP)
+            CurrentHP = MaxHP;
     }
 
     /// <summary>
