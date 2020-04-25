@@ -14,7 +14,8 @@ public class Player : MonoBehaviour
     private float Speed;
     private float MaxHP;
     private float CurrentHP;
-    private float Mana;
+    private float MP;
+    private float ATK;
     private GameObject PlayerBloodUi;
     private GameObject MPUI;
     private Vector3 MouseStartPos;
@@ -24,6 +25,8 @@ public class Player : MonoBehaviour
         PlayerBloodUi = GameObject.FindGameObjectWithTag("PlayerBloodUI");
         MPUI = GameObject.FindGameObjectWithTag("MPUI");
         Playerani = GetComponent<Animator>();
+        MaxHP = 100;
+        MP = 100;
     }
     // Start is called before the first frame update
     void Start()
@@ -113,5 +116,17 @@ public class Player : MonoBehaviour
         Playerani.SetBool("isAttack",isAttack);
         Playerani.SetBool("isHit",isHit);
         Playerani.SetBool("isMove", isMove);
+    }
+    public float GetMaxHP()
+    {
+        return MaxHP;
+    }
+    public float GetCurHP()
+    {
+        return CurrentHP;
+    }
+    public float GetMP()
+    {
+        return MP;
     }
 }
