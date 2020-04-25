@@ -9,6 +9,7 @@ TagManager:
   - PlayerBloodUI
   - MPUI
   - MonsterField
+  - PositionUI
   layers:
   - Default
   - TransparentFX

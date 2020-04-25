@@ -13,25 +13,25 @@ public class Player : MonoBehaviour
     private bool isSetMousePos;
     private float Speed;
     private float MaxHP;
-    private float CurrentHP;
+    private float MaxMP;
+    public float CurrentHP; 
     private float MP;
     private float ATK;
-    private GameObject PlayerBloodUi;
-    private GameObject MPUI;
     private Vector3 MouseStartPos;
+    private GameObject PositionUI;
 
     private void Awake()
     {
-        PlayerBloodUi = GameObject.FindGameObjectWithTag("PlayerBloodUI");
-        MPUI = GameObject.FindGameObjectWithTag("MPUI");
+        PositionUI = GameObject.FindGameObjectWithTag("PositionUI");
         Playerani = GetComponent<Animator>();
         MaxHP = 100;
-        MP = 100;
+        MaxMP = 100;
     }
     // Start is called before the first frame update
     void Start()
     {
         CurrentHP = MaxHP;
+        MP = MaxMP;
         isLive = true;
         isSetMousePos = false;
         isAttack = false;
@@ -76,11 +76,11 @@ public class Player : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.D))
             {
-                transform.Rotate(transform.up * 2f);
+                transform.Rotate(transform.up * 1.5f);
             }
             else if (Input.GetKey(KeyCode.A))
             {
-                transform.Rotate(transform.up * -2f);
+                transform.Rotate(transform.up * -1.5f);
             }
             if (Input.GetMouseButton(1))
             {
@@ -90,11 +90,11 @@ public class Player : MonoBehaviour
             {
                 isSetMousePos = false;
             }
+            GetRecovery();
         }
     }
-    public void GetDamage(float damage) {
+    public void GetHurt(float damage) {
         CurrentHP -= damage;
-        //PlayerBloodUi.transform.GetChild(0).transform.GetChild(0).GetComponent<PlayerBlood>().GetHurt(damage);
         if(CurrentHP <=0)
         {
             isLive = false;
@@ -128,5 +128,27 @@ public class Player : MonoBehaviour
     public float GetMP()
     {
         return MP;
+    }
+    public float GetMaxMP()
+    {
+        return MaxMP;
+    }
+    public void GetRecovery()
+    {
+        CurrentHP += MaxHP * 0.0005f;
+        if (CurrentHP > MaxHP) CurrentHP = MaxHP;
+        MP += MaxMP * 0.0005f;
+        if (MP > MaxMP) MP = MaxMP;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "MonsterField")
+        {
+            PositionUI.GetComponent<PositionMessage>().showMessage(other.gameObject.GetComponent<MonsterField>().GetFieldName());
+        }
+        else if(other.tag == "Monster")
+        {
+            other.gameObject.GetComponent<MonsterInfo>().GetDamage(ATK);
+        }
     }
 }
