@@ -8491,6 +8491,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: positionMessage
       objectReference: {fileID: 0}
+    - target: {fileID: 5912739269528094742, guid: a06c423e2ce1e6749b903b9d47f299bb,
+        type: 3}
+      propertyPath: m_TagString
+      value: PositionUI
+      objectReference: {fileID: 0}
     - target: {fileID: 5912739269528094743, guid: a06c423e2ce1e6749b903b9d47f299bb,
         type: 3}
       propertyPath: m_LocalPosition.x
