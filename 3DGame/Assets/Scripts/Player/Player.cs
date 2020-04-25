@@ -73,28 +73,15 @@ public class Player : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.D))
             {
-                transform.Rotate(transform.up * 0.5f);
+                transform.Rotate(transform.up * 2f);
             }
             else if (Input.GetKey(KeyCode.A))
             {
-                transform.Rotate(transform.up * -0.5f);
+                transform.Rotate(transform.up * -2f);
             }
             if (Input.GetMouseButton(1))
             {
-                if (!isSetMousePos)
-                {
-                    MouseStartPos = Input.mousePosition;
-                    isSetMousePos = true;
-                }
-                Vector3 dis = Input.mousePosition - MouseStartPos;
-                if(dis.x >20 || dis.x < -20)
-                {
-                    this.transform.GetChild(2).transform.Rotate(new Vector3(0,dis.x*0.01f,0));
-                }
-                else if(dis.y >20 || dis.y < -20)
-                {
-                    this.transform.GetChild(2).transform.Rotate(new Vector3(dis.y*0.01f,0,0));
-                }
+                this.transform.GetChild(2).transform.Rotate(-Input.GetAxis("Mouse Y"),0,0);
             }
             else if (Input.GetMouseButtonUp(1))
             {
@@ -111,6 +98,12 @@ public class Player : MonoBehaviour
             isDie = true;
             Playerani.SetBool("isDie", isDie);
         }
+    }
+    public void Healing(float healing)
+    {
+        CurrentHP += healing;
+        if (CurrentHP > MaxHP) CurrentHP = MaxHP;
+        //UI update HP
     }
     public void ResetAnimation()
     {
