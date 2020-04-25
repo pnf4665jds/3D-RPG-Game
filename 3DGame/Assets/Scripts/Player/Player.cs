@@ -14,7 +14,8 @@ public class Player : MonoBehaviour
     private float Speed;
     private float MaxHP;
     private float CurrentHP;
-    private float Mana;
+    private float MP;
+    private float ATK;
     private GameObject PlayerBloodUi;
     private GameObject MPUI;
     private Vector3 MouseStartPos;
@@ -24,6 +25,8 @@ public class Player : MonoBehaviour
         PlayerBloodUi = GameObject.FindGameObjectWithTag("PlayerBloodUI");
         MPUI = GameObject.FindGameObjectWithTag("MPUI");
         Playerani = GetComponent<Animator>();
+        MaxHP = 100;
+        MP = 100;
     }
     // Start is called before the first frame update
     void Start()
@@ -73,28 +76,15 @@ public class Player : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.D))
             {
-                transform.Rotate(transform.up * 0.5f);
+                transform.Rotate(transform.up * 2f);
             }
             else if (Input.GetKey(KeyCode.A))
             {
-                transform.Rotate(transform.up * -0.5f);
+                transform.Rotate(transform.up * -2f);
             }
             if (Input.GetMouseButton(1))
             {
-                if (!isSetMousePos)
-                {
-                    MouseStartPos = Input.mousePosition;
-                    isSetMousePos = true;
-                }
-                Vector3 dis = Input.mousePosition - MouseStartPos;
-                if(dis.x >20 || dis.x < -20)
-                {
-                    this.transform.GetChild(2).transform.Rotate(new Vector3(0,dis.x*0.01f,0));
-                }
-                else if(dis.y >20 || dis.y < -20)
-                {
-                    this.transform.GetChild(2).transform.Rotate(new Vector3(dis.y*0.01f,0,0));
-                }
+                this.transform.GetChild(2).transform.Rotate(-Input.GetAxis("Mouse Y"),0,0);
             }
             else if (Input.GetMouseButtonUp(1))
             {
@@ -104,13 +94,19 @@ public class Player : MonoBehaviour
     }
     public void GetDamage(float damage) {
         CurrentHP -= damage;
-        PlayerBloodUi.transform.GetChild(0).transform.GetChild(0).GetComponent<PlayerBlood>().GetHurt(damage);
+        //PlayerBloodUi.transform.GetChild(0).transform.GetChild(0).GetComponent<PlayerBlood>().GetHurt(damage);
         if(CurrentHP <=0)
         {
             isLive = false;
             isDie = true;
             Playerani.SetBool("isDie", isDie);
         }
+    }
+    public void Healing(float healing)
+    {
+        CurrentHP += healing;
+        if (CurrentHP > MaxHP) CurrentHP = MaxHP;
+        //UI update HP
     }
     public void ResetAnimation()
     {
@@ -120,5 +116,17 @@ public class Player : MonoBehaviour
         Playerani.SetBool("isAttack",isAttack);
         Playerani.SetBool("isHit",isHit);
         Playerani.SetBool("isMove", isMove);
+    }
+    public float GetMaxHP()
+    {
+        return MaxHP;
+    }
+    public float GetCurHP()
+    {
+        return CurrentHP;
+    }
+    public float GetMP()
+    {
+        return MP;
     }
 }

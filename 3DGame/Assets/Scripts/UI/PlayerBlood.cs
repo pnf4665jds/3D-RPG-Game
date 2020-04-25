@@ -5,30 +5,30 @@ using UnityEngine.UI;
 
 public class PlayerBlood : MonoBehaviour
 {
-    public float MaxBlood;
-    public float curBlood;
+    private float MaxBlood;
+    private float curBlood;
+    private GameObject player;
     /// <summary>
     /// 如果血條X軸座標移動至-92.6判定死亡
     /// </summary>
     // Start is called before the first frame update
     void Start()
     {
-        MaxBlood = 100;
-        curBlood = 100;
+        
+        ///抓到player
+        player = GameObject.FindWithTag("Player");
+        MaxBlood = player.GetComponent<Player>().GetMaxHP();
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        curBlood = player.GetComponent<Player>().GetCurHP();
         this.transform.localPosition = new Vector3((-92.6f + 92.6f * (curBlood / MaxBlood)), 0.0f, 0.0f);
         ChangeColor();
     }
-    public void GetHurt(float damage)
-    {
 
-        curBlood -= damage;
-
-    }
     private void ChangeColor()
     {
 

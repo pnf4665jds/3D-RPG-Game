@@ -7,7 +7,7 @@ public class PositionMessage : MonoBehaviour
 {
     private bool isEntered , toMid;
     private CanvasGroup obj;
-    private Vector3 startPos , endPos , midPos;
+
     // Start is called before the first frame update
     void Start()
     {
