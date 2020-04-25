@@ -14,30 +14,21 @@ public class PlayerBlood : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        HPInitialize();
-        ///抓到player
-        player = GameObject.FindWithTag("player");
         
+        ///抓到player
+        player = GameObject.FindWithTag("Player");
+        MaxBlood = player.GetComponent<Player>().GetMaxHP();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        //curBlood = player.GetComponent<Player>()
+        curBlood = player.GetComponent<Player>().GetCurHP();
         this.transform.localPosition = new Vector3((-92.6f + 92.6f * (curBlood / MaxBlood)), 0.0f, 0.0f);
         ChangeColor();
     }
-    public void GetHurt(float damage)
-    {
 
-        curBlood -= damage;
-
-    }
-
-    private void HPInitialize() {
-        MaxBlood = 100;
-
-    }
     private void ChangeColor()
     {
 

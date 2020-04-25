@@ -94,7 +94,7 @@ public class Player : MonoBehaviour
     }
     public void GetDamage(float damage) {
         CurrentHP -= damage;
-        PlayerBloodUi.transform.GetChild(0).transform.GetChild(0).GetComponent<PlayerBlood>().GetHurt(damage);
+        //PlayerBloodUi.transform.GetChild(0).transform.GetChild(0).GetComponent<PlayerBlood>().GetHurt(damage);
         if(CurrentHP <=0)
         {
             isLive = false;

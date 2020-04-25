@@ -11,7 +11,7 @@ public class MP : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindWithTag("player");
+        player = GameObject.FindWithTag("Player");
         MpBar = this.GetComponent<Image>();
         MaxMp = 100.0f;
 
@@ -20,14 +20,14 @@ public class MP : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // curMp = player.GetComponent<Player>().
+        curMp = player.GetComponent<Player>().GetMP();
         MpBar.fillAmount = curMp / MaxMp;
-        increaseMP();
+        //increaseMP();
     }
 
-    public void increaseMP()
+   /* public void increaseMP()
     {
-        if (/*沒有在利用技能*/curMp < MaxMp)
+        if (curMp < MaxMp)
         {
             curMp += 0.01f;
         }
@@ -35,5 +35,5 @@ public class MP : MonoBehaviour
     public void decreaseMP(float deMP)
     {
         curMp -= deMP;
-    }
+    }*/
 }
