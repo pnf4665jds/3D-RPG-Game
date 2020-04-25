@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ActionAttack : ActionBase
 {
+    // 這個Action用來讓怪物進行普通攻擊
+
     private bool colDetect = false;
 
     public override void Init()

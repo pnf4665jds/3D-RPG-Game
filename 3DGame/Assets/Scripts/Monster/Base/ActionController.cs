@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class ActionController : MonoBehaviour
 {
-    /// <summary>
-    /// 這個script用來管理這項怪物的Action狀態
-    /// </summary>
+    // 這個script用來管理這個怪物的Action狀態
 
     // 當前狀態
     public string CurrentStateName;

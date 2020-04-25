@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ActionFly : ActionBase
 {
+    // 這個Action用來讓怪物進行起飛的動作
+
     public float TakeOffSpeed = 1;
 
     public override void Init()

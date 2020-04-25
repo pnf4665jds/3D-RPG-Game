@@ -5,14 +5,15 @@ using UnityEngine;
 [System.Serializable]
 public class State
 {
-    public string StateName;
-    public ActionBase Action;
-    public List<Transition> TransList;
-    public ActionController controller { get; set; }
+    public string StateName;    // 狀態名稱
+    public ActionBase Action;   // 這個狀態下要做的事
+    public List<Transition> TransList;  // 狀態轉移列表
+    public ActionController controller { get; set; }    
 
     // 判斷是否要轉換狀態
     public void EvalTransition()
     {
+        // 如果目前狀態不是這個狀態
         if (controller.CurrentStateName != StateName)
             return;
 
@@ -20,7 +21,7 @@ public class State
         {
             if (t.Decider.Decide())
             {
-                // 如果判斷用script回傳true
+                // 如果Decider回傳true
                 if (t.TrueState != "" && t.Decider.IsPauseTimeFin())
                 {
                     t.Decider.Exit();
@@ -29,7 +30,7 @@ public class State
             }
             else
             {
-                // 如果判斷用script回傳false
+                // 如果Decider回傳true回傳false
                 if (t.FalseState != "" && t.Decider.IsPauseTimeFin())
                 {
                     t.Decider.Exit();

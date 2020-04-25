@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ActionPatrol : ActionBase
 {
+    // 這個Action用來讓怪物在範圍內巡邏
+
     public bool ShowInScene;    // 是否在場景中顯示範圍
     public float PatrolLength;   // 以初始位置為中心的巡邏範圍
 

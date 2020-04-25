@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class ActionFollow : ActionBase
 {
-    public float FollowKeepDistance;
-    public bool FlyMode;
+    // 這個Action用來讓怪物追玩家
 
-    private MonsterInfo info;
+    public float FollowKeepDistance;
+    public bool IsFlyMode;      // 是否是飛行狀態
+
     private GameObject target;
 
     public override void Init()
     {
-        info = GetComponent<MonsterInfo>();
-        if (!FlyMode)
+        if (!IsFlyMode)
             animator.SetBool("Walk", true);
         else
             animator.SetBool("FlyForward", true);
@@ -30,7 +30,7 @@ public class ActionFollow : ActionBase
     public override void Exit()
     {
         target = null;
-        if(!FlyMode)
+        if(!IsFlyMode)
             animator.SetBool("Walk", false);
         else
             animator.SetBool("FlyForward", false);
@@ -44,13 +44,13 @@ public class ActionFollow : ActionBase
         if (target == null)
             return;
 
-        if (!FlyMode)
+        if (!IsFlyMode)
         {
             if(Vector3.Distance(transform.position, target.transform.position) < FollowKeepDistance)
                 return;
 
-            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, info.MoveSpeed * Time.deltaTime);
-            Vector3 newDirection = Vector3.RotateTowards(transform.forward, target.transform.position - transform.position, info.RotateSpeed * Time.deltaTime, 0.0f);
+            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, monsterInfo.MoveSpeed * Time.deltaTime);
+            Vector3 newDirection = Vector3.RotateTowards(transform.forward, target.transform.position - transform.position, monsterInfo.RotateSpeed * Time.deltaTime, 0.0f);
             transform.rotation = Quaternion.LookRotation(newDirection);
         }
         else
@@ -58,11 +58,10 @@ public class ActionFollow : ActionBase
             Vector3 targetWithoutY = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
             if (Vector3.Distance(transform.position, targetWithoutY) < FollowKeepDistance)
             {
-
                 return;
             }
-            transform.position = Vector3.MoveTowards(transform.position, targetWithoutY, info.MoveSpeed * Time.deltaTime * 1.5f);
-            Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetWithoutY - transform.position, info.RotateSpeed * Time.deltaTime, 0.0f);
+            transform.position = Vector3.MoveTowards(transform.position, targetWithoutY, monsterInfo.MoveSpeed * Time.deltaTime * 1.5f);
+            Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetWithoutY - transform.position, monsterInfo.RotateSpeed * Time.deltaTime, 0.0f);
             transform.rotation = Quaternion.LookRotation(newDirection);
         }
     }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ActionFlyPatrol : ActionBase
 {
+    // 這個Action用來讓怪物在飛行狀態下巡邏
+
     public bool ShowInScene;    // 是否在場景中顯示範圍
     public float PatrolLength;   // 以中心點為中心的巡邏範圍
     public float SpeedFactor = 1;

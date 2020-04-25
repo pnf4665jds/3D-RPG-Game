@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ActionFlyFlameAttack : ActionBase
 {
+    // 這個Action用來讓火龍在飛行狀態下噴火球
+
     public float Damage;
     // 偵測玩家的方框
     public DeciderDetectPlayerRect DetectRect;
@@ -45,19 +47,17 @@ public class ActionFlyFlameAttack : ActionBase
     {
         animator.SetTrigger("FlyFlameAttack");
         yield return new WaitForSeconds(DelayBeforeEffect);
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
         for (int i = 0; i < BallNum; i++)
         {
-            RaycastHit hit;
-            if (Physics.Raycast(center, Vector3.down, out hit, Mathf.Infinity, 1 << 9))
-            {
-                target = hit.point + GetRandomRange();
-                GameObject fireBall = Instantiate(FireBallObject, Head.transform.position, Quaternion.identity);
-                FireBallDamager damager = fireBall.AddComponent<FireBallDamager>();
-                damager.SetValue(gameObject, Damage);
-                fireBall.GetComponent<Rigidbody>().AddForce((target - fireBall.transform.position) * FireBallSpeed);
-                Destroy(fireBall, 10);
-                yield return new WaitForSeconds(ShootDeltaTime);
-            }
+            target = player.transform.position;
+            GameObject fireBall = Instantiate(FireBallObject, Head.transform.position, Quaternion.identity);
+            FireBallDamager damager = fireBall.AddComponent<FireBallDamager>();
+            damager.SetValue(gameObject, Damage);
+            fireBall.GetComponent<Rigidbody>().AddForce((target - fireBall.transform.position) * FireBallSpeed);
+            Destroy(fireBall, 10);
+            yield return new WaitForSeconds(ShootDeltaTime);
+            
         }
     }
 

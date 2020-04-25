@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ActionFlameAttack : ActionBase
 {
+    // 這個Action用來讓火龍進行噴火攻擊
+
     public float Damage;
     // 火焰特效物件
     public GameObject FlameObject;

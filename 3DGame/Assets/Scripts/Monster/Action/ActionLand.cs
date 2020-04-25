@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ActionLand : ActionBase
 {
+    // 這個Action用來讓怪物進行著地動作
+
     public float LandSpeed = 1;
 
     public override void Init()
@@ -13,17 +15,28 @@ public class ActionLand : ActionBase
 
     public override void Process()
     {
-        Land();
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, Mathf.Infinity, 1 << 9))
+        {
+            if(Vector3.Distance(hit.point, transform.position) < 0.1f)
+            {
+                // 開啟重力
+                GetComponent<Rigidbody>().useGravity = true;
+            }
+            else
+            {
+                Land();
+            }
+        }
     }
 
     public override void Exit()
     {
-        // 開啟重力
-        GetComponent<Rigidbody>().useGravity = true;
+        
     }
 
     /// <summary>
-    /// 起飛
+    /// 降落
     /// </summary>
     private void Land()
     {

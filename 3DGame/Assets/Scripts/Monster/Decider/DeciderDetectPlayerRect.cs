@@ -10,10 +10,12 @@ public class DeciderDetectPlayerRect : DeciderBase
     public bool IsRangeStable;      // 範圍是否固定? 若不固定則會跟著怪物移動
     public Vector3 DetectCenter;    // 偵測範圍中心
     public Vector3 DetectSize = new Vector3(1, 1, 1);      // 偵測範圍大小
-    public float MinDistanceLimit;      // 最小距離限制
-    public float MaxDistanceLimit;      // 最大距離限制
+    public float StableRotateY = 0;       // 範圍固定時的Y軸旋轉
+    //public float MinDistanceLimit;      // 最小距離限制
+    //public float MaxDistanceLimit;      // 最大距離限制
 
     private Collider[] playerCollider;
+    private Quaternion stableRotation;
 
     public override bool Decide()
     {
@@ -29,6 +31,11 @@ public class DeciderDetectPlayerRect : DeciderBase
         return Quaternion.AngleAxis(transform.rotation.eulerAngles.y, Vector3.up) * DetectCenter;
     }
 
+    public Vector3 GetStableVector()
+    {
+        return Quaternion.AngleAxis(StableRotateY, Vector3.up) * DetectCenter;
+    }
+
     /// <summary>
     /// 偵測玩家
     /// </summary>
@@ -37,15 +44,16 @@ public class DeciderDetectPlayerRect : DeciderBase
         if (controller.CurrentStateName != UseStateName)
             return false;
 
-        if (MinDistanceLimit != 0 && controller.CurrentTarget && Vector3.Distance(controller.CurrentTarget.transform.position, transform.position) < MinDistanceLimit)
+        /*if (MinDistanceLimit != 0 && controller.CurrentTarget && Vector3.Distance(controller.CurrentTarget.transform.position, transform.position) < MinDistanceLimit)
             return false;
 
         if (MaxDistanceLimit != 0 && controller.CurrentTarget && Vector3.Distance(controller.CurrentTarget.transform.position, transform.position) > MaxDistanceLimit)
-            return false;
+            return false;*/
 
         if (IsRangeStable)
         {
-            playerCollider = Physics.OverlapBox(monsterInfo.InitPosition + DetectCenter, DetectSize, transform.rotation, LayerMask.GetMask("Player"));
+            stableRotation = Quaternion.Euler(0, StableRotateY, 0);
+            playerCollider = Physics.OverlapBox(monsterInfo.InitPosition + DetectCenter, DetectSize, stableRotation, LayerMask.GetMask("Player"));
         }
         else
         {
@@ -72,11 +80,21 @@ public class DeciderDetectPlayerRect : DeciderBase
         if (IsRangeStable)
         {
             monsterInfo = GetComponent<MonsterInfo>();
+            Vector3 newDir = GetStableVector();
             Gizmos.color = new Color(1, 0, 0, 0.4f);
+
             if (Application.isPlaying)
-                Gizmos.DrawWireCube(monsterInfo.InitPosition + DetectCenter, DetectSize * 2);
+            {
+                stableRotation = Quaternion.Euler(0, StableRotateY, 0);
+                Gizmos.matrix = Matrix4x4.TRS(monsterInfo.InitPosition + newDir, stableRotation, DetectSize * 2);
+                Gizmos.DrawWireCube(Vector3.zero, Vector3.one);
+            }
             else
-                Gizmos.DrawWireCube(transform.position + DetectCenter, DetectSize * 2);
+            {
+                stableRotation = Quaternion.Euler(0, StableRotateY, 0);
+                Gizmos.matrix = Matrix4x4.TRS(transform.position + newDir, stableRotation, DetectSize * 2);
+                Gizmos.DrawWireCube(Vector3.zero, Vector3.one);
+            }
         }
         else
         {

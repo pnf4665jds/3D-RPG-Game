@@ -3273,6 +3273,7 @@ GameObject:
   - component: {fileID: 3037743098562945570}
   - component: {fileID: 3037743098562945581}
   - component: {fileID: 8619863769468356690}
+  - component: {fileID: 8462531119088151216}
   - component: {fileID: 3037743098562945555}
   - component: {fileID: 3037743098562945554}
   - component: {fileID: 3037743098562945553}
@@ -3289,6 +3290,7 @@ GameObject:
   - component: {fileID: 3037743098562945582}
   - component: {fileID: 5266506073864143134}
   - component: {fileID: 6601443895635697060}
+  - component: {fileID: 662944964347120341}
   m_Layer: 0
   m_Name: RedDragon
   m_TagString: Untagged
@@ -3345,7 +3347,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 122
   m_CollisionDetection: 0
 --- !u!114 &3037743098562945566
 MonoBehaviour:
@@ -3442,7 +3444,7 @@ MonoBehaviour:
       TrueState: 
       FalseState: Land
   - StateName: FlyFollow
-    Action: {fileID: 3037743098562945570}
+    Action: {fileID: 8462531119088151216}
     TransList:
     - Order: 1
       Decider: {fileID: 3037743098562945568}
@@ -3452,6 +3454,10 @@ MonoBehaviour:
       Decider: {fileID: 3037743098562945569}
       TrueState: 
       FalseState: FlyPatrol
+    - Order: 2
+      Decider: {fileID: 662944964347120341}
+      TrueState: FlyPatrol
+      FalseState: 
   - StateName: FlyFlameAttack
     Action: {fileID: 3037743098562945575}
     TransList:
@@ -3487,7 +3493,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UseStateName: Follow
   FollowKeepDistance: 0
-  FlyMode: 0
+  IsFlyMode: 0
 --- !u!114 &3037743098562945552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3587,7 +3593,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UseStateName: FlyFollow
   FollowKeepDistance: 8
-  FlyMode: 1
+  IsFlyMode: 0
 --- !u!114 &3037743098562945581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3615,6 +3621,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Back
+--- !u!114 &8462531119088151216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3037743098562945547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73ceeb65372cca94e88703a4f7acd256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseStateName: FlyFollow
+  IsFlyMode: 1
+  KeepDistance: 18
 --- !u!114 &3037743098562945555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3633,8 +3654,7 @@ MonoBehaviour:
   IsRangeStable: 0
   DetectCenter: {x: 0, y: 0, z: 8}
   DetectSize: {x: 1, y: 2.5, z: 4.5}
-  MinDistanceLimit: 0
-  MaxDistanceLimit: 0
+  StableRotateY: 0
 --- !u!114 &3037743098562945554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3653,8 +3673,7 @@ MonoBehaviour:
   IsRangeStable: 0
   DetectCenter: {x: 0, y: 0, z: 5}
   DetectSize: {x: 1, y: 2.5, z: 7.5}
-  MinDistanceLimit: 0
-  MaxDistanceLimit: 0
+  StableRotateY: 0
 --- !u!114 &3037743098562945553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3720,7 +3739,7 @@ MonoBehaviour:
   ShowInScene: 1
   IsRangeStable: 1
   DetectCenter: {x: 0, y: 0, z: 0}
-  DetectRadius: 30
+  DetectRadius: 25
 --- !u!114 &3037743098562945562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3782,10 +3801,9 @@ MonoBehaviour:
   DetectPauseTime: 10
   ShowInScene: 0
   IsRangeStable: 0
-  DetectCenter: {x: 0, y: -10, z: 10}
-  DetectSize: {x: 4, y: 15, z: 4}
-  MinDistanceLimit: 0
-  MaxDistanceLimit: 27
+  DetectCenter: {x: 0, y: -10, z: 26}
+  DetectSize: {x: 30, y: 30, z: 20}
+  StableRotateY: 0
 --- !u!114 &3037743098562945580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3804,8 +3822,7 @@ MonoBehaviour:
   IsRangeStable: 1
   DetectCenter: {x: 0, y: -10, z: 0}
   DetectSize: {x: 30, y: 15, z: 30}
-  MinDistanceLimit: 0
-  MaxDistanceLimit: 0
+  StableRotateY: 56
 --- !u!114 &3037743098562945569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3820,12 +3837,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UseStateName: FlyFollow
   DetectPauseTime: 0
-  ShowInScene: 1
+  ShowInScene: 0
   IsRangeStable: 1
   DetectCenter: {x: 0, y: -10, z: 0}
-  DetectSize: {x: 30, y: 15, z: 30}
-  MinDistanceLimit: 0
-  MaxDistanceLimit: 0
+  DetectSize: {x: 30, y: 30, z: 30}
+  StableRotateY: 56
 --- !u!114 &3037743098562945571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3855,7 +3871,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UseStateName: Land
   DetectPauseTime: 0
-  WaitTime: 2.5
+  WaitTime: 3
 --- !u!114 &5266506073864143134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3871,11 +3887,10 @@ MonoBehaviour:
   UseStateName: FlyPatrol
   DetectPauseTime: 0
   ShowInScene: 0
-  IsRangeStable: 0
+  IsRangeStable: 1
   DetectCenter: {x: 0, y: -10, z: 0}
   DetectSize: {x: 30, y: 15, z: 30}
-  MinDistanceLimit: 0
-  MaxDistanceLimit: 0
+  StableRotateY: 56
 --- !u!114 &6601443895635697060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3890,6 +3905,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UseStateName: Back
   DetectPauseTime: 0
+--- !u!114 &662944964347120341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3037743098562945547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d81a937f1e55ad41b8427dc77f5f7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseStateName: FlyFollow
+  DetectPauseTime: 0
+  WaitTime: 4
 --- !u!1 &3037743098586715581
 GameObject:
   m_ObjectHideFlags: 0

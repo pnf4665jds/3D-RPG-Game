@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ActionHealAndBack : ActionBase
 {
+    // 這個Action用來讓怪物回到初始位置並且回滿血
+
     private Vector3 initPosition;
     private Quaternion initRotation;
 
@@ -23,7 +25,7 @@ public class ActionHealAndBack : ActionBase
     public override void Exit()
     {
         animator.SetBool("Walk", false);
-        transform.rotation = initRotation;
+        StartCoroutine(RotateToOrigin());
     }
 
     /// <summary>
@@ -46,6 +48,24 @@ public class ActionHealAndBack : ActionBase
         {
             monsterInfo.GetHeal(monsterInfo.MaxHP * 0.05f);
             yield return new WaitForSeconds(0.5f);
+        }
+    }
+
+    /// <summary>
+    /// 回到初始旋轉
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator RotateToOrigin()
+    {
+        Quaternion from = transform.rotation;
+        Quaternion to = initRotation;
+        int elapsed = 0;
+
+        while(elapsed < 100)
+        {
+            transform.rotation = Quaternion.Slerp(from, to, 0.01f * elapsed);
+            elapsed += 1;
+            yield return null;
         }
     }
 }

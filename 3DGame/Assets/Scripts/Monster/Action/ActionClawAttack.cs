@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ActionClawAttack : ActionBase
 {
+    // 這個Action用來讓火龍進行衝撞攻擊
+
     // 是否已經攻擊到，防止過程中多次判定
     private bool alreadyHit = true;
 
