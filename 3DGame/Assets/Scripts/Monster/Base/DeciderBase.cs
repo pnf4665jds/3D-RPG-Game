@@ -19,6 +19,11 @@ public abstract class DeciderBase : MonoBehaviour
         monsterInfo = GetComponent<MonsterInfo>();
     }
 
+    public virtual void Init()
+    {
+        PauseTimeFinish = true;
+    }
+
     /// <summary>
     /// Decider偵測暫停的計時器
     /// </summary>

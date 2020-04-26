@@ -67,4 +67,12 @@ public class ActionController : MonoBehaviour
         }
 
     }
+
+    /// <summary>
+    /// 初始化Decider
+    /// </summary>
+    public void InitDecider()
+    {
+        StateList.ForEach(s => s.TransList.ForEach(t => t.Decider.Init()));
+    }
 }
