@@ -11,8 +11,6 @@ public class DeciderDetectPlayerRect : DeciderBase
     public Vector3 DetectCenter;    // 偵測範圍中心
     public Vector3 DetectSize = new Vector3(1, 1, 1);      // 偵測範圍大小
     public float StableRotateY = 0;       // 範圍固定時的Y軸旋轉
-    //public float MinDistanceLimit;      // 最小距離限制
-    //public float MaxDistanceLimit;      // 最大距離限制
 
     private Collider[] playerCollider;
     private Quaternion stableRotation;
@@ -44,12 +42,6 @@ public class DeciderDetectPlayerRect : DeciderBase
         if (controller.CurrentStateName != UseStateName)
             return false;
 
-        /*if (MinDistanceLimit != 0 && controller.CurrentTarget && Vector3.Distance(controller.CurrentTarget.transform.position, transform.position) < MinDistanceLimit)
-            return false;
-
-        if (MaxDistanceLimit != 0 && controller.CurrentTarget && Vector3.Distance(controller.CurrentTarget.transform.position, transform.position) > MaxDistanceLimit)
-            return false;*/
-
         if (IsRangeStable)
         {
             stableRotation = Quaternion.Euler(0, StableRotateY, 0);
@@ -62,10 +54,8 @@ public class DeciderDetectPlayerRect : DeciderBase
         }
 
         if (playerCollider.Length > 0)
-        {
-            controller.CurrentTarget = playerCollider[0].gameObject;
             return true;
-        }
+        
         return false;
     }
 

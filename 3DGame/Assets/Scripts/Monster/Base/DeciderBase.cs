@@ -4,14 +4,16 @@ using UnityEngine;
 
 public abstract class DeciderBase : MonoBehaviour
 {
+    // 子類別需實作這個函式
     public abstract bool Decide();
 
     public string UseStateName;     // 這個Decider使用在哪個state
-    public float DetectPauseTime = 0;     // 偵測到後幾秒內不再次偵測
+    public float DetectPauseTime = 0;     // 偵測到後幾秒內不再次偵測，可以想像成是冷卻時間
 
     protected ActionController controller { get; set; }
     protected MonsterInfo monsterInfo { get; set; }
-    protected bool PauseTimeFinish = true;
+
+    private bool PauseTimeFinish = true;
 
     private void Start()
     {
@@ -21,17 +23,6 @@ public abstract class DeciderBase : MonoBehaviour
 
     public virtual void Init()
     {
-        PauseTimeFinish = true;
-    }
-
-    /// <summary>
-    /// Decider偵測暫停的計時器
-    /// </summary>
-    /// <returns></returns>
-    private IEnumerator PauseTimer()
-    {
-        PauseTimeFinish = false;
-        yield return new WaitForSeconds(DetectPauseTime);
         PauseTimeFinish = true;
     }
 
@@ -55,5 +46,16 @@ public abstract class DeciderBase : MonoBehaviour
             return true;
         else
             return PauseTimeFinish;
+    }
+
+    /// <summary>
+    /// Decider偵測暫停的計時器
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator PauseTimer()
+    {
+        PauseTimeFinish = false;
+        yield return new WaitForSeconds(DetectPauseTime);
+        PauseTimeFinish = true;
     }
 }

@@ -10,7 +10,7 @@ public class State
     public List<Transition> TransList;  // 狀態轉移列表
     public ActionController controller { get; set; }    
 
-    // 判斷是否要轉換狀態
+    // 判斷是否要切換狀態
     public void EvalTransition()
     {
         // 如果目前狀態不是這個狀態
@@ -19,9 +19,10 @@ public class State
 
         foreach (Transition t in TransList)
         {
+            // 如果Decider回傳true
             if (t.Decider.Decide())
             {
-                // 如果Decider回傳true
+                // 如果有設定新狀態，而且這個狀態的Decider暫停時間結束了
                 if (t.TrueState != "" && t.Decider.IsPauseTimeFin())
                 {
                     t.Decider.Exit();
@@ -30,7 +31,7 @@ public class State
             }
             else
             {
-                // 如果Decider回傳true回傳false
+                // 同上
                 if (t.FalseState != "" && t.Decider.IsPauseTimeFin())
                 {
                     t.Decider.Exit();
@@ -42,13 +43,13 @@ public class State
 }
 
 /// <summary>
-/// Decider:決定狀態轉移的script，如果True就轉成TrueState，反之為FalseState
+/// Decider:決定狀態轉移的script，如果Decider回傳True就轉成TrueState，反之為FalseState
 /// </summary>
 [System.Serializable]
 public class Transition
 {
-    public int Order;
+    public int Order;   // 判斷優先度，數字越小優先度越高
     public DeciderBase Decider;
-    public string TrueState;
+    public string TrueState;    
     public string FalseState;
 }

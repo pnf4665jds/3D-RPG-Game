@@ -21,13 +21,13 @@ public class ActionMoveToKeepPos : ActionBase
             animator.SetBool("FlyForward", true);
 
         readyToEval = false;
+        player = GameObject.FindWithTag("Player");
     }
 
     public override void Process()
     {
-        if (controller.CurrentTarget && !readyToEval)
+        if (!readyToEval)
         {
-            player = controller.CurrentTarget;
             readyToEval = true;
             targetWithoutY = GetTargetPos();
         }

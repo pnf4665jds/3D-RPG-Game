@@ -4,13 +4,12 @@ using UnityEngine;
 
 public abstract class ActionBase : MonoBehaviour
 {
+    // 子類別必須實作以下三個函式
     public abstract void Init();
-    // 同時間只有一個Process
-    public abstract void Process();
+    public abstract void Process();        
     public abstract void Exit();
 
-    // 這個判斷script使用在哪個state
-    public string UseStateName;
+    public string UseStateName;     // 這個Action使用在哪個state
 
     protected ActionController controller { get; set; }
     protected Animator animator { get; set; }

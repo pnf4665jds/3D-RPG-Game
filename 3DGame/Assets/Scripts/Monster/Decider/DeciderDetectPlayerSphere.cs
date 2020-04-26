@@ -32,10 +32,8 @@ public class DeciderDetectPlayerSphere : DeciderBase
             playerCollider = Physics.OverlapSphere(transform.position + DetectCenter, DetectRadius, LayerMask.GetMask("Player"));
 
         if (playerCollider.Length > 0)
-        {
-            controller.CurrentTarget = playerCollider[0].gameObject;
             return true;
-        }
+        
         return false;
     }
 

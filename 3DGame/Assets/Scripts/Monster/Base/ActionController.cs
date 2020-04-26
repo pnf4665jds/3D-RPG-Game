@@ -6,16 +6,11 @@ public class ActionController : MonoBehaviour
 {
     // 這個script用來管理這個怪物的Action狀態
 
-    // 當前狀態
-    public string CurrentStateName;
-    // 當前目標
-    public GameObject CurrentTarget;
-    // 第一個狀態名稱
-    public string FirstStateName;
+    public string CurrentStateName;     // 當前狀態
+    public string FirstStateName;       // 第一個狀態名稱
 
     [Header("State List")]
-    // 狀態列表
-    public List<State> StateList;
+    public List<State> StateList;       // 狀態列表
 
     private State currentState;
 
@@ -29,9 +24,8 @@ public class ActionController : MonoBehaviour
     {
         if (currentState != null)
         {
-            // Update目前的Action
-            currentState.Action?.Process();
-            currentState.EvalTransition();
+            currentState.Action?.Process();     // Update目前狀態的Action的Process函式
+            currentState.EvalTransition();      // Update判斷是否需要切換狀態
         }
     }
 
@@ -42,6 +36,7 @@ public class ActionController : MonoBehaviour
     {
         foreach (State s in StateList)
         {
+            // 以Order進行排序
             s.TransList.Sort((t1, t2) => t1.Order.CompareTo(t2.Order));
         }
     }
@@ -58,7 +53,6 @@ public class ActionController : MonoBehaviour
             if (s.StateName == newStateName)
             {
                 currentState?.Action?.Exit();
-                CurrentTarget = null;
                 currentState = s;
                 currentState.controller = this;
                 currentState.Action?.Init();

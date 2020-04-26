@@ -6,30 +6,18 @@ public class ActionFlyFlameAttack : ActionBase
 {
     // 這個Action用來讓火龍在飛行狀態下噴火球
 
-    public float Damage;
-    // 偵測玩家的方框
-    public DeciderDetectPlayerRect DetectRect;
-    // 龍的頭部
-    public GameObject Head;
-    // 火球物件
-    public GameObject FireBallObject;
-    // 一次噴的火球數量
-    public int BallNum;
-    // 特效出現的延遲
-    public float DelayBeforeEffect;
-    // 間隔時間
-    public float ShootDeltaTime;
-    // 火球速度
-    public float FireBallSpeed = 10;
+    public float Damage;                // 攻擊傷害
+    public GameObject Head;             // 龍的頭部
+    public GameObject FireBallObject;   // 火球物件
+    public int BallNum;                 // 一次噴的火球數量
+    public float DelayBeforeEffect;     // 特效出現的延遲
+    public float ShootDeltaTime;        // 間隔時間
+    public float FireBallSpeed = 10;    // 火球速度
 
-    private Vector3 center;
     private Vector3 target;
-    private Vector3 range;
 
     public override void Init()
     {
-        center = transform.position + DetectRect.GetCenterVector();
-        range = DetectRect.DetectSize / 2;
         StartCoroutine(ShootFireBalls());
     }
 
@@ -43,6 +31,7 @@ public class ActionFlyFlameAttack : ActionBase
 
     }
 
+    // 噴火球攻擊
     private IEnumerator ShootFireBalls()
     {
         animator.SetTrigger("FlyFlameAttack");
@@ -59,11 +48,5 @@ public class ActionFlyFlameAttack : ActionBase
             yield return new WaitForSeconds(ShootDeltaTime);
             
         }
-    }
-
-    private Vector3 GetRandomRange()
-    {
-        Vector3 v = new Vector3(range.x * Random.Range(-1f, 1f), 0, range.z * Random.Range(-1f, 1f));
-        return Quaternion.AngleAxis(transform.rotation.eulerAngles.y, Vector3.up) * v;
     }
 }

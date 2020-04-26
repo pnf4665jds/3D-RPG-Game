@@ -26,7 +26,7 @@ public class ActionHealAndBack : ActionBase
     {
         animator.SetBool("Walk", false);
         StartCoroutine(RotateToOrigin());
-        controller.InitDecider();
+        controller.InitDecider();   // 初始化所有Decider
     }
 
     /// <summary>

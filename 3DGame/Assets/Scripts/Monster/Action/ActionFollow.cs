@@ -6,7 +6,7 @@ public class ActionFollow : ActionBase
 {
     // 這個Action用來讓怪物追玩家
 
-    public float FollowKeepDistance;
+    public float FollowKeepDistance;    // 追隨是否要保持一個距離
     public bool IsFlyMode;      // 是否是飛行狀態
 
     private GameObject target;
@@ -17,13 +17,12 @@ public class ActionFollow : ActionBase
             animator.SetBool("Walk", true);
         else
             animator.SetBool("FlyForward", true);
+
+        target = GameObject.FindWithTag("Player");
     }
 
     public override void Process()
     {
-        if (controller.CurrentTarget)
-            target = controller.CurrentTarget;
-
         FollowPlayer();
     }
 
