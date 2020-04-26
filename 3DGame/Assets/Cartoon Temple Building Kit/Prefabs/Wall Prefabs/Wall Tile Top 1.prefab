@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4000011682122300}
   - component: {fileID: 33000010723850152}
   - component: {fileID: 23000013689755888}
+  - component: {fileID: 7711218312585619716}
   m_Layer: 0
   m_Name: Wall Tile Top 1
   m_TagString: Untagged
@@ -78,3 +79,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &7711218312585619716
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000010979587018}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: 2a9e5b6e557dcb545b8f54a0242d3339, type: 3}
