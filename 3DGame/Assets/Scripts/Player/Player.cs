@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public bool isHit;
     public bool isMove;
     public bool isDie;
+    public float MaxSpeed = 2;
     private bool isLive;
     private bool isSetMousePos;
     private float Speed;
@@ -17,7 +18,7 @@ public class Player : MonoBehaviour
     public float CurrentHP; 
     private float MP;
     private float ATK;
-    private Vector3 MouseStartPos;
+    private Vector3 MouseStartPos; 
     private GameObject PositionUI;
 
     private void Awake()
@@ -48,9 +49,9 @@ public class Player : MonoBehaviour
         {
             if (isMove)
             {
-                if (Speed >= 1)
+                if (Speed >= MaxSpeed)
                 {
-                    Speed = 1;
+                    Speed = MaxSpeed;
                 }
                 else Speed += Time.deltaTime;
             }
