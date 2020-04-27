@@ -6,17 +6,12 @@ public class ActionFlameAttack : ActionBase
 {
     // 這個Action用來讓火龍進行噴火攻擊
 
-    public float Damage;
-    // 火焰特效物件
-    public GameObject FlameObject;
-    // 龍的頭部
-    public GameObject Head;
-    // 微調噴火位置用
-    public Vector3 Offset;
-    // 特效出現的延遲
-    public float DelayBeforeEffect;
-    // 特效持續時間
-    public float KeepTime;
+    public float Damage;            // 傷害
+    public GameObject FlameObject;  // 火焰特效物件
+    public GameObject Head;         // 龍的頭部
+    public Vector3 Offset;          // 微調噴火位置用位移
+    public float DelayBeforeEffect; // 特效出現的延遲
+    public float KeepTime;          // 特效持續時間
 
     private bool colDetect = false;
     private GameObject flameObject;

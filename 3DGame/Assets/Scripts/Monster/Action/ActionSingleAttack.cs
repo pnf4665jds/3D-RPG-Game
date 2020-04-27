@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ActionAttack : ActionBase
+public class ActionSingleAttack : ActionBase
 {
     // 這個Action用來讓怪物進行普通攻擊
 
-    private bool colDetect = false;
+    public float Damage;    // 傷害
+    public string TriggerName;  // 要呼叫的Trigger名稱
 
     public override void Init()
     {
-        colDetect = true;
-        animator.SetTrigger("Attack");
+        animator.SetTrigger(TriggerName);
     }
 
     public override void Process()
@@ -21,14 +21,11 @@ public class ActionAttack : ActionBase
 
     public override void Exit()
     {
-        colDetect = false;
+
     }
 
-    private void OnCollisionEnter(Collision collision)
+    protected override void DoOnCollisionEnter(Collision collision)
     {
-        if (controller.CurrentStateName != UseStateName)
-            return;
-
         if (collision.gameObject.tag == "Player")
             Debug.Log("Hit");
     }

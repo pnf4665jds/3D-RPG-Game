@@ -304,10 +304,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Patrol
+  DetectPauseTime: 0
   ShowInScene: 0
+  IsRangeStable: 0
   DetectCenter: {x: 0, y: 0, z: 0}
   DetectRadius: 5
-  DetectPauseTime: 0
 --- !u!114 &966466048675799226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -321,10 +322,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Follow
+  DetectPauseTime: 0
   ShowInScene: 0
+  IsRangeStable: 0
   DetectCenter: {x: 0, y: 0, z: 0}
   DetectRadius: 10
-  DetectPauseTime: 0
 --- !u!114 &7071659971909622108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,10 +340,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Follow
+  DetectPauseTime: 0
   ShowInScene: 1
+  IsRangeStable: 0
   DetectCenter: {x: 0, y: 0.5, z: 0.8}
   DetectSize: {x: 2, y: 1, z: 1}
-  DetectPauseTime: 0
+  StableRotateY: 0
 --- !u!114 &5750884645848988401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,6 +359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Attack
+  DetectPauseTime: 0
   WaitTime: 0.8
 --- !u!114 &324850864
 MonoBehaviour:
@@ -369,6 +374,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Follow
+  FollowKeepDistance: 0
+  IsFlyMode: 0
 --- !u!114 &7364347008557810436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -397,6 +404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Attack
+  TriggerName: Attack
 --- !u!114 &8087613420217389440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -410,7 +418,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentStateName: 
-  CurrentTarget: {fileID: 0}
   FirstStateName: Patrol
   StateList:
   - StateName: Patrol

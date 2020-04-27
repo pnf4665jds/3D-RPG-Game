@@ -21,4 +21,36 @@ public abstract class ActionBase : MonoBehaviour
         animator = GetComponent<Animator>();
         monsterInfo = GetComponent<MonsterInfo>();
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (controller.CurrentStateName != UseStateName)
+            return;
+
+        DoOnTriggerEnter(other);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (controller.CurrentStateName != UseStateName)
+            return;
+
+        DoOnCollisionEnter(collision);
+    }
+
+    /// <summary>
+    /// 碰到Trigger時做什麼
+    /// </summary>
+    protected virtual void DoOnTriggerEnter(Collider other)
+    {
+        // 讓子類別繼承+實作
+    }
+
+    /// <summary>
+    /// 碰到Collider時做什麼
+    /// </summary>
+    protected virtual void DoOnCollisionEnter(Collision collision)
+    {
+        // 讓子類別繼承+實作
+    }
 }

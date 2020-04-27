@@ -8,7 +8,6 @@ public class MonsterInfo : MonoBehaviour
     public float CurrentHP { get; private set; }    // 目前血量
     public float MoveSpeed;         // 移動速度
     public float RotateSpeed;       // 旋轉速度
-    public float AttackDistance;    // 攻擊距離
     public Vector3 InitPosition { get; private set; }   // 怪物的初始位置
     public Quaternion InitRotation { get; private set; }    // 怪物的初始旋轉
 

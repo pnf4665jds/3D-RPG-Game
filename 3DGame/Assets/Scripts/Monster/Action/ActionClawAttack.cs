@@ -6,8 +6,9 @@ public class ActionClawAttack : ActionBase
 {
     // 這個Action用來讓火龍進行衝撞攻擊
 
-    // 是否已經攻擊到，防止過程中多次判定
-    private bool alreadyHit = true;
+    public float Damage;    // 傷害
+   
+    private bool alreadyHit = true;  // 是否已經攻擊到，防止過程中多次判定
 
     public override void Init()
     {
@@ -25,7 +26,7 @@ public class ActionClawAttack : ActionBase
 
     }
 
-    private void OnTriggerEnter(Collider other)
+    protected override void DoOnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player" && !alreadyHit)
         {
