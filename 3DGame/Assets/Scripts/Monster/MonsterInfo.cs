@@ -5,11 +5,13 @@ using UnityEngine;
 public class MonsterInfo : MonoBehaviour
 {
     public float MaxHP;     // 最大血量
-    public float CurrentHP { get; private set; }    // 目前血量
     public float MoveSpeed;         // 移動速度
     public float RotateSpeed;       // 旋轉速度
+    public float CurrentHP { get; private set; }    // 目前血量
     public Vector3 InitPosition { get; private set; }   // 怪物的初始位置
     public Quaternion InitRotation { get; private set; }    // 怪物的初始旋轉
+    public Vector3 FieldCenter { get; private set; }    // 活動領域中心座標
+    public float FieldRadius { get; private set; }      // 活動領域半徑
 
     private Animator animator;
 
@@ -52,6 +54,15 @@ public class MonsterInfo : MonoBehaviour
         Debug.Log(CurrentHP);
         if (CurrentHP > MaxHP)
             CurrentHP = MaxHP;
+    }
+
+    /// <summary>
+    /// 設定活動領域的中心點跟半徑
+    /// </summary>
+    public void SetField(Vector3 center, float radius)
+    {
+        FieldCenter = center;
+        FieldRadius = radius;
     }
 
     /// <summary>
