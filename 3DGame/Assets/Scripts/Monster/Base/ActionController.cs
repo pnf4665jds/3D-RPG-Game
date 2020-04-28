@@ -20,6 +20,11 @@ public class ActionController : MonoBehaviour
         OrderingList();
     }
 
+    private void Start()
+    {
+        InitAllDecider();
+    }
+
     private void Update()
     {
         if (currentState != null)
@@ -63,9 +68,9 @@ public class ActionController : MonoBehaviour
     }
 
     /// <summary>
-    /// 初始化Decider
+    /// 初始化所有Decider
     /// </summary>
-    public void InitDecider()
+    public void InitAllDecider()
     {
         StateList.ForEach(s => s.TransList.ForEach(t => t.Decider.Init()));
     }
