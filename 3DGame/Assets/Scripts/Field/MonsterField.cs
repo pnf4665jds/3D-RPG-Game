@@ -19,5 +19,8 @@ public class MonsterField : MonoBehaviour
     public string GetFieldName() {
         return Name;
     }
+    public float GetFieldRadius() {
+        return radius;
+    }
 
 }
