@@ -15,7 +15,11 @@ public class FireBallDamager : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Fire Ball Hit");
-        Destroy(gameObject);
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<Player>().GetHurt(finalDamage);
+            //Debug.Log(collision.gameObject.GetComponent<Player>().GetCurHP());
+            Destroy(gameObject);
+        }
     }
 }

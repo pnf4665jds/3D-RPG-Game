@@ -27,6 +27,9 @@ public class ActionSingleAttack : ActionBase
     protected override void DoOnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player")
-            Debug.Log("Hit");
+        {
+            collision.gameObject.GetComponent<Player>().GetHurt(Damage);
+            //Debug.Log(collision.gameObject.GetComponent<Player>().GetCurHP());
+        }
     }
 }

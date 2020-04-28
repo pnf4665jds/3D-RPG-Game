@@ -31,8 +31,8 @@ public class ActionClawAttack : ActionBase
         if (other.gameObject.tag == "Player" && !alreadyHit)
         {
             alreadyHit = true;
-            monsterInfo.GetDamage(100);
-            Debug.Log(monsterInfo.CurrentHP);
+            other.gameObject.GetComponent<Player>().GetHurt(Damage);
+            //Debug.Log(other.gameObject.GetComponent<Player>().GetCurHP());
         }
     }
 }

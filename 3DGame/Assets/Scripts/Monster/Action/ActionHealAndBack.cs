@@ -62,9 +62,9 @@ public class ActionHealAndBack : ActionBase
         Quaternion to = initRotation;
         int elapsed = 0;
 
-        while(elapsed < 100)
+        while(elapsed < 50)
         {
-            transform.rotation = Quaternion.Slerp(from, to, 0.01f * elapsed);
+            transform.rotation = Quaternion.Slerp(from, to, 0.02f * elapsed);
             elapsed += 1;
             yield return null;
         }

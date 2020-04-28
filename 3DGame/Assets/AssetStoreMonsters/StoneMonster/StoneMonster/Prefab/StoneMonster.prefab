@@ -30,7 +30,7 @@ Transform:
   - {fileID: 4201210078927136}
   m_Father: {fileID: 4966007699546920}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -60.650574}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90.21893}
 --- !u!1 &1215002072254110
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,7 +148,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4574649352997690}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 5.086738e-14, y: -2.5487384e-14, z: -0.048364192}
+  m_LocalEulerAnglesHint: {x: 5.897345e-14, y: -3.963925e-14, z: -6.8609357}
 --- !u!1 &1467097521789780
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,7 +178,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4836351918659748}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.048364446}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -6.860958}
 --- !u!1 &1497842698705604
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,7 +211,7 @@ Transform:
   - {fileID: 4836351918659748}
   m_Father: {fileID: 4788319935855200}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: -174.33627}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: -146.6271}
 --- !u!1 &1713781036754730
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,14 +223,18 @@ GameObject:
   - component: {fileID: 4788319935855200}
   - component: {fileID: 329668562437908815}
   - component: {fileID: 8024649797562101706}
+  - component: {fileID: 8087613420217389440}
   - component: {fileID: 324850865}
   - component: {fileID: 966466048675799226}
   - component: {fileID: 7071659971909622108}
   - component: {fileID: 5750884645848988401}
+  - component: {fileID: 6214341331534856085}
+  - component: {fileID: 1574418783358417911}
+  - component: {fileID: 7014428941042049743}
   - component: {fileID: 324850864}
   - component: {fileID: 7364347008557810436}
   - component: {fileID: 7757978349363264088}
-  - component: {fileID: 8087613420217389440}
+  - component: {fileID: 3965253632808350629}
   - component: {fileID: 8650517194863206173}
   - component: {fileID: 2322792306581674664}
   m_Layer: 0
@@ -287,9 +291,64 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34e5fea04bb708f4caa36b0ba88885ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 0
+  MaxHP: 100
   MoveSpeed: 2
   RotateSpeed: 5
+--- !u!114 &8087613420217389440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713781036754730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a538505ec681fc4db7d622ade76a19a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentStateName: 
+  FirstStateName: Patrol
+  StateList:
+  - StateName: Patrol
+    Action: {fileID: 7364347008557810436}
+    TransList:
+    - Order: 1
+      Decider: {fileID: 324850865}
+      TrueState: Follow
+      FalseState: 
+    - Order: 0
+      Decider: {fileID: 1574418783358417911}
+      TrueState: Back
+      FalseState: 
+  - StateName: Follow
+    Action: {fileID: 324850864}
+    TransList:
+    - Order: 1
+      Decider: {fileID: 966466048675799226}
+      TrueState: 
+      FalseState: Patrol
+    - Order: 2
+      Decider: {fileID: 7071659971909622108}
+      TrueState: Attack
+      FalseState: 
+    - Order: 0
+      Decider: {fileID: 7014428941042049743}
+      TrueState: Back
+      FalseState: 
+  - StateName: Attack
+    Action: {fileID: 7757978349363264088}
+    TransList:
+    - Order: 0
+      Decider: {fileID: 5750884645848988401}
+      TrueState: Follow
+      FalseState: 
+  - StateName: Back
+    Action: {fileID: 3965253632808350629}
+    TransList:
+    - Order: 0
+      Decider: {fileID: 6214341331534856085}
+      TrueState: Patrol
+      FalseState: 
 --- !u!114 &324850865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,8 +401,8 @@ MonoBehaviour:
   DetectPauseTime: 0
   ShowInScene: 1
   IsRangeStable: 0
-  DetectCenter: {x: 0, y: 0.5, z: 0.8}
-  DetectSize: {x: 2, y: 1, z: 1}
+  DetectCenter: {x: 0, y: 0.5, z: 0.49}
+  DetectSize: {x: 0.49, y: 0.4, z: 0.8}
   StableRotateY: 0
 --- !u!114 &5750884645848988401
 MonoBehaviour:
@@ -360,6 +419,48 @@ MonoBehaviour:
   UseStateName: Attack
   DetectPauseTime: 0
   WaitTime: 0.8
+--- !u!114 &6214341331534856085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713781036754730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 369f68d96f0b74d438e303483f5f14cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseStateName: Back
+  DetectPauseTime: 0
+--- !u!114 &1574418783358417911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713781036754730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c8c47edbf9c2b848adc2ff31c95f508, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseStateName: Patrol
+  DetectPauseTime: 0
+--- !u!114 &7014428941042049743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713781036754730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c8c47edbf9c2b848adc2ff31c95f508, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseStateName: Follow
+  DetectPauseTime: 0
 --- !u!114 &324850864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -389,7 +490,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UseStateName: Patrol
   ShowInScene: 0
-  PatrolLength: 5
+  PatrolLength: 15
 --- !u!114 &7757978349363264088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -403,9 +504,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Attack
-  Damage: 0
+  Damage: 10
   TriggerName: Attack
---- !u!114 &8087613420217389440
+--- !u!114 &3965253632808350629
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -414,37 +515,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1713781036754730}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a538505ec681fc4db7d622ade76a19a, type: 3}
+  m_Script: {fileID: 11500000, guid: afe25416a92df8749b900faf30eea148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentStateName: 
-  FirstStateName: Patrol
-  StateList:
-  - StateName: Patrol
-    Action: {fileID: 7364347008557810436}
-    TransList:
-    - Order: 0
-      Decider: {fileID: 324850865}
-      TrueState: Follow
-      FalseState: 
-  - StateName: Follow
-    Action: {fileID: 324850864}
-    TransList:
-    - Order: 0
-      Decider: {fileID: 966466048675799226}
-      TrueState: 
-      FalseState: Patrol
-    - Order: 1
-      Decider: {fileID: 7071659971909622108}
-      TrueState: Attack
-      FalseState: 
-  - StateName: Attack
-    Action: {fileID: 7757978349363264088}
-    TransList:
-    - Order: 0
-      Decider: {fileID: 5750884645848988401}
-      TrueState: Follow
-      FalseState: 
+  UseStateName: Back
 --- !u!54 &8650517194863206173
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -504,7 +578,7 @@ Transform:
   - {fileID: 4337812796121360}
   m_Father: {fileID: 4966007699546920}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 9.63194e-16, y: 1.4849983e-16, z: 8.764532}
+  m_LocalEulerAnglesHint: {x: 1.2167535e-15, y: 3.1240574e-17, z: 1.9519324}
 --- !u!1 &1798525600516028
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,7 +608,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4372769990449160}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.048364446}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -6.860958}
 --- !u!1 &1911034780301212
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,4 +639,4 @@ Transform:
   - {fileID: 4266849179980070}
   m_Father: {fileID: 4966007699546920}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -0.0000005019786, y: 0.0000018127654, z: 151.61496}
+  m_LocalEulerAnglesHint: {x: -0.0000003344241, y: 0.0000023252503, z: 144.80232}

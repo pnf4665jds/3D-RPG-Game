@@ -18,7 +18,8 @@ public class ActionPatrol : ActionBase
     /// </summary>
     public override void Init()
     {
-        initPos = transform.position;
+        //initPos = transform.position;
+        initPos = monsterInfo.FieldCenter;
         StartCoroutine(Calculate());
     }
 
@@ -34,7 +35,7 @@ public class ActionPatrol : ActionBase
             Vector3 newDir = Quaternion.Euler(0, Random.Range(0, 360), 0) * new Vector3(0, 0, PatrolLength);
             // 再計算最後的移動目的地 = 初始位置 + 移動向量 * 隨機變數
             targetPos = initPos + newDir * Random.Range(0.7f, 1);
-            yield return new WaitUntil(() => transform.position == targetPos);
+            yield return new WaitUntil(() => Vector3.Distance(transform.position, targetPos) < 0.1f);
             yield return new WaitForSeconds(2);
         }
     }
@@ -57,7 +58,6 @@ public class ActionPatrol : ActionBase
     public override void Exit()
     {
         StopCoroutine(Calculate());
-
     }
 
     /// <summary>

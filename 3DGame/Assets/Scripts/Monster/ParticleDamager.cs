@@ -13,8 +13,9 @@ public class ParticleDamager : MonoBehaviour
         finalDamage = damage;
     }
 
-    private void OnParticleTrigger()
+    private void OnParticleCollision(GameObject other)
     {
-        //Debug.Log("Particle Detect");
+        other.GetComponent<Player>().GetHurt(finalDamage);
+        //Debug.Log(other.gameObject.GetComponent<Player>().GetCurHP());
     }
 }

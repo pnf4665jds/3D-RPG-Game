@@ -46,7 +46,7 @@ public class MonsterField : MonoBehaviour
         for(int i = 0; i < MonsterNum; i++)
         {
             Vector3 randomPos = new Vector3(Random.Range(startX, startX + squareWidth), center.y, Random.Range(startZ, startZ + squareWidth));
-            GameObject obj = Instantiate(Monster, randomPos, Quaternion.identity);
+            GameObject obj = Instantiate(Monster, randomPos, Quaternion.identity, gameObject.transform);
             obj.GetComponent<MonsterInfo>().SetField(center, radius);
         }
     }

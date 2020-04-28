@@ -45,8 +45,7 @@ public class ActionFlyFlameAttack : ActionBase
             damager.SetValue(gameObject, Damage);
             fireBall.GetComponent<Rigidbody>().AddForce((target - fireBall.transform.position) * FireBallSpeed);
             Destroy(fireBall, 10);
-            yield return new WaitForSeconds(ShootDeltaTime);
-            
+            yield return new WaitForSeconds(ShootDeltaTime);    
         }
     }
 }
