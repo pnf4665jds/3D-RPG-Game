@@ -239,7 +239,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4788319935855200
 Transform:
   m_ObjectHideFlags: 0
@@ -290,7 +290,6 @@ MonoBehaviour:
   MaxHP: 0
   MoveSpeed: 2
   RotateSpeed: 5
-  AttackDistance: 0.8
 --- !u!114 &324850865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -404,6 +403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Attack
+  Damage: 0
   TriggerName: Attack
 --- !u!114 &8087613420217389440
 MonoBehaviour:

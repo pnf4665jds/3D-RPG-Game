@@ -15,7 +15,7 @@ public abstract class ActionBase : MonoBehaviour
     protected Animator animator { get; set; }
     protected MonsterInfo monsterInfo { get; set; }
 
-    private void Start()
+    private void Awake()
     {
         controller = GetComponent<ActionController>();
         animator = GetComponent<Animator>();
