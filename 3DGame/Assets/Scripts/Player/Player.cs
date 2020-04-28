@@ -151,5 +151,10 @@ public class Player : MonoBehaviour
         {
             other.gameObject.GetComponent<MonsterInfo>().GetDamage(ATK);
         }
+        else if(other.tag == "Organ")
+        {
+            other.gameObject.GetComponent<GroundMove>().Triggered();
+            Debug.Log("Touched");
+        }
     }
 }

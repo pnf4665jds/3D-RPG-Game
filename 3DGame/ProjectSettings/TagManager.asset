@@ -10,6 +10,8 @@ TagManager:
   - MPUI
   - MonsterField
   - PositionUI
+  - Organ
+  - Ground
   layers:
   - Default
   - TransparentFX
