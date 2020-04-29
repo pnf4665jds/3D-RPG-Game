@@ -363,10 +363,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UseStateName: Patrol
   DetectPauseTime: 0
-  ShowInScene: 0
+  ShowInScene: 1
   IsRangeStable: 0
   DetectCenter: {x: 0, y: 0, z: 0}
-  DetectRadius: 5
+  DetectRadius: 7
 --- !u!114 &966466048675799226
 MonoBehaviour:
   m_ObjectHideFlags: 0
