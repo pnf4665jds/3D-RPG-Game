@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     public float CurrentHP; 
     private float MP;
     private float ATK;
+	private int Gold;
     private Vector3 MouseStartPos; 
     private GameObject PositionUI;
 
@@ -27,6 +28,7 @@ public class Player : MonoBehaviour
         Playerani = GetComponent<Animator>();
         MaxHP = 100;
         MaxMP = 100;
+		Gold = 0;
     }
     // Start is called before the first frame update
     void Start()
@@ -157,4 +159,6 @@ public class Player : MonoBehaviour
             Debug.Log("Touched");
         }
     }
+	public int GetGold(){
+		return Gold;
 }
