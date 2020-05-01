@@ -819,6 +819,7 @@ MonoBehaviour:
   Monster: {fileID: 8083550476279413800, guid: 547ef3da0f58f594cadb9d9880269c64, type: 3}
   MonsterNum: 1
   Name: golem
+  YDelta: 0
 --- !u!4 &145998100 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: d510d1ef3eb85634f846e58a4c1c4246,
@@ -1624,6 +1625,7 @@ MonoBehaviour:
   Monster: {fileID: 1713781036754730, guid: 0f8a471e5537f864ebdb454fe82308eb, type: 3}
   MonsterNum: 3
   Name: StoneMonster
+  YDelta: 0
 --- !u!4 &254405901 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 4ab94ba3fd350e3498b8a81e3adb270b,
@@ -4503,6 +4505,7 @@ MonoBehaviour:
   Monster: {fileID: 3037743098562945547, guid: b63813404ecc18742b0ba2601bd9d9be, type: 3}
   MonsterNum: 1
   Name: BOSS
+  YDelta: 0
 --- !u!135 &854657558
 SphereCollider:
   m_ObjectHideFlags: 0

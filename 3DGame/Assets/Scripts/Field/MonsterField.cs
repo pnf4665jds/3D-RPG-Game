@@ -7,6 +7,7 @@ public class MonsterField : MonoBehaviour
     public GameObject Monster;     // 怪物Prefab
     public int MonsterNum;  // 怪物數量
     public string Name;
+    public float YDelta;  // Y軸位移
     
     public float radius {
         get {
@@ -45,14 +46,14 @@ public class MonsterField : MonoBehaviour
 
         if (MonsterNum == 1)
         {
-            GameObject obj = Instantiate(Monster, center, Quaternion.identity, gameObject.transform);
+            GameObject obj = Instantiate(Monster, center + new Vector3(0, YDelta, 0), Quaternion.identity, gameObject.transform);
             obj.GetComponent<MonsterInfo>().SetField(center, radius);
         }
         else
         {
             for (int i = 0; i < MonsterNum; i++)
             {
-                Vector3 randomPos = new Vector3(Random.Range(startX, startX + squareWidth), center.y, Random.Range(startZ, startZ + squareWidth));
+                Vector3 randomPos = new Vector3(Random.Range(startX, startX + squareWidth), center.y + YDelta, Random.Range(startZ, startZ + squareWidth));
                 GameObject obj = Instantiate(Monster, randomPos, Quaternion.identity, gameObject.transform);
                 obj.GetComponent<MonsterInfo>().SetField(center, radius);
             }
