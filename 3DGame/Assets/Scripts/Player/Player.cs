@@ -156,9 +156,14 @@ public class Player : MonoBehaviour
         else if(other.tag == "Organ")
         {
             other.gameObject.GetComponent<GroundMove>().Triggered();
-            Debug.Log("Touched");
         }
     }
-	public int GetGold(){
-		return Gold;
+    public int GetGold()
+    {
+        return Gold;
+    }
+    public void AddGold(int gold)
+    {
+        Gold += gold;
+    }
 }
