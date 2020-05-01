@@ -17,7 +17,7 @@ public class MonsterInfo : MonoBehaviour
 
     private Animator animator;
 
-    private void Awake()
+    private void Start()
     {
         CurrentHP = MaxHP;
         InitPosition = transform.position;
@@ -65,15 +65,6 @@ public class MonsterInfo : MonoBehaviour
     {
         FieldCenter = center;
         FieldRadius = radius;
-    }
-
-    /// <summary>
-    /// 取得目前位置與領域中心點的距離
-    /// </summary>
-    /// <returns></returns>
-    public float GetDisToFieldCenter()
-    {
-        return Vector3.Distance(transform.position, FieldCenter);
     }
 
     /// <summary>
