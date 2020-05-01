@@ -5,7 +5,7 @@ using UnityEngine;
 public class RockMove : MonoBehaviour
 {
     private GameObject player;
-    public float speed = 10 ;
+    public float speed  ;
     private float distanceToPlayer;
     private bool move = true;
 
