@@ -11,6 +11,7 @@ public class Money : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+        
     }
 
     // Update is called once per frame
