@@ -762,6 +762,8 @@ MonoBehaviour:
   MaxHP: 300
   MoveSpeed: 2
   RotateSpeed: 2
+  DeadWaitTime: 0
+  CoinSum: 0
 --- !u!114 &8083188450262972691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1303,6 +1305,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 990680543417965754, guid: f862c705fcaf0de45ad019898baa96de,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f862c705fcaf0de45ad019898baa96de, type: 3}
