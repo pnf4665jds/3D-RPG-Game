@@ -3364,6 +3364,8 @@ MonoBehaviour:
   MaxHP: 1000
   MoveSpeed: 5
   RotateSpeed: 5
+  DeadWaitTime: 5
+  CoinSum: 1600
 --- !u!114 &3037743098562945565
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -42,12 +42,20 @@ public class MonsterField : MonoBehaviour
         squareWidth = Mathf.Floor(squareWidth); // 取整數
         float startX = center.x - squareWidth / 2;
         float startZ = center.z - squareWidth / 2;
-        
-        for(int i = 0; i < MonsterNum; i++)
+
+        if (MonsterNum == 1)
         {
-            Vector3 randomPos = new Vector3(Random.Range(startX, startX + squareWidth), center.y, Random.Range(startZ, startZ + squareWidth));
-            GameObject obj = Instantiate(Monster, randomPos, Quaternion.identity, gameObject.transform);
+            GameObject obj = Instantiate(Monster, center, Quaternion.identity, gameObject.transform);
             obj.GetComponent<MonsterInfo>().SetField(center, radius);
+        }
+        else
+        {
+            for (int i = 0; i < MonsterNum; i++)
+            {
+                Vector3 randomPos = new Vector3(Random.Range(startX, startX + squareWidth), center.y, Random.Range(startZ, startZ + squareWidth));
+                GameObject obj = Instantiate(Monster, randomPos, Quaternion.identity, gameObject.transform);
+                obj.GetComponent<MonsterInfo>().SetField(center, radius);
+            }
         }
     }
 }

@@ -7,6 +7,8 @@ public class MonsterInfo : MonoBehaviour
     public float MaxHP;     // 最大血量
     public float MoveSpeed;         // 移動速度
     public float RotateSpeed;       // 旋轉速度
+    public float DeadWaitTime;      // 等待死亡時間
+    public int CoinSum;           // 掉落金幣總金額
     public float CurrentHP { get; private set; }    // 目前血量
     public Vector3 InitPosition { get; private set; }   // 怪物的初始位置
     public Quaternion InitRotation { get; private set; }    // 怪物的初始旋轉
@@ -71,9 +73,12 @@ public class MonsterInfo : MonoBehaviour
     /// <returns></returns>
     private IEnumerator DeathAnim()
     {
-        GetComponent<Collider>().enabled = false;
+        Rigidbody rigidbody = GetComponentInChildren<Rigidbody>();
+        rigidbody.isKinematic = true;
+
         animator.SetBool("Dead", true);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(DeadWaitTime);
+        DropItemSystem.instance.createMoney(transform.position, CoinSum);
         Destroy(gameObject);
     }
 }

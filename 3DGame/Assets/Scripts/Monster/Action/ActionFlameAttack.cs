@@ -20,7 +20,8 @@ public class ActionFlameAttack : ActionBase
     {
         colDetect = true;
         animator.SetTrigger("FlameAttack");
-        StartCoroutine(StartEffect());
+        monsterInfo.GetDamage(1000);
+        //StartCoroutine(StartEffect());
     }
 
     public override void Process()

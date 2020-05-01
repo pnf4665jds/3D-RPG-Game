@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DropItemSystem : MonoBehaviour
+public class DropItemSystem : Singleton<DropItemSystem>
 {
     // Start is called before the first frame update
 
@@ -10,12 +10,36 @@ public class DropItemSystem : MonoBehaviour
     public GameObject HealthPref;
     public GameObject ManaPref;
 
-    public void createMoney(Vector3 pos , int number) {
+    /// <summary>
+    /// 產生金幣。
+    /// </summary>
+    /// <param name="pos">生成座標</param>
+    /// <param name="number">總金額</param>
+    public void createMoney(Vector3 pos , int sum) {
 
-        for (int i = 0; i < number; i++) {
-            Instantiate(MoneyPref, pos, Quaternion.identity);
+        GameObject coin;
+        Vector3 delta;
+        while (sum / 1000 > 0)
+        {
+            delta = new Vector3(Random.Range(-5, 5), 3, Random.Range(-5, 5));
+            coin = Instantiate(MoneyPref, pos + delta, Quaternion.identity);
+            coin.transform.localScale = new Vector3(10, 10, 10);
+            sum -= 1000;
         }
-
+        if (sum / 500 > 0)
+        {
+            delta = new Vector3(Random.Range(-5, 5), 3, Random.Range(-5, 5));
+            coin = Instantiate(MoneyPref, pos + delta, Quaternion.identity);
+            coin.transform.localScale = new Vector3(7, 7, 7);
+            sum -= 500;
+        }
+        while(sum / 100 > 0)
+        {
+            delta = new Vector3(Random.Range(-5, 5), 3, Random.Range(-5, 5));
+            coin = Instantiate(MoneyPref, pos + delta, Quaternion.identity);
+            coin.transform.localScale = new Vector3(4, 4, 4);
+            sum -= 100;
+        }
     }
     public void createHealthItem(Vector3 pos, int number)
     {
