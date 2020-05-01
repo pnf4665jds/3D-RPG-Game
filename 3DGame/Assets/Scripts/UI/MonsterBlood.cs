@@ -20,8 +20,8 @@ public class MonsterBlood : MonoBehaviour
     {
         //bloodUI.SetActive(false);
         player = GameObject.FindWithTag("Player");
-        MaxBlood = 100;
-        curBlood = 100;
+        /*MaxBlood = 100;
+        curBlood = 100;*/
     }
 
     // Update is called once per frame
@@ -43,6 +43,10 @@ public class MonsterBlood : MonoBehaviour
         }
         else this.GetComponent<Image>().color = Color.white;
 
+    }
+    public void setMaxBlood(int blood) {
+        MaxBlood = blood;
+        curBlood = MaxBlood;
     }
     private void setCurBlood(int blood) {
         curBlood = blood;
