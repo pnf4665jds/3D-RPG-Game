@@ -6,7 +6,7 @@ public class RockBallDamage : MonoBehaviour
 {
     public Transform Rock;
     public void createRock() {
-        Vector3 newPos = new Vector3(this.transform.position.x, this.transform.position.y + 4, this.transform.position.z);
+        Vector3 newPos = new Vector3(this.transform.position.x, this.transform.position.y + 3, this.transform.position.z);
         var rock = Instantiate(Rock, newPos, Quaternion.identity);
         rock.transform.rotation = this.transform.rotation;
     }
