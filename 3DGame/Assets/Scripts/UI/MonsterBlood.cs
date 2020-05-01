@@ -18,8 +18,7 @@ public class MonsterBlood : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bloodUI = this.transform.parent.parent.gameObject;
-        bloodUI.SetActive(false);
+        //bloodUI.SetActive(false);
         player = GameObject.FindWithTag("Player");
         MaxBlood = 100;
         curBlood = 100;
@@ -28,13 +27,11 @@ public class MonsterBlood : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (/**monster get hurt**/true) {
-            //player.GetComponent<Player>()
-            //bloodUI.SetActive(true) ;
 
-            this.transform.localPosition = new Vector3((-92.6f + 92.6f * (curBlood / MaxBlood)), 0.0f, 0.0f);
-            ChangeColor();
-        }
+
+        this.transform.localPosition = new Vector3((-92.6f + 92.6f * (curBlood / MaxBlood)), 0.0f, 0.0f);
+           
+        
         
     }
     private void ChangeColor()
