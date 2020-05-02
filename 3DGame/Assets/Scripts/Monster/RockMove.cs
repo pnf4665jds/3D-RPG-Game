@@ -5,7 +5,7 @@ using UnityEngine;
 public class RockMove : MonoBehaviour
 {
     private GameObject player;
-    public float speed = 10 ;
+    public float speed ;
     private float distanceToPlayer;
     private bool move = true;
 
@@ -26,7 +26,7 @@ public class RockMove : MonoBehaviour
             float angle = Mathf.Min(1, Vector3.Distance(this.transform.position, playerPos) / distanceToPlayer) * 45;
             this.transform.rotation = this.transform.rotation * Quaternion.Euler(Mathf.Clamp(-angle, -42, 42), 0, 0);
             float currentDist = Vector3.Distance(this.transform.position, player.transform.position);
-            if (currentDist < 0.5f || this.transform.position.y  < 2)
+            if (currentDist < 0.5f || this.transform.position.y  < player.transform.position.y)
             {
                 move = false;
                 Destroy(this.gameObject);
