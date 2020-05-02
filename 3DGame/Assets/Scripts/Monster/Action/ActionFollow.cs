@@ -23,7 +23,8 @@ public class ActionFollow : ActionBase
 
     public override void Process()
     {
-        FollowPlayer();
+        if(IsFlyMode || monsterInfo.isGrounded)
+            FollowPlayer();
     }
 
     public override void Exit()
@@ -50,6 +51,7 @@ public class ActionFollow : ActionBase
 
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, monsterInfo.MoveSpeed * Time.deltaTime);
             Vector3 newDirection = Vector3.RotateTowards(transform.forward, target.transform.position - transform.position, monsterInfo.RotateSpeed * Time.deltaTime, 0.0f);
+            newDirection.y = 0;
             transform.rotation = Quaternion.LookRotation(newDirection);
         }
         else
@@ -61,6 +63,7 @@ public class ActionFollow : ActionBase
             }
             transform.position = Vector3.MoveTowards(transform.position, targetWithoutY, monsterInfo.MoveSpeed * Time.deltaTime * 1.5f);
             Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetWithoutY - transform.position, monsterInfo.RotateSpeed * Time.deltaTime, 0.0f);
+            newDirection.y = 0;
             transform.rotation = Quaternion.LookRotation(newDirection);
         }
     }

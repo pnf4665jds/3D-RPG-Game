@@ -25,6 +25,7 @@ public class ActionPatrol : ActionBase
     /// <returns></returns>
     public IEnumerator Calculate()
     {
+        // 等待怪物著地後才開始移動
         yield return new WaitUntil(() => monsterInfo.isGrounded);
         while (true)
         {
@@ -61,10 +62,9 @@ public class ActionPatrol : ActionBase
     /// </summary>
     private void Move()
     {
-        //Debug.Log(transform.position + "//" + targetPos);
-        Vector3 finalTarget = new Vector3(targetPos.x, targetPos.y, targetPos.z);
-        transform.position = Vector3.MoveTowards(transform.position, finalTarget, monsterInfo.MoveSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, targetPos, monsterInfo.MoveSpeed * Time.deltaTime);
         Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetPos - transform.position, monsterInfo.RotateSpeed * Time.deltaTime, 0.0f);
+        newDirection.y = 0;
         transform.rotation = Quaternion.LookRotation(newDirection);
     }
 
