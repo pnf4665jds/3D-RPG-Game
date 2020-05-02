@@ -14,6 +14,7 @@ public class MonsterInfo : MonoBehaviour
     public Quaternion InitRotation { get; private set; }    // 怪物的初始旋轉
     public Vector3 FieldCenter { get; private set; }    // 活動領域中心座標
     public float FieldRadius { get; private set; }      // 活動領域半徑
+    public bool isGrounded { get; private set; } = false;   // 是否著地
 
     private Animator animator;
 
@@ -89,5 +90,29 @@ public class MonsterInfo : MonoBehaviour
         yield return new WaitForSeconds(DeadWaitTime);
         DropItemSystem.instance.createMoney(transform.position, CoinSum);
         Destroy(gameObject);
+    }
+
+    /// <summary>
+    /// 判定是否著地
+    /// </summary>
+    /// <param name="collision"></param>
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Terrain"))
+        {
+            isGrounded = true;
+        }
+    }
+
+    /// <summary>
+    /// 判定是否離開地面
+    /// </summary>
+    /// <param name="collision"></param>
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Terrain"))
+        {
+            isGrounded = false;
+        }
     }
 }

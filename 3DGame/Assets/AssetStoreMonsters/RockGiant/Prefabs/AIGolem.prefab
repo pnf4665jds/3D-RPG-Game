@@ -858,8 +858,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Patrol
-  ShowInScene: 0
-  PatrolLength: 8
 --- !u!114 &8083188450262973162
 MonoBehaviour:
   m_ObjectHideFlags: 0
