@@ -45,8 +45,10 @@ public class ActionPatrol : ActionBase
             initPos = transform.position;
             targetPos = initPos + newDir * finalLength * Random.Range(0.7f, 0.9f);
             startMove = true;
+            animator.SetBool("Walk", true);
             yield return new WaitUntil(() => Vector3.Distance(transform.position, targetPos) < 0.5f);
             startMove = false;
+            animator.SetBool("Walk", false);
             yield return new WaitForSeconds(2);
         }
     }
@@ -70,6 +72,7 @@ public class ActionPatrol : ActionBase
 
     public override void Exit()
     {
+        animator.SetBool("Walk", false);
         StopCoroutine(Calculate());
     }
 }

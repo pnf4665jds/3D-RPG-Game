@@ -36,6 +36,7 @@ public class ActionHealAndBack : ActionBase
     {
         transform.position = Vector3.MoveTowards(transform.position, initPosition, monsterInfo.MoveSpeed * Time.deltaTime);
         Vector3 newDirection = Vector3.RotateTowards(transform.forward, initPosition - transform.position, monsterInfo.RotateSpeed * Time.deltaTime, 0.0f);
+        newDirection.y = 0;
         transform.rotation = Quaternion.LookRotation(newDirection);
     }
 

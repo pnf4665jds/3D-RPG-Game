@@ -15,6 +15,7 @@ public class MonsterInfo : MonoBehaviour
     public Vector3 FieldCenter { get; private set; }    // 活動領域中心座標
     public float FieldRadius { get; private set; }      // 活動領域半徑
     public bool isGrounded { get; private set; } = false;   // 是否著地
+    public bool isDead { get; private set; } = false;
 
     private Animator animator;
 
@@ -43,6 +44,7 @@ public class MonsterInfo : MonoBehaviour
         // 血量低於0時死亡
         if (CurrentHP <= 0)
         {
+            isDead = true;
             StartCoroutine(DeathAnim());
         }
     }

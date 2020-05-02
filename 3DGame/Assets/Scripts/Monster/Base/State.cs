@@ -8,7 +8,14 @@ public class State
     public string StateName;    // 狀態名稱
     public ActionBase Action;   // 這個狀態下要做的事
     public List<Transition> TransList;  // 狀態轉移列表
-    public ActionController controller { get; set; }    
+    public ActionController controller { get; set; }
+
+    private bool hasEval = false;
+
+    public void Init()
+    {
+        hasEval = false;
+    }
 
     // 判斷是否要切換狀態
     public void EvalTransition()
@@ -23,8 +30,9 @@ public class State
             if (t.Decider.Decide())
             {
                 // 如果有設定新狀態，而且這個狀態的Decider暫停時間結束了
-                if (t.TrueState != "" && t.Decider.IsPauseTimeFin())
+                if (t.TrueState != "" && t.Decider.IsPauseTimeFin() && !hasEval)
                 {
+                    hasEval = true;
                     t.Decider.Exit();
                     controller.ChangeState(t.TrueState);
                 }
@@ -32,8 +40,9 @@ public class State
             else
             {
                 // 同上
-                if (t.FalseState != "" && t.Decider.IsPauseTimeFin())
+                if (t.FalseState != "" && t.Decider.IsPauseTimeFin() && !hasEval)
                 {
+                    hasEval = true;
                     t.Decider.Exit();
                     controller.ChangeState(t.FalseState);
                 }

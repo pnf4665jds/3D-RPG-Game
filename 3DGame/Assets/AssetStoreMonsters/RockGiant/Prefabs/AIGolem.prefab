@@ -829,11 +829,11 @@ MonoBehaviour:
   - StateName: Walk
     Action: {fileID: 3823332478208203809}
     TransList:
-    - Order: 0
+    - Order: 1
       Decider: {fileID: 3823332478208203833}
       TrueState: 
       FalseState: Patrol
-    - Order: 0
+    - Order: 2
       Decider: {fileID: 3823332478208203832}
       TrueState: Attack
       FalseState: 
