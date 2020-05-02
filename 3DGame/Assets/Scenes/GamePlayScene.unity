@@ -1588,7 +1588,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &251162443
 Transform:
   m_ObjectHideFlags: 0
@@ -5718,6 +5718,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1125089947}
   - component: {fileID: 1125089948}
+  - component: {fileID: 1125089949}
   m_Layer: 0
   m_Name: SlimeField
   m_TagString: Untagged
@@ -5733,7 +5734,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1125089946}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 179, y: 0.5, z: 169.5}
+  m_LocalPosition: {x: 191.1, y: 0.5, z: 186.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2073570993}
@@ -5755,6 +5756,19 @@ MonoBehaviour:
   MonsterNum: 3
   Name: Slime
   YDelta: 0
+--- !u!135 &1125089949
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125089946}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 15
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1128674970
 PrefabInstance:
   m_ObjectHideFlags: 0
