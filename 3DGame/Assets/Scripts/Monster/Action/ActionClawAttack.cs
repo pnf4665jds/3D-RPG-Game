@@ -13,6 +13,7 @@ public class ActionClawAttack : ActionBase
     public override void Init()
     {
         animator.SetTrigger("ClawAttack");
+        monsterInfo.GetDamage(100);
         alreadyHit = false;
     }
 

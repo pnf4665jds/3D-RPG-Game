@@ -239,9 +239,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b85ac7af25f6ee40b1ca90db565a4f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Monster: {fileID: 1713781036754730, guid: 0f8a471e5537f864ebdb454fe82308eb, type: 3}
+  Monster: {fileID: 8083550476279413800, guid: 547ef3da0f58f594cadb9d9880269c64, type: 3}
   MonsterNum: 1
-  Name: StoneMonster
+  Name: Slime
   YDelta: 3
 --- !u!4 &441498610
 Transform:
