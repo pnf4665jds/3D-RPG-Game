@@ -1,15 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ActionFollow : ActionBase
 {
     // 這個Action用來讓怪物追玩家
 
-    public float FollowKeepDistance;    // 追隨是否要保持一個距離
+    public bool IsFieldLimited = true; // 是否會被領域控制，若否請使用NavMeshAgent
     public bool IsFlyMode;      // 是否是飛行狀態
+    public float FlySpeedUp = 1f;
 
     private GameObject target;
+    private NavMeshAgent agent;
 
     public override void Init()
     {
@@ -19,6 +22,12 @@ public class ActionFollow : ActionBase
             animator.SetBool("FlyForward", true);
 
         target = GameObject.FindWithTag("Player");
+        if (!IsFieldLimited)
+        {
+            agent = GetComponent<NavMeshAgent>();
+            agent.enabled = true;
+            agent.speed = monsterInfo.MoveSpeed;
+        }
     }
 
     public override void Process()
@@ -30,6 +39,10 @@ public class ActionFollow : ActionBase
     public override void Exit()
     {
         target = null;
+        if (!IsFieldLimited)
+        {
+            agent.enabled = false;
+        }
         if(!IsFlyMode)
             animator.SetBool("Walk", false);
         else
@@ -44,27 +57,17 @@ public class ActionFollow : ActionBase
         if (target == null)
             return;
 
-        if (!IsFlyMode)
+        if (IsFieldLimited)
         {
-            if(Vector3.Distance(transform.position, target.transform.position) < FollowKeepDistance)
-                return;
-
-            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, monsterInfo.MoveSpeed * Time.deltaTime);
-            Vector3 newDirection = Vector3.RotateTowards(transform.forward, target.transform.position - transform.position, monsterInfo.RotateSpeed * Time.deltaTime, 0.0f);
+            Vector3 finalPos = IsFlyMode ? new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z) : target.transform.position;
+            transform.position = Vector3.MoveTowards(transform.position, finalPos, monsterInfo.MoveSpeed * Time.deltaTime * FlySpeedUp);
+            Vector3 newDirection = Vector3.RotateTowards(transform.forward, finalPos - transform.position, monsterInfo.RotateSpeed * Time.deltaTime, 0.0f);
             newDirection.y = 0;
             transform.rotation = Quaternion.LookRotation(newDirection);
         }
         else
         {
-            Vector3 targetWithoutY = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
-            if (Vector3.Distance(transform.position, targetWithoutY) < FollowKeepDistance)
-            {
-                return;
-            }
-            transform.position = Vector3.MoveTowards(transform.position, targetWithoutY, monsterInfo.MoveSpeed * Time.deltaTime * 1.5f);
-            Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetWithoutY - transform.position, monsterInfo.RotateSpeed * Time.deltaTime, 0.0f);
-            newDirection.y = 0;
-            transform.rotation = Quaternion.LookRotation(newDirection);
+            agent.SetDestination(target.transform.position);
         }
     }
 }

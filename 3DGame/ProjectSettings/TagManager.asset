@@ -12,6 +12,7 @@ TagManager:
   - PositionUI
   - Organ
   - Ground
+  - DamageArea
   layers:
   - Default
   - TransparentFX
