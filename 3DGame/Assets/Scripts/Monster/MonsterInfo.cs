@@ -80,6 +80,15 @@ public class MonsterInfo : MonoBehaviour
     }
 
     /// <summary>
+    /// 取得根據角色旋轉所得的新向量
+    /// </summary>
+    /// <returns></returns>
+    public Vector3 GetCenterVector(Vector3 v)
+    {
+        return Quaternion.AngleAxis(transform.rotation.eulerAngles.y, Vector3.up) * v;
+    }
+
+    /// <summary>
     /// 死亡動畫
     /// </summary>
     /// <returns></returns>

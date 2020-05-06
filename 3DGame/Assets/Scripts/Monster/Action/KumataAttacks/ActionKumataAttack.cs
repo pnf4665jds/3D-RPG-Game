@@ -13,6 +13,7 @@ public class ActionKumataAttack : ActionBase
     public bool ShowInScene;        // 是否在場景中顯示範圍
     public Vector3 DamageAreaCenter;    // 傷害範圍中心
     public Vector3 DamageAreaSize = new Vector3(1, 1, 1);      // 傷害範圍大小
+    public float AreaDelayTime;     // 出現傷害範圍的延遲時間
     public float AreaKeepTime;      // 傷害範圍持續時間
 
     [Header("Effect")]
@@ -23,9 +24,7 @@ public class ActionKumataAttack : ActionBase
     public override void Init()
     {
         animator.SetTrigger(TriggerName);
-        GameObject area = new GameObject();
-        DamageAreaCreator creator = area.AddComponent<DamageAreaCreator>();
-        creator.CreateCubeArea(transform.position + GetCenterVector(), transform.rotation, DamageAreaSize, Damage, AreaKeepTime);
+        StartCoroutine(SetDamageArea());
         StartCoroutine(StartEffect());
     }
 
@@ -39,21 +38,20 @@ public class ActionKumataAttack : ActionBase
 
     }
 
+    public IEnumerator SetDamageArea()
+    {
+        yield return new WaitForSeconds(AreaDelayTime);
+        GameObject area = new GameObject();
+        DamageAreaCreator creator = area.AddComponent<DamageAreaCreator>();
+        creator.CreateCubeArea(transform.position + monsterInfo.GetCenterVector(DamageAreaCenter), transform.rotation, DamageAreaSize, Damage, AreaKeepTime);
+    }
+
     public IEnumerator StartEffect()
     {
         yield return new WaitForSeconds(EffectDelay);
         GameObject effect = Instantiate(Effect, transform);
         effect.transform.position = transform.position + new Vector3(-1, 1, 0);
         Destroy(effect, 3);
-    }
-
-    /// <summary>
-    /// 取得範圍框的中心
-    /// </summary>
-    /// <returns></returns>
-    public Vector3 GetCenterVector()
-    {
-        return Quaternion.AngleAxis(transform.rotation.eulerAngles.y, Vector3.up) * DamageAreaCenter;
     }
 
     /// <summary>
@@ -64,7 +62,7 @@ public class ActionKumataAttack : ActionBase
         if (!ShowInScene)
             return;
 
-        Vector3 newDir = GetCenterVector();
+        Vector3 newDir = monsterInfo ? monsterInfo.GetCenterVector(DamageAreaCenter) : Vector3.zero;
         Gizmos.matrix = Matrix4x4.TRS(transform.position + newDir, transform.rotation, DamageAreaSize * 2);
         Gizmos.color = new Color(1, 0, 0, 0.4f);
         Gizmos.DrawWireCube(Vector3.zero, Vector3.one);
