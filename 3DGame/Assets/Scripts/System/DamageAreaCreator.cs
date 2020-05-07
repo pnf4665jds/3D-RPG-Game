@@ -2,43 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageAreaCreator : MonoBehaviour
+public class DamageAreaCreator : Singleton<DamageAreaCreator>
 {
     // 產生傷害區域
-
-    private float damage;
+    public GameObject AreaPrefab;
 
     // 產生立方體區域
     public void CreateCubeArea(Vector3 pos, Quaternion rot, Vector3 size, float Damage, float keepTime)
     {
-        transform.position = pos;
-        transform.rotation = rot;
-        gameObject.tag = "DamageArea";
-        damage = Damage;
-        BoxCollider collider = gameObject.AddComponent<BoxCollider>();
-        collider.isTrigger = true;
-        collider.size = size * 2;
-        Destroy(gameObject, keepTime);
+        GameObject obj = Instantiate(AreaPrefab);
+        obj.transform.position = pos;
+        obj.transform.rotation = rot;
+        obj.tag = "DamageArea";
+        DamageArea area = obj.AddComponent<DamageArea>();
+        area.Damage = Damage;
+        area.GetComponent<BoxCollider>().size = size * 2;
+        Destroy(obj, keepTime);
     }
 
     // 產生球體區域
     public void CreateSphereArea(Vector3 pos, float radius, float Damage, float keepTime)
     {
-        transform.position = pos;
-        gameObject.tag = "DamageArea";
-        damage = Damage;
-        SphereCollider collider = gameObject.AddComponent<SphereCollider>();
-        collider.isTrigger = true;
-        collider.radius = radius;
-        Destroy(gameObject, keepTime);
+        GameObject obj = Instantiate(AreaPrefab);
+        obj.transform.position = pos;
+        obj.tag = "DamageArea";
+        DamageArea area = obj.AddComponent<DamageArea>();
+        area.Damage = Damage;
+        area.GetComponent<SphereCollider>().radius = radius;
+        Destroy(obj, keepTime);
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.tag == "Player")
-        {
-            other.gameObject.GetComponent<Player>().GetHurt(damage);
-            Debug.Log("Area Hit!");
-        }
-    }
+    
 }

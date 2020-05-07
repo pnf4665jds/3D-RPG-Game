@@ -69,9 +69,7 @@ public class ActionKumataJumpAttack : ActionBase
     private IEnumerator SetDamageArea()
     {
         yield return new WaitForSeconds(AreaDelayTime);
-        GameObject area = new GameObject();
-        DamageAreaCreator creator = area.AddComponent<DamageAreaCreator>();
-        creator.CreateCubeArea(jumpStartPos + monsterInfo.GetCenterVector(DamageAreaCenter), transform.rotation, DamageAreaSize, Damage, AreaKeepTime);
+        DamageAreaCreator.instance.CreateCubeArea(jumpStartPos + monsterInfo.GetCenterVector(DamageAreaCenter), transform.rotation, DamageAreaSize, Damage, AreaKeepTime);
     }
 
     /// <summary>

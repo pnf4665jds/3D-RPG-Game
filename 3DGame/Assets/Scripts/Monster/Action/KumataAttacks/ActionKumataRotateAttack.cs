@@ -41,9 +41,7 @@ public class ActionKumataRotateAttack : ActionBase
     public IEnumerator SetDamageArea()
     {
         yield return new WaitForSeconds(AreaDelayTime);
-        GameObject area = new GameObject();
-        DamageAreaCreator creator = area.AddComponent<DamageAreaCreator>();
-        creator.CreateCubeArea(transform.position + monsterInfo.GetCenterVector(DamageAreaCenter), transform.rotation, DamageAreaSize, Damage, AreaKeepTime);
+        DamageAreaCreator.instance.CreateCubeArea(transform.position + monsterInfo.GetCenterVector(DamageAreaCenter), transform.rotation, DamageAreaSize, Damage, AreaKeepTime);
     }
 
     public IEnumerator StartEffect()
