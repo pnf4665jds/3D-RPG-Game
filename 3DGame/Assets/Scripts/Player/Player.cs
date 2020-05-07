@@ -166,4 +166,8 @@ public class Player : MonoBehaviour
     {
         Gold += gold;
     }
+    public bool GetisAttack()
+    {
+        return isAttack;
+    }
 }

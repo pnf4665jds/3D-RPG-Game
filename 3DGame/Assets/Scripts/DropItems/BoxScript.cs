@@ -1,0 +1,44 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BoxScript : MonoBehaviour
+{
+    private Animator animator;
+    private bool isBroken;
+    private int Money;
+    private int HealthItemNum;
+    private int ManaItemNum;
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+        isBroken = false;
+    }
+    private void Start()
+    {
+        Money = UnityEngine.Random.Range(1, 3) * 1000;
+        HealthItemNum = UnityEngine.Random.Range(1,3);
+        ManaItemNum = UnityEngine.Random.Range(1, 3);
+    }
+    private void OnCollisionStay(Collision collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            Debug.Log(collision.gameObject.GetComponent<Player>().GetisAttack());
+            if (collision.gameObject.GetComponent<Player>().GetisAttack())
+            {
+                isBroken = true;
+                animator.SetBool("isBroken", isBroken);
+                //GetItem();
+                Destroy(this.gameObject,5);
+            }
+        }
+    }
+    private void GetItem()
+    {
+        DropItemSystem.instance.createMoney(transform.position,Money);
+        DropItemSystem.instance.createHealthItem(transform.position, HealthItemNum);
+        DropItemSystem.instance.createManaItem(transform.position,ManaItemNum);
+    }
+}
