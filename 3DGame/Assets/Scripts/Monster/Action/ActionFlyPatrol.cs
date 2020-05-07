@@ -8,7 +8,6 @@ public class ActionFlyPatrol : ActionBase
 
     private Vector3 initPos;
     private Vector3 targetPos;
-    private bool keepForward = false;
     private bool startMove = false;
 
     /// <summary>

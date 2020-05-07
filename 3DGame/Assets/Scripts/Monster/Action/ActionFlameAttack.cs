@@ -13,12 +13,10 @@ public class ActionFlameAttack : ActionBase
     public float DelayBeforeEffect; // 特效出現的延遲
     public float KeepTime;          // 特效持續時間
 
-    private bool colDetect = false;
     private GameObject flameObject;
 
     public override void Init()
     {
-        colDetect = true;
         animator.SetTrigger("FlameAttack");
         StartCoroutine(StartEffect());
     }
@@ -30,7 +28,7 @@ public class ActionFlameAttack : ActionBase
 
     public override void Exit()
     {
-        colDetect = false;
+
     }
 
     /// <summary>
