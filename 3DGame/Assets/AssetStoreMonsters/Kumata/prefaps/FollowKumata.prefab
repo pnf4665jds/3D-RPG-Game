@@ -326,16 +326,13 @@ GameObject:
   - component: {fileID: 5049802065022652132}
   - component: {fileID: 2668671406496023431}
   - component: {fileID: 3743233989263425285}
-  - component: {fileID: 2767336111771005047}
   - component: {fileID: 2668671406496023428}
   - component: {fileID: 3602562265927311007}
   - component: {fileID: 7760640169726311602}
-  - component: {fileID: 6392180144370679774}
   - component: {fileID: 1462354799800648892}
-  - component: {fileID: 5147781174292254960}
   - component: {fileID: 8304818077842746314}
   m_Layer: 0
-  m_Name: MyKumata 1
+  m_Name: FollowKumata
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -443,22 +440,11 @@ MonoBehaviour:
       Decider: {fileID: 7760640169726311602}
       TrueState: Attack
       FalseState: 
-    - Order: 0
-      Decider: {fileID: 6392180144370679774}
-      TrueState: Attack2
-      FalseState: 
   - StateName: Attack
     Action: {fileID: 3743233989263425285}
     TransList:
     - Order: 0
       Decider: {fileID: 1462354799800648892}
-      TrueState: Follow
-      FalseState: 
-  - StateName: Attack2
-    Action: {fileID: 2767336111771005047}
-    TransList:
-    - Order: 0
-      Decider: {fileID: 5147781174292254960}
       TrueState: Follow
       FalseState: 
 --- !u!114 &2668671406496023431
@@ -495,34 +481,10 @@ MonoBehaviour:
   ShowInScene: 1
   DamageAreaCenter: {x: 0, y: 1.4, z: 6.28}
   DamageAreaSize: {x: 6.6, y: 3.64, z: 6}
+  AreaDelayTime: 0
   AreaKeepTime: 0.5
   Effect: {fileID: 187802, guid: 464e05904335c0641b76c3b8b8365ecd, type: 3}
   EffectDelay: 0.5
---- !u!114 &2767336111771005047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 805497146806521040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cca63e1e61ce4e240b1eb0623b40464f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UseStateName: Attack2
-  Damage: 10
-  TriggerName: JumpAttack
-  ShowInScene: 1
-  DamageAreaCenter: {x: 0, y: 1.4, z: 20}
-  DamageAreaSize: {x: 4, y: 1.82, z: 4}
-  AreaDelayTime: 2.5
-  AreaKeepTime: 0.8
-  DelayBeforeJump: 1.8
-  JumpTime: 1
-  JumpHeight: 5
-  Effect: {fileID: 121850, guid: cc488df94130a3c46a05a0c6f3b82c66, type: 3}
-  EffectDelay: 2.7
 --- !u!114 &2668671406496023428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -578,25 +540,6 @@ MonoBehaviour:
   DetectCenter: {x: 0, y: 1.4, z: 6.28}
   DetectSize: {x: 4.2, y: 1.82, z: 6}
   StableRotateY: 0
---- !u!114 &6392180144370679774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 805497146806521040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad5935af51adf6c4a967fc77756c7a39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UseStateName: Follow
-  DetectPauseTime: 15
-  ShowInScene: 1
-  IsRangeStable: 0
-  DetectCenter: {x: 0, y: 1.4, z: 18}
-  DetectSize: {x: 4, y: 1.82, z: 2}
-  StableRotateY: 0
 --- !u!114 &1462354799800648892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -612,21 +555,6 @@ MonoBehaviour:
   UseStateName: Attack
   DetectPauseTime: 0
   WaitTime: 2
---- !u!114 &5147781174292254960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 805497146806521040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d81a937f1e55ad41b8427dc77f5f7ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UseStateName: Attack2
-  DetectPauseTime: 0
-  WaitTime: 3.7
 --- !u!195 &8304818077842746314
 NavMeshAgent:
   m_ObjectHideFlags: 0
