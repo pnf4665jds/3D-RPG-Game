@@ -114,32 +114,12 @@ public class MonsterInfo : MonoBehaviour
         Destroy(gameObject);
     }
 
+    /// <summary>
+    /// 判斷是否著地
+    /// </summary>
     private void CheckGrounded()
     {
         float DisstanceToTheGround = mainCollider.bounds.extents.y;
         isGrounded = Physics.Raycast(transform.position, Vector3.down, DisstanceToTheGround + 0.1f);
     }
-    /// <summary>
-    /// 判定是否著地
-    /// </summary>
-    /// <param name="collision"></param>
-    /*private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Terrain"))
-        {
-            isGrounded = true;
-        }
-    }
-
-    /// <summary>
-    /// 判定是否離開地面
-    /// </summary>
-    /// <param name="collision"></param>
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Terrain"))
-        {
-            isGrounded = false;
-        }
-    }*/
 }
