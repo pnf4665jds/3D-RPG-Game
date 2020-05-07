@@ -18,6 +18,7 @@ public class MonsterInfo : MonoBehaviour
     public bool isDead { get; private set; } = false;
 
     private Animator animator;
+    private Collider mainCollider;
 
     private void Awake()
     {
@@ -25,11 +26,21 @@ public class MonsterInfo : MonoBehaviour
         InitPosition = transform.position;
         InitRotation = transform.rotation;
         animator = GetComponent<Animator>();
+        Collider[] c = GetComponentsInChildren<Collider>();
+        foreach(Collider cc in c)
+        {
+            if(cc.isTrigger == false)
+            {
+                mainCollider = cc;
+                break;
+            }
+        }
+        
     }
 
     private void Update()
     {
-
+        CheckGrounded();
     }
 
     /// <summary>
@@ -103,11 +114,16 @@ public class MonsterInfo : MonoBehaviour
         Destroy(gameObject);
     }
 
+    private void CheckGrounded()
+    {
+        float DisstanceToTheGround = mainCollider.bounds.extents.y;
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, DisstanceToTheGround + 0.1f);
+    }
     /// <summary>
     /// 判定是否著地
     /// </summary>
     /// <param name="collision"></param>
-    private void OnCollisionEnter(Collision collision)
+    /*private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Terrain"))
         {
@@ -125,5 +141,5 @@ public class MonsterInfo : MonoBehaviour
         {
             isGrounded = false;
         }
-    }
+    }*/
 }
