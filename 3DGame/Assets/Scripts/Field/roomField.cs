@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class roomField : MonoBehaviour
 {
+
     public List<trapGroup> tgs = new List<trapGroup>();
     private bool isPlayerExisted = false;
+
     // Start is called before the first frame update
     public void Start()
     {
@@ -20,11 +22,10 @@ public class roomField : MonoBehaviour
         if (other.tag == "Player") {
             Debug.Log("Enter");
             
-                foreach (trapGroup tg in tgs)
-                {
-                    StartCoroutine(tg.switchON());
-                }
-            
+            foreach (trapGroup tg in tgs)
+            {
+                StartCoroutine(tg.switchON());
+            }
             
         }
     }
