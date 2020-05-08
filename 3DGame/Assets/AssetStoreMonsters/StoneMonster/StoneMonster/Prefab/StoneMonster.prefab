@@ -476,8 +476,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Follow
-  FollowKeepDistance: 0
+  IsFieldLimited: 1
   IsFlyMode: 0
+  FlySpeedUp: 1
 --- !u!114 &7364347008557810436
 MonoBehaviour:
   m_ObjectHideFlags: 0

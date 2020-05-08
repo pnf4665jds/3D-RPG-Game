@@ -119,6 +119,6 @@ public class MonsterInfo : MonoBehaviour
     private void CheckGrounded()
     {
         float DisstanceToTheGround = mainCollider.bounds.extents.y;
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, DisstanceToTheGround + 0.2f);
+        isGrounded = Physics.Raycast(mainCollider.bounds.center, Vector3.down, DisstanceToTheGround + 0.2f);
     }
 }
