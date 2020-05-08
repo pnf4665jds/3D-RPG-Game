@@ -13,6 +13,9 @@ TagManager:
   - Organ
   - Ground
   - DamageArea
+  - goldCoin
+  - silverCoin
+  - copperCoin
   layers:
   - Default
   - TransparentFX

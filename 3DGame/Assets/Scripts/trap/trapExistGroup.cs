@@ -7,10 +7,6 @@ public class trapExistGroup :trapGroup
     public List<GameObject> existedTraps = new List<GameObject>();
 
     public override IEnumerator switchON() {
-
-        yield return null;
-    }
-    public override IEnumerator process() {
         yield return new WaitForSeconds(DeltaTime);
         foreach (GameObject trap in existedTraps)
         {
@@ -18,6 +14,10 @@ public class trapExistGroup :trapGroup
 
 
         }
+        
+    }
+    public override IEnumerator process() {
+        yield return null;
     }
     public override void switchOFF()
     {

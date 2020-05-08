@@ -34,10 +34,7 @@ public class roomField : MonoBehaviour
         if (other.tag == "Player")
         {
 
-            foreach (trapGroup tg in tgs)
-            {
-                StartCoroutine(tg.process());
-            }
+            
 
         }
     }

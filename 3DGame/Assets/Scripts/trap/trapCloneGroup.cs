@@ -12,61 +12,49 @@ public class trapCloneGroup :trapGroup
     public bool isShoot;
     private Vector3 createPos;
     public float shootDistance;
-    // Start is called before the first frame update
-    private void Start()
+
+    public override IEnumerator switchON()
     {
+
+        yield return new WaitForSeconds(DeltaTime);
+
         createPos = trapPos.transform.position;
-    }
-    private void Update()
-    {
-        if (Vector3.Distance(trapPos.transform.position, createPos) > shootDistance)
-        {
-            stopShoot = true;
-        }
+
+        yield return new WaitUntil(() => createClone());
+
+        trapClone.GetComponent<Animation>().Play();
+        StartCoroutine(process());
 
     }
-
-    public override IEnumerator switchON() {
+    public override IEnumerator process() {
 
         while (loop) {
             
-            yield return new WaitForSeconds(DeltaTime);
-            
-            trapPos.transform.position = createPos;
-
-            yield return new WaitUntil(() =>CloneTrap());
-            
-            stopShoot = false;
-
-            yield return new WaitUntil(() => stopShoot);
-            Destroy(trapClone.gameObject);
-
+            while (Vector3.Distance(trapClone.transform.position, createPos) < shootDistance && isShoot)
+            {
+                
+                trapClone.transform.Translate(Vector3.forward * 20 * Time.deltaTime);
+                yield return null;
+            }
+            trapClone.transform.position = createPos;
         }
         
     }
-    public override IEnumerator process() {
-        //yield return new W
-        while (!stopShoot && isShoot)
-        {
-            trapClone.GetComponent<Animation>().Play();
-            trapClone.transform.Translate(Vector3.forward * 20 * Time.deltaTime);
-            trapPos.transform.Translate(Vector3.forward * 20 * Time.deltaTime);
-            yield return null;
-        }
-    }
     public override void switchOFF()
     {
+        Destroy(trapClone.gameObject);
         loop = false;
     }
+
     public override IEnumerator destroytraps()
     {
         yield return null;
     }
-    private bool CloneTrap()
-    {
-        trapClone = Instantiate(trapPref, trapPos.transform.position, Quaternion.identity);
+    public bool createClone() {
+        trapClone = Instantiate(trapPref, createPos, Quaternion.identity);
         return true;
     }
+
 
 
 }
