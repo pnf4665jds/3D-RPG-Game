@@ -401,7 +401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHP: 1000
-  MoveSpeed: 10
+  MoveSpeed: 20
   RotateSpeed: 5
   DeadWaitTime: 5
   CoinSum: 2000

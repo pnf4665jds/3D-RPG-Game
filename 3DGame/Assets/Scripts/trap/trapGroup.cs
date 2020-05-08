@@ -12,11 +12,10 @@ public abstract class trapGroup : MonoBehaviour
         return DeltaTime;
     }
     public abstract IEnumerator switchON();
+    public abstract IEnumerator process();
 
     public abstract void switchOFF();
-    public IEnumerator destroytraps() {
-        yield return null;
-    }
+    public abstract IEnumerator destroytraps();
     
 }
 

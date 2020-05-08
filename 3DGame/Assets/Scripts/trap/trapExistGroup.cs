@@ -8,12 +8,16 @@ public class trapExistGroup :trapGroup
 
     public override IEnumerator switchON() {
 
-       yield return new WaitForSeconds(DeltaTime);
-       foreach (GameObject trap in existedTraps) {
-           trap.GetComponent<Animation>().Play();
-           StartCoroutine(trap.GetComponent<trapDetail>().shoot()); 
+        yield return null;
+    }
+    public override IEnumerator process() {
+        yield return new WaitForSeconds(DeltaTime);
+        foreach (GameObject trap in existedTraps)
+        {
+            trap.GetComponent<Animation>().Play();
 
-       }
+
+        }
     }
     public override void switchOFF()
     {
@@ -22,6 +26,10 @@ public class trapExistGroup :trapGroup
              trap.GetComponent<Animation>().Stop() ;
 
          }
+    }
+    public override IEnumerator destroytraps()
+    {
+        yield return null;
     }
 
 }

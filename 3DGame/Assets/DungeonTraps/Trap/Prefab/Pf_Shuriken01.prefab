@@ -47,7 +47,7 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: 7cf00858559460141b21a8c48538adb9, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!114 &5836781235882881143
@@ -62,8 +62,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a914c0658e4991d498a66fd924efe19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isShoot: 1
-  shootDistance: 10
 --- !u!135 &3276132575716915481
 SphereCollider:
   m_ObjectHideFlags: 0

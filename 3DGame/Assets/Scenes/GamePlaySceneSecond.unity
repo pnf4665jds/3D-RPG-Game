@@ -339,8 +339,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a914c0658e4991d498a66fd924efe19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isShoot: 0
-  shootDistance: 0
 --- !u!1001 &79403989
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1375,8 +1373,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a914c0658e4991d498a66fd924efe19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isShoot: 0
-  shootDistance: 0
 --- !u!1001 &260863642
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7391,6 +7387,7 @@ GameObject:
   - component: {fileID: 1201510176}
   - component: {fileID: 1201510172}
   - component: {fileID: 1201510171}
+  - component: {fileID: 1201510177}
   m_Layer: 0
   m_Name: roomField
   m_TagString: Untagged
@@ -7411,10 +7408,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DeltaTime: 0
-  trapsPos:
-  - {fileID: 1958365490}
-  - {fileID: 1343385781}
+  trapPos: {fileID: 1958365490}
   trapPref: {fileID: 102270, guid: eb8dff7252c175247a45389403b9ddf4, type: 3}
+  loop: 1
+  isShoot: 0
+  shootDistance: 10
 --- !u!114 &1201510172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7448,6 +7446,7 @@ MonoBehaviour:
   - {fileID: 1201510176}
   - {fileID: 1201510172}
   - {fileID: 1201510171}
+  - {fileID: 1201510177}
 --- !u!65 &1201510174
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7492,6 +7491,24 @@ MonoBehaviour:
   - {fileID: 248455300}
   - {fileID: 1777105687}
   - {fileID: 1760203972}
+--- !u!114 &1201510177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201510170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa6ef783fe62a764fb74ff5f7251fbc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeltaTime: 0
+  trapPos: {fileID: 1343385781}
+  trapPref: {fileID: 102270, guid: eb8dff7252c175247a45389403b9ddf4, type: 3}
+  loop: 1
+  isShoot: 0
+  shootDistance: 10
 --- !u!1001 &1225690793
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8008,8 +8025,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a914c0658e4991d498a66fd924efe19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isShoot: 0
-  shootDistance: 0
 --- !u!1001 &1310483323
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10644,8 +10659,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a914c0658e4991d498a66fd924efe19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isShoot: 0
-  shootDistance: 0
 --- !u!1001 &1774939290
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10804,8 +10817,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a914c0658e4991d498a66fd924efe19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isShoot: 0
-  shootDistance: 0
 --- !u!1001 &1794271779
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12684,8 +12695,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a914c0658e4991d498a66fd924efe19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isShoot: 0
-  shootDistance: 0
 --- !u!1001 &2096667385
 PrefabInstance:
   m_ObjectHideFlags: 0

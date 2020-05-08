@@ -29,6 +29,18 @@ public class roomField : MonoBehaviour
             
         }
     }
+    private void OnTriggerStay(Collider other) {
+
+        if (other.tag == "Player")
+        {
+
+            foreach (trapGroup tg in tgs)
+            {
+                StartCoroutine(tg.process());
+            }
+
+        }
+    }
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
