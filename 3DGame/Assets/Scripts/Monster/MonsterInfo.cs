@@ -17,8 +17,12 @@ public class MonsterInfo : MonoBehaviour
     public bool isGrounded { get; private set; } = false;   // 是否著地
     public bool isDead { get; private set; } = false;
 
+    [Header("Grounded Detect")]
+    public Collider mainCollider;
+    public float Offset = 0.2f;    // Collider與地面間的差距
+
     private Animator animator;
-    private Collider mainCollider;
+    private float distanceToTheGround = 0.5f;
 
     private void Awake()
     {
@@ -26,15 +30,7 @@ public class MonsterInfo : MonoBehaviour
         InitPosition = transform.position;
         InitRotation = transform.rotation;
         animator = GetComponent<Animator>();
-        Collider[] c = GetComponentsInChildren<Collider>();
-        foreach(Collider cc in c)
-        {
-            if(cc.isTrigger == false)
-            {
-                mainCollider = cc;
-                break;
-            }
-        }
+        distanceToTheGround = mainCollider.bounds.extents.y + Offset;
     }
 
     private void Update()
@@ -118,7 +114,6 @@ public class MonsterInfo : MonoBehaviour
     /// </summary>
     private void CheckGrounded()
     {
-        float DisstanceToTheGround = mainCollider.bounds.extents.y;
-        isGrounded = Physics.Raycast(mainCollider.bounds.center, Vector3.down, DisstanceToTheGround + 0.2f);
+        isGrounded = Physics.Raycast(mainCollider.bounds.center, Vector3.down, distanceToTheGround);
     }
 }

@@ -405,6 +405,8 @@ MonoBehaviour:
   RotateSpeed: 5
   DeadWaitTime: 5
   CoinSum: 2000
+  mainCollider: {fileID: 147804861295525994}
+  Offset: 0.2
 --- !u!114 &5049802065022652132
 MonoBehaviour:
   m_ObjectHideFlags: 0

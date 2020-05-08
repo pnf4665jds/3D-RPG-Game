@@ -44,7 +44,7 @@ public class LoadAsyncScene : MonoBehaviour
             if (progressValue >= 0.9)
                 async.allowSceneActivation = true;
 
-            yield return null;
+            yield return new WaitForSeconds(3);
         }
     }
 }

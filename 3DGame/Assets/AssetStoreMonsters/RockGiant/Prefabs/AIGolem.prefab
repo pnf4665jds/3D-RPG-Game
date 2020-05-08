@@ -789,6 +789,8 @@ MonoBehaviour:
   RotateSpeed: 2
   DeadWaitTime: 0
   CoinSum: 0
+  mainCollider: {fileID: 3823332477227898747}
+  Offset: 0.2
 --- !u!114 &3823332478208203809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -802,8 +804,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Walk
-  FollowKeepDistance: 0
+  IsFieldLimited: 1
   IsFlyMode: 0
+  FlySpeedUp: 1
 --- !u!114 &3823332478208203810
 MonoBehaviour:
   m_ObjectHideFlags: 0
