@@ -6,22 +6,18 @@ using UnityEngine.SceneManagement;
 
 public class LoadAsyncScene : MonoBehaviour
 {
+    public RectTransform LoadingBar;
+
     private string nextSceneName;
     private float progressValue;
     private Text progess;
-    private Slider slider;
 
     private AsyncOperation async = null;
 
     private void Start()
     {
         progess = GetComponentInChildren<Text>();
-        slider = GetComponentInChildren<Slider>();
-    }
-
-    public void SetScene(string name)
-    {
-        nextSceneName = name;
+        nextSceneName = GameSceneManager.instance.NextSceneName;
         StartCoroutine(LoadScene());
     }
 
@@ -31,20 +27,29 @@ public class LoadAsyncScene : MonoBehaviour
         // 防止自動跳到下個場景
         async.allowSceneActivation = false;
 
+        while(async.progress < 0.9f)
+        {
+            LoadingBar.localScale = new Vector3(async.progress, 1, 1);
+            progess.text = (int)(LoadingBar.localScale.x * 100) + "%";
+            yield return null;
+        }
+
         // 等待讀取
         while (!async.isDone)
         {
-            if (async.progress < 0.9f)
-                progressValue = async.progress;
-            else
-                progressValue = 1.0f;
-
-            slider.value = progressValue;
-            progess.text = (int)(slider.value * 100) + "%";
-            if (progressValue >= 0.9)
+            if (LoadingBar.localScale.x >= 0.99f)
+            {
+                LoadingBar.localScale = Vector3.one;
+                progess.text = (int)(LoadingBar.localScale.x * 100) + "%";
+                yield return new WaitForSeconds(3);
                 async.allowSceneActivation = true;
-
-            yield return new WaitForSeconds(3);
+            }
+            else
+            {
+                LoadingBar.localScale += new Vector3(0.01f, 0, 0);
+                progess.text = (int)(LoadingBar.localScale.x * 100) + "%";
+            }
+            yield return new WaitForSeconds(0.05f);
         }
     }
 }

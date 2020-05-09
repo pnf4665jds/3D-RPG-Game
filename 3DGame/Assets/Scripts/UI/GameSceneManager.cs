@@ -5,27 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class GameSceneManager : Singleton<GameSceneManager>
 {
-    private LoadAsyncScene loadAsyncScene;
-    private AsyncOperation op;
+    public string NextSceneName { get; private set; }
 
     public void LoadScene(string nextSceneName)
     {
-        op = SceneManager.LoadSceneAsync("LoadingScene");
-        StartCoroutine(Load(nextSceneName));
+        NextSceneName = nextSceneName;
+        SceneManager.LoadScene("LoadingScene");
     }
 
-    private IEnumerator Load(string nextSceneName)
-    {
-        yield return new WaitUntil(() => op.isDone);
-        loadAsyncScene = FindObjectOfType<LoadAsyncScene>();
-        loadAsyncScene.SetScene(nextSceneName);
-    }
-
+    // 測適用
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Z))
         {
-            LoadScene("Maze");
+            LoadScene("GamePlayScene");
         }
     }
 
