@@ -790,7 +790,7 @@ MonoBehaviour:
   DeadWaitTime: 0
   CoinSum: 0
   mainCollider: {fileID: 3823332477227898747}
-  Offset: 0.2
+  Offset: 1
 --- !u!114 &3823332478208203809
 MonoBehaviour:
   m_ObjectHideFlags: 0
