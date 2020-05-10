@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     private bool isSetMousePos;
 
     public float MaxSpeed = 2;
-    private float Speed;
+    [SerializeField] private float Speed;
     private float MaxHP;
     private float MaxMP;
     private float CurrentHP; 
@@ -208,4 +208,5 @@ public class Player : MonoBehaviour
     public int GetManaPotionNum() { return ManaPotionNum; }
     public void AddHealthPotion(int num) { HealthPotionNum += num; }
     public void AddManaPotion(int num) { ManaPotionNum += num; }
+	public void SetSpeed(float speed){ Speed = speed;}
 }
