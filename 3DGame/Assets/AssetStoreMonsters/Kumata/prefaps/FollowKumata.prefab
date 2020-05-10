@@ -329,6 +329,7 @@ GameObject:
   - component: {fileID: 7760640169726311602}
   - component: {fileID: 1462354799800648892}
   - component: {fileID: 8304818077842746314}
+  - component: {fileID: 4779000740752631706}
   m_Layer: 0
   m_Name: FollowKumata
   m_TagString: Untagged
@@ -384,7 +385,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
@@ -420,7 +421,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentStateName: 
-  FirstStateName: Follow
+  FirstStateName: Idle
   StateList:
   - StateName: Follow
     Action: {fileID: 2668671406496023431}
@@ -434,6 +435,13 @@ MonoBehaviour:
     TransList:
     - Order: 0
       Decider: {fileID: 1462354799800648892}
+      TrueState: Follow
+      FalseState: 
+  - StateName: Idle
+    Action: {fileID: 0}
+    TransList:
+    - Order: 0
+      Decider: {fileID: 4779000740752631706}
       TrueState: Follow
       FalseState: 
 --- !u!114 &2668671406496023431
@@ -530,6 +538,21 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &4779000740752631706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805497146806521040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d81a937f1e55ad41b8427dc77f5f7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseStateName: Idle
+  DetectPauseTime: 0
+  WaitTime: 3
 --- !u!1 &805497146806521042
 GameObject:
   m_ObjectHideFlags: 0

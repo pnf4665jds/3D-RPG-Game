@@ -16,6 +16,7 @@ TagManager:
   - goldCoin
   - silverCoin
   - copperCoin
+  - Boss
   layers:
   - Default
   - TransparentFX
