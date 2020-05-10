@@ -7,9 +7,9 @@ public class BoxScript : MonoBehaviour
 {
     private Animator animator;
     private bool isBroken;
-    private int Money;
-    private int HealthItemNum;
-    private int ManaItemNum;
+    public int Money;
+    public int HealthItemNum;
+    public int ManaItemNum;
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -17,7 +17,7 @@ public class BoxScript : MonoBehaviour
     }
     private void Start()
     {
-        Money = UnityEngine.Random.Range(1, 3) * 1000;
+        Money = UnityEngine.Random.Range(1, 3) * 1000 + UnityEngine.Random.Range(1,9)*100;
         HealthItemNum = UnityEngine.Random.Range(1,3);
         ManaItemNum = UnityEngine.Random.Range(1, 3);
     }
@@ -25,12 +25,12 @@ public class BoxScript : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            Debug.Log(collision.gameObject.GetComponent<Player>().GetisAttack());
-            if (collision.gameObject.GetComponent<Player>().GetisAttack())
+            if (collision.gameObject.GetComponent<Player>().GetisAttack() && !isBroken)
             {
                 isBroken = true;
                 animator.SetBool("isBroken", isBroken);
-                //GetItem();
+                GetItem();
+                Destroy(this.GetComponent<BoxCollider>());
                 Destroy(this.gameObject,5);
             }
         }

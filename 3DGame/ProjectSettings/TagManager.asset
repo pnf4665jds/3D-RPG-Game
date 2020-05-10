@@ -17,6 +17,8 @@ TagManager:
   - silverCoin
   - copperCoin
   - Boss
+  - HealthPotion
+  - ManaPotion
   layers:
   - Default
   - TransparentFX

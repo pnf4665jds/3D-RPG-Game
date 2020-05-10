@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4000013555364002}
+  - component: {fileID: 1568567341698685183}
   m_Layer: 0
   m_Name: Coin
   m_TagString: goldCoin
@@ -31,6 +32,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 59.528004, z: 0}
+--- !u!65 &1568567341698685183
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000011365394840}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.25427908, y: 0.25412548, z: 0.045760244}
+  m_Center: {x: -0.0011467336, y: -0.00044603646, z: -0.0066896835}
 --- !u!1 &1000013760068644
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,16 +9,22 @@ public class Player : MonoBehaviour
     public bool isHit;
     public bool isMove;
     public bool isDie;
-    public float MaxSpeed = 2;
     private bool isLive;
     private bool isSetMousePos;
+
+    public float MaxSpeed = 2;
     private float Speed;
     private float MaxHP;
     private float MaxMP;
-    public float CurrentHP; 
+    private float CurrentHP; 
     private float MP;
     private float ATK;
-	private int Gold;
+
+
+    [SerializeField] private int Gold;
+    [SerializeField] private int HealthPotionNum;
+    [SerializeField] private int ManaPotionNum;
+
     private Vector3 MouseStartPos; 
     private GameObject PositionUI;
 
@@ -29,6 +35,8 @@ public class Player : MonoBehaviour
         MaxHP = 100;
         MaxMP = 100;
 		Gold = 0;
+        HealthPotionNum = 0;
+        ManaPotionNum = 0;
     }
     // Start is called before the first frame update
     void Start()
@@ -157,6 +165,32 @@ public class Player : MonoBehaviour
         {
             other.gameObject.GetComponent<GroundMove>().Triggered();
         }
+        else if(other.tag == "goldCoin")
+        {
+            switch (other.gameObject.transform.localScale.x)
+            {
+                case 10:
+                    AddGold(1000);
+                    break;
+                case 7:
+                    AddGold(500);
+                    break;
+                case 4:
+                    AddGold(100);
+                    break;
+            }
+            Destroy(other.gameObject);
+        }
+        else if(other.tag == "HealthPotion")
+        {
+            AddHealthPotion(1);
+            Destroy(other.gameObject);
+        }
+        else if(other.tag == "ManaPotion")
+        {
+            AddManaPotion(1);
+            Destroy(other.gameObject);
+        }
     }
     public int GetGold()
     {
@@ -170,4 +204,8 @@ public class Player : MonoBehaviour
     {
         return isAttack;
     }
+    public int GetHealthPotionNum() { return HealthPotionNum; }
+    public int GetManaPotionNum() { return ManaPotionNum; }
+    public void AddHealthPotion(int num) { HealthPotionNum += num; }
+    public void AddManaPotion(int num) { ManaPotionNum += num; }
 }
