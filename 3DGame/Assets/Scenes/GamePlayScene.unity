@@ -5403,9 +5403,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49d1dda9bdc4bb54c94735cbb8432265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: Maze
-  DestPosition: {x: 110, y: 4.2, z: -314}
-  DestRotationY: 180
+  SceneName: newMaze
+  DestPosition: {x: 22.9, y: 462.7, z: -661.4}
+  DestRotationY: 0
   Condition: 0
 --- !u!65 &988345880
 BoxCollider:
