@@ -63,7 +63,7 @@ public class Player : MonoBehaviour
                 {
                     Speed = MaxSpeed;
                 }
-                else Speed += Time.deltaTime;
+                else Speed += Time.deltaTime*MaxSpeed;
             }
             else Speed = 0;
             if (Input.GetMouseButton(0))
@@ -78,7 +78,7 @@ public class Player : MonoBehaviour
             if (Input.GetKey(KeyCode.W))
             {
                 isMove = true;
-                transform.Translate(Vector3.forward * Speed * 0.1f);
+                transform.Translate(Vector3.forward * Speed * Time.deltaTime);
                 Playerani.SetBool("isMove", isMove);
             }
             else if (Input.GetKeyUp(KeyCode.W))
@@ -88,10 +88,16 @@ public class Player : MonoBehaviour
             if (Input.GetKey(KeyCode.D))
             {
                 transform.Rotate(transform.up * 1.5f);
+                MaxSpeed = 8;
             }
             else if (Input.GetKey(KeyCode.A))
             {
                 transform.Rotate(transform.up * -1.5f);
+                MaxSpeed = 8;
+            }
+            else if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
+            {
+                MaxSpeed = 10;
             }
             if (Input.GetMouseButton(1))
             {
