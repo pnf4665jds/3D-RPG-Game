@@ -11,7 +11,7 @@ public class Portal : MonoBehaviour
     public string SceneName;        // 傳送場景
     public Vector3 DestPosition;    // 傳送後座標
     public float DestRotationY;   // 傳送後Y軸旋轉
-    public PortalCondition Condition;
+    public PortalCondition Condition;   // 傳送條件
 
     private List<bool> ConditionMeetList = new List<bool>();
 
@@ -48,9 +48,12 @@ public class Portal : MonoBehaviour
         {
             GameSceneManager.instance.LoadScene(SceneName, new List<Action>()
             {
-                // 切換場景時將主角移到指定座標，並更改成指定的Y軸旋轉角度
+                // 切換場景時將主角移到指定座標
                 () => other.gameObject.transform.position = DestPosition,
-                () => other.gameObject.transform.rotation = Quaternion.Euler(0, DestRotationY, 0)
+                // 更改成指定的Y軸旋轉角度
+                () => other.gameObject.transform.rotation = Quaternion.Euler(0, DestRotationY, 0),
+                // 重置狀態
+                () => other.GetComponent<Player>().SetSpeed(0)
             });
         }
     }
