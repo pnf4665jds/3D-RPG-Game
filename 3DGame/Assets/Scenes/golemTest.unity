@@ -280,6 +280,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6856482291752146625, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.71315277
+      objectReference: {fileID: 0}
     - target: {fileID: 7256699946879332715, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
         type: 3}
       propertyPath: m_Mass
@@ -287,6 +292,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 214e08cd5e5d74c458e2a81b7ec2c84c, type: 3}
+--- !u!1 &715866410
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 715866412}
+  - component: {fileID: 715866411}
+  m_Layer: 0
+  m_Name: WindZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!182 &715866411
+WindZone:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715866410}
+  m_Enabled: 1
+  m_Mode: 0
+  m_Radius: 20
+  m_WindMain: 2.98
+  m_WindTurbulence: 3.08
+  m_WindPulseMagnitude: 4.61
+  m_WindPulseFrequency: 22.1
+--- !u!4 &715866412
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715866410}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 5.26, z: -45.85}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1340861147 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3823332478208203829, guid: 547ef3da0f58f594cadb9d9880269c64,
@@ -307,6 +357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UseStateName: Attack02
   Damage: 10
+  Punch: {fileID: 0}
 --- !u!1 &2046335035
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,6 +460,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AIGolem
+      objectReference: {fileID: 0}
+    - target: {fileID: 3823332478208203829, guid: 547ef3da0f58f594cadb9d9880269c64,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3823332478208203813, guid: 547ef3da0f58f594cadb9d9880269c64,
         type: 3}
