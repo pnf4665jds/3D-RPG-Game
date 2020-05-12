@@ -23,10 +23,13 @@ public class MonsterInfo : MonoBehaviour
 
     private Animator animator;
     private float distanceToTheGround = 0.5f;
+    private MonsterBlood monsterBlood;
 
     private void Awake()
     {
         CurrentHP = MaxHP;
+        monsterBlood = GetComponentInChildren<MonsterBlood>();
+        monsterBlood?.setMaxBlood(MaxHP);
         InitPosition = transform.position;
         InitRotation = transform.rotation;
         animator = GetComponent<Animator>();

@@ -12,6 +12,8 @@ public class trapCloneGroup :trapGroup
     public bool isShoot;
     private Vector3 createPos;
     public float shootDistance;
+    public float rotation;
+    public int Speed;
 
     public override IEnumerator switchON()
     {
@@ -25,6 +27,8 @@ public class trapCloneGroup :trapGroup
         trapClone.GetComponent<Animation>().Play();
         StartCoroutine(process());
 
+        
+
     }
     public override IEnumerator process() {
 
@@ -33,10 +37,11 @@ public class trapCloneGroup :trapGroup
             while (Vector3.Distance(trapClone.transform.position, createPos) < shootDistance && isShoot)
             {
                 
-                trapClone.transform.Translate(Vector3.forward * 20 * Time.deltaTime);
+                trapClone.transform.Translate(Vector3.forward * Speed * Time.deltaTime);
                 yield return null;
             }
             trapClone.transform.position = createPos;
+            
         }
         
     }
@@ -51,7 +56,8 @@ public class trapCloneGroup :trapGroup
         yield return null;
     }
     public bool createClone() {
-        trapClone = Instantiate(trapPref, createPos, Quaternion.identity);
+        trapClone = Instantiate(trapPref, createPos, Quaternion.Euler(0 , rotation , 0));
+
         return true;
     }
 

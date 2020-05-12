@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MonsterBlood : MonoBehaviour
 {
-    public float MaxBlood;
+    private float MaxBlood;
     private float curBlood; //get the monster who get hurt
     private GameObject player;
     private GameObject bloodUI;
@@ -27,12 +27,11 @@ public class MonsterBlood : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
-        this.transform.localPosition = new Vector3((-92.6f + 92.6f * (curBlood / MaxBlood)), 0.0f, 0.0f);
+        if (MaxBlood > 0) {
+            this.transform.localPosition = new Vector3((-92.6f + 92.6f * (curBlood / MaxBlood)), 0.0f, 0.0f);
+        }
+        
            
-        
-        
     }
     private void ChangeColor()
     {
@@ -44,7 +43,7 @@ public class MonsterBlood : MonoBehaviour
         else this.GetComponent<Image>().color = Color.white;
 
     }
-    public void setMaxBlood(int blood) {
+    public void setMaxBlood(float blood) {
         MaxBlood = blood;
         curBlood = MaxBlood;
     }
