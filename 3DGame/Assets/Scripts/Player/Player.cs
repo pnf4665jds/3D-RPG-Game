@@ -50,6 +50,7 @@ public class Player : MonoBehaviour
         isMove = false;
         isDie = false;
         Speed = 0;
+        ATK = 50;
     }
 
     // Update is called once per frame
@@ -114,6 +115,7 @@ public class Player : MonoBehaviour
         CurrentHP -= damage;
         if(CurrentHP <=0)
         {
+            ResetAnimation();
             isLive = false;
             isDie = true;
             Playerani.SetBool("isDie", isDie);
@@ -165,6 +167,7 @@ public class Player : MonoBehaviour
         }
         else if(other.tag == "Monster")
         {
+            Debug.Log(other.name);
             other.gameObject.GetComponent<MonsterInfo>().GetDamage(ATK);
         }
         else if(other.tag == "Organ")
