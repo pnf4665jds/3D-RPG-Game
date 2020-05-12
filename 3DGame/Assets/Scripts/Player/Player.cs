@@ -167,8 +167,8 @@ public class Player : MonoBehaviour
         }
         else if(other.tag == "Monster")
         {
-            Debug.Log(other.name);
-            other.gameObject.GetComponent<MonsterInfo>().GetDamage(ATK);
+            Debug.Log(other.gameObject.transform.parent.name);
+            other.gameObject.transform.parent.GetComponent<MonsterInfo>().GetDamage(ATK);
         }
         else if(other.tag == "Organ")
         {
