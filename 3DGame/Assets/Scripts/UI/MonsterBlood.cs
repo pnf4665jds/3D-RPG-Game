@@ -47,7 +47,7 @@ public class MonsterBlood : MonoBehaviour
         MaxBlood = blood;
         curBlood = MaxBlood;
     }
-    private void setCurBlood(int blood) {
+    public void setCurBlood(float blood) {
         curBlood = blood;
     }
     private void setMonsterImage(string monsterName) {

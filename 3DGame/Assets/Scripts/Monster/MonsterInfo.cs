@@ -49,7 +49,7 @@ public class MonsterInfo : MonoBehaviour
     {
         animator.SetTrigger("Damage");  
         CurrentHP = CurrentHP - value;
-
+        monsterBlood?.setCurBlood(CurrentHP >= 0 ? CurrentHP : 0);
         // 血量低於0時死亡
         if (CurrentHP <= 0)
         {
