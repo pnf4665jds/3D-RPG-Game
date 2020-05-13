@@ -6,7 +6,9 @@ public class DropItemSystem : Singleton<DropItemSystem>
 {
     // Start is called before the first frame update
 
-    public GameObject MoneyPref;
+    public GameObject GoldCoinPref;
+    public GameObject SilverCoinPref;
+    public GameObject CopperCoinPref;
     public GameObject HealthPref;
     public GameObject ManaPref;
 
@@ -22,21 +24,21 @@ public class DropItemSystem : Singleton<DropItemSystem>
         while (sum / 1000 > 0)
         {
             delta = new Vector3(Random.Range(-5, 5), 3, Random.Range(-5, 5));
-            coin = Instantiate(MoneyPref, pos + delta, Quaternion.identity);
-            coin.transform.localScale = new Vector3(10, 10, 10);
+            coin = Instantiate(GoldCoinPref, pos + delta, Quaternion.identity);
+            coin.transform.localScale = new Vector3(4, 4 , 4);
             sum -= 1000;
         }
         if (sum / 500 > 0)
         {
             delta = new Vector3(Random.Range(-5, 5), 3, Random.Range(-5, 5));
-            coin = Instantiate(MoneyPref, pos + delta, Quaternion.identity);
-            coin.transform.localScale = new Vector3(7, 7, 7);
+            coin = Instantiate(SilverCoinPref, pos + delta, Quaternion.identity);
+            coin.transform.localScale = new Vector3(4, 4, 4);
             sum -= 500;
         }
         while(sum / 100 > 0)
         {
             delta = new Vector3(Random.Range(-5, 5), 3, Random.Range(-5, 5));
-            coin = Instantiate(MoneyPref, pos + delta, Quaternion.identity);
+            coin = Instantiate(CopperCoinPref, pos + delta, Quaternion.identity);
             coin.transform.localScale = new Vector3(4, 4, 4);
             sum -= 100;
         }
