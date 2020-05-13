@@ -5,12 +5,18 @@ using UnityEngine;
 public class GroundMove : MonoBehaviour
 {
     private GameObject Ground;
+    private bool isTrigger;
     private void Awake()
     {
-        Ground = GameObject.FindGameObjectWithTag("Ground"); 
+        Ground = GameObject.FindGameObjectWithTag("Ground");
+        isTrigger = false;
     }
     public void Triggered()
     {
-        Ground.GetComponent<Animation>().Play();
+        if (!isTrigger) {
+            Ground.GetComponent<Animation>().Play();
+            isTrigger = true;
+        }
+        
     }
 }
