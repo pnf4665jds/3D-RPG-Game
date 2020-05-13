@@ -11,6 +11,11 @@ public class DropItemSystem : Singleton<DropItemSystem>
     public GameObject CopperCoinPref;
     public GameObject HealthPref;
     public GameObject ManaPref;
+    public GameObject RecoveryPref;
+
+    public Item HealthPotion;
+    public Item ManaPotion;
+    public Item RecoveryPotion;
 
     /// <summary>
     /// 產生金幣。
@@ -61,4 +66,20 @@ public class DropItemSystem : Singleton<DropItemSystem>
         }
 
     }
+    public void AddPotionToPack(GameObject temp) {
+        if (temp == HealthPref)
+        {
+            Inventory.instance.addItem(HealthPotion);
+        }
+        else if (temp == ManaPref)
+        {
+            Inventory.instance.addItem(ManaPotion);
+        }
+        else if (temp == RecoveryPref)
+        {
+            Inventory.instance.addItem(RecoveryPotion);
+        }
+
+    }
+
 }
