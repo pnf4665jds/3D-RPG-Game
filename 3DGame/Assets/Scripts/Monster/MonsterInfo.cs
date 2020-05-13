@@ -15,7 +15,8 @@ public class MonsterInfo : MonoBehaviour
     public Vector3 FieldCenter { get; private set; }    // 活動領域中心座標
     public float FieldRadius { get; private set; }      // 活動領域半徑
     public bool isGrounded { get; private set; } = false;   // 是否著地
-    public bool isDead { get; private set; } = false;
+    public bool isDead { get; private set; } = false;   // 是否死亡
+    public bool isInvincible { get; set; } = false;     // 是否無敵
 
     [Header("Grounded Detect")]
     public Collider mainCollider;
@@ -47,9 +48,12 @@ public class MonsterInfo : MonoBehaviour
     /// <param name="value"></param>
     public void GetDamage(float value)
     {
+        if (isInvincible)
+            return;
+
         animator.SetTrigger("Damage");  
         CurrentHP = CurrentHP - value;
-        monsterBlood?.setCurBlood(CurrentHP >= 0 ? CurrentHP : 0);
+        monsterBlood?.setCurBlood(CurrentHP > 0 ? CurrentHP : 0);
         // 血量低於0時死亡
         if (CurrentHP <= 0)
         {
@@ -65,7 +69,7 @@ public class MonsterInfo : MonoBehaviour
     public void GetHeal(float value)
     {
         CurrentHP = CurrentHP + value;
-        Debug.Log(CurrentHP);
+        monsterBlood?.setCurBlood(CurrentHP < MaxHP ? CurrentHP : MaxHP);
         if (CurrentHP > MaxHP)
             CurrentHP = MaxHP;
     }
