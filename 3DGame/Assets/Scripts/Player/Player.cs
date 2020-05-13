@@ -12,18 +12,13 @@ public class Player : MonoBehaviour
     private bool isLive;
     private bool isSetMousePos;
 
-    public float MaxSpeed = 2;
+    public float MaxSpeed = 12;
     [SerializeField] private float Speed;
     private float MaxHP;
     private float MaxMP;
     private float CurrentHP; 
     private float MP;
     private float ATK;
-
-
-    [SerializeField] private int Gold;
-    [SerializeField] private int HealthPotionNum;
-    [SerializeField] private int ManaPotionNum;
 
     private Vector3 MouseStartPos; 
     private GameObject PositionUI;
@@ -34,9 +29,6 @@ public class Player : MonoBehaviour
         Playerani = GetComponent<Animator>();
         MaxHP = 100;
         MaxMP = 100;
-		Gold = 0;
-        HealthPotionNum = 0;
-        ManaPotionNum = 0;
     }
     // Start is called before the first frame update
     void Start()
@@ -161,61 +153,28 @@ public class Player : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "MonsterField")
+        if (other.tag == "MonsterField")
         {
             PositionUI.GetComponent<PositionMessage>().showMessage(other.gameObject.GetComponent<MonsterField>().GetFieldName());
         }
-        else if(other.tag == "Monster")
+        else if (other.tag == "Monster")
         {
             Debug.Log(other.gameObject.transform.parent.name);
             other.gameObject.transform.parent.GetComponent<MonsterInfo>().GetDamage(ATK);
         }
-        else if(other.tag == "Organ")
+        else if (other.tag == "Organ")
         {
             other.gameObject.GetComponent<GroundMove>().Triggered();
         }
-        else if(other.tag == "goldCoin")
+        else if (other.tag == "goldCoin" || other.tag == "silverCoin" || other.tag == "copperCoin" || other.tag == "HealthPotion" || other.tag == "ManaPotion")
         {
-            switch (other.gameObject.transform.localScale.x)
-            {
-                case 10:
-                    AddGold(1000);
-                    break;
-                case 7:
-                    AddGold(500);
-                    break;
-                case 4:
-                    AddGold(100);
-                    break;
-            }
+            //GameManger.add(other.gameoject);
             Destroy(other.gameObject);
         }
-        else if(other.tag == "HealthPotion")
-        {
-            AddHealthPotion(1);
-            Destroy(other.gameObject);
-        }
-        else if(other.tag == "ManaPotion")
-        {
-            AddManaPotion(1);
-            Destroy(other.gameObject);
-        }
-    }
-    public int GetGold()
-    {
-        return Gold;
-    }
-    public void AddGold(int gold)
-    {
-        Gold += gold;
     }
     public bool GetisAttack()
     {
         return isAttack;
     }
-    public int GetHealthPotionNum() { return HealthPotionNum; }
-    public int GetManaPotionNum() { return ManaPotionNum; }
-    public void AddHealthPotion(int num) { HealthPotionNum += num; }
-    public void AddManaPotion(int num) { ManaPotionNum += num; }
 	public void SetSpeed(float speed){ Speed = speed;}
 }
