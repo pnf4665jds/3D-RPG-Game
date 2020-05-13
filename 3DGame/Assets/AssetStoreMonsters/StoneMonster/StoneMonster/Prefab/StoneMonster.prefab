@@ -293,7 +293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHP: 100
-  MoveSpeed: 2
+  MoveSpeed: 3
   RotateSpeed: 5
   DeadWaitTime: 0
   CoinSum: 0
@@ -331,7 +331,7 @@ MonoBehaviour:
     - Order: 1
       Decider: {fileID: 966466048675799226}
       TrueState: 
-      FalseState: Patrol
+      FalseState: Back
     - Order: 2
       Decider: {fileID: 7071659971909622108}
       TrueState: Attack
@@ -371,7 +371,7 @@ MonoBehaviour:
   ShowInScene: 1
   IsRangeStable: 0
   DetectCenter: {x: 0, y: 0, z: 0}
-  DetectRadius: 7
+  DetectRadius: 10
 --- !u!114 &966466048675799226
 MonoBehaviour:
   m_ObjectHideFlags: 0
