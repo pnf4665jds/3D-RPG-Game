@@ -1,12 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     public Animator Playerani;
     public bool isAttack;
-    public bool isHit;
     public bool isMove;
     public bool isDie;
     private bool isLive;
@@ -38,7 +35,6 @@ public class Player : MonoBehaviour
         isLive = true;
         isSetMousePos = false;
         isAttack = false;
-        isHit = false;
         isMove = false;
         isDie = false;
         Speed = 0;
@@ -122,10 +118,8 @@ public class Player : MonoBehaviour
     public void ResetAnimation()
     {
         isAttack = false;
-        isHit = false;
         isMove = false;
         Playerani.SetBool("isAttack",isAttack);
-        Playerani.SetBool("isHit",isHit);
         Playerani.SetBool("isMove", isMove);
     }
     public float GetMaxHP()
