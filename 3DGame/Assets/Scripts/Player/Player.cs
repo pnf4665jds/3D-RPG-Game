@@ -153,8 +153,7 @@ public class Player : MonoBehaviour
         }
         else if (other.tag == "Monster")
         {
-            Debug.Log(other.gameObject.transform.parent.name);
-            other.gameObject.transform.parent.GetComponent<MonsterInfo>().GetDamage(ATK);
+            if(isAttack) other.gameObject.GetComponentInParent<MonsterInfo>().GetDamage(ATK);
         }
         else if (other.tag == "Organ")
         {
