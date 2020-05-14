@@ -50,8 +50,8 @@ public class MonsterInfo : MonoBehaviour
     {
         if (isInvincible)
             return;
-
-        animator.SetTrigger("Damage");  
+        if(animator != null)
+            animator.SetTrigger("Damage");  
         CurrentHP = CurrentHP - value;
         monsterBlood?.setCurBlood(CurrentHP > 0 ? CurrentHP : 0);
         // 血量低於0時死亡
@@ -110,7 +110,8 @@ public class MonsterInfo : MonoBehaviour
         Rigidbody rigidbody = GetComponentInChildren<Rigidbody>();
         rigidbody.isKinematic = true;
 
-        animator.SetBool("Dead", true);
+        if (animator != null)
+            animator.SetBool("Dead", true);
         yield return new WaitForSeconds(DeadWaitTime);
         DropItemSystem.instance.createMoney(transform.position, CoinSum);
 
