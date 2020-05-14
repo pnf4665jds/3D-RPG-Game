@@ -29,8 +29,12 @@ public class backPackUI : MonoBehaviour
         healthBtn.onClick.AddListener(healthBtnClick);
         manaBtn.onClick.AddListener(manaBtnClick);
         recoveryBtn.onClick.AddListener(recoveryBtnClick);
+        Exit.onClick.AddListener(exitBtn);
     }
-
+    private void exitBtn() {
+        this.gameObject.SetActive(false);
+        GameSystem.instance.changeGameState();
+    }
     private void usePotion() {
         if (potion == potionUse.health)
         {
