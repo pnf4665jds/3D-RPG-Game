@@ -1379,14 +1379,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Playerani: {fileID: 0}
   isAttack: 0
-  isHit: 0
   isMove: 0
   isDie: 0
   MaxSpeed: 12
   Speed: 0
-  Gold: 0
-  HealthPotionNum: 0
-  ManaPotionNum: 0
 --- !u!136 &6856482291752146625
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2520,6 +2516,10 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 9ef625d01f79b4e4eb62fcdf032954ca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9ef625d01f79b4e4eb62fcdf032954ca, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 9ef625d01f79b4e4eb62fcdf032954ca, type: 3}
       propertyPath: m_Materials.Array.data[0]
