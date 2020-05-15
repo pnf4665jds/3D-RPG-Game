@@ -6,11 +6,12 @@ public class shopRobot : MonoBehaviour
 {
     // Start is called before the first frame update
     private Animator anim;
+    public Vector3 DetectPlayerSize = new Vector3(1.0f, 1.0f, 1.0f);
     void Start()
     {
        
         anim = this.GetComponent<Animator>();
-        anim.SetBool("Open_Anim", true);
+        
 
     }
     private void FixedUpdate()
@@ -19,20 +20,24 @@ public class shopRobot : MonoBehaviour
     }
 
     private void LookAtPlayer() {
-        Collider[] enterZone = Physics.OverlapBox(transform.position , transform.localScale/2 , transform.rotation, LayerMask.GetMask("Player"));
+        Collider[] enterZone = Physics.OverlapBox(transform.position , DetectPlayerSize , transform.rotation, LayerMask.GetMask("Player"));
 
-        if (enterZone.Length > 0) {
+        if (enterZone.Length > 0)
+        {
+            anim.SetBool("Open_Anim", true);
             var playerEntity = GameObject.FindGameObjectWithTag("Player");
             transform.LookAt(playerEntity.transform);
-            if (playerEntity.GetComponent<Player>()) {
+            if (playerEntity.GetComponent<Player>().GetSpeed() != 0)
+            {
                 anim.SetBool("Walk_Anim", true);
             }
-            else {
+            else
+            {
                 anim.SetBool("Walk_Anim", false);
             }
-            
-
-            
+        }
+        else {
+            anim.SetBool("Open_Anim", false);
         }
     }
     private void OnCollisionEnter(Collision collision)
@@ -43,21 +48,27 @@ public class shopRobot : MonoBehaviour
             StartCoroutine(animFlow());
         }
     }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            CameraSystem.instance.changeCameraModeFpllowPlayer();
+        }
+    }
 
     private IEnumerator animFlow() {
-        anim.SetBool("Open_Anim", true);
-        GameSystem.instance.changeGameState();
-        //yield return shopping finish 
-        yield return new WaitForSecondsRealtime(5);
         
-        anim.SetBool("Open_Anim", false);
-        yield return new WaitUntil(() => anim.GetCurrentAnimatorStateInfo(0).IsName("anim_close"));
         GameSystem.instance.changeGameState();
+        CameraSystem.instance.changeCameraModeTalking();
+        yield return new WaitForSecondsRealtime(5);
+
+        GameSystem.instance.changeGameState();
+
         yield return null;
     }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(transform.position, transform.localScale);
+        Gizmos.DrawWireCube(transform.position, DetectPlayerSize);
     }
 }

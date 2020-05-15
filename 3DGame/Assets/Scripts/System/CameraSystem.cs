@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraSystem : MonoBehaviour
+public class CameraSystem :Singleton<CameraSystem>
 {
     
     public enum CameraMode {
@@ -10,6 +10,8 @@ public class CameraSystem : MonoBehaviour
         talking,
         backpack 
     }
+    public GameObject DialogCanvas;
+    public GameObject PlayerDetailCanvas;
     private CameraMode cameraM;
     private GameObject player;
     private Vector3 cameraOffset;
@@ -32,11 +34,16 @@ public class CameraSystem : MonoBehaviour
     {
         if (cameraM == CameraMode.normal)
         {
+            DialogCanvas.SetActive(false);
+            PlayerDetailCanvas.SetActive(true);
             FollowPlayer();
+            
         }
         else if (cameraM == CameraMode.talking)
         {
-
+            DialogCanvas.SetActive(true);
+            PlayerDetailCanvas.SetActive(false);
+            showDialog();
         }
         else if (cameraM == CameraMode.backpack)
         {
@@ -59,11 +66,15 @@ public class CameraSystem : MonoBehaviour
         cameraM = CameraMode.normal;
     }
     private void FollowPlayer() {
+        this.GetComponent<Camera>().fieldOfView = 60;
         Vector3 newPos = player.transform.position + cameraOffset;
         transform.position = Vector3.Slerp(transform.position, newPos, SmoothFactor);
         if (lookAtPlayer) {
             transform.LookAt(player.transform);
 
         }
+    }
+    private void showDialog() {
+        this.GetComponent<Camera>().fieldOfView = 40;
     }
 }
