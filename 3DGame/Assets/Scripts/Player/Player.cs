@@ -170,4 +170,5 @@ public class Player : MonoBehaviour
         return isAttack;
     }
 	public void SetSpeed(float speed){ Speed = speed;}
+    public float GetSpeed() { return Speed; }
 }
