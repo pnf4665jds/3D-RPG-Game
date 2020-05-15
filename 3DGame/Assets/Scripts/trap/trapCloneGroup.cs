@@ -8,7 +8,6 @@ public class trapCloneGroup :trapGroup
     public GameObject trapPref;
     private GameObject trapClone;
     public bool loop ;
-    private bool stopShoot = false;
     public bool isShoot;
     private Vector3 createPos;
     public float shootDistance;

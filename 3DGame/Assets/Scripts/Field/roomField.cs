@@ -6,7 +6,7 @@ public class roomField : MonoBehaviour
 {
 
     public List<trapGroup> tgs = new List<trapGroup>();
-    private bool isPlayerExisted = false;
+    
 
     // Start is called before the first frame update
     public void Start()
@@ -42,7 +42,7 @@ public class roomField : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            isPlayerExisted = true;
+            
             foreach (trapGroup tg in tgs)
             {
                 tg.switchOFF();

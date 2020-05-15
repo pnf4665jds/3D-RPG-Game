@@ -5,9 +5,7 @@ using UnityEngine.UI;
 
 public class GameSystem : Singleton<GameSystem>
 {
-    public GameObject backPackUI;
-    public Camera playerCamera;
-    public Camera backPackCamera;
+
 
     private enum GameState {
         Running,

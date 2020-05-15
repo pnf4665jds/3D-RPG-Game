@@ -6,7 +6,7 @@ public class ActionPunch : ActionBase
 {
     public float Damage;    // 傷害
     public GameObject Punch;
-    private bool alreadyHit = true;  // 是否已經攻擊到，防止過程中多次判定
+   
 
     // Start is called before the first frame update
     public override void Init()
