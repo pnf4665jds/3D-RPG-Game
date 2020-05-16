@@ -1,22 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class shopRobot : MonoBehaviour
 {
     // Start is called before the first frame update
     private Animator anim;
     public Vector3 DetectPlayerSize = new Vector3(1.0f, 1.0f, 1.0f);
+    public Vector3 openShopSize = new Vector3(1.0f, 1.0f, 1.0f);
+    public Sprite pressX;
+    public Sprite shop;
+    private NPC shopNPC = new NPC("Shop Robot");
     void Start()
     {
        
         anim = this.GetComponent<Animator>();
+
         
 
     }
     private void FixedUpdate()
     {
         LookAtPlayer();
+        shopOpen();
+        
     }
 
     private void LookAtPlayer() {
@@ -38,31 +46,49 @@ public class shopRobot : MonoBehaviour
         }
         else {
             anim.SetBool("Open_Anim", false);
+            anim.SetBool("Walk_Anim", false);
+        }
+    }
+    private void shopOpen()
+    {
+        Collider[] enterZone = Physics.OverlapBox(transform.position, openShopSize, transform.rotation, LayerMask.GetMask("Player"));
+        
+        if (enterZone.Length > 0 )
+        {
+            this.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = pressX;
+            if (isPressX()) {
+                anim.SetBool("Walk_Anim", false);
+                GameSystem.instance.changeModeTalking(shopNPC);
+                StartCoroutine(animFlow());
+            }
+            
+        }
+        else
+        {
+            GameSystem.instance.changeModeFollowPlayer();
+            this.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = shop;
         }
     }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            anim.SetBool("Walk_Anim", false);
-            StartCoroutine(animFlow());
+           
         }
     }
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            CameraSystem.instance.changeCameraModeFpllowPlayer();
+           
         }
     }
 
     private IEnumerator animFlow() {
         
-        GameSystem.instance.changeGameState();
-        CameraSystem.instance.changeCameraModeTalking();
+        GameSystem.instance.changeTheWorldTime(0);
         yield return new WaitForSecondsRealtime(5);
-
-        GameSystem.instance.changeGameState();
+        GameSystem.instance.changeTheWorldTime(1);
 
         yield return null;
     }
@@ -70,5 +96,19 @@ public class shopRobot : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(transform.position, DetectPlayerSize);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireCube(transform.position, openShopSize);
     }
+    public bool isPressX()
+    {
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
 }

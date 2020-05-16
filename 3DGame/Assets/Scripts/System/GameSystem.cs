@@ -6,10 +6,11 @@ using UnityEngine.UI;
 public class GameSystem : Singleton<GameSystem>
 {
 
-
-    private enum GameState {
-        Running,
-        Stopping,
+    public enum GameState
+    {
+        normal,
+        talking,
+        backpack
     }
 
     private GameState gs;
@@ -17,28 +18,44 @@ public class GameSystem : Singleton<GameSystem>
     // Start is called before the first frame update
     void Start()
     {
-        gs = GameState.Running;
+        gs = GameState.normal;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void changeModeTalking(NPC character)
     {
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            changeGameState();
-            //call the backPackUI
-        }
+
+        gs = GameState.talking;
+        CameraSystem.instance.setNPCNameInDialog(character.getName());
+        
+
+    }
+    public void changeModeBackPack()
+    {
+
+        gs = GameState.backpack;
+    }
+    public void changeModeFollowPlayer()
+    {
+
+        gs = GameState.normal;
+        
+    }
+    public bool isPlayerTalking()
+    {
+        return (gs == GameState.talking) ? true : false;
+    }
+    public bool isPlayerNormal()
+    {
+        return (gs == GameState.normal) ? true : false;
+    }
+    public bool isPlayerOpenBackPack()
+    {
+        return (gs == GameState.backpack) ? true : false;
+    }
+    public void changeTheWorldTime(float timeSpeed) {
+        Time.timeScale = timeSpeed;
     }
 
-    public void changeGameState() {
-        if (gs == GameState.Running)
-        {
-            Time.timeScale = 0;
-            gs = GameState.Stopping;
-        }
-        else {
-            Time.timeScale = 1 ;
-            gs = GameState.Running;
-        }
-    }
+
 
 }

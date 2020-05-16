@@ -33,7 +33,7 @@ public class backPackUI : MonoBehaviour
     }
     private void exitBtn() {
         this.gameObject.SetActive(false);
-        GameSystem.instance.changeGameState();
+        GameSystem.instance.changeModeFollowPlayer();
     }
     private void usePotion() {
         if (potion == potionUse.health)

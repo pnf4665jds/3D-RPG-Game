@@ -290,28 +290,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2343571045003451408, guid: 8e0f285c21cdcf14e8d5c06c57ba936b,
         type: 3}
-      propertyPath: m_Constraints
-      value: 126
-      objectReference: {fileID: 0}
-    - target: {fileID: 2343571045003451408, guid: 8e0f285c21cdcf14e8d5c06c57ba936b,
-        type: 3}
       propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2150952610405088359, guid: 8e0f285c21cdcf14e8d5c06c57ba936b,
-        type: 3}
-      propertyPath: DetectPlayerSize.x
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 2150952610405088359, guid: 8e0f285c21cdcf14e8d5c06c57ba936b,
-        type: 3}
-      propertyPath: DetectPlayerSize.y
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 2150952610405088359, guid: 8e0f285c21cdcf14e8d5c06c57ba936b,
-        type: 3}
-      propertyPath: DetectPlayerSize.z
-      value: 60
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8449162448002871314, guid: 8e0f285c21cdcf14e8d5c06c57ba936b,
         type: 3}
@@ -560,7 +540,7 @@ GameObject:
   - component: {fileID: 1345769021}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

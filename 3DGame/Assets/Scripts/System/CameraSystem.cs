@@ -1,18 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CameraSystem :Singleton<CameraSystem>
 {
     
-    public enum CameraMode {
-        normal,
-        talking,
-        backpack 
-    }
+    
     public GameObject DialogCanvas;
     public GameObject PlayerDetailCanvas;
-    private CameraMode cameraM;
     private GameObject player;
     private Vector3 cameraOffset;
     [Range(0.01f, 1.0f)]
@@ -26,45 +22,32 @@ public class CameraSystem :Singleton<CameraSystem>
         player = GameObject.FindGameObjectWithTag("Player");
         cameraOffset = transform.position - player.transform.position;
 
-        cameraM = CameraMode.normal;
+        GameSystem.instance.changeModeFollowPlayer();
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void Update()
     {
-        if (cameraM == CameraMode.normal)
+        if (GameSystem.instance.isPlayerNormal())
         {
             DialogCanvas.SetActive(false);
             PlayerDetailCanvas.SetActive(true);
             FollowPlayer();
             
         }
-        else if (cameraM == CameraMode.talking)
+        else if (GameSystem.instance.isPlayerTalking())
         {
             DialogCanvas.SetActive(true);
             PlayerDetailCanvas.SetActive(false);
             showDialog();
         }
-        else if (cameraM == CameraMode.backpack)
+        else if (GameSystem.instance.isPlayerOpenBackPack())
         {
 
         }
         
     }
-    public void changeCameraModeTalking() {
-
-        cameraM = CameraMode.talking;
-    }
-    public void changeCameraModeBackPack()
-    {
-
-        cameraM = CameraMode.backpack;
-    }
-    public void changeCameraModeFpllowPlayer()
-    {
-
-        cameraM = CameraMode.normal;
-    }
+    
     private void FollowPlayer() {
         this.GetComponent<Camera>().fieldOfView = 60;
         Vector3 newPos = player.transform.position + cameraOffset;
@@ -77,4 +60,8 @@ public class CameraSystem :Singleton<CameraSystem>
     private void showDialog() {
         this.GetComponent<Camera>().fieldOfView = 40;
     }
+    public void setNPCNameInDialog(string name) {
+        DialogCanvas.transform.GetChild(0).GetChild(1).GetComponent<Text>().text = name;
+    }
+
 }
