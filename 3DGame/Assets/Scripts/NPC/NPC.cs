@@ -5,24 +5,45 @@ using UnityEngine;
 public class NPC : MonoBehaviour
 {
     // Start is called before the first frame update
-    private string NPCname;
+    public string NPCname;
+    public TextAsset TxtFile;
+    protected Animator anim;
     private List<string> contentToTalk = new List<string>();
+    
 
-    public NPC(string name) {
-        this.NPCname = name;
+    private void Start()
+    {
+
+        anim = this.GetComponent<Animator>();
+
+        if (TxtFile != null)
+        {
+            string[] subString = TxtFile.text.Split('\n');
+            foreach (string s in subString)
+            {
+                addDialog(s);
+                print(s);
+            }
+        }
+
     }
+
     public void changeName(string name) {
         this.NPCname = name;
     }
-    public void addDialog(List<string> dialog) {
+    public void addDialog(string dialog) {
 
-        contentToTalk.AddRange(dialog);
+        contentToTalk.Add(dialog);
 
     }
-    public string getDialog(int index) {
-        return contentToTalk[index];
-    }
+    
+    
+
     public string getName() {
         return NPCname;
+    }
+    public List<string> getDialog()
+    {
+        return contentToTalk;
     }
 }

@@ -3,23 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class shopRobot : MonoBehaviour
+public class shopRobot : NPC
 {
     // Start is called before the first frame update
-    private Animator anim;
+    
     public Vector3 DetectPlayerSize = new Vector3(1.0f, 1.0f, 1.0f);
     public Vector3 openShopSize = new Vector3(1.0f, 1.0f, 1.0f);
     public Sprite pressX;
     public Sprite shop;
-    private NPC shopNPC = new NPC("Shop Robot");
-    void Start()
-    {
-       
-        anim = this.GetComponent<Animator>();
-
-        
-
-    }
+    
     private void FixedUpdate()
     {
         LookAtPlayer();
@@ -56,10 +48,13 @@ public class shopRobot : MonoBehaviour
         if (enterZone.Length > 0 )
         {
             this.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = pressX;
-            if (isPressX()) {
+
+            if (Input.GetKey(KeyCode.X)) {
+
                 anim.SetBool("Walk_Anim", false);
-                GameSystem.instance.changeModeTalking(shopNPC);
-                StartCoroutine(animFlow());
+                GameSystem.instance.changeModeTalking(this);
+                //StartCoroutine(animFlow());
+
             }
             
         }
@@ -99,16 +94,6 @@ public class shopRobot : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireCube(transform.position, openShopSize);
     }
-    public bool isPressX()
-    {
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
+   
 
 }

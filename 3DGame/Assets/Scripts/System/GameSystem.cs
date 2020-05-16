@@ -23,9 +23,10 @@ public class GameSystem : Singleton<GameSystem>
 
     public void changeModeTalking(NPC character)
     {
-
+        CameraSystem.instance.setNPCName(character.getName());
+        CameraSystem.instance.setDialog(character.getDialog());
         gs = GameState.talking;
-        CameraSystem.instance.setNPCNameInDialog(character.getName());
+        
         
 
     }

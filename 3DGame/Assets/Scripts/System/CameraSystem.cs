@@ -10,7 +10,9 @@ public class CameraSystem :Singleton<CameraSystem>
     public GameObject DialogCanvas;
     public GameObject PlayerDetailCanvas;
     private GameObject player;
+    private bool canBuy;
     private Vector3 cameraOffset;
+    
     [Range(0.01f, 1.0f)]
     public float SmoothFactor = 0.5f;
     public bool lookAtPlayer = false;
@@ -21,6 +23,7 @@ public class CameraSystem :Singleton<CameraSystem>
     {
         player = GameObject.FindGameObjectWithTag("Player");
         cameraOffset = transform.position - player.transform.position;
+        canBuy = false;
 
         GameSystem.instance.changeModeFollowPlayer();
     }
@@ -30,6 +33,8 @@ public class CameraSystem :Singleton<CameraSystem>
     {
         if (GameSystem.instance.isPlayerNormal())
         {
+            DialogCanvas.GetComponent<Dialog>().setTalking(false);
+            DialogCanvas.GetComponent<Dialog>().initDialogCanvas();
             DialogCanvas.SetActive(false);
             PlayerDetailCanvas.SetActive(true);
             FollowPlayer();
@@ -40,6 +45,11 @@ public class CameraSystem :Singleton<CameraSystem>
             DialogCanvas.SetActive(true);
             PlayerDetailCanvas.SetActive(false);
             showDialog();
+            if (canBuy) {
+                //shop extend
+                print("shop extend");
+            }
+            
         }
         else if (GameSystem.instance.isPlayerOpenBackPack())
         {
@@ -50,6 +60,7 @@ public class CameraSystem :Singleton<CameraSystem>
     
     private void FollowPlayer() {
         this.GetComponent<Camera>().fieldOfView = 60;
+        
         Vector3 newPos = player.transform.position + cameraOffset;
         transform.position = Vector3.Slerp(transform.position, newPos, SmoothFactor);
         if (lookAtPlayer) {
@@ -59,9 +70,20 @@ public class CameraSystem :Singleton<CameraSystem>
     }
     private void showDialog() {
         this.GetComponent<Camera>().fieldOfView = 40;
+        DialogCanvas.GetComponent<Dialog>().setTalking(true);
+
     }
-    public void setNPCNameInDialog(string name) {
+    public void setNPCName(string name) {
         DialogCanvas.transform.GetChild(0).GetChild(1).GetComponent<Text>().text = name;
+
     }
+    public void setDialog(List<string> temp)
+    {
+        DialogCanvas.GetComponent<Dialog>().setUIDialog(temp);
+    }
+    public void canBuying(bool canBuy) {
+        this.canBuy = canBuy;
+    }
+
 
 }
