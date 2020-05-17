@@ -25,24 +25,25 @@ public class GameSystem : Singleton<GameSystem>
     public void changeModeTalking(NPC character)
     {
         gs = GameState.talking;
+        changeTheWorldTime(1);
         CameraSystem.instance.showDialog(character);
 
     }
     public void changeModeShopping()
     {
-
         gs = GameState.shopping;
     }
     public void changeModeBackPack()
     {
-
         gs = GameState.backpack;
+        changeTheWorldTime(0);
+
     }
     public void changeModeFollowPlayer()
     {
-
         gs = GameState.normal;
-        
+        changeTheWorldTime(1);
+
     }
     public bool isPlayerTalking()
     {

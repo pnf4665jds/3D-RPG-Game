@@ -36,6 +36,7 @@ public class CameraSystem :Singleton<CameraSystem>
             
             DialogCanvas.SetActive(false);
             PlayerDetailCanvas.SetActive(true);
+            PlayerDetailCanvas.transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
             FollowPlayer();
             
         }
@@ -47,6 +48,7 @@ public class CameraSystem :Singleton<CameraSystem>
         else if (GameSystem.instance.isPlayerOpenBackPack())
         {
 
+            PlayerDetailCanvas.transform.GetChild(0).GetChild(3).gameObject.SetActive(true);
         }
         
     }
