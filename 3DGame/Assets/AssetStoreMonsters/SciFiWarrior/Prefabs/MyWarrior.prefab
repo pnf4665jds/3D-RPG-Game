@@ -456,6 +456,7 @@ GameObject:
   - component: {fileID: 5058495835430281234}
   - component: {fileID: 1136138655215018244}
   - component: {fileID: 349378415412069180}
+  - component: {fileID: 2645573179626935691}
   - component: {fileID: 9055533379744192037}
   - component: {fileID: 8774236812468797484}
   - component: {fileID: 4683699850819955661}
@@ -464,6 +465,8 @@ GameObject:
   - component: {fileID: 3904294891452571286}
   - component: {fileID: 4252274960606231272}
   - component: {fileID: 3053613679511114705}
+  - component: {fileID: 9167302145544872929}
+  - component: {fileID: 5273048472649556343}
   m_Layer: 0
   m_Name: MyWarrior
   m_TagString: Boss
@@ -605,6 +608,17 @@ MonoBehaviour:
       Decider: {fileID: 3053613679511114705}
       TrueState: Idle
       FalseState: 
+    - Order: 1
+      Decider: {fileID: 9167302145544872929}
+      TrueState: Laser Shoot
+      FalseState: 
+  - StateName: Laser Shoot
+    Action: {fileID: 2645573179626935691}
+    TransList:
+    - Order: 0
+      Decider: {fileID: 5273048472649556343}
+      TrueState: Idle
+      FalseState: 
 --- !u!114 &5058495835430281234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -619,7 +633,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UseStateName: SingleShoot
   TriggerName: SingleShoot
-  Bullet: {fileID: 3338478526852509592, guid: 33327208b47ce1f4fbd2f79d7ad374ad, type: 3}
+  Bullet: {fileID: 105805403729295645, guid: f5dbb8247c8de8747973bde6eb540266, type: 3}
   ShootPosition: {fileID: 6504435582339645441}
   BulletKeepTime: 4
   ShootDelayTime: 0.3
@@ -654,7 +668,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Storing Energy
+  StoringTime: 15
+  ShootPosition: {fileID: 6504435582339645441}
   StoringObject: {fileID: 174581197432718829, guid: 934f40953986aa44abe596e44abd73e1,
+    type: 3}
+  StoringBall: {fileID: 2646840820849798491, guid: 0c31e996dcbc0a54088504ecdb70cadd,
     type: 3}
   LightningEffect: {fileID: 106988, guid: 15dec7b07032b2f4aa6f855bfbe120f7, type: 3}
   BoltPointsList:
@@ -662,6 +680,24 @@ MonoBehaviour:
     EndPos: {fileID: 4984123610755017429}
   - StartPos: {fileID: 4667454430411578948}
     EndPos: {fileID: 5463579884249970944}
+--- !u!114 &2645573179626935691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5445655434448142861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b504907f6b8b3c748b6a999fa8148b13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseStateName: Laser Shoot
+  LaserObject: {fileID: 6110940536516971060, guid: 4d5b86b6c4fd7c740aa3c55ae9b37c31,
+    type: 3}
+  ExplosionObject: {fileID: 2666541965549815239, guid: 2aabdff952015924bbc30b85c6d6df72,
+    type: 3}
+  ShootPosition: {fileID: 6504435582339645441}
 --- !u!114 &9055533379744192037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -723,7 +759,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Idle
-  DetectPauseTime: 0
+  DetectPauseTime: 50
 --- !u!114 &242781674712369224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -785,6 +821,36 @@ MonoBehaviour:
   UseStateName: Storing Energy
   DetectPauseTime: 0
   DecideHP: 2000
+--- !u!114 &9167302145544872929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5445655434448142861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d81a937f1e55ad41b8427dc77f5f7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseStateName: Storing Energy
+  DetectPauseTime: 0
+  WaitTime: 16
+--- !u!114 &5273048472649556343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5445655434448142861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d81a937f1e55ad41b8427dc77f5f7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseStateName: Laser Shoot
+  DetectPauseTime: 0
+  WaitTime: 3.2
 --- !u!1 &5445655434448142863
 GameObject:
   m_ObjectHideFlags: 0
@@ -3250,7 +3316,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6504435582339645441}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.25, y: 1.45, z: 1.6}
+  m_LocalPosition: {x: 0.25, y: 1.45, z: 1.5}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 5445655434447986221}
