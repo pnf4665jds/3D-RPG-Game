@@ -14,6 +14,6 @@ public class DeciderShieldBreak : DeciderBase
 
     public override bool Decide()
     {
-        return shield.isShieldBreak;
+        return shield.IsShieldBreak;
     }
 }

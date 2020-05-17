@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 5285189736933278439}
   m_Layer: 0
   m_Name: Main Collider
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 6212912654721045799}
   m_Layer: 0
   m_Name: BaseCollider
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -530,7 +530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34e5fea04bb708f4caa36b0ba88885ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 3000
+  MaxHP: 2001
   MoveSpeed: 10
   RotateSpeed: 5
   DeadWaitTime: 5
@@ -759,7 +759,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Idle
-  DetectPauseTime: 50
+  DetectPauseTime: 20
 --- !u!114 &242781674712369224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -773,7 +773,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Move
-  DetectPauseTime: 0
+  DetectPauseTime: 20
 --- !u!114 &3904294891452571286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -787,7 +787,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: SingleShoot
-  DetectPauseTime: 0
+  DetectPauseTime: 20
 --- !u!114 &4252274960606231272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -806,6 +806,7 @@ MonoBehaviour:
   ShieldObject: {fileID: 798299639}
   EnergyObject: {fileID: 3664237278242416461, guid: c44b1a0fa0c8c4041856f38b4fb73641,
     type: 3}
+  RecoverStateName: Idle
 --- !u!114 &3053613679511114705
 MonoBehaviour:
   m_ObjectHideFlags: 0

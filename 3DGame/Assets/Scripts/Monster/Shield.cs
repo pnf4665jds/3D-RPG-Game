@@ -7,27 +7,32 @@ public class Shield : MonoBehaviour
     // 這個Script是負責控制掛在機器人身上的防護罩
     // 破壞所有能量物件->防護罩消失
 
-    public List<Transform> Points;
+    public List<Transform> Points;      // 能量物件位置
     public GameObject ShieldObject;     // 防護罩物件
     public GameObject EnergyObject;     // 能量物件
+    public string RecoverStateName;     // 恢復能量點的狀態名稱
     public int EnergyPointNum { get; set; } = 0;
-    public bool isShieldBreak { get; set; } = false;
+    public bool IsShieldBreak { get; set; } = false;
+    //public string 
 
     private MonsterInfo info;
-    
+    private ActionController controller;
+
     private void Start()
     {
         info = GetComponent<MonsterInfo>();
+        controller = GetComponent<ActionController>();
         CreateEnergyPoint();
     }
 
     /// <summary>
     /// 創建能量點在指定位置
     /// </summary>
-    private void CreateEnergyPoint()
+    public void CreateEnergyPoint()
     {
-        isShieldBreak = false;
+        IsShieldBreak = false;
         info.isInvincible = true;
+        ShieldObject.SetActive(true);
         foreach (Transform t in Points)
         {
             GameObject energyObj = Instantiate(EnergyObject, t.position, Quaternion.identity);
@@ -49,8 +54,15 @@ public class Shield : MonoBehaviour
             yield return null;
         }
         info.isInvincible = false;
-        isShieldBreak = true;
+        IsShieldBreak = true;
         ShieldObject.SetActive(false);
+        StartCoroutine(WaitToRecoverShield());
+    }
+
+    private IEnumerator WaitToRecoverShield()
+    {
+        yield return new WaitUntil(() => controller.CurrentStateName == RecoverStateName);
+        CreateEnergyPoint();
     }
 
     /// <summary>
