@@ -50,6 +50,11 @@ public class Player : MonoBehaviour
     {
         if (isLive)
         {
+            
+            if (Input.GetKey(KeyCode.B) && GameSystem.instance.isPlayerNormal())
+            {
+                GameSystem.instance.changeModeBackPack();
+            }
             GetState();
             if (isFree)
             {
@@ -144,8 +149,12 @@ public class Player : MonoBehaviour
     }
     public void GetState()
     {
-        if(GameSystem.instance.isPlayerTalking() || GameSystem.instance.isPlayerOpenBackPack())
+        Debug.Log("Normal: " + GameSystem.instance.isPlayerNormal());
+        Debug.Log("BackPack: " + GameSystem.instance.isPlayerOpenBackPack());
+        Debug.Log("Talking: "+ GameSystem.instance.isPlayerTalking());
+        if (GameSystem.instance.isPlayerTalking() || GameSystem.instance.isPlayerOpenBackPack())
         {
+
             isFree = false;
         }
         else if (GameSystem.instance.isPlayerNormal())
@@ -190,5 +199,9 @@ public class Player : MonoBehaviour
                 ResetAnimation();
             }
         }
+    }
+    public void ResetSpeed()
+    {
+        Speed = 0;
     }
 }
