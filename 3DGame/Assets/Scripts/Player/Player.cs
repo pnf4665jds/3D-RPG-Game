@@ -51,10 +51,15 @@ public class Player : MonoBehaviour
         if (isLive)
         {
             
-            if (Input.GetKey(KeyCode.B) && GameSystem.instance.isPlayerNormal())
+            if (Input.GetKeyUp(KeyCode.B) && GameSystem.instance.isPlayerNormal())
             {
                 GameSystem.instance.changeModeBackPack();
             }
+            else if(Input.GetKeyUp(KeyCode.B) && GameSystem.instance.isPlayerOpenBackPack())
+            {
+                GameSystem.instance.changeModeFollowPlayer();
+            }
+            else
             GetState();
             if (isFree)
             {
@@ -149,9 +154,6 @@ public class Player : MonoBehaviour
     }
     public void GetState()
     {
-        Debug.Log("Normal: " + GameSystem.instance.isPlayerNormal());
-        Debug.Log("BackPack: " + GameSystem.instance.isPlayerOpenBackPack());
-        Debug.Log("Talking: "+ GameSystem.instance.isPlayerTalking());
         if (GameSystem.instance.isPlayerTalking() || GameSystem.instance.isPlayerOpenBackPack())
         {
 
