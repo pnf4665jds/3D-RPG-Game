@@ -38,17 +38,19 @@ public class CameraSystem :Singleton<CameraSystem>
             PlayerDetailCanvas.SetActive(true);
             PlayerDetailCanvas.transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
             FollowPlayer();
+            print("Normal");
             
         }
         else if (GameSystem.instance.isPlayerTalking())
         {
 
-            
+            print("Talking");
         }
         else if (GameSystem.instance.isPlayerOpenBackPack())
         {
 
-            PlayerDetailCanvas.transform.GetChild(0).GetChild(3).gameObject.SetActive(true);
+            PlayerDetailCanvas.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
+            print("BackPack");
         }
         
     }

@@ -55,12 +55,11 @@ public class shopRobot : NPC
                 GameSystem.instance.changeModeTalking(this);
 
             }
-            
-            
+
         }
         else
         {
-            GameSystem.instance.changeModeFollowPlayer();
+            
             this.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = shop;
         }
     }
