@@ -36,7 +36,7 @@ public class GameSystem : Singleton<GameSystem>
     public void changeModeBackPack()
     {
         gs = GameState.backpack;
-        changeTheWorldTime(0);
+        //changeTheWorldTime(0);
 
     }
     public void changeModeFollowPlayer()
