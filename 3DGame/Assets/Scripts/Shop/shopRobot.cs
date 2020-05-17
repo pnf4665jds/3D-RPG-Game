@@ -53,9 +53,9 @@ public class shopRobot : NPC
 
                 anim.SetBool("Walk_Anim", false);
                 GameSystem.instance.changeModeTalking(this);
-                //StartCoroutine(animFlow());
 
             }
+            
             
         }
         else
@@ -79,11 +79,10 @@ public class shopRobot : NPC
         }
     }
 
-    private IEnumerator animFlow() {
+    private IEnumerator shopping()
+    {
         
-        GameSystem.instance.changeTheWorldTime(0);
-        yield return new WaitForSecondsRealtime(5);
-        GameSystem.instance.changeTheWorldTime(1);
+        
 
         yield return null;
     }

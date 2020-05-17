@@ -33,8 +33,7 @@ public class CameraSystem :Singleton<CameraSystem>
     {
         if (GameSystem.instance.isPlayerNormal())
         {
-            DialogCanvas.GetComponent<Dialog>().setTalking(false);
-            DialogCanvas.GetComponent<Dialog>().initDialogCanvas();
+            
             DialogCanvas.SetActive(false);
             PlayerDetailCanvas.SetActive(true);
             FollowPlayer();
@@ -42,13 +41,7 @@ public class CameraSystem :Singleton<CameraSystem>
         }
         else if (GameSystem.instance.isPlayerTalking())
         {
-            DialogCanvas.SetActive(true);
-            PlayerDetailCanvas.SetActive(false);
-            showDialog();
-            if (canBuy) {
-                //shop extend
-                print("shop extend");
-            }
+
             
         }
         else if (GameSystem.instance.isPlayerOpenBackPack())
@@ -68,16 +61,22 @@ public class CameraSystem :Singleton<CameraSystem>
 
         }
     }
-    private void showDialog() {
+    public void showDialog(NPC character) {
+
+        DialogCanvas.SetActive(true);
+        PlayerDetailCanvas.SetActive(false);
         this.GetComponent<Camera>().fieldOfView = 40;
-        DialogCanvas.GetComponent<Dialog>().setTalking(true);
+        setNPCName(character.getName());
+        setDialog(character.getDialog());
+        StartCoroutine(DialogCanvas.GetComponent<Dialog>().showNPCMessage());
+        
 
     }
-    public void setNPCName(string name) {
+    private void setNPCName(string name) {
         DialogCanvas.transform.GetChild(0).GetChild(1).GetComponent<Text>().text = name;
 
     }
-    public void setDialog(List<string> temp)
+    private void setDialog(List<string> temp)
     {
         DialogCanvas.GetComponent<Dialog>().setUIDialog(temp);
     }

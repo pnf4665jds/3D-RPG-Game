@@ -10,7 +10,8 @@ public class GameSystem : Singleton<GameSystem>
     {
         normal,
         talking,
-        backpack
+        backpack,
+        shopping
     }
 
     private GameState gs;
@@ -23,12 +24,14 @@ public class GameSystem : Singleton<GameSystem>
 
     public void changeModeTalking(NPC character)
     {
-        CameraSystem.instance.setNPCName(character.getName());
-        CameraSystem.instance.setDialog(character.getDialog());
         gs = GameState.talking;
-        
-        
+        CameraSystem.instance.showDialog(character);
 
+    }
+    public void changeModeShopping()
+    {
+
+        gs = GameState.shopping;
     }
     public void changeModeBackPack()
     {
@@ -44,6 +47,10 @@ public class GameSystem : Singleton<GameSystem>
     public bool isPlayerTalking()
     {
         return (gs == GameState.talking) ? true : false;
+    }
+    public bool isPlayerShopping()
+    {
+        return (gs == GameState.shopping) ? true : false;
     }
     public bool isPlayerNormal()
     {

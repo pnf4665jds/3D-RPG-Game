@@ -8,6 +8,7 @@ public class NPC : MonoBehaviour
     public string NPCname;
     public TextAsset TxtFile;
     protected Animator anim;
+    public GameObject UICanvas; //專屬腳色的UI面板
     private List<string> contentToTalk = new List<string>();
     
 
@@ -22,7 +23,6 @@ public class NPC : MonoBehaviour
             foreach (string s in subString)
             {
                 addDialog(s);
-                print(s);
             }
         }
 
