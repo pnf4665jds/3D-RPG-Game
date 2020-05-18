@@ -46,4 +46,7 @@ public class NPC : MonoBehaviour
     {
         return contentToTalk;
     }
+    public GameObject getNPCCanvas() {
+        return UICanvas;
+    }
 }

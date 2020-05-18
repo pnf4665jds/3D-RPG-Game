@@ -8,6 +8,7 @@ public class Dialog : MonoBehaviour
     
     
     public float textSpeed;    //文字的速度
+    private GameObject UICanvas;
 
     
     private List<string> dialog = new List<string>();
@@ -30,8 +31,16 @@ public class Dialog : MonoBehaviour
                 if (index + 1 == dialog.Count)
                 {
                     this.transform.GetChild(0).GetChild(3).GetComponent<Text>().text = "按下Z鍵結束";
-                    yield return new WaitUntil(() => Input.GetKey(KeyCode.Z));
-                    isActive = false;
+                    if (UICanvas)
+                    {
+                        var canvas = Instantiate(UICanvas);
+                    }
+                    else
+                    {
+                        yield return new WaitUntil(() => Input.GetKey(KeyCode.Z));
+                        isActive = false;
+                    }
+                    
 
                 }
                 else {
@@ -49,6 +58,10 @@ public class Dialog : MonoBehaviour
     }
     public void setUIDialog(List<string> temp) {
         dialog = temp;
+    }
+    public void setUICanvas(GameObject UICanvas)
+    {
+        this.UICanvas = UICanvas;
     }
    
     

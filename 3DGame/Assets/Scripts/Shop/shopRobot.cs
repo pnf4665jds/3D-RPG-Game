@@ -53,7 +53,6 @@ public class shopRobot : NPC
 
                 anim.SetBool("Walk_Anim", false);
                 GameSystem.instance.changeModeTalking(this);
-
             }
 
         }

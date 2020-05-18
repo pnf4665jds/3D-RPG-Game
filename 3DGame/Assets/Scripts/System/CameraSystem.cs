@@ -72,6 +72,7 @@ public class CameraSystem :Singleton<CameraSystem>
         this.GetComponent<Camera>().fieldOfView = 40;
         setNPCName(character.getName());
         setDialog(character.getDialog());
+        if (character.UICanvas) { setNPCCanvas(character.getNPCCanvas()); }
         StartCoroutine(DialogCanvas.GetComponent<Dialog>().showNPCMessage());
         
 
@@ -83,6 +84,9 @@ public class CameraSystem :Singleton<CameraSystem>
     private void setDialog(List<string> temp)
     {
         DialogCanvas.GetComponent<Dialog>().setUIDialog(temp);
+    }
+    private void setNPCCanvas(GameObject canvas) {
+        DialogCanvas.GetComponent<Dialog>().setUICanvas(canvas);
     }
     public void canBuying(bool canBuy) {
         this.canBuy = canBuy;

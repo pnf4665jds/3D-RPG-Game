@@ -1,0 +1,46 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class shopUI : MonoBehaviour
+{
+    public TextAsset stregnthDetail;
+    public TextAsset healthDetail;
+    public TextAsset manaDetail;
+    public Button strength;
+    public Button health;
+    public Button mana;
+    public Button Buy;
+    private void Start()
+    {
+        this.transform.GetChild(0).GetChild(3).GetComponentInChildren<Text>().text = "歡迎光臨，請問需要購買什麼";
+        this.transform.GetChild(0).GetChild(4).GetComponentInChildren<Text>().text = "來買來買 ! ! !";
+        Buy.gameObject.SetActive(false);
+    }
+    private void Update()
+    {
+        strength.onClick.AddListener(clickStrength);
+        health.onClick.AddListener(clickHealth);
+        mana.onClick.AddListener(clickMana);
+
+    }
+    private void clickStrength() {
+        this.transform.GetChild(0).GetChild(3).GetComponentInChildren<Text>().text = stregnthDetail.text;
+        this.transform.GetChild(0).GetChild(4).GetComponentInChildren<Text>().text = "喔喔 !!!  這個可能比較貴，一次要10000塊錢 (ﾟ3ﾟ)～♪";
+        Buy.gameObject.SetActive(true);
+    }
+    private void clickHealth()
+    {
+        this.transform.GetChild(0).GetChild(3).GetComponentInChildren<Text>().text = healthDetail.text;
+        this.transform.GetChild(0).GetChild(4).GetComponentInChildren<Text>().text = "喔喔 !!!  這個有時會放在寶箱裡，一瓶要1000塊錢 (ﾟ3ﾟ)～♪";
+        Buy.gameObject.SetActive(true);
+    }
+    private void clickMana()
+    {
+        this.transform.GetChild(0).GetChild(3).GetComponentInChildren<Text>().text = manaDetail.text;
+        this.transform.GetChild(0).GetChild(4).GetComponentInChildren<Text>().text = "喔喔 !!!  這個有時會放在寶箱裡，一瓶要2000塊錢 (ﾟ3ﾟ)～♪";
+        Buy.gameObject.SetActive(true);
+    }
+
+}
