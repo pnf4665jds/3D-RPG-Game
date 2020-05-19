@@ -10,6 +10,7 @@ public class GameSceneManager : Singleton<GameSceneManager>
     public List<Action> ActionOnCompleted { get; private set; }
 
     private GameObject player;
+    private GameObject mainCamera;
 
     public override void Awake()
     {
@@ -34,14 +35,17 @@ public class GameSceneManager : Singleton<GameSceneManager>
         if(scene.name == "GamePlayScene")        // GamePlayScene
         {
             player = FindObjectOfType<Player>().gameObject;
+            mainCamera = FindObjectOfType<Camera>().gameObject;
         }
         else if(scene.name == "LoadingScene")     // LoadingScene
         {
             player.SetActive(false);
+            mainCamera.SetActive(false);
         }
         else
         {
             player.SetActive(true);
+            mainCamera.SetActive(true);
         }
     }
 }
