@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class Player : MonoBehaviour
 {
@@ -6,6 +7,7 @@ public class Player : MonoBehaviour
     public bool isAttack;
     public bool isMove;
     public bool isDie;
+    public bool UseSkill;
     private bool isLive;
     private bool isFree;
     private bool isChangeState;
@@ -40,6 +42,7 @@ public class Player : MonoBehaviour
         isAttack = false;
         isMove = false;
         isDie = false;
+        UseSkill = false;
         Speed = 0;
         ATK = 50;
         isFree = true;
@@ -171,6 +174,7 @@ public class Player : MonoBehaviour
             {
                 isMove = true;
                 transform.Translate(Vector3.forward * Speed * Time.deltaTime);
+                //Cc.SimpleMove(transform.forward * Speed * Time.deltaTime);
                 Playerani.SetBool("isMove", isMove);
             }
             if (Input.GetKey(KeyCode.D))
@@ -187,6 +191,12 @@ public class Player : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.W))
             {
                 ResetAnimation();
+            }
+            if (Input.GetKeyUp(KeyCode.S))
+            {
+                UseSkill = true;
+                Playerani.SetBool("UseSkill",UseSkill);
+                StartCoroutine(ResetUseSkill());
             }
         }
     }
@@ -250,5 +260,12 @@ public class Player : MonoBehaviour
     public void SetNPC(NPC Person)
     {
         npc = Person;
+    }
+    public IEnumerator ResetUseSkill()
+    {
+        yield return new WaitForSeconds(0.5f);
+        UseSkill = false;
+        Playerani.SetBool("UseSkill", UseSkill);
+
     }
 }

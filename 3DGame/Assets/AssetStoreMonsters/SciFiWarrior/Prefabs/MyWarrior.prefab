@@ -464,9 +464,10 @@ GameObject:
   - component: {fileID: 242781674712369224}
   - component: {fileID: 3904294891452571286}
   - component: {fileID: 4252274960606231272}
-  - component: {fileID: 3053613679511114705}
   - component: {fileID: 9167302145544872929}
   - component: {fileID: 5273048472649556343}
+  - component: {fileID: 4007145128083157260}
+  - component: {fileID: 7404377258790962695}
   m_Layer: 0
   m_Name: MyWarrior
   m_TagString: Boss
@@ -530,7 +531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34e5fea04bb708f4caa36b0ba88885ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 2001
+  MaxHP: 1500
   MoveSpeed: 10
   RotateSpeed: 5
   DeadWaitTime: 5
@@ -605,8 +606,8 @@ MonoBehaviour:
     Action: {fileID: 349378415412069180}
     TransList:
     - Order: 0
-      Decider: {fileID: 3053613679511114705}
-      TrueState: Idle
+      Decider: {fileID: 4007145128083157260}
+      TrueState: Recover Shield
       FalseState: 
     - Order: 1
       Decider: {fileID: 9167302145544872929}
@@ -617,6 +618,13 @@ MonoBehaviour:
     TransList:
     - Order: 0
       Decider: {fileID: 5273048472649556343}
+      TrueState: Idle
+      FalseState: 
+  - StateName: Recover Shield
+    Action: {fileID: 0}
+    TransList:
+    - Order: 0
+      Decider: {fileID: 7404377258790962695}
       TrueState: Idle
       FalseState: 
 --- !u!114 &5058495835430281234
@@ -761,7 +769,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Idle
-  DetectPauseTime: 20
+  DetectPauseTime: 50
 --- !u!114 &242781674712369224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -775,7 +783,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Move
-  DetectPauseTime: 20
+  DetectPauseTime: 50
 --- !u!114 &3904294891452571286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -789,7 +797,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: SingleShoot
-  DetectPauseTime: 20
+  DetectPauseTime: 50
 --- !u!114 &4252274960606231272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -810,23 +818,8 @@ MonoBehaviour:
     type: 3}
   RespawnEffect: {fileID: 6458634961833599019, guid: d3669c1e16852344d9d8d5a6eebb4066,
     type: 3}
-  RecoverStateName: Idle
+  RecoverStateName: Recover Shield
   CreateDelay: 2
---- !u!114 &3053613679511114705
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5445655434448142861}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c0ecd4d0816db6418cf321ebdb6c9de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UseStateName: Storing Energy
-  DetectPauseTime: 0
-  DecideHP: 2000
 --- !u!114 &9167302145544872929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -857,6 +850,39 @@ MonoBehaviour:
   UseStateName: Laser Shoot
   DetectPauseTime: 0
   WaitTime: 5
+--- !u!114 &4007145128083157260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5445655434448142861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5470abe64f6671a43b828fd424dd3162, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseStateName: Storing Energy
+  DetectPauseTime: 0
+  DecideHP: 0
+  DeciderHPList:
+  - 1000
+  - 500
+--- !u!114 &7404377258790962695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5445655434448142861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d81a937f1e55ad41b8427dc77f5f7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseStateName: Recover Shield
+  DetectPauseTime: 0
+  WaitTime: 3
 --- !u!1 &5445655434448142863
 GameObject:
   m_ObjectHideFlags: 0

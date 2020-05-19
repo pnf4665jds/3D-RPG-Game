@@ -2258,7 +2258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34e5fea04bb708f4caa36b0ba88885ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 1000
+  MaxHP: 1300
   MoveSpeed: 10
   RotateSpeed: 5
   DeadWaitTime: 5
@@ -2378,7 +2378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Attack2
-  Damage: 10
+  Damage: 50
   TriggerName: JumpAttack
   ShowInScene: 1
   DamageAreaCenter: {x: 0, y: 1.4, z: 20}
@@ -2403,7 +2403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Attack3
-  Damage: 0
+  Damage: 20
   TriggerName: RotateAttack
   ShowInScene: 1
   DamageAreaCenter: {x: 0, y: 0, z: 0}

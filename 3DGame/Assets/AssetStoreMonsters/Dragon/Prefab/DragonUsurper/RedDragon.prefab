@@ -3411,7 +3411,7 @@ MonoBehaviour:
   MoveSpeed: 5
   RotateSpeed: 5
   DeadWaitTime: 5
-  CoinSum: 1600
+  CoinSum: 1500
   mainCollider: {fileID: 1296688923467251572}
   Offset: 5
 --- !u!114 &3037743098562945565

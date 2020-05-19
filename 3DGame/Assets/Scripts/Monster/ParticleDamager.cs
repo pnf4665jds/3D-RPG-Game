@@ -19,15 +19,17 @@ public class ParticleDamager : MonoBehaviour
         finalDamage = damage;
     }
 
+    // 粒子系統是Collider
     private void OnParticleCollision(GameObject other)
     {
         other.GetComponent<Player>().GetHurt(finalDamage);
-        Debug.Log(other.gameObject.GetComponent<Player>().GetCurHP());
+        //Debug.Log(other.gameObject.GetComponent<Player>().GetCurHP());
     }
 
+    // 粒子系統是Trigger
     private void OnParticleTrigger()
     {
         player.GetHurt(finalDamage);
-        Debug.Log(player.GetCurHP());
+        //Debug.Log(player.GetCurHP());
     }
 }
