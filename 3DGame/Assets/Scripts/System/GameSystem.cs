@@ -26,7 +26,8 @@ public class GameSystem : Singleton<GameSystem>
     {
         gs = GameState.talking;
         changeTheWorldTime(1);
-        CameraSystem.instance.showDialog(character);
+        UISystem.instance.changeToTalkingMode(character);
+
 
     }
     public void changeModeShopping()

@@ -52,7 +52,12 @@ public class shopRobot : NPC
             if (Input.GetKey(KeyCode.X)) {
 
                 anim.SetBool("Walk_Anim", false);
-                GameSystem.instance.changeModeTalking(this);
+                if (GameSystem.instance.isPlayerNormal()) {
+                    //GameSystem.instance.changeModeTalking(this);
+                    var player = GameObject.FindGameObjectWithTag("Player");
+                    player.GetComponent<Player>().SetNPC(this);
+                }
+                
             }
 
         }

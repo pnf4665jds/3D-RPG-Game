@@ -2517,6 +2517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NPCname: Shop Robot
   TxtFile: {fileID: 4900000, guid: 9c7204a9cb4f68640a278e66d58f89b0, type: 3}
+  UICanvas: {fileID: 0}
   DetectPlayerSize: {x: 40, y: 40, z: 40}
   openShopSize: {x: 8, y: 8, z: 8}
   pressX: {fileID: 21300000, guid: 8f435b93c4f80724bbee09fa70efd4cd, type: 3}

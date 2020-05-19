@@ -7,8 +7,7 @@ public class CameraSystem :Singleton<CameraSystem>
 {
     
     
-    public GameObject DialogCanvas;
-    public GameObject PlayerDetailCanvas;
+    
     private GameObject player;
     private bool canBuy;
     private Vector3 cameraOffset;
@@ -22,10 +21,8 @@ public class CameraSystem :Singleton<CameraSystem>
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        this.transform.position = player.transform.position + new Vector3(-1.5f, 9.4f, -11);
         cameraOffset = transform.position - player.transform.position;
-        canBuy = false;
-
-        GameSystem.instance.changeModeFollowPlayer();
     }
 
     // Update is called once per frame
@@ -34,23 +31,24 @@ public class CameraSystem :Singleton<CameraSystem>
         if (GameSystem.instance.isPlayerNormal())
         {
             
-            DialogCanvas.SetActive(false);
-            PlayerDetailCanvas.SetActive(true);
-            PlayerDetailCanvas.transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
             FollowPlayer();
             print("Normal");
-            
+
         }
         else if (GameSystem.instance.isPlayerTalking())
         {
-
+            this.GetComponent<Camera>().fieldOfView = 40;
             print("Talking");
         }
         else if (GameSystem.instance.isPlayerOpenBackPack())
         {
 
-            PlayerDetailCanvas.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
+           
             print("BackPack");
+        }
+        else if (GameSystem.instance.isPlayerShopping()) {
+
+
         }
         
     }
@@ -65,32 +63,10 @@ public class CameraSystem :Singleton<CameraSystem>
 
         }
     }
-    public void showDialog(NPC character) {
+    
+    
+    
 
-        DialogCanvas.SetActive(true);
-        PlayerDetailCanvas.SetActive(false);
-        this.GetComponent<Camera>().fieldOfView = 40;
-        setNPCName(character.getName());
-        setDialog(character.getDialog());
-        if (character.UICanvas) { setNPCCanvas(character.getNPCCanvas()); }
-        StartCoroutine(DialogCanvas.GetComponent<Dialog>().showNPCMessage());
-        
-
-    }
-    private void setNPCName(string name) {
-        DialogCanvas.transform.GetChild(0).GetChild(1).GetComponent<Text>().text = name;
-
-    }
-    private void setDialog(List<string> temp)
-    {
-        DialogCanvas.GetComponent<Dialog>().setUIDialog(temp);
-    }
-    private void setNPCCanvas(GameObject canvas) {
-        DialogCanvas.GetComponent<Dialog>().setUICanvas(canvas);
-    }
-    public void canBuying(bool canBuy) {
-        this.canBuy = canBuy;
-    }
 
 
 }
