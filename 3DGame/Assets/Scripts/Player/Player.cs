@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     private float MP;
     private float ATK;
     private float FrameCount;
+    private NPC npc;
 
 
     private Vector3 MouseStartPos; 
@@ -203,6 +204,12 @@ public class Player : MonoBehaviour
                 isChangeState = true;
                 return;
             }
+            else if(Input.GetKeyUp(KeyCode.X) && npc != null)
+            {
+                GameSystem.instance.changeModeTalking(npc);
+                isChangeState = true;
+                return;
+            }
             FrameCount++;
             SpeedChange(isMove);
             MouseEvent(isMove);
@@ -239,5 +246,9 @@ public class Player : MonoBehaviour
             //    return;
             //}   
         }
+    }
+    public void SetNPC(NPC Person)
+    {
+        npc = Person;
     }
 }
