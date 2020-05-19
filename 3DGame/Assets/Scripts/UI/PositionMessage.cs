@@ -39,7 +39,7 @@ public class PositionMessage : MonoBehaviour
 
         this.transform.GetChild(0).GetComponent<Text>().text = title;
         StartCoroutine(FadeMessage());
-        StartCoroutine(transMessage());
+       // StartCoroutine(transMessage());
     }
     private IEnumerator FadeMessage()
     {
@@ -48,7 +48,8 @@ public class PositionMessage : MonoBehaviour
             obj.alpha += Time.deltaTime / 4;
             yield return null;
         }
-        yield return new WaitUntil(() => toMid);
+        //yield return new WaitUntil(() => toMid);
+        yield return new WaitForSeconds(3);
         while (obj.alpha > 0)
         {
             

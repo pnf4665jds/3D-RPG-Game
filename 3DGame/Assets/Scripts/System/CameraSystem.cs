@@ -72,7 +72,7 @@ public class CameraSystem :Singleton<CameraSystem>
     }
     private void detectWall() {
         RaycastHit hit;
-        if (Physics.Linecast(player.transform.position+Vector3.up , transform.position, out hit))
+        if (Physics.Linecast(player.transform.position+Vector3.up , transform.position, out hit, LayerMask.GetMask("Terrain") ))
         {
             if (hit.collider.gameObject.tag != "MainCamera") {
                 float currentDistance = Vector3.Distance(hit.point, player.transform.position);
