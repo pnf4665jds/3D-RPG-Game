@@ -20,7 +20,7 @@ public class ActionLaser : ActionBase
     {
         target = GameObject.FindWithTag("Player");
         laserObject = Instantiate(LaserObject, ShootPosition.transform.position, Quaternion.identity);
-        laserObject.AddComponent<ParticleDamager>().SetValue(gameObject, Damage);
+        laserObject.AddComponent<ParticleDamager>().SetValue(gameObject, Damage * monsterInfo.AttackBuffRate);
         explosionObject = Instantiate(ExplosionObject, ShootPosition.transform.position, Quaternion.identity, transform);
         laserParticleSystem = laserObject.GetComponent<ParticleSystem>();
         isFinished = false;

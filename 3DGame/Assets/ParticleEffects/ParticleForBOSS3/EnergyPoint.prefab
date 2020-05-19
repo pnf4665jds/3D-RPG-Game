@@ -92,7 +92,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3664237278242416461}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -114,6 +114,7 @@ MonoBehaviour:
   RotateSpeed: 0
   DeadWaitTime: 0
   CoinSum: 0
+  AttackBuffRate: 1
   mainCollider: {fileID: 3664237278242416460}
   Offset: 0
 --- !u!54 &-1851165728141628827

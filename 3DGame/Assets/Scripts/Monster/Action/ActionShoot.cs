@@ -7,6 +7,7 @@ public class ActionShoot : ActionBase
     public string TriggerName;
     public GameObject Bullet;   // 發射的子彈物件
     public GameObject ShootPosition;    // 發射口位置
+    public float BulletDamage;      // 子彈傷害
     public float BulletKeepTime;    // 子彈持續時間
     public float ShootDelayTime;    // 射擊延遲時間
     public int BulletNum;           // 射擊數量
@@ -39,6 +40,7 @@ public class ActionShoot : ActionBase
             animator.SetTrigger(TriggerName);
             yield return new WaitForSeconds(ShootDelayTime);
             GameObject bullet = Instantiate(Bullet, ShootPosition.transform.position, Quaternion.identity);
+            bullet.GetComponent<BulletBase>().SetValue(gameObject, BulletDamage);
             Destroy(bullet, BulletKeepTime);
             yield return new WaitForSeconds(ShootDeltaTime);
         }

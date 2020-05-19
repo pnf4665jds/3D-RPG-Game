@@ -32,15 +32,15 @@ public class Shield : MonoBehaviour
     /// </summary>
     public IEnumerator CreateEnergyPoint()
     {
+        IsShieldBreak = false;
+        info.isInvincible = true;
+        ShieldObject.SetActive(true);
         foreach (Transform t in Points)
         {
             GameObject effectObj = Instantiate(RespawnEffect, t.position, Quaternion.identity);
             Destroy(effectObj, 6);
         }
         yield return new WaitForSeconds(CreateDelay);
-        IsShieldBreak = false;
-        info.isInvincible = true;
-        ShieldObject.SetActive(true);
         foreach (Transform t in Points)
         {
             GameObject energyObj = Instantiate(EnergyObject, t.position, Quaternion.identity);

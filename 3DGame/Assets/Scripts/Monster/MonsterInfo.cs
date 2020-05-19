@@ -13,6 +13,7 @@ public class MonsterInfo : MonoBehaviour
     public Vector3 InitPosition { get; private set; }   // 怪物的初始位置
     public Quaternion InitRotation { get; private set; }    // 怪物的初始旋轉
     public Vector3 FieldCenter { get; private set; }    // 活動領域中心座標
+    public float AttackBuffRate = 1;        // 攻擊強化倍率
     public float FieldRadius { get; private set; }      // 活動領域半徑
     public bool isGrounded { get; private set; } = false;   // 是否著地
     public bool isDead { get; private set; } = false;   // 是否死亡

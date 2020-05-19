@@ -54,6 +54,7 @@ public class ActionController : MonoBehaviour
     /// <param name="newState"></param>
     public void ChangeState(string newStateName)
     {
+        ExitAllDeciderInState();
         CurrentStateName = newStateName;
         foreach (State s in StateList)
         {
@@ -76,5 +77,13 @@ public class ActionController : MonoBehaviour
     public void InitAllDecider()
     {
         StateList.ForEach(s => s.TransList.ForEach(t => t.Decider.Init()));
+    }
+
+    /// <summary>
+    /// 呼叫目前這個State中所有Decider的Exit()
+    /// </summary>
+    public void ExitAllDeciderInState()
+    {
+        currentState?.TransList.ForEach(t => t.Decider.Exit());
     }
 }

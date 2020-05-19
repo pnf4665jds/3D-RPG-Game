@@ -16,7 +16,7 @@ public class DeciderUnderHealthPlus : DeciderUnderHealth
 
     public override bool Decide()
     {
-        if (monsterInfo.CurrentHP <= DecideHP && level < DeciderHPList.Count)
+        if (monsterInfo.CurrentHP <= DecideHP && level < DeciderHPList.Count - 1)
         {
             level++;
             DecideHP = DeciderHPList[level];

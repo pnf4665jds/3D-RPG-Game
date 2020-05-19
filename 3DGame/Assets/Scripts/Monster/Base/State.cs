@@ -33,7 +33,6 @@ public class State
                 if (t.TrueState != "" && t.Decider.IsPauseTimeFin() && !hasEval)
                 {
                     hasEval = true;
-                    t.Decider.Exit();
                     controller.ChangeState(t.TrueState);
                 }
             }
@@ -43,7 +42,6 @@ public class State
                 if (t.FalseState != "" && t.Decider.IsPauseTimeFin() && !hasEval)
                 {
                     hasEval = true;
-                    t.Decider.Exit();
                     controller.ChangeState(t.FalseState);
                 }
             }

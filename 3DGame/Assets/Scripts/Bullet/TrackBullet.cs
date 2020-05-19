@@ -2,24 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrackBullet : MonoBehaviour
+public class TrackBullet : BulletBase
 {
-    public float Damage;
     public GameObject Effect;
-    public float MaxSpeed;
 
-    private GameObject shooter;  // 發射者
-    private GameObject player;
     private float speed;
     private float timer = 0;
-
-    private void Start()
-    {
-        shooter = FindObjectOfType<ActionShoot>().gameObject;
-        player = GameObject.FindWithTag("Player");
-        speed = MaxSpeed * 0.5f;
-        StartCoroutine(Shoot());
-    }
 
     private void Update()
     {
@@ -27,17 +15,13 @@ public class TrackBullet : MonoBehaviour
             speed += MaxSpeed * 0.005f;
     }
 
-    private void OnTriggerEnter(Collider other)
+    protected override void Init()
     {
-        if (other.gameObject.tag == "Player")
-        {
-            other.gameObject.GetComponent<Player>().GetHurt(Damage);
-            
-            Destroy(gameObject);
-        }
+        speed = MaxSpeed * 0.5f;
+        base.Init();
     }
 
-    private IEnumerator Shoot()
+    protected override IEnumerator Shoot()
     {
         while (timer <= 0.5f)
         {
