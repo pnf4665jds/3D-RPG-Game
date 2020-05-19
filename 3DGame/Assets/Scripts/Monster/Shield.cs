@@ -10,7 +10,9 @@ public class Shield : MonoBehaviour
     public List<Transform> Points;      // 能量物件位置
     public GameObject ShieldObject;     // 防護罩物件
     public GameObject EnergyObject;     // 能量物件
+    public GameObject RespawnEffect;
     public string RecoverStateName;     // 恢復能量點的狀態名稱
+    public float CreateDelay;           // 產生能量點的延遲
     public int EnergyPointNum { get; set; } = 0;
     public bool IsShieldBreak { get; set; } = false;
     //public string 
@@ -22,14 +24,20 @@ public class Shield : MonoBehaviour
     {
         info = GetComponent<MonsterInfo>();
         controller = GetComponent<ActionController>();
-        CreateEnergyPoint();
+        StartCoroutine(CreateEnergyPoint());
     }
 
     /// <summary>
     /// 創建能量點在指定位置
     /// </summary>
-    public void CreateEnergyPoint()
+    public IEnumerator CreateEnergyPoint()
     {
+        foreach (Transform t in Points)
+        {
+            GameObject effectObj = Instantiate(RespawnEffect, t.position, Quaternion.identity);
+            Destroy(effectObj, 6);
+        }
+        yield return new WaitForSeconds(CreateDelay);
         IsShieldBreak = false;
         info.isInvincible = true;
         ShieldObject.SetActive(true);
@@ -59,10 +67,14 @@ public class Shield : MonoBehaviour
         StartCoroutine(WaitToRecoverShield());
     }
 
+    /// <summary>
+    /// 等待BOSS到特定狀態後護盾恢復
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator WaitToRecoverShield()
     {
         yield return new WaitUntil(() => controller.CurrentStateName == RecoverStateName);
-        CreateEnergyPoint();
+        StartCoroutine(CreateEnergyPoint());
     }
 
     /// <summary>

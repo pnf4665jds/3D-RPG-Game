@@ -7,29 +7,35 @@ public class ActionLaser : ActionBase
     public GameObject LaserObject;      // 雷射特效
     public GameObject ExplosionObject;  // 噴發特效
     public GameObject ShootPosition;
+    public float LaserKeepTime;
+    public float Damage;
 
     private GameObject target;
     private GameObject laserObject;
     private GameObject explosionObject;
     private ParticleSystem laserParticleSystem;
+    private bool isFinished;
 
     public override void Init()
     {
         target = GameObject.FindWithTag("Player");
         laserObject = Instantiate(LaserObject, ShootPosition.transform.position, Quaternion.identity);
-        explosionObject = Instantiate(ExplosionObject, ShootPosition.transform.position, Quaternion.identity);
+        laserObject.AddComponent<ParticleDamager>().SetValue(gameObject, Damage);
+        explosionObject = Instantiate(ExplosionObject, ShootPosition.transform.position, Quaternion.identity, transform);
         laserParticleSystem = laserObject.GetComponent<ParticleSystem>();
+        isFinished = false;
+        StartCoroutine(LaserDestroy());
     }
 
     public override void Process()
     {
-        ShootPlayer();
+        if(!isFinished)
+            ShootPlayer();
     }
 
     public override void Exit()
     {
-        Destroy(laserObject);
-        Destroy(explosionObject);
+        
     }
 
     private void ShootPlayer()
@@ -47,5 +53,13 @@ public class ActionLaser : ActionBase
         }
 
         laserParticleSystem.SetParticles(particles, count);
+    }
+
+    private IEnumerator LaserDestroy()
+    {
+        yield return new WaitForSeconds(LaserKeepTime);
+        isFinished = true;
+        Destroy(laserObject);
+        Destroy(explosionObject);
     }
 }

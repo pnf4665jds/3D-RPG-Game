@@ -483,7 +483,7 @@ Transform:
   m_GameObject: {fileID: 5445655434448142861}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 23.1, y: 0, z: 39.87}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_Children:
   - {fileID: 5445655434447986287}
   - {fileID: 5445655434447986275}
@@ -698,6 +698,8 @@ MonoBehaviour:
   ExplosionObject: {fileID: 2666541965549815239, guid: 2aabdff952015924bbc30b85c6d6df72,
     type: 3}
   ShootPosition: {fileID: 6504435582339645441}
+  LaserKeepTime: 4
+  Damage: 0.4
 --- !u!114 &9055533379744192037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -806,7 +808,10 @@ MonoBehaviour:
   ShieldObject: {fileID: 798299639}
   EnergyObject: {fileID: 3664237278242416461, guid: c44b1a0fa0c8c4041856f38b4fb73641,
     type: 3}
+  RespawnEffect: {fileID: 6458634961833599019, guid: d3669c1e16852344d9d8d5a6eebb4066,
+    type: 3}
   RecoverStateName: Idle
+  CreateDelay: 2
 --- !u!114 &3053613679511114705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -851,7 +856,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UseStateName: Laser Shoot
   DetectPauseTime: 0
-  WaitTime: 3.2
+  WaitTime: 5
 --- !u!1 &5445655434448142863
 GameObject:
   m_ObjectHideFlags: 0
