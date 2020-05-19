@@ -7,8 +7,8 @@ public class Player : MonoBehaviour
     public bool isMove;
     public bool isDie;
     private bool isLive;
-    private bool isSetMousePos;
     private bool isFree;
+    private bool isChangeState;
 
     public float MaxSpeed = 12;
     [SerializeField] private float Speed;
@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     private float MP;
     private float ATK;
     private float FrameCount;
+
 
     private Vector3 MouseStartPos; 
     private GameObject PositionUI;
@@ -35,13 +36,13 @@ public class Player : MonoBehaviour
         CurrentHP = MaxHP;
         MP = MaxMP;
         isLive = true;
-        isSetMousePos = false;
         isAttack = false;
         isMove = false;
         isDie = false;
         Speed = 0;
         ATK = 50;
         isFree = true;
+        isChangeState = false;
         FrameCount = 0;
     }
 
@@ -50,25 +51,11 @@ public class Player : MonoBehaviour
     {
         if (isLive)
         {
-            
-            if (Input.GetKeyUp(KeyCode.B) && GameSystem.instance.isPlayerNormal())
-            {
-                GameSystem.instance.changeModeBackPack();
-            }
-            else if(Input.GetKeyUp(KeyCode.B) && GameSystem.instance.isPlayerOpenBackPack())
-            {
-                GameSystem.instance.changeModeFollowPlayer();
-            }
-            else
-            GetState();
-            if (isFree)
-            {
-                FrameCount++;
-                SpeedChange(isMove);
-                MouseEvent(isMove);
-                KeyboardEvent(isAttack);
-                GetRecovery(FrameCount);
-            }
+            isChangeState = false;
+            isTalking(GameSystem.instance.isPlayerTalking());
+            isShopping(GameSystem.instance.isPlayerShopping());
+            isOpenBP(GameSystem.instance.isPlayerOpenBackPack());
+            isNormal(GameSystem.instance.isPlayerNormal());
         }
     }
     public void GetHurt(float damage) {
@@ -205,5 +192,52 @@ public class Player : MonoBehaviour
     public void ResetSpeed()
     {
         Speed = 0;
+    }
+    public void isNormal(bool state)
+    {
+        if (state && !isChangeState)
+        {
+            if (Input.GetKeyUp(KeyCode.B))
+            {
+                GameSystem.instance.changeModeBackPack();
+                isChangeState = true;
+                return;
+            }
+            FrameCount++;
+            SpeedChange(isMove);
+            MouseEvent(isMove);
+            KeyboardEvent(isAttack);
+            GetRecovery(FrameCount);
+        }
+    }
+    public void isTalking(bool state)
+    {
+        if (state && !isChangeState)
+        {
+
+        }
+    }
+    public void isOpenBP(bool state)
+    {
+        if (state && !isChangeState)
+        {
+            if (Input.GetKeyUp(KeyCode.B))
+            {
+                GameSystem.instance.changeModeFollowPlayer();
+                isChangeState = true;
+                return;
+            }
+        }
+    }
+    public void isShopping(bool state)
+    {
+        if (state && !isChangeState)
+        {
+            //if (Input.GetKeyUp())
+            //{
+            //    GameSystem.instance.changeModeFollowPlayer();
+            //    return;
+            //}   
+        }
     }
 }
