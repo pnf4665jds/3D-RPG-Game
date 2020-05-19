@@ -15,23 +15,28 @@ public class CameraSystem :Singleton<CameraSystem>
     [Range(0.01f, 1.0f)]
     public float SmoothFactor = 0.5f;
     public bool lookAtPlayer = false;
+    
 
     
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        this.transform.position = player.transform.position + new Vector3(-1.5f, 9.4f, -11);
-        cameraOffset = transform.position - player.transform.position;
+        
+        this.transform.position = player.transform.position;
+        transform.rotation = player.transform.rotation;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (GameSystem.instance.isPlayerNormal())
         {
             
             FollowPlayer();
+            detectWall();
             print("Normal");
 
         }
@@ -55,12 +60,29 @@ public class CameraSystem :Singleton<CameraSystem>
     
     private void FollowPlayer() {
         this.GetComponent<Camera>().fieldOfView = 60;
-        
-        Vector3 newPos = player.transform.position + cameraOffset;
-        transform.position = Vector3.Slerp(transform.position, newPos, SmoothFactor);
+        transform.rotation = player.transform.rotation;
+        transform.Rotate(30, 0, 0);
+        transform.position = player.transform.position - player.transform.TransformDirection(Vector3.forward) * 10;
+        transform.position += new Vector3(0, 10, 0);
+
         if (lookAtPlayer) {
             transform.LookAt(player.transform);
 
+        }
+    }
+    private void detectWall() {
+        RaycastHit hit;
+        if (Physics.Linecast(player.transform.position+Vector3.up , transform.position, out hit))
+        {
+            if (hit.collider.gameObject.tag != "MainCamera") {
+                float currentDistance = Vector3.Distance(hit.point, player.transform.position);
+                float cameraDistance = Vector3.Distance(transform.position, player.transform.position);
+                if (cameraDistance > currentDistance)
+                {
+                    transform.position = hit.point + new Vector3(0 , 3 , 0);
+                }
+
+            }
         }
     }
     
