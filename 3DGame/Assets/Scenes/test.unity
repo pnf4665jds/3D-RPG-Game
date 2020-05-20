@@ -293,10 +293,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 197186955}
     m_Modifications:
-    - target: {fileID: 1000013327739928, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
-      propertyPath: m_Name
-      value: Wall Tile 2x4
-      objectReference: {fileID: 0}
     - target: {fileID: 4000013224114162, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
       propertyPath: m_LocalPosition.x
       value: -47.84
@@ -344,6 +340,10 @@ PrefabInstance:
     - target: {fileID: 4000013224114162, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013327739928, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
+      propertyPath: m_Name
+      value: Wall Tile 2x4
       objectReference: {fileID: 0}
     - target: {fileID: 23000011918854088, guid: 8859acd5a81cf7c499011be8fa88d940,
         type: 3}
@@ -533,10 +533,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 197186955}
     m_Modifications:
-    - target: {fileID: 1000013327739928, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
-      propertyPath: m_Name
-      value: Wall Tile 2x4
-      objectReference: {fileID: 0}
     - target: {fileID: 4000013224114162, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15.7
@@ -580,6 +576,10 @@ PrefabInstance:
     - target: {fileID: 4000013224114162, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013327739928, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
+      propertyPath: m_Name
+      value: Wall Tile 2x4
       objectReference: {fileID: 0}
     - target: {fileID: 23000011918854088, guid: 8859acd5a81cf7c499011be8fa88d940,
         type: 3}
@@ -843,10 +843,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 197186955}
     m_Modifications:
-    - target: {fileID: 1000013327739928, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
-      propertyPath: m_Name
-      value: Wall Tile 2x4 (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 4000013224114162, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
       propertyPath: m_LocalPosition.x
       value: -48.29
@@ -894,6 +890,10 @@ PrefabInstance:
     - target: {fileID: 4000013224114162, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.96427083
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013327739928, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
+      propertyPath: m_Name
+      value: Wall Tile 2x4 (3)
       objectReference: {fileID: 0}
     - target: {fileID: 23000011918854088, guid: 8859acd5a81cf7c499011be8fa88d940,
         type: 3}
@@ -1261,10 +1261,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 197186955}
     m_Modifications:
-    - target: {fileID: 1000010937331702, guid: 4db46325c54c8af4b83e3def2790e611, type: 3}
-      propertyPath: m_Name
-      value: Wall Tile 1x1 (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 4000010835380716, guid: 4db46325c54c8af4b83e3def2790e611, type: 3}
       propertyPath: m_LocalPosition.x
       value: -20.171
@@ -1312,6 +1308,10 @@ PrefabInstance:
     - target: {fileID: 4000010835380716, guid: 4db46325c54c8af4b83e3def2790e611, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.1226217
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010937331702, guid: 4db46325c54c8af4b83e3def2790e611, type: 3}
+      propertyPath: m_Name
+      value: Wall Tile 1x1 (3)
       objectReference: {fileID: 0}
     - target: {fileID: 23000013004822720, guid: 4db46325c54c8af4b83e3def2790e611,
         type: 3}
@@ -1723,10 +1723,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 197186955}
     m_Modifications:
-    - target: {fileID: 1000013327739928, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
-      propertyPath: m_Name
-      value: Wall Tile 2x4 (8)
-      objectReference: {fileID: 0}
     - target: {fileID: 4000013224114162, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
       propertyPath: m_LocalPosition.x
       value: 23.8
@@ -1774,6 +1770,10 @@ PrefabInstance:
     - target: {fileID: 4000013224114162, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013327739928, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
+      propertyPath: m_Name
+      value: Wall Tile 2x4 (8)
       objectReference: {fileID: 0}
     - target: {fileID: 23000011918854088, guid: 8859acd5a81cf7c499011be8fa88d940,
         type: 3}
@@ -1981,10 +1981,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 197186955}
     m_Modifications:
-    - target: {fileID: 1000010937331702, guid: 4db46325c54c8af4b83e3def2790e611, type: 3}
-      propertyPath: m_Name
-      value: Wall Tile 1x1 (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 4000010835380716, guid: 4db46325c54c8af4b83e3def2790e611, type: 3}
       propertyPath: m_LocalPosition.x
       value: -20.75
@@ -2032,6 +2028,10 @@ PrefabInstance:
     - target: {fileID: 4000010835380716, guid: 4db46325c54c8af4b83e3def2790e611, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.96752703
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010937331702, guid: 4db46325c54c8af4b83e3def2790e611, type: 3}
+      propertyPath: m_Name
+      value: Wall Tile 1x1 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 23000013004822720, guid: 4db46325c54c8af4b83e3def2790e611,
         type: 3}
@@ -2264,7 +2264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1144034123514170, guid: 55847da7c65561a449ba17fb7d0a4f8b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4580579497204374, guid: 55847da7c65561a449ba17fb7d0a4f8b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2377,62 +2377,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c00c0785d59cc644bb64b247606523f6, type: 3}
---- !u!1 &458708749 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3813320116476949067, guid: b9b708d3d6ea2a54fb60f0c8d03842e9,
-    type: 3}
-  m_PrefabInstance: {fileID: 1985629622}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &458708752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 458708749}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69951987cb5473b448af35dd223b6ac7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Playerani: {fileID: 0}
-  isAttack: 0
-  isMove: 0
-  isDie: 0
-  UseSkill: 0
-  MaxSpeed: 12
-  Speed: 0
-  ATK: 0
---- !u!54 &458708753
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 458708749}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
---- !u!136 &458708754
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 458708749}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.66414213
-  m_Height: 2.105342
-  m_Direction: 1
-  m_Center: {x: -0.024876118, y: 1.0510926, z: 0}
 --- !u!1001 &460482721
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2440,10 +2384,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1767956919}
     m_Modifications:
-    - target: {fileID: 1000013598317750, guid: 605c5179c270f51458f90168a90b72a3, type: 3}
-      propertyPath: m_Name
-      value: Lantern With Orb (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 4000010863501412, guid: 605c5179c270f51458f90168a90b72a3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -53.909355
@@ -2488,6 +2428,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1000013598317750, guid: 605c5179c270f51458f90168a90b72a3, type: 3}
+      propertyPath: m_Name
+      value: Lantern With Orb (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 1517070325709411877, guid: 605c5179c270f51458f90168a90b72a3,
         type: 3}
       propertyPath: m_Color.r
@@ -2513,6 +2457,11 @@ PrefabInstance:
       propertyPath: m_Range
       value: 1.5225992
       objectReference: {fileID: 0}
+    - target: {fileID: 23000014124756176, guid: 605c5179c270f51458f90168a90b72a3,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a2f29e4244106804f8c53e9e21211539, type: 2}
     - target: {fileID: 1000010069043380, guid: 605c5179c270f51458f90168a90b72a3, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2522,11 +2471,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 23000014124756176, guid: 605c5179c270f51458f90168a90b72a3,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a2f29e4244106804f8c53e9e21211539, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 605c5179c270f51458f90168a90b72a3, type: 3}
 --- !u!4 &460482722 stripped
@@ -3171,10 +3115,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 197186955}
     m_Modifications:
-    - target: {fileID: 1000013327739928, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
-      propertyPath: m_Name
-      value: Wall Tile 2x4 (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 4000013224114162, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
       propertyPath: m_LocalPosition.x
       value: -32.6
@@ -3218,6 +3158,10 @@ PrefabInstance:
     - target: {fileID: 4000013224114162, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013327739928, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
+      propertyPath: m_Name
+      value: Wall Tile 2x4 (2)
       objectReference: {fileID: 0}
     - target: {fileID: 23000011918854088, guid: 8859acd5a81cf7c499011be8fa88d940,
         type: 3}
@@ -3973,10 +3917,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1767956919}
     m_Modifications:
-    - target: {fileID: 1000010774182382, guid: 422535b6a130b0743bc1ca47febfd435, type: 3}
-      propertyPath: m_Name
-      value: Idol 6
-      objectReference: {fileID: 0}
     - target: {fileID: 4000010777763524, guid: 422535b6a130b0743bc1ca47febfd435, type: 3}
       propertyPath: m_LocalPosition.x
       value: -48.1
@@ -4020,6 +3960,10 @@ PrefabInstance:
     - target: {fileID: 4000010777763524, guid: 422535b6a130b0743bc1ca47febfd435, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010774182382, guid: 422535b6a130b0743bc1ca47febfd435, type: 3}
+      propertyPath: m_Name
+      value: Idol 6
       objectReference: {fileID: 0}
     - target: {fileID: 23000011529738888, guid: 422535b6a130b0743bc1ca47febfd435,
         type: 3}
@@ -4511,14 +4455,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1078205019}
     m_Modifications:
-    - target: {fileID: 1000013296790728, guid: 03b0ed4871f8e8d46aab17cd9b867655, type: 3}
-      propertyPath: m_Name
-      value: Gate 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000013296790728, guid: 03b0ed4871f8e8d46aab17cd9b867655, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 4000012274991244, guid: 03b0ed4871f8e8d46aab17cd9b867655, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.7395601
@@ -4570,6 +4506,14 @@ PrefabInstance:
     - target: {fileID: 4000012274991244, guid: 03b0ed4871f8e8d46aab17cd9b867655, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.014
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013296790728, guid: 03b0ed4871f8e8d46aab17cd9b867655, type: 3}
+      propertyPath: m_Name
+      value: Gate 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013296790728, guid: 03b0ed4871f8e8d46aab17cd9b867655, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 23000011285792486, guid: 03b0ed4871f8e8d46aab17cd9b867655,
         type: 3}
@@ -4695,10 +4639,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 197186955}
     m_Modifications:
-    - target: {fileID: 1000013327739928, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
-      propertyPath: m_Name
-      value: Wall Tile 2x4 (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 4000013224114162, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
       propertyPath: m_LocalPosition.x
       value: -56
@@ -4742,6 +4682,10 @@ PrefabInstance:
     - target: {fileID: 4000013224114162, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013327739928, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
+      propertyPath: m_Name
+      value: Wall Tile 2x4 (5)
       objectReference: {fileID: 0}
     - target: {fileID: 23000011918854088, guid: 8859acd5a81cf7c499011be8fa88d940,
         type: 3}
@@ -4988,10 +4932,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 197186955}
     m_Modifications:
-    - target: {fileID: 1000013327739928, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
-      propertyPath: m_Name
-      value: Wall Tile 2x4 (10)
-      objectReference: {fileID: 0}
     - target: {fileID: 4000013224114162, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
       propertyPath: m_LocalPosition.x
       value: 23.8
@@ -5040,6 +4980,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 1.0037578
       objectReference: {fileID: 0}
+    - target: {fileID: 1000013327739928, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
+      propertyPath: m_Name
+      value: Wall Tile 2x4 (10)
+      objectReference: {fileID: 0}
     - target: {fileID: 23000011918854088, guid: 8859acd5a81cf7c499011be8fa88d940,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -5085,10 +5029,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 197186955}
     m_Modifications:
-    - target: {fileID: 1000013419234888, guid: 6cd7440ceab5bd244aad79580a2f7817, type: 3}
-      propertyPath: m_Name
-      value: Wall Tile 4x4 (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 4000013680355614, guid: 6cd7440ceab5bd244aad79580a2f7817, type: 3}
       propertyPath: m_LocalPosition.x
       value: -55.97
@@ -5136,6 +5076,10 @@ PrefabInstance:
     - target: {fileID: 4000013680355614, guid: 6cd7440ceab5bd244aad79580a2f7817, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013419234888, guid: 6cd7440ceab5bd244aad79580a2f7817, type: 3}
+      propertyPath: m_Name
+      value: Wall Tile 4x4 (2)
       objectReference: {fileID: 0}
     - target: {fileID: 23000013749870214, guid: 6cd7440ceab5bd244aad79580a2f7817,
         type: 3}
@@ -5455,10 +5399,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 197186955}
     m_Modifications:
-    - target: {fileID: 1000013327739928, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
-      propertyPath: m_Name
-      value: Wall Tile 2x4 (7)
-      objectReference: {fileID: 0}
     - target: {fileID: 4000013224114162, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
       propertyPath: m_LocalPosition.x
       value: 23.9
@@ -5502,6 +5442,10 @@ PrefabInstance:
     - target: {fileID: 4000013224114162, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013327739928, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
+      propertyPath: m_Name
+      value: Wall Tile 2x4 (7)
       objectReference: {fileID: 0}
     - target: {fileID: 23000011918854088, guid: 8859acd5a81cf7c499011be8fa88d940,
         type: 3}
@@ -5675,10 +5619,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 197186955}
     m_Modifications:
-    - target: {fileID: 1000013419234888, guid: 6cd7440ceab5bd244aad79580a2f7817, type: 3}
-      propertyPath: m_Name
-      value: Wall Tile 4x4
-      objectReference: {fileID: 0}
     - target: {fileID: 4000013680355614, guid: 6cd7440ceab5bd244aad79580a2f7817, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.01
@@ -5722,6 +5662,10 @@ PrefabInstance:
     - target: {fileID: 4000013680355614, guid: 6cd7440ceab5bd244aad79580a2f7817, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013419234888, guid: 6cd7440ceab5bd244aad79580a2f7817, type: 3}
+      propertyPath: m_Name
+      value: Wall Tile 4x4
       objectReference: {fileID: 0}
     - target: {fileID: 23000013749870214, guid: 6cd7440ceab5bd244aad79580a2f7817,
         type: 3}
@@ -8436,10 +8380,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 197186955}
     m_Modifications:
-    - target: {fileID: 1000013419234888, guid: 6cd7440ceab5bd244aad79580a2f7817, type: 3}
-      propertyPath: m_Name
-      value: Wall Tile 4x4 (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 4000013680355614, guid: 6cd7440ceab5bd244aad79580a2f7817, type: 3}
       propertyPath: m_LocalPosition.x
       value: -23.9
@@ -8484,6 +8424,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1000013419234888, guid: 6cd7440ceab5bd244aad79580a2f7817, type: 3}
+      propertyPath: m_Name
+      value: Wall Tile 4x4 (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 23000013749870214, guid: 6cd7440ceab5bd244aad79580a2f7817,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -8504,10 +8448,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 197186955}
     m_Modifications:
-    - target: {fileID: 1000013327739928, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
-      propertyPath: m_Name
-      value: Wall Tile 2x4 (9)
-      objectReference: {fileID: 0}
     - target: {fileID: 4000013224114162, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
       propertyPath: m_LocalPosition.x
       value: 23.8
@@ -8555,6 +8495,10 @@ PrefabInstance:
     - target: {fileID: 4000013224114162, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.865266
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013327739928, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
+      propertyPath: m_Name
+      value: Wall Tile 2x4 (9)
       objectReference: {fileID: 0}
     - target: {fileID: 23000011918854088, guid: 8859acd5a81cf7c499011be8fa88d940,
         type: 3}
@@ -8637,6 +8581,79 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1456789521}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1517526349
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 109968, guid: 24fa9e3e1d2eec940ad985538026a810, type: 3}
+      propertyPath: m_Name
+      value: Footman
+      objectReference: {fileID: 0}
+    - target: {fileID: 109968, guid: 24fa9e3e1d2eec940ad985538026a810, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 489874, guid: 24fa9e3e1d2eec940ad985538026a810, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -18.433264
+      objectReference: {fileID: 0}
+    - target: {fileID: 489874, guid: 24fa9e3e1d2eec940ad985538026a810, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0000056028366
+      objectReference: {fileID: 0}
+    - target: {fileID: 489874, guid: 24fa9e3e1d2eec940ad985538026a810, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.6489973
+      objectReference: {fileID: 0}
+    - target: {fileID: 489874, guid: 24fa9e3e1d2eec940ad985538026a810, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 489874, guid: 24fa9e3e1d2eec940ad985538026a810, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 489874, guid: 24fa9e3e1d2eec940ad985538026a810, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 489874, guid: 24fa9e3e1d2eec940ad985538026a810, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 489874, guid: 24fa9e3e1d2eec940ad985538026a810, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 489874, guid: 24fa9e3e1d2eec940ad985538026a810, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 489874, guid: 24fa9e3e1d2eec940ad985538026a810, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 489874, guid: 24fa9e3e1d2eec940ad985538026a810, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 489874, guid: 24fa9e3e1d2eec940ad985538026a810, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 489874, guid: 24fa9e3e1d2eec940ad985538026a810, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 489874, guid: 24fa9e3e1d2eec940ad985538026a810, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 24fa9e3e1d2eec940ad985538026a810, type: 3}
 --- !u!1001 &1518241748
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9431,10 +9448,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 197186955}
     m_Modifications:
-    - target: {fileID: 1000010937331702, guid: 4db46325c54c8af4b83e3def2790e611, type: 3}
-      propertyPath: m_Name
-      value: Wall Tile 1x1
-      objectReference: {fileID: 0}
     - target: {fileID: 4000010835380716, guid: 4db46325c54c8af4b83e3def2790e611, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12.272
@@ -9482,6 +9495,10 @@ PrefabInstance:
     - target: {fileID: 4000010835380716, guid: 4db46325c54c8af4b83e3def2790e611, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.1542891
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010937331702, guid: 4db46325c54c8af4b83e3def2790e611, type: 3}
+      propertyPath: m_Name
+      value: Wall Tile 1x1
       objectReference: {fileID: 0}
     - target: {fileID: 23000013004822720, guid: 4db46325c54c8af4b83e3def2790e611,
         type: 3}
@@ -10494,10 +10511,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 197186955}
     m_Modifications:
-    - target: {fileID: 1000013327739928, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
-      propertyPath: m_Name
-      value: Wall Tile 2x4 (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 4000013224114162, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
       propertyPath: m_LocalPosition.x
       value: -56
@@ -10545,6 +10558,10 @@ PrefabInstance:
     - target: {fileID: 4000013224114162, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.97689193
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013327739928, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
+      propertyPath: m_Name
+      value: Wall Tile 2x4 (4)
       objectReference: {fileID: 0}
     - target: {fileID: 23000011918854088, guid: 8859acd5a81cf7c499011be8fa88d940,
         type: 3}
@@ -10771,130 +10788,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 952bcdc4335844d44bdb9263c0069cc8, type: 3}
---- !u!1001 &1985629622
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3813320116476949067, guid: b9b708d3d6ea2a54fb60f0c8d03842e9,
-        type: 3}
-      propertyPath: m_Name
-      value: Footman
-      objectReference: {fileID: 0}
-    - target: {fileID: 3813320116476949067, guid: b9b708d3d6ea2a54fb60f0c8d03842e9,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2910147733357963458, guid: b9b708d3d6ea2a54fb60f0c8d03842e9,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2.852
-      objectReference: {fileID: 0}
-    - target: {fileID: 2910147733357963458, guid: b9b708d3d6ea2a54fb60f0c8d03842e9,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.97
-      objectReference: {fileID: 0}
-    - target: {fileID: 2910147733357963458, guid: b9b708d3d6ea2a54fb60f0c8d03842e9,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2910147733357963458, guid: b9b708d3d6ea2a54fb60f0c8d03842e9,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2910147733357963458, guid: b9b708d3d6ea2a54fb60f0c8d03842e9,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2910147733357963458, guid: b9b708d3d6ea2a54fb60f0c8d03842e9,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2910147733357963458, guid: b9b708d3d6ea2a54fb60f0c8d03842e9,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5821712919290764846, guid: b9b708d3d6ea2a54fb60f0c8d03842e9,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -19.790138
-      objectReference: {fileID: 0}
-    - target: {fileID: 5821712919290764846, guid: b9b708d3d6ea2a54fb60f0c8d03842e9,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.0000019073486
-      objectReference: {fileID: 0}
-    - target: {fileID: 5821712919290764846, guid: b9b708d3d6ea2a54fb60f0c8d03842e9,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -8.2469635
-      objectReference: {fileID: 0}
-    - target: {fileID: 5821712919290764846, guid: b9b708d3d6ea2a54fb60f0c8d03842e9,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5821712919290764846, guid: b9b708d3d6ea2a54fb60f0c8d03842e9,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5821712919290764846, guid: b9b708d3d6ea2a54fb60f0c8d03842e9,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5821712919290764846, guid: b9b708d3d6ea2a54fb60f0c8d03842e9,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5821712919290764846, guid: b9b708d3d6ea2a54fb60f0c8d03842e9,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5821712919290764846, guid: b9b708d3d6ea2a54fb60f0c8d03842e9,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5821712919290764846, guid: b9b708d3d6ea2a54fb60f0c8d03842e9,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5821712919290764846, guid: b9b708d3d6ea2a54fb60f0c8d03842e9,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5821712919290764846, guid: b9b708d3d6ea2a54fb60f0c8d03842e9,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5821712919290764846, guid: b9b708d3d6ea2a54fb60f0c8d03842e9,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5821712919290764846, guid: b9b708d3d6ea2a54fb60f0c8d03842e9,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b9b708d3d6ea2a54fb60f0c8d03842e9, type: 3}
 --- !u!1 &1995078851
 GameObject:
   m_ObjectHideFlags: 0
@@ -10943,10 +10836,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 197186955}
     m_Modifications:
-    - target: {fileID: 1000010937331702, guid: 4db46325c54c8af4b83e3def2790e611, type: 3}
-      propertyPath: m_Name
-      value: Wall Tile 1x1 (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 4000010835380716, guid: 4db46325c54c8af4b83e3def2790e611, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.68
@@ -10994,6 +10883,10 @@ PrefabInstance:
     - target: {fileID: 4000010835380716, guid: 4db46325c54c8af4b83e3def2790e611, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010937331702, guid: 4db46325c54c8af4b83e3def2790e611, type: 3}
+      propertyPath: m_Name
+      value: Wall Tile 1x1 (2)
       objectReference: {fileID: 0}
     - target: {fileID: 23000013004822720, guid: 4db46325c54c8af4b83e3def2790e611,
         type: 3}
@@ -11159,6 +11052,62 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2100693117}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2064432246 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 109968, guid: 24fa9e3e1d2eec940ad985538026a810,
+    type: 3}
+  m_PrefabInstance: {fileID: 1517526349}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2064432247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064432246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69951987cb5473b448af35dd223b6ac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Playerani: {fileID: 0}
+  isAttack: 0
+  isMove: 0
+  isDie: 0
+  UseSkill: 0
+  MaxSpeed: 12
+  Speed: 0
+  ATK: 0
+--- !u!54 &2064432248
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064432246}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
+--- !u!136 &2064432249
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064432246}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.66414213
+  m_Height: 2.105342
+  m_Direction: 1
+  m_Center: {x: -0.024876118, y: 1.0510926, z: 0}
 --- !u!1001 &2070049357
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11510,10 +11459,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 197186955}
     m_Modifications:
-    - target: {fileID: 1000013327739928, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
-      propertyPath: m_Name
-      value: Wall Tile 2x4 (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 4000013224114162, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.3
@@ -11557,6 +11502,10 @@ PrefabInstance:
     - target: {fileID: 4000013224114162, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013327739928, guid: 8859acd5a81cf7c499011be8fa88d940, type: 3}
+      propertyPath: m_Name
+      value: Wall Tile 2x4 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 23000011918854088, guid: 8859acd5a81cf7c499011be8fa88d940,
         type: 3}
@@ -11639,10 +11588,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1767956919}
     m_Modifications:
-    - target: {fileID: 1000013598317750, guid: 605c5179c270f51458f90168a90b72a3, type: 3}
-      propertyPath: m_Name
-      value: Lantern With Orb
-      objectReference: {fileID: 0}
     - target: {fileID: 4000010863501412, guid: 605c5179c270f51458f90168a90b72a3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -44.35886
@@ -11687,6 +11632,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1000013598317750, guid: 605c5179c270f51458f90168a90b72a3, type: 3}
+      propertyPath: m_Name
+      value: Lantern With Orb
+      objectReference: {fileID: 0}
     - target: {fileID: 1517070325709411877, guid: 605c5179c270f51458f90168a90b72a3,
         type: 3}
       propertyPath: m_Color.r
@@ -11712,6 +11661,11 @@ PrefabInstance:
       propertyPath: m_Range
       value: 1.5225992
       objectReference: {fileID: 0}
+    - target: {fileID: 23000014124756176, guid: 605c5179c270f51458f90168a90b72a3,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a2f29e4244106804f8c53e9e21211539, type: 2}
     - target: {fileID: 1000010069043380, guid: 605c5179c270f51458f90168a90b72a3, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -11721,10 +11675,5 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 23000014124756176, guid: 605c5179c270f51458f90168a90b72a3,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a2f29e4244106804f8c53e9e21211539, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 605c5179c270f51458f90168a90b72a3, type: 3}
