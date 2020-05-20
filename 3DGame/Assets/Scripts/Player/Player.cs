@@ -19,10 +19,10 @@ public class Player : MonoBehaviour
     private float MaxMP;
     private float CurrentHP;
     private float MP;
-    [SerializeField]private float ATK;
+    private float ATK;
     private float FrameCount;
     private NPC npc;
-
+    private float Cooldown;
 
     private Vector3 MouseStartPos;
     private GameObject PositionUI;
@@ -49,6 +49,7 @@ public class Player : MonoBehaviour
         isFree = true;
         isChangeState = false;
         SkillAvail = true;
+        SetCooldown();
         FrameCount = 0;
     }
 
@@ -102,13 +103,13 @@ public class Player : MonoBehaviour
     {
         return MaxMP;
     }
-    public void GetRecovery(float Count)
+    public void GetRecovery()
     {
-        if (Count > 50)
+        if (FrameCount >= 100)
         {
-            Healing(MaxHP * 0.0005f);
-            AddMP(MaxMP*0.0005f);
-            Count -= 50;
+            Healing(MaxHP * 0.01f);
+            AddMP(MaxMP*0.03f);
+            FrameCount -= 100;
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -228,7 +229,7 @@ public class Player : MonoBehaviour
             SpeedChange(isMove);
             MouseEvent(isMove);
             KeyboardEvent(isAttack);
-            GetRecovery(FrameCount);
+            GetRecovery();
         }
     }
     public void isTalking(bool state)
@@ -286,11 +287,11 @@ public class Player : MonoBehaviour
                     break;
                 case "Avelyn":
                     StartCoroutine(AvelynSkill());
-                    StartCoroutine(SkillCooldown(8));
+                    StartCoroutine(SkillCooldown());
                     break;
                 case "Footman":
                     StartCoroutine(FootmanSkill());
-                    StartCoroutine(SkillCooldown(14));
+                    StartCoroutine(SkillCooldown());
                     break;
             }
             Playerani.SetBool("UseSkill", UseSkill);
@@ -308,11 +309,11 @@ public class Player : MonoBehaviour
         ATK *= 2;
         yield return new WaitForSeconds(1);
         ATK /= 2;
-        Healing(20);
+        Healing(MaxHP/4);
     }
-    public IEnumerator SkillCooldown(int Sec)
+    public IEnumerator SkillCooldown()
     {
-        yield return new WaitForSeconds(Sec);
+        yield return new WaitForSeconds(Cooldown);
         SkillAvail = true;
     }
     public float GetSkillCost()
@@ -329,4 +330,20 @@ public class Player : MonoBehaviour
                 return 0 ;
         }
     }
+    public void SetCooldown()
+    {
+        switch (this.name)
+        {
+            case "DogPBR":
+                Cooldown = 10;
+                break;
+            case "Avelyn":
+                Cooldown = 8;
+                break;
+            case "Footman":
+                Cooldown = 14;
+                break;
+        }
+    }
+    public float GetCooldown() { return Cooldown; }
 }
