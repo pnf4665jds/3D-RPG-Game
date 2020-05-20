@@ -16,14 +16,14 @@ public class Player : MonoBehaviour
     [SerializeField] private float Speed;
     private float MaxHP;
     private float MaxMP;
-    private float CurrentHP; 
+    private float CurrentHP;
     private float MP;
-    private float ATK;
+    [SerializeField]private float ATK;
     private float FrameCount;
     private NPC npc;
 
 
-    private Vector3 MouseStartPos; 
+    private Vector3 MouseStartPos;
     private GameObject PositionUI;
 
     private void Awake()
@@ -64,7 +64,7 @@ public class Player : MonoBehaviour
     }
     public void GetHurt(float damage) {
         CurrentHP -= damage;
-        if(CurrentHP <=0)
+        if (CurrentHP <= 0)
         {
             ResetAnimation();
             isLive = false;
@@ -82,7 +82,7 @@ public class Player : MonoBehaviour
     {
         isAttack = false;
         isMove = false;
-        Playerani.SetBool("isAttack",isAttack);
+        Playerani.SetBool("isAttack", isAttack);
         Playerani.SetBool("isMove", isMove);
     }
     public float GetMaxHP()
@@ -103,7 +103,7 @@ public class Player : MonoBehaviour
     }
     public void GetRecovery(float Count)
     {
-        if(Count > 50)
+        if (Count > 50)
         {
             CurrentHP = (CurrentHP > MaxHP) ? MaxHP : (CurrentHP += MaxHP * 0.0005f);
             MP = (MP > MaxMP) ? MaxMP : (MP += MaxMP * 0.0005f);
@@ -118,7 +118,7 @@ public class Player : MonoBehaviour
         }
         else if (other.tag == "Monster")
         {
-            if(isAttack) other.gameObject.GetComponentInParent<MonsterInfo>().GetDamage(ATK);
+            if (isAttack) other.gameObject.GetComponentInParent<MonsterInfo>().GetDamage(ATK);
         }
         else if (other.tag == "Organ")
         {
@@ -134,7 +134,7 @@ public class Player : MonoBehaviour
     {
         return isAttack;
     }
-	public void SetSpeed(float speed){ Speed = speed;}
+    public void SetSpeed(float speed) { Speed = speed; }
     public float GetSpeed() { return Speed; }
     public void SetisFree(bool free) { isFree = free; }
     public bool GetisFree() { return isFree; }
@@ -157,7 +157,7 @@ public class Player : MonoBehaviour
     }
     public void MouseEvent(bool isMove)
     {
-        if (Input.GetMouseButton(0) && !isMove) SetAttack(true);            
+        if (Input.GetMouseButton(0) && !isMove) SetAttack(true);
         else if (Input.GetMouseButton(1)) this.transform.GetChild(2).transform.Rotate(-Input.GetAxis("Mouse Y"), 0, 0);
         if (Input.GetMouseButtonUp(0)) ResetAnimation();
     }
@@ -166,6 +166,7 @@ public class Player : MonoBehaviour
         this.isAttack = isAttack;
         Playerani.SetBool("isAttack", isAttack);
     }
+    public void SetATK(float num) {ATK = num;}
     public void KeyboardEvent(bool isAttack)
     {
         if (!isAttack)
@@ -194,9 +195,7 @@ public class Player : MonoBehaviour
             }
             if (Input.GetKeyUp(KeyCode.S))
             {
-                UseSkill = true;
-                Playerani.SetBool("UseSkill",UseSkill);
-                StartCoroutine(ResetUseSkill());
+                isSkilling(); 
             }
         }
     }
@@ -267,5 +266,36 @@ public class Player : MonoBehaviour
         UseSkill = false;
         Playerani.SetBool("UseSkill", UseSkill);
 
+    }
+    public void isSkilling()
+    {
+        UseSkill = true;
+        Playerani.SetBool("UseSkill", UseSkill);
+        switch (this.name)
+        {
+            case "DogPBR":
+                break;
+            case "Avelyn":
+                StartCoroutine(AvelynSkill());
+                break;
+            case "Footman":
+                StartCoroutine(FootmanSkill());
+                break;
+        }
+        Playerani.SetBool("UseSkill", UseSkill);
+        StartCoroutine(ResetUseSkill());
+    }
+    public IEnumerator FootmanSkill()
+    {
+        SetATK(75);
+        yield return new WaitForSeconds(10);
+        SetATK(50);
+    }
+    public IEnumerator AvelynSkill()
+    {
+        ATK *= 2;
+        yield return new WaitForSeconds(1);
+        ATK /= 2;
+        Healing(20);
     }
 }
