@@ -1614,7 +1614,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 15
+  m_Radius: 30
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &251162445
 MonoBehaviour:
@@ -5605,7 +5605,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 15
+  m_Radius: 20
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1128674970
 PrefabInstance:
@@ -10552,6 +10552,96 @@ PrefabInstance:
     - target: {fileID: 6824704989196837911, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3879072796684512264, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3879072796684512264, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3879072796684512264, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3879072796684512264, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3879072796684512264, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3879072796684512264, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3879072796966676062, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3879072796966676062, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3879072796966676062, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3879072796966676062, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3879072796966676062, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3879072796966676062, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3879072798097371089, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3879072798097371089, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3879072798097371089, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3879072798097371089, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3879072798097371089, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3879072798097371089, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
+        type: 3}
+      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

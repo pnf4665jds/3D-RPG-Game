@@ -468,6 +468,8 @@ GameObject:
   - component: {fileID: 5273048472649556343}
   - component: {fileID: 4007145128083157260}
   - component: {fileID: 7404377258790962695}
+  - component: {fileID: 6010466986723172504}
+  - component: {fileID: 5918445886750251367}
   m_Layer: 0
   m_Name: MyWarrior
   m_TagString: Boss
@@ -574,13 +576,17 @@ MonoBehaviour:
   - StateName: Idle
     Action: {fileID: 0}
     TransList:
-    - Order: 1
+    - Order: 2
       Decider: {fileID: 9055533379744192037}
       TrueState: Move
       FalseState: 
-    - Order: 0
+    - Order: 1
       Decider: {fileID: 7849572382076530145}
       TrueState: Storing Energy
+      FalseState: 
+    - Order: 0
+      Decider: {fileID: 6010466986723172504}
+      TrueState: Dead
       FalseState: 
   - StateName: SingleShoot
     Action: {fileID: 5058495835430281234}
@@ -607,13 +613,17 @@ MonoBehaviour:
   - StateName: Storing Energy
     Action: {fileID: 349378415412069180}
     TransList:
-    - Order: 0
+    - Order: 1
       Decider: {fileID: 4007145128083157260}
       TrueState: Recover Shield
       FalseState: 
-    - Order: 1
+    - Order: 2
       Decider: {fileID: 9167302145544872929}
       TrueState: Laser Shoot
+      FalseState: 
+    - Order: 0
+      Decider: {fileID: 5918445886750251367}
+      TrueState: Dead
       FalseState: 
   - StateName: Laser Shoot
     Action: {fileID: 2645573179626935691}
@@ -629,6 +639,9 @@ MonoBehaviour:
       Decider: {fileID: 7404377258790962695}
       TrueState: Idle
       FalseState: 
+  - StateName: Dead
+    Action: {fileID: 0}
+    TransList: []
 --- !u!114 &5058495835430281234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -887,6 +900,36 @@ MonoBehaviour:
   UseStateName: Recover Shield
   DetectPauseTime: 0
   WaitTime: 3
+--- !u!114 &6010466986723172504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5445655434448142861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c0ecd4d0816db6418cf321ebdb6c9de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseStateName: Idle
+  DetectPauseTime: 0
+  DecideHP: 0
+--- !u!114 &5918445886750251367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5445655434448142861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c0ecd4d0816db6418cf321ebdb6c9de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseStateName: Storing Energy
+  DetectPauseTime: 0
+  DecideHP: 0
 --- !u!1 &5445655434448142863
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,6 +18,7 @@ public class MonsterInfo : MonoBehaviour
     public bool isGrounded { get; private set; } = false;   // 是否著地
     public bool isDead { get; private set; } = false;   // 是否死亡
     public bool isInvincible { get; set; } = false;     // 是否無敵
+    public bool isCollideMonster { get; set; } = false; // 是否撞到其他怪物
 
     [Header("Grounded Detect")]
     public Collider mainCollider;
@@ -50,7 +51,7 @@ public class MonsterInfo : MonoBehaviour
     public void GetDamage(float value)
     {
         Debug.Log(CurrentHP);
-        if (isInvincible)
+        if (isInvincible || isDead)
             return;
         if(animator != null)
             animator.SetTrigger("Damage");  
@@ -110,6 +111,7 @@ public class MonsterInfo : MonoBehaviour
     private IEnumerator DeathAnim()
     {
         Rigidbody rigidbody = GetComponentInChildren<Rigidbody>();
+        rigidbody.velocity = Vector3.zero;
         rigidbody.isKinematic = true;
 
         if (animator != null)
@@ -117,7 +119,7 @@ public class MonsterInfo : MonoBehaviour
         yield return new WaitForSeconds(DeadWaitTime);
         DropItemSystem.instance.createMoney(transform.position, CoinSum);
 
-        // 如果是BOSS死亡，則傳遞死亡訊息給Potal
+        // 如果是BOSS死亡，則傳遞死亡訊息給Portal
         if(gameObject.tag == "Boss")
         {
             FindObjectOfType<Portal>().SetCondition(PortalCondition.BossDead, true);
@@ -131,5 +133,21 @@ public class MonsterInfo : MonoBehaviour
     private void CheckGrounded()
     {
         isGrounded = Physics.Raycast(mainCollider.bounds.center, Vector3.down, distanceToTheGround);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Monster")
+        {
+            isCollideMonster = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "Monster")
+        {
+            isCollideMonster = false;
+        }
     }
 }

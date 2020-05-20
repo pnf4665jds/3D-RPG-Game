@@ -787,8 +787,9 @@ MonoBehaviour:
   MaxHP: 600
   MoveSpeed: 2
   RotateSpeed: 2
-  DeadWaitTime: 0
+  DeadWaitTime: 3
   CoinSum: 500
+  AttackBuffRate: 1
   mainCollider: {fileID: 3823332477227898747}
   Offset: 1
 --- !u!114 &3823332478208203809

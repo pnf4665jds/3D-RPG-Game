@@ -14,6 +14,7 @@ public class ActionStoringEnergy : ActionBase
 
     private GameObject storingObject;
     private GameObject storingBall;
+    private List<GameObject> boltObjects = new List<GameObject>();
     private GameObject target;
 
     public override void Init()
@@ -26,6 +27,7 @@ public class ActionStoringEnergy : ActionBase
             LightningBoltScript lightning = Instantiate(LightningEffect).GetComponent<LightningBoltScript>();
             lightning.StartObject = points.StartPos;
             lightning.EndObject = points.EndPos;
+            boltObjects.Add(lightning.gameObject);
         }
     }
 
@@ -39,6 +41,11 @@ public class ActionStoringEnergy : ActionBase
     {
         Destroy(storingObject);
         Destroy(storingBall);
+        foreach(GameObject obj in boltObjects)
+        {
+            Destroy(obj);
+        }
+        boltObjects = new List<GameObject>();
     }
 
     private void AimTarget()

@@ -9,6 +9,7 @@ public class ActionPatrol : ActionBase
     private Vector3 initPos;
     private Vector3 targetPos;
     private bool startMove = false;
+    private bool reCalculate = false;
 
     /// <summary>
     /// 初始化
@@ -16,6 +17,7 @@ public class ActionPatrol : ActionBase
     public override void Init()
     {
         //initPos = transform.position;
+        startMove = false;
         StartCoroutine(Calculate());
     }
 
@@ -29,32 +31,27 @@ public class ActionPatrol : ActionBase
         yield return new WaitUntil(() => monsterInfo.isGrounded);
         while (true)
         {
-            // 先計算隨機的方向向量
-            Vector3 newDir = Quaternion.Euler(0, Random.Range(0, 360), 0) * new Vector3(0, 0, 1);
-            // 計算往領域中心的向量
-            Vector3 DirToInit = monsterInfo.FieldCenter - transform.position;
-            DirToInit.y = 0;
-            // 取兩向量夾角
-            float angle = Mathf.Deg2Rad * Vector3.Angle(newDir, DirToInit);
-            // 計算最終距離
-            float a = monsterInfo.GetDisToFieldCenter();
-            float b = monsterInfo.FieldRadius;
-            float c = Mathf.Pow(2 * a * Mathf.Cos(angle), 2) - 4 * (Mathf.Pow(a, 2) - Mathf.Pow(b, 2));
-            float finalLength = (2 * a * Mathf.Cos(angle) + Mathf.Sqrt(c)) / 2;
-            // 再計算最後的移動目的地 = 初始位置 + 移動向量 * 隨機變數
-            initPos = transform.position;
-            targetPos = initPos + newDir * finalLength * Random.Range(0.7f, 0.9f);
+            float theta = Random.Range(0f, 1f) * 2 * Mathf.PI;
+            float len = Random.Range(monsterInfo.FieldRadius * 0.2f, monsterInfo.FieldRadius);
+            //centerX + len * cos(theta), centerZ + len * sin(theta)
+            targetPos = new Vector3(monsterInfo.FieldCenter.x + len * Mathf.Cos(theta), transform.position.y, monsterInfo.FieldCenter.z + len * Mathf.Sin(theta));
             startMove = true;
             animator.SetBool("Walk", true);
-            yield return new WaitUntil(() => Vector3.Distance(transform.position, targetPos) < 0.5f);
-            startMove = false;
-            animator.SetBool("Walk", false);
-            yield return new WaitForSeconds(2);
+            reCalculate = false;
+            yield return CheckArrive();
+            if (!reCalculate)
+            {
+                startMove = false;
+                animator.SetBool("Walk", false);
+                yield return new WaitForSeconds(2);
+            }
         }
     }
 
     public override void Process()
     {
+        if(monsterInfo.isCollideMonster)
+            Debug.Log("Co");
         if(startMove)
             Move();
     }
@@ -74,5 +71,22 @@ public class ActionPatrol : ActionBase
     {
         animator.SetBool("Walk", false);
         StopCoroutine(Calculate());
+    }
+
+    /// <summary>
+    /// 檢查是否抵達目的地或者中途與其他怪物碰撞
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator CheckArrive()
+    {
+        while(Vector3.Distance(transform.position, targetPos) >= 0.5f)
+        {
+            if (monsterInfo.isCollideMonster)
+            {
+                reCalculate = true;
+                yield break;
+            }
+            yield return null;
+        }
     }
 }

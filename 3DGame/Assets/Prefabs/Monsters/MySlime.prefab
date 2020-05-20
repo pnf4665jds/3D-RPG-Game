@@ -161,7 +161,7 @@ MonoBehaviour:
     - Order: 3
       Decider: {fileID: 7734224744010699127}
       TrueState: 
-      FalseState: Back
+      FalseState: Patrol
     - Order: 1
       Decider: {fileID: 6990349621653779293}
       TrueState: Attack
@@ -318,6 +318,7 @@ MonoBehaviour:
   UseStateName: Attack
   DetectPauseTime: 0
   WaitTime: 1.5
+  KeepPreviousTime: 0
 --- !u!114 &5238383425548887361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,6 +334,7 @@ MonoBehaviour:
   UseStateName: Attack2
   DetectPauseTime: 0
   WaitTime: 1.5
+  KeepPreviousTime: 0
 --- !u!114 &6990349621653779293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,7 +367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Follow
-  DetectPauseTime: 3
+  DetectPauseTime: 10
   ShowInScene: 1
   IsRangeStable: 0
   DetectCenter: {x: 0, y: 0.52, z: 3.93}

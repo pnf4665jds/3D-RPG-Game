@@ -37,7 +37,7 @@ public class CameraSystem :Singleton<CameraSystem>
             
             FollowPlayer();
             detectWall();
-            print("Normal");
+            //print("Normal");
 
         }
         else if (GameSystem.instance.isPlayerTalking())

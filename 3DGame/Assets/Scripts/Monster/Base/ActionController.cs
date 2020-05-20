@@ -13,11 +13,9 @@ public class ActionController : MonoBehaviour
     public List<State> StateList;       // 狀態列表
 
     private State currentState;
-    private MonsterInfo monsterInfo;
 
     private void Awake()
     {
-        monsterInfo = GetComponent<MonsterInfo>();
         ChangeState(FirstStateName);
         OrderingList();
     }
@@ -29,7 +27,7 @@ public class ActionController : MonoBehaviour
 
     private void Update()
     {
-        if (currentState != null && !monsterInfo.isDead)
+        if (currentState != null)
         {
             currentState.Action?.Process();     // Update目前狀態的Action的Process函式
             currentState.EvalTransition();      // Update判斷是否需要切換狀態

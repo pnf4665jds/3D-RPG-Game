@@ -7,6 +7,7 @@ public class DeciderWaitTimer : DeciderBase
     // 這個Decider會在"在這個狀態中持續WaitTime秒"後回傳true，反之回傳false
 
     public float WaitTime;
+    public bool KeepPreviousTime = false;
 
     private float currentTime = 0;
 
@@ -26,6 +27,7 @@ public class DeciderWaitTimer : DeciderBase
     public override void Exit()
     {
         base.Exit();
-        currentTime = 0;
+        if(!KeepPreviousTime)
+            currentTime = 0;
     }
 }
