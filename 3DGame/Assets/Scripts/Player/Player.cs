@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     private bool isLive;
     private bool isFree;
     private bool isChangeState;
+    [SerializeField]private bool SkillAvail;
 
     public float MaxSpeed = 12;
     [SerializeField] private float Speed;
@@ -47,6 +48,7 @@ public class Player : MonoBehaviour
         ATK = 50;
         isFree = true;
         isChangeState = false;
+        SkillAvail = true;
         FrameCount = 0;
     }
 
@@ -74,8 +76,7 @@ public class Player : MonoBehaviour
     }
     public void Healing(float healing)
     {
-        CurrentHP += healing;
-        if (CurrentHP > MaxHP) CurrentHP = MaxHP;
+        CurrentHP = (CurrentHP > MaxHP) ? MaxHP : (CurrentHP += healing);
         //UI update HP
     }
     public void ResetAnimation()
@@ -105,8 +106,8 @@ public class Player : MonoBehaviour
     {
         if (Count > 50)
         {
-            CurrentHP = (CurrentHP > MaxHP) ? MaxHP : (CurrentHP += MaxHP * 0.0005f);
-            MP = (MP > MaxMP) ? MaxMP : (MP += MaxMP * 0.0005f);
+            Healing(MaxHP * 0.0005f);
+            AddMP(MaxMP*0.0005f);
             Count -= 50;
         }
     }
@@ -167,6 +168,10 @@ public class Player : MonoBehaviour
         Playerani.SetBool("isAttack", isAttack);
     }
     public void SetATK(float num) {ATK = num;}
+    public void AddMP(float num)
+    {
+        MP = (MP > MaxMP) ? MaxMP : (MP += num);
+    }
     public void KeyboardEvent(bool isAttack)
     {
         if (!isAttack)
@@ -269,21 +274,28 @@ public class Player : MonoBehaviour
     }
     public void isSkilling()
     {
-        UseSkill = true;
-        Playerani.SetBool("UseSkill", UseSkill);
-        switch (this.name)
+        if(SkillAvail && GetSkillCost() <= MP)
         {
-            case "DogPBR":
-                break;
-            case "Avelyn":
-                StartCoroutine(AvelynSkill());
-                break;
-            case "Footman":
-                StartCoroutine(FootmanSkill());
-                break;
+            AddMP(-GetSkillCost());
+            UseSkill = true;
+            SkillAvail = false;
+            Playerani.SetBool("UseSkill", UseSkill);
+            switch (this.name)
+            {
+                case "DogPBR":
+                    break;
+                case "Avelyn":
+                    StartCoroutine(AvelynSkill());
+                    StartCoroutine(SkillCooldown(8));
+                    break;
+                case "Footman":
+                    StartCoroutine(FootmanSkill());
+                    StartCoroutine(SkillCooldown(14));
+                    break;
+            }
+            Playerani.SetBool("UseSkill", UseSkill);
+            StartCoroutine(ResetUseSkill());
         }
-        Playerani.SetBool("UseSkill", UseSkill);
-        StartCoroutine(ResetUseSkill());
     }
     public IEnumerator FootmanSkill()
     {
@@ -297,5 +309,24 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(1);
         ATK /= 2;
         Healing(20);
+    }
+    public IEnumerator SkillCooldown(int Sec)
+    {
+        yield return new WaitForSeconds(Sec);
+        SkillAvail = true;
+    }
+    public float GetSkillCost()
+    {
+        switch (this.name)
+        {
+            case "DogPBR":
+                return 50;
+            case "Avelyn":
+                return 30;
+            case "Footman":
+                return 40;
+            default:
+                return 0 ;
+        }
     }
 }
