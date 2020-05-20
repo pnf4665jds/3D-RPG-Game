@@ -2263,6 +2263,7 @@ MonoBehaviour:
   RotateSpeed: 5
   DeadWaitTime: 5
   CoinSum: 2000
+  AttackBuffRate: 1
   mainCollider: {fileID: 4981433525598520099}
   Offset: 0.2
 --- !u!114 &87821171846319533
@@ -3424,7 +3425,7 @@ PrefabInstance:
     - target: {fileID: 6377096817172657724, guid: f862c705fcaf0de45ad019898baa96de,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2.380005
+      value: 2.78
       objectReference: {fileID: 0}
     - target: {fileID: 6377096817172657724, guid: f862c705fcaf0de45ad019898baa96de,
         type: 3}
@@ -3464,6 +3465,21 @@ PrefabInstance:
     - target: {fileID: 6377096817172657724, guid: f862c705fcaf0de45ad019898baa96de,
         type: 3}
       propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6377096817172657724, guid: f862c705fcaf0de45ad019898baa96de,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6377096817172657724, guid: f862c705fcaf0de45ad019898baa96de,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6377096817172657724, guid: f862c705fcaf0de45ad019898baa96de,
+        type: 3}
+      propertyPath: m_LocalScale.z
       value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
