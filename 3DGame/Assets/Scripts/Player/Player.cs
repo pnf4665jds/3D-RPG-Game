@@ -116,7 +116,7 @@ public class Player : MonoBehaviour
         {
             PositionUI.GetComponent<PositionMessage>().showMessage(other.gameObject.GetComponent<MonsterField>().GetFieldName());
         }
-        else if (other.tag == "Monster")
+        else if (other.tag == "Monster" || other.tag == "Boss")
         {
             if (isAttack) other.gameObject.GetComponentInParent<MonsterInfo>().GetDamage(ATK);
         }
