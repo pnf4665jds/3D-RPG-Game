@@ -2402,6 +2402,7 @@ MonoBehaviour:
   UseSkill: 0
   MaxSpeed: 12
   Speed: 0
+  ATK: 0
 --- !u!54 &458708753
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10780,7 +10781,7 @@ PrefabInstance:
     - target: {fileID: 3813320116476949067, guid: b9b708d3d6ea2a54fb60f0c8d03842e9,
         type: 3}
       propertyPath: m_Name
-      value: footman_Green_HP
+      value: Footman
       objectReference: {fileID: 0}
     - target: {fileID: 3813320116476949067, guid: b9b708d3d6ea2a54fb60f0c8d03842e9,
         type: 3}
