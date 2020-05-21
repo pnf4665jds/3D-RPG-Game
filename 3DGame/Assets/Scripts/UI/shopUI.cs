@@ -15,6 +15,7 @@ public class shopUI : MonoBehaviour
     public Button Exit;
     public GameObject HealthPotion;
     public GameObject ManaPotion;
+    private GameObject player;
     private enum BuyItem{
         none ,
         strengthItem,
@@ -27,6 +28,7 @@ public class shopUI : MonoBehaviour
     private bool ExitShop;
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         this.transform.GetChild(3).GetComponentInChildren<Text>().text = "歡迎光臨，請問需要購買什麼";
         this.transform.GetChild(4).GetComponentInChildren<Text>().text = "來買來買 ! ! !";
         chooseItem = BuyItem.none;
@@ -74,19 +76,49 @@ public class shopUI : MonoBehaviour
         else if (chooseItem == BuyItem.strengthItem)
         {
 
-            this.transform.GetChild(4).GetComponentInChildren<Text>().text = "謝謝惠顧";
-            isBuy = true;
+
+
+            if (canBuy(10000))
+            {
+                player.GetComponent<Player>().MoneyChange(-10000);
+                player.GetComponent<Player>().SetATK(10f);
+                this.transform.GetChild(4).GetComponentInChildren<Text>().text = "謝謝惠顧";
+                isBuy = true;
+            }
+            else {
+                this.transform.GetChild(4).GetComponentInChildren<Text>().text = "喔喔~ 你好像沒有足夠的錢喔 ! ";
+            }
+            
+            
+            
         }
         else if (chooseItem == BuyItem.healthItem)
         {
-            DropItemSystem.instance.AddPotionToPack(HealthPotion);
-            this.transform.GetChild(4).GetComponentInChildren<Text>().text = "謝謝惠顧";
-            isBuy = true;
+            
+            if (canBuy(1000)) {
+                DropItemSystem.instance.AddPotionToPack(HealthPotion);
+                player.GetComponent<Player>().MoneyChange(-1000);
+                this.transform.GetChild(4).GetComponentInChildren<Text>().text = "謝謝惠顧";
+                isBuy = true;
+            }
+            else {
+                this.transform.GetChild(4).GetComponentInChildren<Text>().text = "喔喔~ 你好像沒有足夠的錢喔 ! ";
+            }
         }
         else if (chooseItem == BuyItem.manaItem) {
-            DropItemSystem.instance.AddPotionToPack(ManaPotion);
-            this.transform.GetChild(4).GetComponentInChildren<Text>().text = "謝謝惠顧";
-            isBuy = true;
+            
+            if (canBuy(2000))
+            {
+                DropItemSystem.instance.AddPotionToPack(ManaPotion);
+                player.GetComponent<Player>().MoneyChange(-2000);
+                this.transform.GetChild(4).GetComponentInChildren<Text>().text = "謝謝惠顧";
+                isBuy = true;
+            }
+            else
+            {
+                this.transform.GetChild(4).GetComponentInChildren<Text>().text = "喔喔~ 你好像沒有足夠的錢喔 ! ";
+            }
+            
         }
         
 
@@ -107,6 +139,15 @@ public class shopUI : MonoBehaviour
         Buy.gameObject.SetActive(false);
         isBuy = false;
         ExitShop = false;
+    }
+    private bool canBuy(int cost) {
+        if (player.GetComponent<Player>().GetMoney() >= cost)
+        {
+            return true;
+        }
+        else {
+            return false; 
+        }
     }
 
 }
