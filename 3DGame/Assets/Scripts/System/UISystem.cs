@@ -71,4 +71,13 @@ public class UISystem : Singleton<UISystem>
     {
         DialogPanel.GetComponent<Dialog>().setUICanvas(canvas);
     }
+    public GameObject getPlayerDetailPanel() {
+        return PlayerPanel;
+    }
+    public GameObject getDialogPanel() {
+        return DialogPanel;
+    }
+    public GameObject getShopPanel() {
+        return ShopPanel;
+    }
 }

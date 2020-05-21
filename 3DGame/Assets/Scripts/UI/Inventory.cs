@@ -8,32 +8,19 @@ public class Inventory : Singleton<Inventory>
     public const int numberOfItem = 3;
     public Image[] itemImages = new Image[numberOfItem];
     public Text[] detail = new Text[numberOfItem];
-    public Item newItem;
-    public Item newItem2;
-    private void Start()
-    {
-        addItem(newItem);
-        addItem(newItem);
-        addItem(newItem2);
-        addItem(newItem2);
-    }
 
 
-    public void addItem(Item newItem) {
+
+
+    public void addItem(Sprite newItemSprite) {
         for (int i = 0; i < numberOfItem; i ++) {
-            if (itemImages[i].sprite == newItem.sprite)
+            if (itemImages[i].sprite == newItemSprite)
             {
                 
                 detail[i].text = (int.Parse(detail[i].text)+1).ToString();
                 break;
             }
-            /*else if (Items[i] == null) {
-                Items[i] = newItem;
-                itemImages[i].sprite = newItem.sprite;
-                itemImages[i].enabled = true;
-                detail[i].text = (int.Parse(detail[i].text) + 1).ToString();
-                return;
-            }*/
+           
         }
     }
     public void RemoveItem(Sprite oldItem) {

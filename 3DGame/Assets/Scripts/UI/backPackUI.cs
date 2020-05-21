@@ -22,10 +22,7 @@ public class backPackUI : MonoBehaviour
         recoveryBtn.onClick.AddListener(recoveryBtnClick);
 
     }
-    private void exitBtn() {
-        this.gameObject.SetActive(false);
-        GameSystem.instance.changeModeFollowPlayer();
-    }
+
     
     private void healthBtnClick() {
         

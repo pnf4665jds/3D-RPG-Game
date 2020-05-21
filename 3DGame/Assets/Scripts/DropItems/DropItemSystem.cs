@@ -13,9 +13,9 @@ public class DropItemSystem : Singleton<DropItemSystem>
     public GameObject ManaPref;
     public GameObject RecoveryPref;
 
-    public Item HealthPotion;
-    public Item ManaPotion;
-    public Item RecoveryPotion;
+    public Sprite HealthPotion;
+    public Sprite ManaPotion;
+    public Sprite RecoveryPotion;
 
     /// <summary>
     /// 產生金幣。
