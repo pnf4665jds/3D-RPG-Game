@@ -100,5 +100,13 @@ public class shopUI : MonoBehaviour
     public bool detectExitTheShop() {
         return ExitShop;
     }
+    public void initShopUI() {
+        this.transform.GetChild(3).GetComponentInChildren<Text>().text = "歡迎光臨，請問需要購買什麼";
+        this.transform.GetChild(4).GetComponentInChildren<Text>().text = "來買來買 ! ! !";
+        chooseItem = BuyItem.none;
+        Buy.gameObject.SetActive(false);
+        isBuy = false;
+        ExitShop = false;
+    }
 
 }

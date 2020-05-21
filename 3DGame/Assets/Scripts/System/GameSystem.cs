@@ -43,6 +43,8 @@ public class GameSystem : Singleton<GameSystem>
     public void changeModeFollowPlayer()
     {
         gs = GameState.normal;
+        UISystem.instance.getDialogPanel().GetComponentInChildren<Dialog>().initDialog();
+        UISystem.instance.getShopPanel().GetComponentInChildren<shopUI>().initShopUI();
         changeTheWorldTime(1);
 
     }

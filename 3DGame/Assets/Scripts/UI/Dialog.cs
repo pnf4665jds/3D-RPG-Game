@@ -61,6 +61,9 @@ public class Dialog : MonoBehaviour
     public bool detectTheDialogFinish() {
         return !isActive;
     }
+    public void initDialog() {
+        isActive = true;
+    }
    
     
 }
