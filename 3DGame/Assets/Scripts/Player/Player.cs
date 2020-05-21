@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     private float FrameCount;
     private NPC npc;
     private float Cooldown;
+    [SerializeField]private int Money;
 
     private Vector3 MouseStartPos;
     private GameObject PositionUI;
@@ -77,8 +78,7 @@ public class Player : MonoBehaviour
     }
     public void Healing(float healing)
     {
-        CurrentHP = (CurrentHP > MaxHP) ? MaxHP : (CurrentHP += healing);
-        //UI update HP
+        CurrentHP = ((CurrentHP+healing) >= MaxHP) ? MaxHP : (CurrentHP += healing);
     }
     public void ResetAnimation()
     {
@@ -128,7 +128,18 @@ public class Player : MonoBehaviour
         }
         else if (other.tag == "goldCoin" || other.tag == "silverCoin" || other.tag == "copperCoin" || other.tag == "HealthPotion" || other.tag == "ManaPotion")
         {
-            //GameManger.add(other.gameoject);
+            switch (other.tag)
+            {
+                case "goldCoin":
+                    AddMoney(1000);
+                    break;
+                case "silverCoin":
+                    AddMoney(500);
+                    break;
+                case "copperCoin":
+                    AddMoney(100);
+                    break;
+            }
             Destroy(other.gameObject);
         }
     }
@@ -168,7 +179,7 @@ public class Player : MonoBehaviour
         this.isAttack = isAttack;
         Playerani.SetBool("isAttack", isAttack);
     }
-    public void SetATK(float num) {ATK = num;}
+    public void SetATK(float num) {ATK += num;}
     public void AddMP(float num)
     {
         MP = (MP > MaxMP) ? MaxMP : (MP += num);
@@ -300,9 +311,9 @@ public class Player : MonoBehaviour
     }
     public IEnumerator FootmanSkill()
     {
-        SetATK(75);
+        SetATK(25);
         yield return new WaitForSeconds(10);
-        SetATK(50);
+        SetATK(-25);
     }
     public IEnumerator AvelynSkill()
     {
@@ -346,4 +357,10 @@ public class Player : MonoBehaviour
         }
     }
     public float GetCooldown() { return Cooldown; }
+    public void AddMoney(int num)
+    {
+        if (Money + num < 0) Debug.Log("Not Enough");
+        else Money += num;
+    }
+    public int GetMoney() { return Money; }
 }
