@@ -170,16 +170,16 @@ public class Player : MonoBehaviour
     }
     public void MouseEvent(bool isMove)
     {
-        if (Input.GetMouseButton(0) && !isMove) SetAttack(true);
+        if (Input.GetMouseButton(0) && !isMove) SetAttackanim(true);
         else if (Input.GetMouseButton(1)) this.transform.GetChild(2).transform.Rotate(-Input.GetAxis("Mouse Y"), 0, 0);
         if (Input.GetMouseButtonUp(0)) ResetAnimation();
     }
-    public void SetAttack(bool isAttack)
+    public void SetAttackanim(bool isAttack)
     {
         this.isAttack = isAttack;
         Playerani.SetBool("isAttack", isAttack);
     }
-    public void SetATK(float num) {ATK += num;}
+    public void ATKChange(float num) {ATK += num;}
     public void AddMP(float num)
     {
         MP = (MP > MaxMP) ? MaxMP : (MP += num);
@@ -313,9 +313,9 @@ public class Player : MonoBehaviour
     }
     public IEnumerator FootmanSkill()
     {
-        SetATK(25);
+        ATKChange(25);
         yield return new WaitForSeconds(10);
-        SetATK(-25);
+        ATKChange(-25);
     }
     public IEnumerator AvelynSkill()
     {
