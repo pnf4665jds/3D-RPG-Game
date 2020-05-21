@@ -131,13 +131,13 @@ public class Player : MonoBehaviour
             switch (other.tag)
             {
                 case "goldCoin":
-                    AddMoney(1000);
+                    MoneyChange(1000);
                     break;
                 case "silverCoin":
-                    AddMoney(500);
+                    MoneyChange(500);
                     break;
                 case "copperCoin":
-                    AddMoney(100);
+                    MoneyChange(100);
                     break;
             }
             Destroy(other.gameObject);
@@ -247,7 +247,10 @@ public class Player : MonoBehaviour
     {
         if (state && !isChangeState)
         {
-
+            if (UISystem.instance.getDialogPanel().GetComponentInChildren<Dialog>().detectTheDialogFinish())
+            {
+                GameSystem.instance.changeModeShopping();
+            }
         }
     }
     public void isOpenBP(bool state)
@@ -266,11 +269,10 @@ public class Player : MonoBehaviour
     {
         if (state && !isChangeState)
         {
-            //if (Input.GetKeyUp())
-            //{
-            //    GameSystem.instance.changeModeFollowPlayer();
-            //    return;
-            //}   
+            if (UISystem.instance.getShopPanel().GetComponentInChildren<shopUI>().detectExitTheShop())
+            {
+                GameSystem.instance.changeModeFollowPlayer();
+            } 
         }
     }
     public void SetNPC(NPC Person)
@@ -357,7 +359,7 @@ public class Player : MonoBehaviour
         }
     }
     public float GetCooldown() { return Cooldown; }
-    public void AddMoney(int num)
+    public void MoneyChange(int num)
     {
         if (Money + num < 0) Debug.Log("Not Enough");
         else Money += num;
