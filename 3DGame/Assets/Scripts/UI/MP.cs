@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class MP : MonoBehaviour
 {
     private float MaxMp;
+    [SerializeField]
     private float curMp;
     private Image MpBar;
     private GameObject player;
@@ -13,7 +14,7 @@ public class MP : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player");
         MpBar = this.GetComponent<Image>();
-        MaxMp = 100.0f;
+        MaxMp = player.GetComponent<Player>().GetMaxMP();
 
     }
 
@@ -25,15 +26,5 @@ public class MP : MonoBehaviour
         //increaseMP();
     }
 
-   /* public void increaseMP()
-    {
-        if (curMp < MaxMp)
-        {
-            curMp += 0.01f;
-        }
-    }
-    public void decreaseMP(float deMP)
-    {
-        curMp -= deMP;
-    }*/
+   
 }

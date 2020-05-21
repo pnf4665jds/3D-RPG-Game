@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerBlood : MonoBehaviour
 {
     private float MaxBlood;
+    [SerializeField]
     private float curBlood;
     private GameObject player;
     /// <summary>
