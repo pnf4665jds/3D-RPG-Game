@@ -81,7 +81,7 @@ public class shopUI : MonoBehaviour
             if (canBuy(10000))
             {
                 player.GetComponent<Player>().MoneyChange(-10000);
-                player.GetComponent<Player>().SetATK(10f);
+                player.GetComponent<Player>().ATKChange(10f);
                 this.transform.GetChild(4).GetComponentInChildren<Text>().text = "謝謝惠顧";
                 isBuy = true;
             }
