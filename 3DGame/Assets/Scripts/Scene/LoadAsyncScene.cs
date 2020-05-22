@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class LoadAsyncScene : MonoBehaviour
 {
     public RectTransform LoadingBar;
+    public Image Picture;
 
     private string nextSceneName;
     private float progressValue;
@@ -18,6 +19,7 @@ public class LoadAsyncScene : MonoBehaviour
     {
         progess = GetComponentInChildren<Text>();
         nextSceneName = GameSceneManager.instance.NextSceneName;
+        Picture.sprite = (Sprite)Resources.Load<Sprite>("ChangeSceneImage/" + nextSceneName);
         StartCoroutine(LoadScene());
     }
 

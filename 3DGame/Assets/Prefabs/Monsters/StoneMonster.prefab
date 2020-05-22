@@ -295,7 +295,7 @@ MonoBehaviour:
   MaxHP: 300
   MoveSpeed: 3
   RotateSpeed: 5
-  DeadWaitTime: 3
+  DeadWaitTime: 2
   CoinSum: 100
   AttackBuffRate: 1
   mainCollider: {fileID: 2322792306581674664}
@@ -425,6 +425,7 @@ MonoBehaviour:
   UseStateName: Attack
   DetectPauseTime: 0
   WaitTime: 0.8
+  KeepPreviousTime: 0
 --- !u!114 &6214341331534856085
 MonoBehaviour:
   m_ObjectHideFlags: 0

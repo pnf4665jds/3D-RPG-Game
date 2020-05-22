@@ -50,8 +50,6 @@ public class ActionPatrol : ActionBase
 
     public override void Process()
     {
-        if(monsterInfo.isCollideMonster)
-            Debug.Log("Co");
         if(startMove)
             Move();
     }

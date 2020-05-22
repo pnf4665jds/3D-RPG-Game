@@ -21,5 +21,7 @@ public class FireBallDamager : MonoBehaviour
             //Debug.Log(collision.gameObject.GetComponent<Player>().GetCurHP());
             Destroy(gameObject);
         }
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("Terrain"))
+            Destroy(gameObject);
     }
 }
