@@ -13,18 +13,18 @@ public class ActionMoveNearPoints : ActionBase
     private GameObject target;
     private Vector3 finalPos;
     private GameObject player;
+    private static System.Random random = new System.Random();
 
     public override void Init()
     {
         player = GameObject.FindWithTag("Player");
         animator.SetBool("Walk", true);
-        System.Random random = new System.Random();
-        targetIndex = random.Next(0, Points.Count - 1);
+        targetIndex = random.Next(0, Points.Count);
         if (targetIndex == lastIndex)
             targetIndex = targetIndex > 0 ? targetIndex - 1 : targetIndex + 1;
         target = Points[targetIndex];
 
-        finalPos = transform.position + (target.transform.position - transform.position) * 0.9f;
+        finalPos = transform.position + (target.transform.position - transform.position) * 0.8f;
         finalPos.y = transform.position.y;
 
         StartCoroutine(LookAtPlayer());

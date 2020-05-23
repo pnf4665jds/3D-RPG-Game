@@ -534,7 +534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34e5fea04bb708f4caa36b0ba88885ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 1500
+  MaxHP: 5000
   MoveSpeed: 10
   RotateSpeed: 5
   DeadWaitTime: 5
@@ -679,6 +679,7 @@ MonoBehaviour:
   Points:
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &349378415412069180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -757,6 +758,7 @@ MonoBehaviour:
   UseStateName: SingleShoot
   DetectPauseTime: 0
   WaitTime: 4
+  KeepPreviousTime: 0
 --- !u!114 &4683699850819955661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -772,6 +774,7 @@ MonoBehaviour:
   UseStateName: Move
   DetectPauseTime: 0
   WaitTime: 3
+  KeepPreviousTime: 0
 --- !u!114 &7849572382076530145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -829,6 +832,7 @@ MonoBehaviour:
   Points:
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   ShieldObject: {fileID: 798299639}
   EnergyObject: {fileID: 3664237278242416461, guid: c44b1a0fa0c8c4041856f38b4fb73641,
     type: 3}
@@ -851,6 +855,7 @@ MonoBehaviour:
   UseStateName: Storing Energy
   DetectPauseTime: 0
   WaitTime: 16
+  KeepPreviousTime: 0
 --- !u!114 &5273048472649556343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -866,6 +871,7 @@ MonoBehaviour:
   UseStateName: Laser Shoot
   DetectPauseTime: 0
   WaitTime: 5
+  KeepPreviousTime: 0
 --- !u!114 &4007145128083157260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -882,8 +888,8 @@ MonoBehaviour:
   DetectPauseTime: 0
   DecideHP: 0
   DeciderHPList:
-  - 1000
-  - 500
+  - 3700
+  - 2000
   - 0
 --- !u!114 &7404377258790962695
 MonoBehaviour:
@@ -900,6 +906,7 @@ MonoBehaviour:
   UseStateName: Recover Shield
   DetectPauseTime: 0
   WaitTime: 3
+  KeepPreviousTime: 0
 --- !u!114 &6010466986723172504
 MonoBehaviour:
   m_ObjectHideFlags: 0

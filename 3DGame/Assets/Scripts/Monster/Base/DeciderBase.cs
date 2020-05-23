@@ -31,9 +31,7 @@ public abstract class DeciderBase : MonoBehaviour
     /// </summary>
     public virtual void Exit()
     {
-        // 離開這個狀態後，一定時間內Decider暫停
-        if (DetectPauseTime > 0)
-            StartCoroutine(PauseTimer());
+        
     }
 
     /// <summary>
@@ -46,6 +44,16 @@ public abstract class DeciderBase : MonoBehaviour
             return true;
         else
             return PauseTimeFinish;
+    }
+
+    /// <summary>
+    /// 開始暫停計時器
+    /// </summary>
+    public void StartPauseTimer()
+    {
+        // 離開這個狀態後，一定時間內Decider暫停
+        if (DetectPauseTime > 0 && PauseTimeFinish == true)
+            StartCoroutine(PauseTimer());
     }
 
     /// <summary>

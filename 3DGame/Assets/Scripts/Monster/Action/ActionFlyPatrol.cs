@@ -28,7 +28,7 @@ public class ActionFlyPatrol : ActionBase
         yield return null;
         while (true)
         {
-            // 先計算隨機的方向向量
+            /*// 先計算隨機的方向向量
             Vector3 newDir = Quaternion.Euler(0, Random.Range(0, 360), 0) * new Vector3(0, 0, 1);
             // 計算往領域中心的向量
             Vector3 DirToInit = monsterInfo.FieldCenter - transform.position;
@@ -39,10 +39,14 @@ public class ActionFlyPatrol : ActionBase
             float a = monsterInfo.GetDisToFieldCenter();
             float b = monsterInfo.FieldRadius;
             float c = Mathf.Pow(2 * a * Mathf.Cos(angle), 2) - 4 * (Mathf.Pow(a, 2) - Mathf.Pow(b, 2));
-            float finalLength = (2 * a * Mathf.Cos(angle) + Mathf.Sqrt(c)) / 2;
+            float finalLength = (2 * a * Mathf.Cos(angle) + Mathf.Sqrt(c)) / 2;*/
             // 再計算最後的移動目的地 = 初始位置 + 移動向量 * 隨機變數
-            initPos = transform.position;
-            targetPos = initPos + newDir * finalLength * 0.9f;
+            //initPos = transform.position;
+            float theta = Random.Range(0f, 1f) * 2 * Mathf.PI;
+            float len = Random.Range(monsterInfo.FieldRadius * 0.2f, monsterInfo.FieldRadius);
+            //centerX + len * cos(theta), centerZ + len * sin(theta)
+            targetPos = new Vector3(monsterInfo.FieldCenter.x + len * Mathf.Cos(theta), transform.position.y, monsterInfo.FieldCenter.z + len * Mathf.Sin(theta));
+            //targetPos = initPos + newDir * finalLength * 0.9f;
             startMove = true;
             yield return new WaitUntil(() => Vector3.Distance(transform.position, targetPos) < 0.1f);
             startMove = false;
