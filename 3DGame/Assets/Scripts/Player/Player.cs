@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     private bool isLive;
     private bool isFree;
     private bool isChangeState;
+    private bool isTurn = false;
     [SerializeField]private bool SkillAvail;
 
     public float MaxSpeed = 12;
@@ -198,14 +199,26 @@ public class Player : MonoBehaviour
             if (Input.GetKey(KeyCode.D))
             {
                 transform.Rotate(transform.up * 1.5f);
-                MaxSpeed = 8;
+                if (!isTurn)
+                {
+                    MaxSpeedChange(-4);
+                    isTurn = true;
+                }
             }
             else if (Input.GetKey(KeyCode.A))
             {
                 transform.Rotate(transform.up * -1.5f);
-                MaxSpeed = 8;
+                if (!isTurn)
+                {
+                    MaxSpeedChange(-4);
+                    isTurn = true;
+                }
             }
-            if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D)) MaxSpeed = 12;
+            if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
+            {
+                MaxSpeedChange(4);
+                isTurn = false;
+            }
             if (Input.GetKeyUp(KeyCode.W))
             {
                 ResetAnimation();
@@ -297,6 +310,8 @@ public class Player : MonoBehaviour
             switch (this.name)
             {
                 case "DogPBR":
+                    StartCoroutine(DogKnightSkill());
+                    StartCoroutine(SkillCooldown());
                     break;
                 case "Avelyn":
                     StartCoroutine(AvelynSkill());
@@ -323,6 +338,20 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(1);
         ATK /= 2;
         Healing(MaxHP/4);
+    }
+    public IEnumerator DogKnightSkill()
+    {
+        MaxSpeedChange(4);
+        yield return new WaitForSeconds(1);
+        Healing(5);
+        yield return new WaitForSeconds(1);
+        Healing(5);
+        yield return new WaitForSeconds(1);
+        Healing(5);
+        yield return new WaitForSeconds(1);
+        Healing(5);
+        yield return new WaitForSeconds(1);
+        MaxSpeedChange(-4);
     }
     public IEnumerator SkillCooldown()
     {
@@ -365,4 +394,8 @@ public class Player : MonoBehaviour
         else Money += num;
     }
     public int GetMoney() { return Money; }
+    public void MaxSpeedChange(int change)
+    {
+        MaxSpeed += change;
+    }
 }

@@ -1381,8 +1381,11 @@ MonoBehaviour:
   isAttack: 0
   isMove: 0
   isDie: 0
+  UseSkill: 0
+  SkillAvail: 0
   MaxSpeed: 12
   Speed: 0
+  Money: 0
 --- !u!136 &6856482291752146625
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2465,14 +2468,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8422892626600249714}
     m_Modifications:
-    - target: {fileID: 100000, guid: 9ef625d01f79b4e4eb62fcdf032954ca, type: 3}
-      propertyPath: m_Name
-      value: Sword
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 9ef625d01f79b4e4eb62fcdf032954ca, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9ef625d01f79b4e4eb62fcdf032954ca, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2521,6 +2516,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1.2
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 9ef625d01f79b4e4eb62fcdf032954ca, type: 3}
+      propertyPath: m_Name
+      value: Sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 9ef625d01f79b4e4eb62fcdf032954ca, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 9ef625d01f79b4e4eb62fcdf032954ca, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -2546,14 +2549,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8422892626600249500}
     m_Modifications:
-    - target: {fileID: 100000, guid: 588cb1a3084bba747b81631d0c071523, type: 3}
-      propertyPath: m_Name
-      value: Shield
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 588cb1a3084bba747b81631d0c071523, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 588cb1a3084bba747b81631d0c071523, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.013969423
@@ -2597,6 +2592,14 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 588cb1a3084bba747b81631d0c071523, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 588cb1a3084bba747b81631d0c071523, type: 3}
+      propertyPath: m_Name
+      value: Shield
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 588cb1a3084bba747b81631d0c071523, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 588cb1a3084bba747b81631d0c071523, type: 3}
       propertyPath: m_Materials.Array.data[0]
