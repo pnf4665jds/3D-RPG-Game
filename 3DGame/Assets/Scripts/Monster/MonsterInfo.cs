@@ -9,16 +9,22 @@ public class MonsterInfo : MonoBehaviour
     public float RotateSpeed;       // 旋轉速度
     public float DeadWaitTime;      // 等待死亡時間
     public int CoinSum;           // 掉落金幣總金額
+    public bool IdleWhenAnimation = false;    // 是否要在播放場景動畫時Idle
+    public float AttackBuffRate = 1;        // 攻擊強化倍率
+
     public float CurrentHP { get; private set; }    // 目前血量
     public Vector3 InitPosition { get; private set; }   // 怪物的初始位置
     public Quaternion InitRotation { get; private set; }    // 怪物的初始旋轉
     public Vector3 FieldCenter { get; private set; }    // 活動領域中心座標
-    public float AttackBuffRate = 1;        // 攻擊強化倍率
     public float FieldRadius { get; private set; }      // 活動領域半徑
+    public int MonsterId { get; private set; }      // 怪物編號 
+
+    // 各種狀態
     public bool isGrounded { get; private set; } = false;   // 是否著地
     public bool isDead { get; private set; } = false;   // 是否死亡
     public bool isInvincible { get; set; } = false;     // 是否無敵
     public bool isCollideMonster { get; set; } = false; // 是否撞到其他怪物
+    public bool isPause { get; set; } = false;
 
     [Header("Grounded Detect")]
     public Collider mainCollider;
@@ -28,6 +34,9 @@ public class MonsterInfo : MonoBehaviour
     private float distanceToTheGround = 0.5f;
     private MonsterBlood monsterBlood;
 
+    /// <summary>
+    /// 初始化
+    /// </summary>
     private void Awake()
     {
         CurrentHP = MaxHP;
@@ -37,6 +46,7 @@ public class MonsterInfo : MonoBehaviour
         InitRotation = transform.rotation;
         animator = GetComponent<Animator>();
         distanceToTheGround = mainCollider.bounds.extents.y + Offset;
+        MonsterId = MonsterSystem.instance.AddMonster(this);    // 取得編號
     }
 
     private void Update()
@@ -61,7 +71,7 @@ public class MonsterInfo : MonoBehaviour
         if (CurrentHP <= 0)
         {
             isDead = true;
-            StartCoroutine(DeathAnim());
+            StartCoroutine(DeathEvent());
         }
     }
 
@@ -105,10 +115,10 @@ public class MonsterInfo : MonoBehaviour
     }
 
     /// <summary>
-    /// 死亡動畫
+    /// 死亡事件
     /// </summary>
     /// <returns></returns>
-    private IEnumerator DeathAnim()
+    private IEnumerator DeathEvent()
     {
         Rigidbody rigidbody = GetComponentInChildren<Rigidbody>();
         rigidbody.velocity = Vector3.zero;
@@ -128,6 +138,7 @@ public class MonsterInfo : MonoBehaviour
         {
             FindObjectOfType<Portal>().SetCondition(PortalCondition.BossDead, true);
         }
+        MonsterSystem.instance.RemoveMonster(MonsterId);    // 取消註冊
         Destroy(gameObject);
     }
 
@@ -137,6 +148,22 @@ public class MonsterInfo : MonoBehaviour
     private void CheckGrounded()
     {
         isGrounded = Physics.Raycast(mainCollider.bounds.center, Vector3.down, distanceToTheGround);
+    }
+
+    /// <summary>
+    /// 播放場景動畫時讓怪物Idle
+    /// </summary>
+    /// <returns></returns>
+    public IEnumerator IdleOnAnimationState()
+    {
+        IdleWhenAnimation = true;
+        animator.updateMode = AnimatorUpdateMode.UnscaledTime;
+        MonsterSystem.instance.SetMonsterActionController(MonsterId, false);
+        animator.SetTrigger("Pause");
+        yield return new WaitWhile(GameSystem.instance.isAnimation);
+        IdleWhenAnimation = false;
+        animator.updateMode = AnimatorUpdateMode.Normal;
+        MonsterSystem.instance.SetMonsterActionController(MonsterId, true);
     }
 
     private void OnCollisionEnter(Collision collision)
