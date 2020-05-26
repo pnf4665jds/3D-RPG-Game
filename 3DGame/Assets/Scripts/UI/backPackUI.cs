@@ -45,6 +45,7 @@ public class backPackUI : MonoBehaviour
             Inventory.instance.RemoveItem(recoveryBtn.GetComponent<Image>().sprite);
         }
     }
+
     
 
 

@@ -12,7 +12,8 @@ public class GameSystem : Singleton<GameSystem>
         talking,
         backpack,
         shopping,
-        Animation
+        Animation,
+        dead
     }
 
     private GameState gs;
@@ -43,6 +44,10 @@ public class GameSystem : Singleton<GameSystem>
     {
         gs = GameState.shopping;
     }
+    public void changeModeDead()
+    {
+        gs = GameState.dead;
+    }
     public void changeModeBackPack()
     {
         gs = GameState.backpack;
@@ -64,6 +69,10 @@ public class GameSystem : Singleton<GameSystem>
     public bool isAnimation()
     {
         return (gs == GameState.Animation) ? true : false;
+    }
+    public bool isPlayerDead()
+    {
+        return (gs == GameState.dead) ? true : false;
     }
     public bool isPlayerShopping()
     {
