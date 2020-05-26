@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     private float FrameCount;
     private NPC npc;
     private float Cooldown;
+    [SerializeField]private float CurCooldown;
     [SerializeField]private int Money;
 
     private Vector3 MouseStartPos;
@@ -53,6 +54,7 @@ public class Player : MonoBehaviour
         SkillAvail = true;
         SetCooldown();
         FrameCount = 0;
+        CurCooldown = 0;
     }
 
     // Update is called once per frame
@@ -66,6 +68,7 @@ public class Player : MonoBehaviour
             isOpenBP(GameSystem.instance.isPlayerOpenBackPack());
             isNormal(GameSystem.instance.isPlayerNormal());
         }
+        CheckCooldown();
     }
     public void GetHurt(float damage) {
         CurrentHP -= damage;
@@ -292,16 +295,9 @@ public class Player : MonoBehaviour
     {
         npc = Person;
     }
-    public IEnumerator ResetUseSkill()
-    {
-        yield return new WaitForSeconds(0.5f);
-        UseSkill = false;
-        Playerani.SetBool("UseSkill", UseSkill);
-
-    }
     public void isSkilling()
     {
-        if(SkillAvail && GetSkillCost() <= MP)
+        if (SkillAvail && GetSkillCost() <= MP)
         {
             AddMP(-GetSkillCost());
             UseSkill = true;
@@ -324,7 +320,15 @@ public class Player : MonoBehaviour
             }
             Playerani.SetBool("UseSkill", UseSkill);
             StartCoroutine(ResetUseSkill());
+            CurCooldown = Cooldown;
         }
+    }
+    public IEnumerator ResetUseSkill()
+    {
+        yield return new WaitForSeconds(0.5f);
+        UseSkill = false;
+        Playerani.SetBool("UseSkill", UseSkill);
+
     }
     public IEnumerator FootmanSkill()
     {
@@ -397,5 +401,10 @@ public class Player : MonoBehaviour
     public void MaxSpeedChange(int change)
     {
         MaxSpeed += change;
+    }  
+    public float GetCurCooldown() { return CurCooldown; }
+    public void CheckCooldown()
+    {
+        CurCooldown = (CurCooldown - Time.deltaTime < 0) ? 0 : (CurCooldown - Time.deltaTime);
     }
 }
