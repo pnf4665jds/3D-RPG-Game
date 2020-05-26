@@ -156,12 +156,13 @@ public class MonsterInfo : MonoBehaviour
     /// <returns></returns>
     public IEnumerator IdleOnAnimationState()
     {
-        IdleWhenAnimation = true;
+        if (!IdleWhenAnimation)
+            yield break;
+
         animator.updateMode = AnimatorUpdateMode.UnscaledTime;
         MonsterSystem.instance.SetMonsterActionController(MonsterId, false);
         animator.SetBool("Pause", true);
         yield return new WaitWhile(GameSystem.instance.isAnimation);
-        IdleWhenAnimation = false;
         animator.updateMode = AnimatorUpdateMode.Normal;
         MonsterSystem.instance.SetMonsterActionController(MonsterId, true);
         animator.SetBool("Pause", false);

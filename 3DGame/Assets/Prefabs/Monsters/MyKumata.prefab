@@ -2325,9 +2325,10 @@ MonoBehaviour:
   RotateSpeed: 5
   DeadWaitTime: 5
   CoinSum: 2000
+  IdleWhenAnimation: 1
   AttackBuffRate: 1
   mainCollider: {fileID: 4981433525598520099}
-  Offset: 0.2
+  Offset: 1
 --- !u!114 &87821171846319533
 MonoBehaviour:
   m_ObjectHideFlags: 0

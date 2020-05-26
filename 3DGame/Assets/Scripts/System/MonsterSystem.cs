@@ -59,7 +59,13 @@ public class MonsterSystem : Singleton<MonsterSystem>
     /// <param name="isActive"></param>
     public void SetMonsterActionController(int id, bool isEnable)
     {
-        MonsterList[id].GetComponent<ActionController>().enabled = isEnable;
+        ActionController controller = MonsterList[id].GetComponent<ActionController>();
+        controller.enabled = isEnable;
+        if (isEnable)
+        {
+            controller.InitAllDecider();
+            controller.ChangeState("Idle");
+        }
     }
 
     /// <summary>
