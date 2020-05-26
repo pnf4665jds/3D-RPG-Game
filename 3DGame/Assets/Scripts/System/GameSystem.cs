@@ -11,7 +11,8 @@ public class GameSystem : Singleton<GameSystem>
         normal,
         talking,
         backpack,
-        shopping
+        shopping,
+        Animation
     }
 
     private GameState gs;
@@ -30,6 +31,13 @@ public class GameSystem : Singleton<GameSystem>
 
 
     }
+    public void changeModeAnimation()
+    {
+        gs = GameState.Animation;
+        changeTheWorldTime(0);
+
+
+    }
     public void changeModeShopping()
     {
         gs = GameState.shopping;
@@ -37,7 +45,7 @@ public class GameSystem : Singleton<GameSystem>
     public void changeModeBackPack()
     {
         gs = GameState.backpack;
-        //changeTheWorldTime(0);
+        changeTheWorldTime(0);
 
     }
     public void changeModeFollowPlayer()
@@ -51,6 +59,10 @@ public class GameSystem : Singleton<GameSystem>
     public bool isPlayerTalking()
     {
         return (gs == GameState.talking) ? true : false;
+    }
+    public bool isAnimation()
+    {
+        return (gs == GameState.Animation) ? true : false;
     }
     public bool isPlayerShopping()
     {
