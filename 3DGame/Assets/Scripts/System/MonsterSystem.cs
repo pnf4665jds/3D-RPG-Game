@@ -44,7 +44,7 @@ public class MonsterSystem : Singleton<MonsterSystem>
     /// </summary>
     public void IdleAllMonsterOnAnimation()
     {
-        for(int i = 0; i < monsterId; i++)
+        for(int i = 0; i <= monsterId; i++)
         {
             if (MonsterList.ContainsKey(i))
             {
@@ -68,7 +68,7 @@ public class MonsterSystem : Singleton<MonsterSystem>
     /// <returns></returns>
     public MonsterInfo GetBossInfo()
     {
-        for (int i = 0; i < monsterId; i++)
+        for (int i = 0; i <= monsterId; i++)
         {
             if (!MonsterList.ContainsKey(i))
                 continue;
