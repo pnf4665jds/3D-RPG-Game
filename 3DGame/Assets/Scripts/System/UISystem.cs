@@ -8,40 +8,42 @@ public class UISystem : Singleton<UISystem>
     public GameObject PlayerPanel;
     public GameObject DialogPanel;
     public GameObject ShopPanel;
+    public GameObject DeadPanel;
     // Start is called before the first frame update
     void Start()
     {
-        AllSet(false , false , false);
+        AllSet(false , false , false , false);
     }
     private void Update()
     {
         if (GameSystem.instance.isPlayerNormal())
         {
-            AllSet(true, false, false);
+            AllSet(true, false, false , false);
         }
         else if (GameSystem.instance.isPlayerTalking())
         {
-            AllSet(false, true, false);
+            AllSet(false, true, false , false);
         }
         else if (GameSystem.instance.isPlayerOpenBackPack())
         {
-            AllSet(true, false, false);
+            AllSet(true, false, false , false);
             PlayerPanel.transform.GetChild(0).gameObject.SetActive(true);
         }
         else if (GameSystem.instance.isPlayerShopping())
         {
-            AllSet(false, false, true);
+            AllSet(false, false, true , false);
         }
     }
 
     // Update is called once per frame
 
-    private void AllSet(bool put1 , bool put2 , bool put3) {
+    private void AllSet(bool put1 , bool put2 , bool put3 , bool put4) {
         PlayerPanel.SetActive(put1);
         PlayerPanel.transform.GetChild(0).gameObject.SetActive(false);
         DialogPanel.SetActive(put2);
         ShopPanel.SetActive(put3);
-        
+        DeadPanel.SetActive(put4);
+
     }
 
     public void changeToTalkingMode(NPC character) {

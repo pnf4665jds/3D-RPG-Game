@@ -21,6 +21,7 @@ TagManager:
   - ManaPotion
   - Shop
   - MainCanvas
+  - director
   layers:
   - Default
   - TransparentFX
