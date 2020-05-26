@@ -36,7 +36,7 @@ public class GameSystem : Singleton<GameSystem>
     {
         gs = GameState.Animation;
         MonsterSystem.instance.IdleAllMonsterOnAnimation();
-        changeTheWorldTime(0);
+        //changeTheWorldTime(0);
 
 
     }

@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
     private float FrameCount;
     private NPC npc;
     private float Cooldown;
-    private GameObject temp;
+    [SerializeField]private GameObject temp;
     [SerializeField]private float CurCooldown;
     [SerializeField]private int Money;
 
@@ -150,9 +150,10 @@ public class Player : MonoBehaviour
         }
         else if(other.tag == "director")
         {
-            GameSystem.instance.changeModeAnimation();
             temp = other.gameObject;
             temp.GetComponent<TimeLineManager>().TimeLinePlay();
+            GameSystem.instance.changeModeAnimation();
+            
         }
     }
     public bool GetisAttack()

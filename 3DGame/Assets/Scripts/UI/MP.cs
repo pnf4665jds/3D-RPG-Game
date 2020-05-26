@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class MP : MonoBehaviour
 {
+    [SerializeField]
     private float MaxMp;
     [SerializeField]
     private float curMp;
