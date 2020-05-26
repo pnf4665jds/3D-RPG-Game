@@ -34,9 +34,9 @@ TagManager:
   - Terrain
   - BlockForPlayer
   - Base
-  - 
-  - 
-  - 
+  - Monster
+  - MonsterNoMove
+  - PlayerNoMove
   - 
   - 
   - 
