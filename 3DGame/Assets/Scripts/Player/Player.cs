@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     private float FrameCount;
     private NPC npc;
     private float Cooldown;
+    private GameObject temp;
     [SerializeField]private float CurCooldown;
     [SerializeField]private int Money;
 
@@ -36,6 +37,7 @@ public class Player : MonoBehaviour
         Playerani = GetComponent<Animator>();
         MaxHP = 100;
         MaxMP = 100;
+        SetCooldown();
     }
     // Start is called before the first frame update
     void Start()
@@ -52,7 +54,6 @@ public class Player : MonoBehaviour
         isFree = true;
         isChangeState = false;
         SkillAvail = true;
-        SetCooldown();
         FrameCount = 0;
         CurCooldown = 0;
     }
@@ -67,6 +68,7 @@ public class Player : MonoBehaviour
             isShopping(GameSystem.instance.isPlayerShopping());
             isOpenBP(GameSystem.instance.isPlayerOpenBackPack());
             isNormal(GameSystem.instance.isPlayerNormal());
+            isAnimation(GameSystem.instance.isAnimation());
         }
         CheckCooldown();
     }
@@ -145,6 +147,12 @@ public class Player : MonoBehaviour
                     break;
             }
             Destroy(other.gameObject);
+        }
+        else if(other.tag == "director")
+        {
+            GameSystem.instance.changeModeAnimation();
+            temp = other.gameObject;
+            temp.GetComponent<TimeLineManager>().TimeLinePlay();
         }
     }
     public bool GetisAttack()
@@ -406,5 +414,13 @@ public class Player : MonoBehaviour
     public void CheckCooldown()
     {
         CurCooldown = (CurCooldown - Time.deltaTime < 0) ? 0 : (CurCooldown - Time.deltaTime);
+    }
+    public void isAnimation(bool Active)
+    {
+        if (Active)
+        {
+            Speed = 0;
+            if (temp.GetComponent<TimeLineManager>().isTimeLineCompleted()) GameSystem.instance.changeModeFollowPlayer();
+        }
     }
 }
