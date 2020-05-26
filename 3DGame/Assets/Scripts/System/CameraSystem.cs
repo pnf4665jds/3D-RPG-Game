@@ -75,12 +75,21 @@ public class CameraSystem :Singleton<CameraSystem>
         if (Physics.Linecast(player.transform.position+Vector3.up , transform.position, out hit, LayerMask.GetMask("Terrain") ))
         {
             if (hit.collider.gameObject.tag != "MainCamera") {
-                print(hit.collider.gameObject.name);
+               
                 float currentDistance = Vector3.Distance(hit.point, player.transform.position);
                 float cameraDistance = Vector3.Distance(transform.position, player.transform.position);
                 if (cameraDistance > currentDistance)
                 {
-                    transform.position = hit.point + new Vector3(0 , 3 , 0);
+                    if (currentDistance < 3)
+                    {
+                        transform.position = hit.point + transform.forward*3 + transform.up*2;
+                        transform.Rotate(-30, 0, 0);
+                    }
+                    else {
+                        transform.position = hit.point;
+                    }
+                    Debug.DrawLine(player.transform.position + Vector3.up, hit.point, Color.red);
+                    
                 }
 
             }
