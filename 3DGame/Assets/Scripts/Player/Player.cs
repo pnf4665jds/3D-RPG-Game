@@ -84,7 +84,7 @@ public class Player : MonoBehaviour
     }
     public void Healing(float healing)
     {
-        CurrentHP = ((CurrentHP+healing) >= MaxHP) ? MaxHP : (CurrentHP += healing);
+        CurrentHP = ((CurrentHP+healing) >= MaxHP) ? MaxHP : (CurrentHP + healing);
     }
     public void ResetAnimation()
     {
@@ -194,7 +194,7 @@ public class Player : MonoBehaviour
     public void ATKChange(float num) {ATK += num;}
     public void AddMP(float num)
     {
-        MP = (MP > MaxMP) ? MaxMP : (MP += num);
+        MP = (MP+num > MaxMP) ? MaxMP : (MP + num);
     }
     public void KeyboardEvent(bool isAttack)
     {
