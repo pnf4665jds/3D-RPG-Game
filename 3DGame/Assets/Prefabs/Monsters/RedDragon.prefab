@@ -3318,6 +3318,7 @@ GameObject:
   - component: {fileID: 3037743098562945581}
   - component: {fileID: 8619863769468356690}
   - component: {fileID: 8462531119088151216}
+  - component: {fileID: 7655690699250300839}
   - component: {fileID: 3037743098562945555}
   - component: {fileID: 3037743098562945554}
   - component: {fileID: 3037743098562945553}
@@ -3351,7 +3352,7 @@ Transform:
   m_GameObject: {fileID: 3037743098562945547}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 6823267065318387081}
   - {fileID: 3037743098258686703}
@@ -3423,7 +3424,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3037743098562945547}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a538505ec681fc4db7d622ade76a19a, type: 3}
   m_Name: 
@@ -3529,6 +3530,9 @@ MonoBehaviour:
       Decider: {fileID: 6601443895635697060}
       TrueState: Idle
       FalseState: 
+  - StateName: IntroFly
+    Action: {fileID: 7655690699250300839}
+    TransList: []
 --- !u!114 &3037743098562945564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3685,6 +3689,21 @@ MonoBehaviour:
   UseStateName: FlyFollow
   IsFlyMode: 1
   KeepDistance: 18
+--- !u!114 &7655690699250300839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3037743098562945547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b0a099bee8dd214ab070e1943d318df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseStateName: IntroFly
+  MoveSpeedRate: 2
+  RotateSpeedRate: 0.18
 --- !u!114 &3037743098562945555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5016,7 +5035,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8731250791483866198}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6124718729902879261}

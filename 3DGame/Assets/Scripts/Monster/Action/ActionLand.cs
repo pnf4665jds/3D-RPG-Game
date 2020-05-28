@@ -21,7 +21,7 @@ public class ActionLand : ActionBase
             if(Vector3.Distance(hit.point, transform.position) < 0.1f)
             {
                 // 開啟重力
-                GetComponent<Rigidbody>().useGravity = true;
+                rigid.useGravity = true;
             }
             else
             {

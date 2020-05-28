@@ -12,6 +12,12 @@ public class Portal : MonoBehaviour
     public Vector3 DestPosition;    // 傳送後座標
     public float DestRotationY;   // 傳送後Y軸旋轉
     public PortalCondition Condition;   // 傳送條件
+    public GameObject PortalEffect;     // 傳送點特效
+
+    private void Start()
+    {
+        StartCoroutine(WaitEffectSet());
+    }
 
     /// <summary>
     /// 是否滿足特定條件
@@ -38,6 +44,12 @@ public class Portal : MonoBehaviour
                 () => other.GetComponent<Player>().SetSpeed(0)
             });
         }
+    }
+
+    private IEnumerator WaitEffectSet()
+    {
+        yield return new WaitUntil(ConditionMeet);
+        Instantiate(PortalEffect, transform);
     }
 }
 

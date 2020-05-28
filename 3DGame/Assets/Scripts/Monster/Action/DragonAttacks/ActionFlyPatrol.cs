@@ -28,20 +28,6 @@ public class ActionFlyPatrol : ActionBase
         yield return null;
         while (true)
         {
-            /*// 先計算隨機的方向向量
-            Vector3 newDir = Quaternion.Euler(0, Random.Range(0, 360), 0) * new Vector3(0, 0, 1);
-            // 計算往領域中心的向量
-            Vector3 DirToInit = monsterInfo.FieldCenter - transform.position;
-            DirToInit.y = 0;
-            // 取兩向量夾角
-            float angle = Mathf.Deg2Rad * Vector3.Angle(newDir, DirToInit);
-            // 計算最終距離
-            float a = monsterInfo.GetDisToFieldCenter();
-            float b = monsterInfo.FieldRadius;
-            float c = Mathf.Pow(2 * a * Mathf.Cos(angle), 2) - 4 * (Mathf.Pow(a, 2) - Mathf.Pow(b, 2));
-            float finalLength = (2 * a * Mathf.Cos(angle) + Mathf.Sqrt(c)) / 2;*/
-            // 再計算最後的移動目的地 = 初始位置 + 移動向量 * 隨機變數
-            //initPos = transform.position;
             float theta = Random.Range(0f, 1f) * 2 * Mathf.PI;
             float len = Random.Range(monsterInfo.FieldRadius * 0.2f, monsterInfo.FieldRadius);
             //centerX + len * cos(theta), centerZ + len * sin(theta)

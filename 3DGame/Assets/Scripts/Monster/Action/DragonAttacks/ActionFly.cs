@@ -12,7 +12,7 @@ public class ActionFly : ActionBase
     {
         animator.SetTrigger("TakeOff");
         // 關閉重力
-        GetComponent<Rigidbody>().useGravity = false;
+        rigid.useGravity = false;
     }
 
     public override void Process()

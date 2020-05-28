@@ -14,12 +14,14 @@ public abstract class ActionBase : MonoBehaviour
     protected ActionController controller { get; set; }
     protected Animator animator { get; set; }
     protected MonsterInfo monsterInfo { get; set; }
+    protected Rigidbody rigid { get; set; }
 
     private void Awake()
     {
         controller = GetComponent<ActionController>();
         animator = GetComponent<Animator>();
         monsterInfo = GetComponent<MonsterInfo>();
+        rigid = GetComponent<Rigidbody>();
     }
 
     private void OnTriggerEnter(Collider other)
