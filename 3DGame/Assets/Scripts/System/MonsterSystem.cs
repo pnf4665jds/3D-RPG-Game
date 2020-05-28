@@ -5,6 +5,7 @@ using UnityEngine;
 public class MonsterSystem : Singleton<MonsterSystem>
 {
     public Dictionary<int, MonsterInfo> MonsterList { get; set; } = new Dictionary<int, MonsterInfo>();
+    public bool IsBossDead { get; set; }    // 回傳Boss是否死亡
 
     private int monsterId = -1;
 
@@ -16,6 +17,8 @@ public class MonsterSystem : Singleton<MonsterSystem>
     {
         monsterId++;
         MonsterList.Add(monsterId, info);
+        if (info.gameObject.tag == "Boss")
+            IsBossDead = false;
 
         return monsterId;
     }
@@ -27,7 +30,12 @@ public class MonsterSystem : Singleton<MonsterSystem>
     public void RemoveMonster(int id)
     {
         if (MonsterList.ContainsKey(id))
+        {
+            if (MonsterList[id].gameObject.tag == "Boss")
+                IsBossDead = true;
+
             MonsterList.Remove(id);
+        }
     }
 
     /// <summary>

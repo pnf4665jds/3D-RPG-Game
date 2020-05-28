@@ -3337,7 +3337,7 @@ GameObject:
   - component: {fileID: 662944964347120341}
   m_Layer: 0
   m_Name: RedDragon
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3407,11 +3407,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34e5fea04bb708f4caa36b0ba88885ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 6000
+  MaxHP: 1
   MoveSpeed: 5
   RotateSpeed: 5
   DeadWaitTime: 5
   CoinSum: 1500
+  IdleWhenAnimation: 0
   AttackBuffRate: 1
   mainCollider: {fileID: 1296688923467251572}
   Offset: 5
@@ -3422,7 +3423,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3037743098562945547}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a538505ec681fc4db7d622ade76a19a, type: 3}
   m_Name: 

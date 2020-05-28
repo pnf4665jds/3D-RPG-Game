@@ -132,12 +132,6 @@ public class MonsterInfo : MonoBehaviour
             animator.SetBool("Dead", true);
         yield return new WaitForSeconds(DeadWaitTime);
         DropItemSystem.instance.createMoney(transform.position, CoinSum);
-
-        // 如果是BOSS死亡，則傳遞死亡訊息給Portal
-        if(gameObject.tag == "Boss")
-        {
-            FindObjectOfType<Portal>().SetCondition(PortalCondition.BossDead, true);
-        }
         MonsterSystem.instance.RemoveMonster(MonsterId);    // 取消註冊
         Destroy(gameObject);
     }

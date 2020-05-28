@@ -5234,7 +5234,7 @@ MonoBehaviour:
   SceneName: newMaze
   DestPosition: {x: 22.9, y: 462.7, z: -661.4}
   DestRotationY: 0
-  Condition: 0
+  Condition: 1
 --- !u!65 &988345880
 BoxCollider:
   m_ObjectHideFlags: 0

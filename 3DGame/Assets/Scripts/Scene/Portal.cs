@@ -13,24 +13,6 @@ public class Portal : MonoBehaviour
     public float DestRotationY;   // 傳送後Y軸旋轉
     public PortalCondition Condition;   // 傳送條件
 
-    private List<bool> ConditionMeetList = new List<bool>();
-
-    private void Awake()
-    {
-        for (int i = 0; i < Enum.GetNames(typeof(PortalCondition)).Length; i++)
-            ConditionMeetList.Add(false);
-    }
-
-    /// <summary>
-    /// 設置條件
-    /// </summary>
-    /// <param name="condition"></param>
-    /// <param name="value"></param>
-    public void SetCondition(PortalCondition condition, bool value)
-    {
-        ConditionMeetList[(int)condition] = value;
-    }
-
     /// <summary>
     /// 是否滿足特定條件
     /// </summary>
@@ -38,9 +20,9 @@ public class Portal : MonoBehaviour
     private bool ConditionMeet()
     {
         int index = (int)Condition;
-        return index == 0 || ConditionMeetList[index] == true;
+        return (index == 0) ||
+               (index == 1 && MonsterSystem.instance.IsBossDead);
     }
-
 
     private void OnTriggerEnter(Collider other)
     {
