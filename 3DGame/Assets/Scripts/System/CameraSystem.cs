@@ -12,8 +12,7 @@ public class CameraSystem :Singleton<CameraSystem>
     private bool canBuy;
     private Vector3 cameraOffset;
     
-    [Range(0.01f, 1.0f)]
-    public float SmoothFactor = 0.5f;
+
     public bool lookAtPlayer = false;
     
 
@@ -25,6 +24,8 @@ public class CameraSystem :Singleton<CameraSystem>
         
         this.transform.position = player.transform.position;
         transform.rotation = player.transform.rotation;
+        transform.Rotate(30, 0, 0);
+
 
     }
 
@@ -60,8 +61,9 @@ public class CameraSystem :Singleton<CameraSystem>
     
     private void FollowPlayer() {
         this.GetComponent<Camera>().fieldOfView = 60;
-        transform.rotation = player.transform.rotation;
-        transform.Rotate(30, 0, 0);
+        transform.rotation = Quaternion.Euler(transform.eulerAngles.x, player.transform.eulerAngles.y, transform.eulerAngles.z);
+        //transform.rotation = player.transform.rotation;
+        //transform.Rotate(30, 0, 0);
         transform.position = player.transform.position - player.transform.TransformDirection(Vector3.forward) * 10;
         transform.position += new Vector3(0, 10, 0);
 
@@ -69,21 +71,26 @@ public class CameraSystem :Singleton<CameraSystem>
             transform.LookAt(player.transform);
 
         }
+        if (Input.GetMouseButton(1)) {
+
+            this.transform.Rotate(-Input.GetAxis("Mouse Y"), 0, 0);
+        }
     }
     private void detectWall() {
         RaycastHit hit;
-        if (Physics.Linecast(player.transform.position+Vector3.up , transform.position, out hit, LayerMask.GetMask("Terrain") ))
+        if (Physics.Linecast(player.transform.position+Vector3.up*2 , transform.position, out hit, LayerMask.GetMask("Terrain") ))
         {
             if (hit.collider.gameObject.tag != "MainCamera") {
                
                 float currentDistance = Vector3.Distance(hit.point, player.transform.position);
                 float cameraDistance = Vector3.Distance(transform.position, player.transform.position);
+                //print(currentDistance);
                 if (cameraDistance > currentDistance)
                 {
-                    if (currentDistance < 3)
+                    if (currentDistance < 5)
                     {
-                        transform.position = hit.point + transform.forward*3 + transform.up*2;
-                        transform.Rotate(-30, 0, 0);
+                        transform.position = hit.point + transform.forward*4 + transform.up*2;
+                        //transform.Rotate(-30, 0, 0);
                     }
                     else {
                         transform.position = hit.point;
