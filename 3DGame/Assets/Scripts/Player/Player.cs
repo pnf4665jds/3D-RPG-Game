@@ -9,7 +9,6 @@ public class Player : MonoBehaviour
     public bool isDie;
     public bool UseSkill;
     private bool isLive;
-    private bool isFree;
     private bool isChangeState;
     private bool isTurn = false;
     [SerializeField]private bool SkillAvail;
@@ -30,6 +29,7 @@ public class Player : MonoBehaviour
 
     private Vector3 MouseStartPos;
     private GameObject PositionUI;
+    [SerializeField]private ParticleSystem SkillParticle;
 
     private void Awake()
     {
@@ -51,11 +51,12 @@ public class Player : MonoBehaviour
         UseSkill = false;
         Speed = 0;
         ATK = 50;
-        isFree = true;
         isChangeState = false;
         SkillAvail = true;
         FrameCount = 0;
         CurCooldown = 0;
+        SkillParticle = GetComponentInChildren<ParticleSystem>();
+        SkillParticle.Stop();
     }
 
     // Update is called once per frame
@@ -80,6 +81,7 @@ public class Player : MonoBehaviour
             isLive = false;
             isDie = true;
             Playerani.SetBool("isDie", isDie);
+            GameSystem.instance.changeModeDead();
         }
     }
     public void Healing(float healing)
@@ -114,7 +116,7 @@ public class Player : MonoBehaviour
         if (FrameCount >= 100)
         {
             Healing(MaxHP * 0.01f);
-            AddMP(MaxMP*0.03f);
+            MPChange(MaxMP*0.03f);
             FrameCount -= 100;
         }
     }
@@ -132,7 +134,7 @@ public class Player : MonoBehaviour
         {
             other.gameObject.GetComponent<GroundMove>().Triggered();
         }
-        else if (other.tag == "goldCoin" || other.tag == "silverCoin" || other.tag == "copperCoin" || other.tag == "HealthPotion" || other.tag == "ManaPotion")
+        else if (other.tag == "goldCoin" || other.tag == "silverCoin" || other.tag == "copperCoin" || other.tag == "HealthPotion" || other.tag == "ManaPotion" || other.tag =="")
         {
             switch (other.tag)
             {
@@ -145,6 +147,10 @@ public class Player : MonoBehaviour
                 case "copperCoin":
                     MoneyChange(100);
                     break;
+                case "HealthPotion":
+                case "ManaPotion":
+                    DropItemSystem.instance.AddPotionToPack(other.gameObject);
+                    break;
             }
             Destroy(other.gameObject);
         }
@@ -153,7 +159,6 @@ public class Player : MonoBehaviour
             temp = other.gameObject;
             temp.GetComponent<TimeLineManager>().TimeLinePlay();
             GameSystem.instance.changeModeAnimation();
-            
         }
     }
     public bool GetisAttack()
@@ -162,25 +167,12 @@ public class Player : MonoBehaviour
     }
     public void SetSpeed(float speed) { Speed = speed; }
     public float GetSpeed() { return Speed; }
-    public void SetisFree(bool free) { isFree = free; }
-    public bool GetisFree() { return isFree; }
     public void SpeedChange(bool isMove)
     {
         if (isMove) Speed = (Speed > MaxSpeed) ? MaxSpeed : (Speed += Time.deltaTime * MaxSpeed);
         else Speed = 0;
     }
-    public void GetState()
-    {
-        if (GameSystem.instance.isPlayerTalking() || GameSystem.instance.isPlayerOpenBackPack())
-        {
-
-            isFree = false;
-        }
-        else if (GameSystem.instance.isPlayerNormal())
-        {
-            isFree = true;
-        }
-    }
+    
     public void MouseEvent(bool isMove)
     {
         if (Input.GetMouseButton(0) && !isMove) SetAttackanim(true);
@@ -193,7 +185,7 @@ public class Player : MonoBehaviour
         Playerani.SetBool("isAttack", isAttack);
     }
     public void ATKChange(float num) {ATK += num;}
-    public void AddMP(float num)
+    public void MPChange(float num)
     {
         MP = (MP+num > MaxMP) ? MaxMP : (MP + num);
     }
@@ -245,6 +237,7 @@ public class Player : MonoBehaviour
     {
         Speed = 0;
     }
+
     public void isNormal(bool state)
     {
         if (state && !isChangeState)
@@ -308,7 +301,7 @@ public class Player : MonoBehaviour
     {
         if (SkillAvail && GetSkillCost() <= MP)
         {
-            AddMP(-GetSkillCost());
+            MPChange(-GetSkillCost());
             UseSkill = true;
             SkillAvail = false;
             Playerani.SetBool("UseSkill", UseSkill);
@@ -330,6 +323,7 @@ public class Player : MonoBehaviour
             Playerani.SetBool("UseSkill", UseSkill);
             StartCoroutine(ResetUseSkill());
             CurCooldown = Cooldown;
+            SkillParticle.Play();
         }
     }
     public IEnumerator ResetUseSkill()
@@ -344,13 +338,15 @@ public class Player : MonoBehaviour
         ATKChange(25);
         yield return new WaitForSeconds(10);
         ATKChange(-25);
+        SkillParticle.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
     }
     public IEnumerator AvelynSkill()
     {
         ATK *= 2;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         ATK /= 2;
         Healing(MaxHP/4);
+        SkillParticle.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
     }
     public IEnumerator DogKnightSkill()
     {
@@ -365,6 +361,7 @@ public class Player : MonoBehaviour
         Healing(5);
         yield return new WaitForSeconds(1);
         MaxSpeedChange(-4);
+        SkillParticle.Stop(true,ParticleSystemStopBehavior.StopEmittingAndClear);
     }
     public IEnumerator SkillCooldown()
     {
