@@ -3319,6 +3319,8 @@ GameObject:
   - component: {fileID: 8619863769468356690}
   - component: {fileID: 8462531119088151216}
   - component: {fileID: 7655690699250300839}
+  - component: {fileID: 3982946970222593782}
+  - component: {fileID: 71727091241401314}
   - component: {fileID: 3037743098562945555}
   - component: {fileID: 3037743098562945554}
   - component: {fileID: 3037743098562945553}
@@ -3336,6 +3338,8 @@ GameObject:
   - component: {fileID: 5266506073864143134}
   - component: {fileID: 6601443895635697060}
   - component: {fileID: 662944964347120341}
+  - component: {fileID: 823696519847296390}
+  - component: {fileID: -5708021511623118838}
   m_Layer: 0
   m_Name: RedDragon
   m_TagString: Boss
@@ -3388,7 +3392,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3037743098562945547}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 6000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -3408,7 +3412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34e5fea04bb708f4caa36b0ba88885ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 1
+  MaxHP: 6000
   MoveSpeed: 5
   RotateSpeed: 5
   DeadWaitTime: 5
@@ -3416,7 +3420,7 @@ MonoBehaviour:
   IdleWhenAnimation: 0
   AttackBuffRate: 1
   mainCollider: {fileID: 1296688923467251572}
-  Offset: 5
+  Offset: 1
 --- !u!114 &3037743098562945565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3430,12 +3434,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentStateName: 
-  FirstStateName: Idle
+  FirstStateName: IntroFly
   StateList:
   - StateName: Idle
-    Action: {fileID: 0}
+    Action: {fileID: 71727091241401314}
     TransList:
     - Order: 0
+      TransitionDelay: 6
       Decider: {fileID: 3037743098562945557}
       TrueState: Follow
       FalseState: 
@@ -3443,18 +3448,22 @@ MonoBehaviour:
     Action: {fileID: 3037743098562945564}
     TransList:
     - Order: 0
+      TransitionDelay: 0
       Decider: {fileID: 3037743098562945556}
       TrueState: 
       FalseState: Back
     - Order: 2
+      TransitionDelay: 0
       Decider: {fileID: 3037743098562945555}
       TrueState: FlameAttack
       FalseState: 
     - Order: 3
+      TransitionDelay: 0
       Decider: {fileID: 3037743098562945554}
       TrueState: ClawAttack
       FalseState: 
     - Order: 1
+      TransitionDelay: 0
       Decider: {fileID: 3037743098562945562}
       TrueState: Fly
       FalseState: 
@@ -3462,6 +3471,7 @@ MonoBehaviour:
     Action: {fileID: 3037743098562945552}
     TransList:
     - Order: 0
+      TransitionDelay: 0
       Decider: {fileID: 3037743098562945553}
       TrueState: Follow
       FalseState: 
@@ -3469,6 +3479,7 @@ MonoBehaviour:
     Action: {fileID: 3037743098562945559}
     TransList:
     - Order: 0
+      TransitionDelay: 0
       Decider: {fileID: 3037743098562945558}
       TrueState: Follow
       FalseState: 
@@ -3476,6 +3487,7 @@ MonoBehaviour:
     Action: {fileID: 3037743098562945563}
     TransList:
     - Order: 0
+      TransitionDelay: 0
       Decider: {fileID: 3037743098562945572}
       TrueState: FlyPatrol
       FalseState: 
@@ -3483,14 +3495,17 @@ MonoBehaviour:
     Action: {fileID: 3037743098562945573}
     TransList:
     - Order: 2
+      TransitionDelay: 0
       Decider: {fileID: 3037743098562945580}
       TrueState: FlyFollow
       FalseState: 
     - Order: 1
+      TransitionDelay: 0
       Decider: {fileID: 3037743098562945571}
       TrueState: Land
       FalseState: 
     - Order: 0
+      TransitionDelay: 0
       Decider: {fileID: 5266506073864143134}
       TrueState: 
       FalseState: Land
@@ -3498,14 +3513,17 @@ MonoBehaviour:
     Action: {fileID: 8462531119088151216}
     TransList:
     - Order: 1
+      TransitionDelay: 0
       Decider: {fileID: 3037743098562945568}
       TrueState: FlyFlameAttack
       FalseState: 
     - Order: 0
+      TransitionDelay: 0
       Decider: {fileID: 3037743098562945569}
       TrueState: 
       FalseState: FlyPatrol
     - Order: 2
+      TransitionDelay: 0
       Decider: {fileID: 662944964347120341}
       TrueState: FlyPatrol
       FalseState: 
@@ -3513,6 +3531,7 @@ MonoBehaviour:
     Action: {fileID: 3037743098562945575}
     TransList:
     - Order: 0
+      TransitionDelay: 0
       Decider: {fileID: 3037743098562945574}
       TrueState: FlyPatrol
       FalseState: 
@@ -3520,6 +3539,7 @@ MonoBehaviour:
     Action: {fileID: 3037743098562945581}
     TransList:
     - Order: 0
+      TransitionDelay: 0
       Decider: {fileID: 3037743098562945582}
       TrueState: Follow
       FalseState: 
@@ -3527,12 +3547,26 @@ MonoBehaviour:
     Action: {fileID: 8619863769468356690}
     TransList:
     - Order: 0
+      TransitionDelay: 0
       Decider: {fileID: 6601443895635697060}
       TrueState: Idle
       FalseState: 
   - StateName: IntroFly
     Action: {fileID: 7655690699250300839}
-    TransList: []
+    TransList:
+    - Order: 0
+      TransitionDelay: 0
+      Decider: {fileID: 823696519847296390}
+      TrueState: IntroLand
+      FalseState: 
+  - StateName: IntroLand
+    Action: {fileID: 3982946970222593782}
+    TransList:
+    - Order: 0
+      TransitionDelay: 0
+      Decider: {fileID: -5708021511623118838}
+      TrueState: Idle
+      FalseState: 
 --- !u!114 &3037743098562945564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3546,6 +3580,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Follow
+  ActionSound: {fileID: 0}
+  SoundDelay: 0
   IsFieldLimited: 1
   IsFlyMode: 0
   FlySpeedUp: 1
@@ -3562,6 +3598,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: ClawAttack
+  ActionSound: {fileID: 0}
+  SoundDelay: 0
   Damage: 10
 --- !u!114 &3037743098562945559
 MonoBehaviour:
@@ -3576,6 +3614,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: FlameAttack
+  ActionSound: {fileID: 0}
+  SoundDelay: 0
   Damage: 4
   FlameObject: {fileID: 1634767862067424, guid: 007c57e2df8e9b144b99f471b84f3d56,
     type: 3}
@@ -3596,6 +3636,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Fly
+  ActionSound: {fileID: 0}
+  SoundDelay: 0
   TakeOffSpeed: 2
 --- !u!114 &3037743098562945573
 MonoBehaviour:
@@ -3610,6 +3652,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: FlyPatrol
+  ActionSound: {fileID: 0}
+  SoundDelay: 0
 --- !u!114 &3037743098562945575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3623,6 +3667,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: FlyFlameAttack
+  ActionSound: {fileID: 0}
+  SoundDelay: 0
   Damage: 10
   Head: {fileID: 3037743098269929874}
   FireBallObject: {fileID: 1947871717301538, guid: a990e3ac1318b834488c784d851f42a9,
@@ -3644,6 +3690,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: FlyFollow
+  ActionSound: {fileID: 0}
+  SoundDelay: 0
   IsFieldLimited: 1
   IsFlyMode: 0
   FlySpeedUp: 1
@@ -3660,7 +3708,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Land
-  LandSpeed: 2
+  ActionSound: {fileID: 0}
+  SoundDelay: 0
+  LandAtFieldCenter: 0
+  InitLandSpeed: 0
+  LandEffect: {fileID: 1025285306637258, guid: d8f0099df63275647a8bcf646df1ca00, type: 3}
 --- !u!114 &8619863769468356690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3674,6 +3726,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Back
+  ActionSound: {fileID: 0}
+  SoundDelay: 0
 --- !u!114 &8462531119088151216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3687,6 +3741,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: FlyFollow
+  ActionSound: {fileID: 0}
+  SoundDelay: 0
   IsFlyMode: 1
   KeepDistance: 18
 --- !u!114 &7655690699250300839
@@ -3702,8 +3758,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: IntroFly
+  ActionSound: {fileID: 0}
+  SoundDelay: 0
   MoveSpeedRate: 2
   RotateSpeedRate: 0.18
+--- !u!114 &3982946970222593782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3037743098562945547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38e02baae8c31fe4dab0f63920c7c27c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseStateName: IntroLand
+  ActionSound: {fileID: 0}
+  SoundDelay: 0
+  LandAtFieldCenter: 1
+  InitLandSpeed: 10
+  LandEffect: {fileID: 1025285306637258, guid: d8f0099df63275647a8bcf646df1ca00, type: 3}
+--- !u!114 &71727091241401314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3037743098562945547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11badb71bec153946801f77f7f6d5db4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseStateName: Idle
+  ActionSound: {fileID: 8300000, guid: 166c90b9017dd514fb24410bd4c47c3f, type: 3}
+  SoundDelay: 1
 --- !u!114 &3037743098562945555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3790,7 +3881,7 @@ MonoBehaviour:
   DetectPauseTime: 0
   ShowInScene: 0
   IsRangeStable: 1
-  DetectCenter: {x: 0, y: 0, z: 0}
+  DetectCenter: {x: 0, y: -20, z: 0}
   DetectRadius: 30
 --- !u!114 &3037743098562945556
 MonoBehaviour:
@@ -3808,7 +3899,7 @@ MonoBehaviour:
   DetectPauseTime: 0
   ShowInScene: 1
   IsRangeStable: 1
-  DetectCenter: {x: 0, y: 0, z: 0}
+  DetectCenter: {x: 0, y: -20, z: 0}
   DetectRadius: 30
 --- !u!114 &3037743098562945562
 MonoBehaviour:
@@ -3994,6 +4085,41 @@ MonoBehaviour:
   UseStateName: FlyFollow
   DetectPauseTime: 0
   WaitTime: 4
+  KeepPreviousTime: 0
+--- !u!114 &823696519847296390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3037743098562945547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad5935af51adf6c4a967fc77756c7a39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseStateName: IntroFly
+  DetectPauseTime: 0
+  ShowInScene: 0
+  IsRangeStable: 1
+  DetectCenter: {x: 0, y: 0, z: 0}
+  DetectSize: {x: 30, y: 30, z: 30}
+  StableRotateY: 59
+--- !u!114 &-5708021511623118838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3037743098562945547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d81a937f1e55ad41b8427dc77f5f7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseStateName: IntroLand
+  DetectPauseTime: 0
+  WaitTime: 8
   KeepPreviousTime: 0
 --- !u!1 &3037743098586715581
 GameObject:
@@ -5053,7 +5179,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4, y: 4, z: 6}
+  m_Size: {x: 4, y: 3.17, z: 6}
   m_Center: {x: 0, y: 0, z: 1.25}
 --- !u!114 &351911627842409761
 MonoBehaviour:

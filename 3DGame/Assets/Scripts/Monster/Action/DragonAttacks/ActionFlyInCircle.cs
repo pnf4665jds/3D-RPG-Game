@@ -26,7 +26,7 @@ public class ActionFlyInCircle : ActionBase
     public override void Exit()
     {
         StopCoroutine(Calculate());
-        rigid.useGravity = true;
+        //rigid.useGravity = true;
     }
 
     /// <summary>
@@ -43,7 +43,7 @@ public class ActionFlyInCircle : ActionBase
             if (val >= 1)
                 val = 0;
             float theta = val * 2 * Mathf.PI;
-            float len = monsterInfo.FieldRadius;
+            float len = monsterInfo.FieldRadius * 0.9f;
             targetPos = new Vector3(monsterInfo.FieldCenter.x + len * Mathf.Cos(theta), transform.position.y, monsterInfo.FieldCenter.z + len * Mathf.Sin(theta));
             startMove = true;
             yield return new WaitUntil(() => Vector3.Distance(transform.position, targetPos) < 0.1f);

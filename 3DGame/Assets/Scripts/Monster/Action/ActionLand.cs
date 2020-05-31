@@ -6,28 +6,26 @@ public class ActionLand : ActionBase
 {
     // 這個Action用來讓怪物進行著地動作
 
-    public float LandSpeed = 1;
+    public bool LandAtFieldCenter = false;
+    public float InitLandSpeed = 0;
+    public GameObject LandEffect;
 
     public override void Init()
     {
-        animator.SetTrigger("Land");
+        if (LandAtFieldCenter)
+            StartCoroutine(MoveToCenter());
+        else
+        {
+            animator.SetTrigger("Land");
+            rigid.useGravity = true;
+            rigid.velocity += new Vector3(0, -InitLandSpeed, 0);
+            StartCoroutine(SetEffect());
+        }
     }
 
     public override void Process()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, Mathf.Infinity, 1 << 9))
-        {
-            if(Vector3.Distance(hit.point, transform.position) < 0.1f)
-            {
-                // 開啟重力
-                rigid.useGravity = true;
-            }
-            else
-            {
-                Land();
-            }
-        }
+        
     }
 
     public override void Exit()
@@ -35,11 +33,28 @@ public class ActionLand : ActionBase
         
     }
 
-    /// <summary>
-    /// 降落
-    /// </summary>
-    private void Land()
+    private IEnumerator MoveToCenter()
     {
-        transform.position = Vector3.MoveTowards(transform.position, transform.position + Vector3.down, monsterInfo.MoveSpeed * Time.deltaTime * LandSpeed);
+        Vector3 targetPos = monsterInfo.FieldCenter;
+        targetPos.y = transform.position.y;
+        while(Vector3.Distance(transform.position, targetPos) > 0.1f)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, targetPos, monsterInfo.MoveSpeed * Time.deltaTime * 1.5f);
+            Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetPos - transform.position, monsterInfo.RotateSpeed * Time.deltaTime, 0.0f);
+            newDirection.y = 0;
+            transform.rotation = Quaternion.LookRotation(newDirection);
+            yield return null;
+        }
+        StartCoroutine(SetEffect());
+        animator.SetTrigger("QuickLand");
+        rigid.useGravity = true;
+        rigid.velocity += new Vector3(0, -InitLandSpeed, 0);
+    }
+
+    private IEnumerator SetEffect()
+    {
+        yield return new WaitUntil(() => monsterInfo.isGrounded);
+        GameObject obj = Instantiate(LandEffect, transform.position, Quaternion.identity);
+        Destroy(obj, 3);
     }
 }

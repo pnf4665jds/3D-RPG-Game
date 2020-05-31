@@ -34,7 +34,7 @@ public class State
                 {
                     hasEval = true;
                     t.Decider.StartPauseTimer();
-                    controller.ChangeState(t.TrueState);
+                    controller.ChangeState(t.TrueState, t.TransitionDelay);
                 }
             }
             else
@@ -44,7 +44,7 @@ public class State
                 {
                     hasEval = true;
                     t.Decider.StartPauseTimer();
-                    controller.ChangeState(t.FalseState);
+                    controller.ChangeState(t.FalseState, t.TransitionDelay);
                 }
             }
         }
@@ -58,6 +58,7 @@ public class State
 public class Transition
 {
     public int Order;   // 判斷優先度，數字越小優先度越高
+    public float TransitionDelay = 0;   // 符合特定規則後須等待特定秒數才轉移
     public DeciderBase Decider;
     public string TrueState;    
     public string FalseState;

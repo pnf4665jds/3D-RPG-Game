@@ -19,15 +19,36 @@ public class SoundSystem : Singleton<SoundSystem>
     /// </summary>
     /// <param name="clip">要播放的音效</param>
     /// <param name="position">播放位置</param>
-    public void PlaySound(AudioClip clip, Vector3 position)
+    public void PlaySound3D(AudioClip clip, Vector3 position, float delay)
     {
         GameObject obj = new GameObject();
         AudioSource source = obj.AddComponent<AudioSource>();
         obj.transform.position = position;
         source.clip = clip;
         source.spatialBlend = 1;
+        StartCoroutine(DelayAndPlay(source, delay));
+        Destroy(obj, clip.length + delay);
+    }
+
+    /// <summary>
+    /// 播放2D音效
+    /// </summary>
+    /// <param name="clip">要播放的音效</param>
+    /// <param name="position">播放位置</param>
+    public void PlaySound2D(AudioClip clip, float delay)
+    {
+        GameObject obj = new GameObject();
+        AudioSource source = obj.AddComponent<AudioSource>();
+        source.clip = clip;
+        source.spatialBlend = 0;
+        StartCoroutine(DelayAndPlay(source, delay));
+        Destroy(obj, clip.length + delay);
+    }
+
+    private IEnumerator DelayAndPlay(AudioSource source, float delay)
+    {
+        yield return new WaitForSeconds(delay);
         source.Play();
-        Destroy(obj, clip.length);
     }
 
     /// <summary>

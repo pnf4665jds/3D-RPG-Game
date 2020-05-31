@@ -16,7 +16,7 @@ public class ActionController : MonoBehaviour
 
     private void Awake()
     {
-        ChangeState(FirstStateName);
+        ChangeState(FirstStateName, 0);
         OrderingList();
     }
 
@@ -50,8 +50,20 @@ public class ActionController : MonoBehaviour
     /// 切換狀態
     /// </summary>
     /// <param name="newState"></param>
-    public void ChangeState(string newStateName)
+    public void ChangeState(string newStateName, float delay)
     {
+        StartCoroutine(WaitChangeState(newStateName, delay));
+    }
+
+    /// <summary>
+    /// 等待一個delay後切換狀態
+    /// </summary>
+    /// <param name="newStateName"></param>
+    /// <param name="delay"></param>
+    /// <returns></returns>
+    private IEnumerator WaitChangeState(string newStateName, float delay)
+    {
+        yield return new WaitForSeconds(delay);
         ExitAllDeciderInState();
         CurrentStateName = newStateName;
         foreach (State s in StateList)
@@ -66,7 +78,6 @@ public class ActionController : MonoBehaviour
                 break;
             }
         }
-
     }
 
     /// <summary>

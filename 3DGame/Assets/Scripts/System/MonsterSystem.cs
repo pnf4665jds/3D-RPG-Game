@@ -72,7 +72,7 @@ public class MonsterSystem : Singleton<MonsterSystem>
         if (isEnable)
         {
             controller.InitAllDecider();
-            controller.ChangeState("Idle");
+            controller.ChangeState("Idle", 0);
         }
     }
 

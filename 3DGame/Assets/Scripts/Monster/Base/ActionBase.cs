@@ -10,6 +10,8 @@ public abstract class ActionBase : MonoBehaviour
     public abstract void Exit();
 
     public string UseStateName;     // 這個Action使用在哪個state
+    public AudioClip ActionSound;
+    public float SoundDelay;
 
     protected ActionController controller { get; set; }
     protected Animator animator { get; set; }
