@@ -4341,7 +4341,7 @@ MonoBehaviour:
   Monster: {fileID: 3037743098562945547, guid: b63813404ecc18742b0ba2601bd9d9be, type: 3}
   MonsterNum: 1
   Name: BOSS
-  YDelta: 20
+  YDelta: 25
 --- !u!135 &854657558
 SphereCollider:
   m_ObjectHideFlags: 0

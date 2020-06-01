@@ -16,9 +16,9 @@ public class ActionLand : ActionBase
             StartCoroutine(MoveToCenter());
         else
         {
+            animator.SetBool("FlyForward", false);
             animator.SetTrigger("Land");
             rigid.useGravity = true;
-            rigid.velocity += new Vector3(0, -InitLandSpeed, 0);
             StartCoroutine(SetEffect());
         }
     }
@@ -46,7 +46,8 @@ public class ActionLand : ActionBase
             yield return null;
         }
         StartCoroutine(SetEffect());
-        animator.SetTrigger("QuickLand");
+        animator.SetBool("FlyForward", false);
+        animator.SetTrigger("Land");
         rigid.useGravity = true;
         rigid.velocity += new Vector3(0, -InitLandSpeed, 0);
     }
