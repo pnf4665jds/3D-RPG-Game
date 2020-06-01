@@ -13,6 +13,7 @@ public class GameSystem : Singleton<GameSystem>
         backpack,
         shopping,
         Animation,
+        story,
         dead
     }
 
@@ -30,6 +31,13 @@ public class GameSystem : Singleton<GameSystem>
         changeTheWorldTime(1);
         UISystem.instance.changeToTalkingMode(character);
 
+
+    }
+    public void changeModeStory()
+    {
+        gs = GameState.story;
+        MonsterSystem.instance.IdleAllMonsterOnAnimation();
+        //changeTheWorldTime(0);
 
     }
     public void changeModeAnimation()
@@ -51,7 +59,7 @@ public class GameSystem : Singleton<GameSystem>
     public void changeModeBackPack()
     {
         gs = GameState.backpack;
-        changeTheWorldTime(0);
+        MonsterSystem.instance.IdleAllMonsterOnAnimation();
 
     }
     public void changeModeFollowPlayer()
@@ -85,6 +93,10 @@ public class GameSystem : Singleton<GameSystem>
     public bool isPlayerOpenBackPack()
     {
         return (gs == GameState.backpack) ? true : false;
+    }
+    public bool isPlayerStory()
+    {
+        return (gs == GameState.story) ? true : false;
     }
     public void changeTheWorldTime(float timeSpeed) {
         Time.timeScale = timeSpeed;
