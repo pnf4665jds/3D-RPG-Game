@@ -44,7 +44,7 @@ public class shopRobot : NPC
     private void shopOpen()
     {
         Collider[] enterZone = Physics.OverlapBox(transform.position, openShopSize, transform.rotation, LayerMask.GetMask("Player"));
-        
+        //print("overlapBox" + enterZone.Length);
         if (enterZone.Length > 0 )
         {
             this.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = pressX;

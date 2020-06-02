@@ -97,5 +97,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPersistant: 0
-  SmoothFactor: 0.5
   lookAtPlayer: 0
