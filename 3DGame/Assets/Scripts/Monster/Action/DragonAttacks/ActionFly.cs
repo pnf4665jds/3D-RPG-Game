@@ -13,6 +13,7 @@ public class ActionFly : ActionBase
         animator.SetTrigger("TakeOff");
         // 關閉重力
         rigid.useGravity = false;
+        SoundSystem.instance.PlaySound(Source, ActionSound, Volume, SoundDelay, true);
     }
 
     public override void Process()

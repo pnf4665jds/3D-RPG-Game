@@ -10,7 +10,7 @@ public class ActionScream : ActionBase
     {
         timer = 0;
         animator.SetTrigger("Scream");
-        SoundSystem.instance.PlaySound3D(ActionSound, transform.position, SoundDelay);
+        SoundSystem.instance.PlaySound(Source, ActionSound, Volume, SoundDelay, false);
     }
 
     public override void Process()

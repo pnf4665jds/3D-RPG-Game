@@ -6,6 +6,7 @@ public class ActionLand : ActionBase
 {
     // 這個Action用來讓怪物進行著地動作
 
+    [Header("Land")]
     public bool LandAtFieldCenter = false;
     public float InitLandSpeed = 0;
     public GameObject LandEffect;
@@ -48,6 +49,7 @@ public class ActionLand : ActionBase
         StartCoroutine(SetEffect());
         animator.SetBool("FlyForward", false);
         animator.SetTrigger("Land");
+        yield return new WaitForSeconds(1);
         rigid.useGravity = true;
         rigid.velocity += new Vector3(0, -InitLandSpeed, 0);
     }
@@ -55,6 +57,7 @@ public class ActionLand : ActionBase
     private IEnumerator SetEffect()
     {
         yield return new WaitUntil(() => monsterInfo.isGrounded);
+        Source.Stop();
         GameObject obj = Instantiate(LandEffect, transform.position, Quaternion.identity);
         Destroy(obj, 3);
     }

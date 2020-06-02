@@ -6,6 +6,7 @@ public class ActionFlameAttack : ActionBase
 {
     // 這個Action用來讓火龍進行噴火攻擊
 
+    [Header("Flame")]
     public float Damage;            // 傷害
     public GameObject FlameObject;  // 火焰特效物件
     public GameObject Head;         // 龍的頭部
@@ -37,6 +38,7 @@ public class ActionFlameAttack : ActionBase
     /// <returns></returns>
     private IEnumerator StartEffect()
     {
+        SoundSystem.instance.PlaySound(Source, ActionSound, Volume, SoundDelay, false);
         yield return new WaitForSeconds(DelayBeforeEffect);
         flameObject = Instantiate(FlameObject, Head.transform);
         ParticleDamager damager = flameObject.AddComponent<ParticleDamager>();

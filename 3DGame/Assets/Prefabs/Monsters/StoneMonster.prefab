@@ -298,6 +298,7 @@ MonoBehaviour:
   RotateSpeed: 5
   DeadWaitTime: 2
   CoinSum: 100
+  IdleWhenAnimation: 0
   AttackBuffRate: 1
   mainCollider: {fileID: 2322792306581674664}
   Offset: 0.2
@@ -320,10 +321,12 @@ MonoBehaviour:
     Action: {fileID: 7364347008557810436}
     TransList:
     - Order: 1
+      TransitionDelay: 0
       Decider: {fileID: 324850865}
       TrueState: Follow
       FalseState: 
     - Order: 0
+      TransitionDelay: 0
       Decider: {fileID: 1574418783358417911}
       TrueState: Back
       FalseState: 
@@ -331,14 +334,17 @@ MonoBehaviour:
     Action: {fileID: 324850864}
     TransList:
     - Order: 1
+      TransitionDelay: 0
       Decider: {fileID: 966466048675799226}
       TrueState: 
       FalseState: Back
     - Order: 2
+      TransitionDelay: 0
       Decider: {fileID: 7071659971909622108}
       TrueState: Attack
       FalseState: 
     - Order: 0
+      TransitionDelay: 0
       Decider: {fileID: 7014428941042049743}
       TrueState: Back
       FalseState: 
@@ -346,6 +352,7 @@ MonoBehaviour:
     Action: {fileID: 7757978349363264088}
     TransList:
     - Order: 0
+      TransitionDelay: 0
       Decider: {fileID: 5750884645848988401}
       TrueState: Follow
       FalseState: 
@@ -353,6 +360,7 @@ MonoBehaviour:
     Action: {fileID: 3965253632808350629}
     TransList:
     - Order: 0
+      TransitionDelay: 0
       Decider: {fileID: 6214341331534856085}
       TrueState: Patrol
       FalseState: 
@@ -482,6 +490,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Follow
+  ActionSound: {fileID: 0}
+  SoundDelay: 0
   IsFieldLimited: 1
   IsFlyMode: 0
   FlySpeedUp: 1
@@ -498,6 +508,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Patrol
+  ActionSound: {fileID: 0}
+  SoundDelay: 0
 --- !u!114 &7757978349363264088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -511,6 +523,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Attack
+  ActionSound: {fileID: 0}
+  SoundDelay: 0
   Damage: 10
   TriggerName: Attack
 --- !u!114 &3965253632808350629
@@ -526,6 +540,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Back
+  ActionSound: {fileID: 0}
+  SoundDelay: 0
 --- !u!54 &8650517194863206173
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -658,7 +674,7 @@ GameObject:
   - component: {fileID: 629350849416114491}
   - component: {fileID: 6502412852122774124}
   - component: {fileID: 947572089248817915}
-  m_Layer: 12
+  m_Layer: 13
   m_Name: NoMove
   m_TagString: Untagged
   m_Icon: {fileID: 0}

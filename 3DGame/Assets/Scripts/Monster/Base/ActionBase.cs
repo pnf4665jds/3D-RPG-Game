@@ -10,8 +10,12 @@ public abstract class ActionBase : MonoBehaviour
     public abstract void Exit();
 
     public string UseStateName;     // 這個Action使用在哪個state
+
+    [Header("Sound Effect")]
+    public AudioSource Source;
     public AudioClip ActionSound;
-    public float SoundDelay;
+    public float Volume = 1;    // 音量 (0.0 ~ 1.0)
+    public float SoundDelay;    // 音效播放延遲
 
     protected ActionController controller { get; set; }
     protected Animator animator { get; set; }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ActionFlyInCircle : ActionBase
 {
+    [Header("Fly")]
     public float MoveSpeedRate = 1;
     public float RotateSpeedRate = 1;
 
@@ -15,6 +16,7 @@ public class ActionFlyInCircle : ActionBase
         StartCoroutine(Calculate());
         animator.SetBool("FlyForward", true);
         rigid.useGravity = false;
+        SoundSystem.instance.PlaySound(Source, ActionSound, Volume, SoundDelay, true);
     }
 
     public override void Process()

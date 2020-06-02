@@ -14,12 +14,13 @@ public class SoundSystem : Singleton<SoundSystem>
         CreateBGMSource();
     }
 
-    /// <summary>
+    /*/// <summary>
     /// 播放3D音效
     /// </summary>
     /// <param name="clip">要播放的音效</param>
     /// <param name="position">播放位置</param>
-    public void PlaySound3D(AudioClip clip, Vector3 position, float delay)
+    /// <param name="additionalLoopTime">額外循環時間</param>
+    public GameObject PlaySound3D(AudioClip clip, Vector3 position, float delay, bool toLoop)
     {
         GameObject obj = new GameObject();
         AudioSource source = obj.AddComponent<AudioSource>();
@@ -27,7 +28,12 @@ public class SoundSystem : Singleton<SoundSystem>
         source.clip = clip;
         source.spatialBlend = 1;
         StartCoroutine(DelayAndPlay(source, delay));
-        Destroy(obj, clip.length + delay);
+        if (!toLoop)
+            Destroy(obj, clip.length + delay);
+        else
+            source.loop = true;
+
+        return obj;
     }
 
     /// <summary>
@@ -35,16 +41,45 @@ public class SoundSystem : Singleton<SoundSystem>
     /// </summary>
     /// <param name="clip">要播放的音效</param>
     /// <param name="position">播放位置</param>
-    public void PlaySound2D(AudioClip clip, float delay)
+    public GameObject PlaySound2D(AudioClip clip, float delay, bool toLoop)
     {
         GameObject obj = new GameObject();
         AudioSource source = obj.AddComponent<AudioSource>();
         source.clip = clip;
         source.spatialBlend = 0;
         StartCoroutine(DelayAndPlay(source, delay));
-        Destroy(obj, clip.length + delay);
+        if (!toLoop)
+            Destroy(obj, clip.length + delay);
+        else
+            source.loop = true;
+
+        return obj;
+    }*/
+
+    /// <summary>
+    /// 播放音效
+    /// </summary>
+    /// <param name="source"></param>
+    /// <param name="clip"></param>
+    /// <param name="delay"></param>
+    /// <param name="toLoop"></param>
+    public void PlaySound(AudioSource source, AudioClip clip, float volume, float delay, bool toLoop)
+    {
+        if (!source || !clip)
+            return;
+
+        source.clip = clip;
+        source.volume = volume;
+        source.loop = toLoop;
+        StartCoroutine(DelayAndPlay(source, delay));
     }
 
+    /// <summary>
+    /// 經過延遲後播放
+    /// </summary>
+    /// <param name="source"></param>
+    /// <param name="delay"></param>
+    /// <returns></returns>
     private IEnumerator DelayAndPlay(AudioSource source, float delay)
     {
         yield return new WaitForSeconds(delay);
