@@ -12,7 +12,7 @@ public class GameSceneManager : Singleton<GameSceneManager>
     public string CurrentSceneName { get; private set; }
     public string NextSceneName { get; private set; }
     public List<Action> ActionOnCompleted { get; private set; }
-    public bool IsLoadingFinish;    // 回傳場景是否載入完畢
+    public bool IsLoadingFinish { get; private set; }    // 回傳場景是否載入完畢
 
     private GameObject player;
     private GameObject mainCamera;
