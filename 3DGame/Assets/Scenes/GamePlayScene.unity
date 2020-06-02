@@ -817,6 +817,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Monster: {fileID: 3823332478208203829, guid: 547ef3da0f58f594cadb9d9880269c64, type: 3}
+  IsBossField: 0
   MonsterNum: 1
   Name: golem
   YDelta: 0
@@ -1629,6 +1630,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Monster: {fileID: 1713781036754730, guid: 0f8a471e5537f864ebdb454fe82308eb, type: 3}
+  IsBossField: 0
   MonsterNum: 3
   Name: StoneMonster
   YDelta: 3
@@ -4339,6 +4341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Monster: {fileID: 3037743098562945547, guid: b63813404ecc18742b0ba2601bd9d9be, type: 3}
+  IsBossField: 1
   MonsterNum: 1
   Name: BOSS
   YDelta: 25
@@ -5592,6 +5595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Monster: {fileID: 5015241899266592804, guid: 1742e3490a6242141bcccd98e34967bf, type: 3}
+  IsBossField: 0
   MonsterNum: 3
   Name: Slime
   YDelta: 0

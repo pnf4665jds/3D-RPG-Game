@@ -6,6 +6,10 @@ using System;
 
 public class GameSceneManager : Singleton<GameSceneManager>
 {
+    public float BGMFadeInTime = 3;
+    public float BGMFadeOutTime = 3;
+
+    public string CurrentSceneName { get; private set; }
     public string NextSceneName { get; private set; }
     public List<Action> ActionOnCompleted { get; private set; }
     public bool IsLoadingFinish;    // 回傳場景是否載入完畢
@@ -55,7 +59,8 @@ public class GameSceneManager : Singleton<GameSceneManager>
             player.SetActive(true);
             mainCamera.SetActive(true);
         }
-        SoundSystem.instance.PlayBGM(scene.name);   // 播放對應場景的BGM
+        CurrentSceneName = scene.name;
+        SoundSystem.instance.PlayBGM(BGMFadeInTime);   // 淡入對應場景的BGM
         IsLoadingFinish = true;
     }
 
@@ -65,5 +70,6 @@ public class GameSceneManager : Singleton<GameSceneManager>
     private void DoBeforeLoadScene()
     {
         MonsterSystem.instance.RemoveAllMonster();
+        SoundSystem.instance.PlayBGM(BGMFadeOutTime);   // 淡出對應場景的BGM
     }
 }

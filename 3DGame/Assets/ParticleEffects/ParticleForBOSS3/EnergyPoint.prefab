@@ -109,11 +109,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34e5fea04bb708f4caa36b0ba88885ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 500
+  MaxHP: 1
   MoveSpeed: 0
   RotateSpeed: 0
   DeadWaitTime: 0
   CoinSum: 0
+  IdleWhenAnimation: 0
   AttackBuffRate: 1
   mainCollider: {fileID: 3664237278242416460}
   Offset: 0
