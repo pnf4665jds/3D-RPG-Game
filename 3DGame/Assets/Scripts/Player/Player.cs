@@ -120,11 +120,20 @@ public class Player : MonoBehaviour
             FrameCount -= 100;
         }
     }
+    public bool GetisAttack()
+    {
+        return isAttack;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "MonsterField")
         {
             PositionUI.GetComponent<PositionMessage>().showMessage(other.gameObject.GetComponent<MonsterField>().GetFieldName());
+            if (other.gameObject.GetComponent<MonsterField>().IsBossField)
+            {
+                SoundSystem.instance.PlayBossBGM(3f);
+            }
         }
         else if (other.tag == "Monster" || other.tag == "Boss")
         {
@@ -134,7 +143,7 @@ public class Player : MonoBehaviour
         {
             other.gameObject.GetComponent<GroundMove>().Triggered();
         }
-        else if (other.tag == "goldCoin" || other.tag == "silverCoin" || other.tag == "copperCoin" || other.tag == "HealthPotion" || other.tag == "ManaPotion" || other.tag =="")
+        else if (other.tag == "goldCoin" || other.tag == "silverCoin" || other.tag == "copperCoin" || other.tag == "HealthPotion" || other.tag == "ManaPotion" || other.tag == "")
         {
             switch (other.tag)
             {
@@ -154,16 +163,22 @@ public class Player : MonoBehaviour
             }
             Destroy(other.gameObject);
         }
-        else if(other.tag == "director")
+        else if (other.tag == "director")
         {
             temp = other.gameObject;
             temp.GetComponent<TimeLineManager>().TimeLinePlay();
             GameSystem.instance.changeModeAnimation();
         }
     }
-    public bool GetisAttack()
+    private void OnTriggerExit(Collider other)
     {
-        return isAttack;
+        if(other.tag == "MonsterField")
+        {
+            if (other.gameObject.GetComponent<MonsterField>().IsBossField)
+            {
+                SoundSystem.instance.PlayBGM(3);
+            }
+        }
     }
     public void SetSpeed(float speed) { Speed = speed; }
     public float GetSpeed() { return Speed; }
@@ -351,13 +366,16 @@ public class Player : MonoBehaviour
     public IEnumerator DogKnightSkill()
     {
         MaxSpeedChange(4);
-        yield return new WaitForSeconds(1);
+        GetComponent<PlayerSoundSys>().Skill();
         Healing(5);
         yield return new WaitForSeconds(1);
+        GetComponent<PlayerSoundSys>().Skill();
         Healing(5);
         yield return new WaitForSeconds(1);
+        GetComponent<PlayerSoundSys>().Skill();
         Healing(5);
         yield return new WaitForSeconds(1);
+        GetComponent<PlayerSoundSys>().Skill();
         Healing(5);
         yield return new WaitForSeconds(1);
         MaxSpeedChange(-4);
