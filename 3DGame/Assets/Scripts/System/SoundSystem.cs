@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class SoundSystem : Singleton<SoundSystem>
 {
+    public AudioSource BGMSource;
     public List<BGM> BGMList;     // 每一關使用的BGM列表
-
-    private AudioSource bgmSource;
-
-    public override void Awake()
-    {
-        base.Awake();
-        CreateBGMSource();
-    }
 
     /// <summary>
     /// 播放音效
@@ -57,10 +50,10 @@ public class SoundSystem : Singleton<SoundSystem>
     {
         foreach(BGM bgm in BGMList)
         {
-            if (bgm.SceneName == GameSceneManager.instance.CurrentSceneName)
+            if (bgm.SceneName == GameSceneManager.instance.CurrentSceneName && bgm.NormalBGM)
             {
-                bgmSource.clip = bgm.NormalBGM;
-                StartCoroutine(SoundFadeIn(bgmSource, fadeInTime));
+                BGMSource.clip = bgm.NormalBGM;
+                StartCoroutine(SoundFadeIn(BGMSource, fadeInTime));
             }
         }
     }
@@ -72,10 +65,10 @@ public class SoundSystem : Singleton<SoundSystem>
     {
         foreach (BGM bgm in BGMList)
         {
-            if (bgm.SceneName == GameSceneManager.instance.CurrentSceneName)
+            if (bgm.SceneName == GameSceneManager.instance.CurrentSceneName && bgm.BossBGM)
             {
-                bgmSource.clip = bgm.BossBGM;
-                StartCoroutine(SoundFadeIn(bgmSource, fadeInTime));
+                BGMSource.clip = bgm.BossBGM;
+                StartCoroutine(SoundFadeIn(BGMSource, fadeInTime));
             }
         }
     }
@@ -85,16 +78,7 @@ public class SoundSystem : Singleton<SoundSystem>
     /// </summary>
     public void StopBGM(float fadeOutTime)
     {
-        StartCoroutine(SoundFadeOut(bgmSource, fadeOutTime));
-    }
-
-    /// <summary>
-    /// 產生專門播放BGM的Source
-    /// </summary>
-    private void CreateBGMSource()
-    {
-        bgmSource = gameObject.AddComponent<AudioSource>();
-        bgmSource.spatialBlend = 0;
+        StartCoroutine(SoundFadeOut(BGMSource, fadeOutTime));
     }
 
     /// <summary>
