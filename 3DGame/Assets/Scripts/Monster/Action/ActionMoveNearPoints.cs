@@ -44,10 +44,11 @@ public class ActionMoveNearPoints : ActionBase
 
     private void Move()
     {
-        transform.position = Vector3.MoveTowards(transform.position, finalPos, monsterInfo.MoveSpeed * Time.deltaTime);
+        /*transform.position = Vector3.MoveTowards(transform.position, finalPos, monsterInfo.MoveSpeed * Time.deltaTime);
         Vector3 newDirection = Vector3.RotateTowards(transform.forward, finalPos - transform.position, monsterInfo.RotateSpeed * Time.deltaTime, 0.0f);
         newDirection.y = 0;
-        transform.rotation = Quaternion.LookRotation(newDirection);
+        transform.rotation = Quaternion.LookRotation(newDirection);*/
+        GetComponent<UnityEngine.AI.NavMeshAgent>().SetDestination(finalPos);
     }
 
     private IEnumerator LookAtPlayer()

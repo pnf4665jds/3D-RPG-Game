@@ -5,6 +5,7 @@ using UnityEngine;
 public class MonsterField : MonoBehaviour
 {
     public GameObject Monster;     // 怪物Prefab
+    public bool IsBossField;    // 是否為Boss的區域
     public int MonsterNum;  // 怪物數量
     public string Name;
     public float YDelta;  // Y軸位移

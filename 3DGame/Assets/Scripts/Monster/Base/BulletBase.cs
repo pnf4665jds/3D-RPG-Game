@@ -38,5 +38,13 @@ public abstract class BulletBase : MonoBehaviour
 
             Destroy(gameObject);
         }
+        else if(other.gameObject.layer == LayerMask.NameToLayer("Terrain"))
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Debug.Log(other.name);
+        }
     }
 }

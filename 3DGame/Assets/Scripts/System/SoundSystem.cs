@@ -14,48 +14,6 @@ public class SoundSystem : Singleton<SoundSystem>
         CreateBGMSource();
     }
 
-    /*/// <summary>
-    /// 播放3D音效
-    /// </summary>
-    /// <param name="clip">要播放的音效</param>
-    /// <param name="position">播放位置</param>
-    /// <param name="additionalLoopTime">額外循環時間</param>
-    public GameObject PlaySound3D(AudioClip clip, Vector3 position, float delay, bool toLoop)
-    {
-        GameObject obj = new GameObject();
-        AudioSource source = obj.AddComponent<AudioSource>();
-        obj.transform.position = position;
-        source.clip = clip;
-        source.spatialBlend = 1;
-        StartCoroutine(DelayAndPlay(source, delay));
-        if (!toLoop)
-            Destroy(obj, clip.length + delay);
-        else
-            source.loop = true;
-
-        return obj;
-    }
-
-    /// <summary>
-    /// 播放2D音效
-    /// </summary>
-    /// <param name="clip">要播放的音效</param>
-    /// <param name="position">播放位置</param>
-    public GameObject PlaySound2D(AudioClip clip, float delay, bool toLoop)
-    {
-        GameObject obj = new GameObject();
-        AudioSource source = obj.AddComponent<AudioSource>();
-        source.clip = clip;
-        source.spatialBlend = 0;
-        StartCoroutine(DelayAndPlay(source, delay));
-        if (!toLoop)
-            Destroy(obj, clip.length + delay);
-        else
-            source.loop = true;
-
-        return obj;
-    }*/
-
     /// <summary>
     /// 播放音效
     /// </summary>
@@ -86,20 +44,48 @@ public class SoundSystem : Singleton<SoundSystem>
         source.Play();
     }
 
+
+    ///////////////////////////////////////////////////////////////////////////////////
+    // BGM
+    ///////////////////////////////////////////////////////////////////////////////////
+
     /// <summary>
     /// 播放BGM
     /// </summary>
     /// <param name="sceneName"></param>
-    public void PlayBGM(string sceneName)
+    public void PlayBGM(float fadeInTime)
     {
         foreach(BGM bgm in BGMList)
         {
-            if (bgm.SceneName == sceneName)
+            if (bgm.SceneName == GameSceneManager.instance.CurrentSceneName)
             {
-                bgmSource.clip = bgm.Clip;
-                bgmSource.Play();
+                bgmSource.clip = bgm.NormalBGM;
+                StartCoroutine(SoundFadeIn(bgmSource, fadeInTime));
             }
         }
+    }
+
+    /// <summary>
+    /// 播放BOSS BGM
+    /// </summary>
+    public void PlayBossBGM(float fadeInTime)
+    {
+        foreach (BGM bgm in BGMList)
+        {
+            if (bgm.SceneName == GameSceneManager.instance.CurrentSceneName)
+            {
+                bgmSource.clip = bgm.BossBGM;
+                StartCoroutine(SoundFadeIn(bgmSource, fadeInTime));
+            }
+        }
+    }
+
+    /// <summary>
+    /// 停止播放BGM
+    /// </summary>
+    public void StopBGM(float fadeOutTime)
+    {
+        StartCoroutine(SoundFadeOut(bgmSource, fadeOutTime));
     }
 
     /// <summary>
@@ -110,11 +96,46 @@ public class SoundSystem : Singleton<SoundSystem>
         bgmSource = gameObject.AddComponent<AudioSource>();
         bgmSource.spatialBlend = 0;
     }
+
+    /// <summary>
+    /// 聲音淡入
+    /// </summary>
+    /// <param name="source"></param>
+    /// <param name="fadeInTime"></param>
+    /// <returns></returns>
+    private IEnumerator SoundFadeIn(AudioSource source, float fadeInTime)
+    {
+        float timer = 0;
+        source.Play();
+        while (timer < fadeInTime && source.volume < 1)
+        {
+            source.volume += 1f / fadeInTime * Time.deltaTime;
+            yield return null;
+        }
+    }
+
+    /// <summary>
+    /// 聲音淡出
+    /// </summary>
+    /// <param name="source"></param>
+    /// <param name="fadeOutTime"></param>
+    /// <returns></returns>
+    private IEnumerator SoundFadeOut(AudioSource source, float fadeOutTime)
+    {
+        float timer = 0;
+        while (timer < fadeOutTime && source.volume > 0)
+        {
+            source.volume -= 1f / fadeOutTime * Time.deltaTime;
+            yield return null;
+        }
+        source.Stop();
+    }
 }
 
 [System.Serializable]
 public class BGM
 {
     public string SceneName;    // 播放場景名
-    public AudioClip Clip;      // BGM
+    public AudioClip NormalBGM;      // 場景BGM
+    public AudioClip BossBGM;       // Boss BGM
 }
