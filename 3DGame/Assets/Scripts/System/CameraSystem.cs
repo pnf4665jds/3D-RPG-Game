@@ -100,81 +100,75 @@ public class CameraSystem :Singleton<CameraSystem>
     private void detectWall() {
 
         RaycastHit hit;
-        Collider[] clipCollider = Physics.OverlapSphere(transform.position, 1.0f , LayerMask.GetMask("Terrain"));
-        /*if (Physics.Linecast(player.transform.position + Vector3.up * 2, transform.position, out hit, LayerMask.GetMask("Terrain")))
+
+        Vector3 cameraLeftDir = transform.TransformDirection(Vector3.left) * 2;
+        Vector3 cameraRightDir = transform.TransformDirection(Vector3.right) * 2;
+        Vector3 hitPointL = Vector3.zero;
+        Vector3 hitPointR = Vector3.zero;
+
+        float currentDistanceL = Vector3.Distance(transform.position + cameraLeftDir, player.transform.position);
+        float currentDistanceR  = Vector3.Distance(transform.position + cameraRightDir, player.transform.position);
+        float offsetDistanceL = Vector3.Distance(transform.position + cameraLeftDir, player.transform.position);
+        float offsetDistanceR = Vector3.Distance(transform.position + cameraRightDir, player.transform.position);
+
+        if (Physics.Linecast(player.transform.position, transform.position + cameraLeftDir, out hit, LayerMask.GetMask("Terrain")))
         {
-
-            if (hit.collider.gameObject.tag != "MainCamera")
-            {
-                cm = CameraMode.outSide;
-                float currentDistance = Vector3.Distance(hit.point, player.transform.position);
-                float cameraDistance = Vector3.Distance(transform.position, player.transform.position);
-                if (cameraDistance > currentDistance)
-                {
-                    cm = CameraMode.normal;
-                    if (currentDistance < 5)
-                    {
-                        transform.position = hit.point + transform.forward * 4 + transform.up * 2;
-
-                    }
-                    else
-                    {
-                        transform.position = hit.point + transform.forward * 2;
-                    }
-                    Debug.DrawLine(player.transform.position + Vector3.up, hit.point, Color.red);
-
-                }
-            }
-
-        }*/
-        if (Physics.Linecast(player.transform.position, transform.position + Vector3.left * 2, out hit, LayerMask.GetMask("Terrain")))
-        {
-            float currentDistance = Vector3.Distance(hit.point, player.transform.position);
-            float LeftDistance = Vector3.Distance(transform.position + Vector3.left * 2 , player.transform.position);
-            float cameraHitDistance = Vector3.Distance(transform.position + Vector3.left * 2  ,  hit.point);
-            float cameraDistance = Vector3.Distance(transform.position, player.transform.position);
-            Vector3 camToPlayer = transform.position - player.transform.position;
-
-            if (currentDistance < cameraDistance)
-            {
-                //cm = CameraMode.outSide;
-                
-                float ratio = cameraHitDistance / LeftDistance;
-                transform.position -= camToPlayer * ratio;
-                if (currentDistance < 5) {
-                    transform.position += transform.up * 3 + transform.forward * 4;
-                }
-                //moveLerp(transform.position - camToPlayer * ratio, 1);
-
-            }
+            currentDistanceL = Vector3.Distance(hit.point, player.transform.position);
+            hitPointL = hit.point;
+            
         }
-        else if (Physics.Linecast(player.transform.position, transform.position + Vector3.right * 2, out hit, LayerMask.GetMask("Terrain")))
+        if (Physics.Linecast(player.transform.position, transform.position + cameraRightDir, out hit, LayerMask.GetMask("Terrain")))
         {
-            float currentDistance = Vector3.Distance(hit.point, player.transform.position);
-            float rightDistance = Vector3.Distance(transform.position + Vector3.right * 2, player.transform.position);
-            float cameraHitDistance = Vector3.Distance(transform.position + Vector3.right * 2, hit.point);
-            float cameraDistance = Vector3.Distance(transform.position, player.transform.position);
-            Vector3 camToPlayer = transform.position - player.transform.position;
-
-            if (currentDistance < cameraDistance)
-            {
-                //cm = CameraMode.outSide;
-
-                float ratio = cameraHitDistance / rightDistance;
-                transform.position -= camToPlayer * ratio;
-                //moveLerp(transform.position - camToPlayer * ratio, 1);
-                if (currentDistance < 5)
-                {
-                    transform.position += transform.up * 3 + transform.forward * 4;
-                }
-            }
+            currentDistanceR = Vector3.Distance(hit.point, player.transform.position);
+            hitPointR = hit.point;
         }
-        Debug.DrawLine(player.transform.position, transform.position + Vector3.left * 2, Color.green);
-        Debug.DrawLine(player.transform.position, transform.position + Vector3.right * 2, Color.green);
-        
+
+        if (currentDistanceR < offsetDistanceR && currentDistanceL < offsetDistanceL) //左右邊界都觸及到，判定兩方長短
+        {
+            if (currentDistanceL > currentDistanceR)//右方較短
+            {
+                calculateTheCameraPos(Vector3.Distance(transform.position + cameraRightDir, player.transform.position),
+                    Vector3.Distance(transform.position + cameraRightDir, hitPointR),
+                    Vector3.Distance(transform.position, player.transform.position), currentDistanceR);
+            }
+            else //左方較短或一樣
+            {
+                calculateTheCameraPos(Vector3.Distance(transform.position + cameraLeftDir, player.transform.position),
+                    Vector3.Distance(transform.position + cameraLeftDir, hitPointL),
+                    Vector3.Distance(transform.position, player.transform.position), currentDistanceL);
+            }
+
+        }
+        else if (currentDistanceR < offsetDistanceR) //只有右邊觸及到
+        {
+            calculateTheCameraPos(Vector3.Distance(transform.position + cameraRightDir, player.transform.position),
+                    Vector3.Distance(transform.position + cameraRightDir, hitPointR),
+                    Vector3.Distance(transform.position, player.transform.position), currentDistanceR);
+        }
+        else if (currentDistanceL < offsetDistanceL)//只有左邊觸及到
+        {
+            calculateTheCameraPos(Vector3.Distance(transform.position + cameraLeftDir, player.transform.position),
+                    Vector3.Distance(transform.position + cameraLeftDir, hitPointL),
+                    Vector3.Distance(transform.position, player.transform.position), currentDistanceL);
+        }
+
+
+        Debug.DrawLine(player.transform.position, transform.position + cameraLeftDir, Color.green);
+        Debug.DrawLine(player.transform.position, transform.position + cameraRightDir, Color.green);
+        Debug.DrawLine(transform.position, transform.position + cameraLeftDir, Color.red);
+        Debug.DrawLine(transform.position, transform.position + cameraRightDir, Color.red);
     }
 
-
+    private void calculateTheCameraPos(float offsetToPlayer , float offsetToHit , float cameraToPlayer , float currentDistance)
+    {
+        Vector3 camToPlayer = transform.position - player.transform.position;
+        float ratio = offsetToHit / offsetToPlayer;
+        transform.position -= camToPlayer * ratio;
+        if (currentDistance < 5)
+        {
+            transform.position += transform.up * 3 + transform.forward * 4;
+        }
+    }
     private void moveLerp(Vector3 targetPos , float speed) {
         transform.position = Vector3.MoveTowards(transform.position, targetPos, Time.deltaTime * speed);
     }
