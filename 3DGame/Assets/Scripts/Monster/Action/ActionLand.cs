@@ -57,7 +57,7 @@ public class ActionLand : ActionBase
     private IEnumerator SetEffect()
     {
         yield return new WaitUntil(() => monsterInfo.isGrounded);
-        Source.Stop();
+        SoundSystem.instance.PlaySound(Source, ActionSound, Volume, SoundDelay, false);
         GameObject obj = Instantiate(LandEffect, transform.position, Quaternion.identity);
         Destroy(obj, 3);
     }
