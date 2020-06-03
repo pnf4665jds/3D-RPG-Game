@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     private bool isLive;
     private bool isChangeState;
     private bool isTurn = false;
+    private bool isInBoss = false;
     [SerializeField]private bool SkillAvail;
 
     public float MaxSpeed = 12;
@@ -132,6 +133,7 @@ public class Player : MonoBehaviour
             PositionUI.GetComponent<PositionMessage>().showMessage(other.gameObject.GetComponent<MonsterField>().GetFieldName());
             if (other.gameObject.GetComponent<MonsterField>().IsBossField)
             {
+                isInBoss = true;
                 SoundSystem.instance.PlayBossBGM(3f);
             }
         }
@@ -176,6 +178,7 @@ public class Player : MonoBehaviour
         {
             if (other.gameObject.GetComponent<MonsterField>().IsBossField)
             {
+                isInBoss = false;
                 SoundSystem.instance.PlayBGM(3);
             }
         }
@@ -439,4 +442,5 @@ public class Player : MonoBehaviour
             if (temp.GetComponent<TimeLineManager>().isTimeLineCompleted()) GameSystem.instance.changeModeFollowPlayer();
         }
     }
+    public bool GetisInBoss() { return isInBoss; }
 }
