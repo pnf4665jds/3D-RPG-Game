@@ -817,6 +817,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Monster: {fileID: 3823332478208203829, guid: 547ef3da0f58f594cadb9d9880269c64, type: 3}
+  IsBossField: 0
   MonsterNum: 1
   Name: golem
   YDelta: 0
@@ -1629,6 +1630,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Monster: {fileID: 1713781036754730, guid: 0f8a471e5537f864ebdb454fe82308eb, type: 3}
+  IsBossField: 0
   MonsterNum: 3
   Name: StoneMonster
   YDelta: 3
@@ -4339,6 +4341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Monster: {fileID: 3037743098562945547, guid: b63813404ecc18742b0ba2601bd9d9be, type: 3}
+  IsBossField: 1
   MonsterNum: 1
   Name: BOSS
   YDelta: 25
@@ -5592,6 +5595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Monster: {fileID: 5015241899266592804, guid: 1742e3490a6242141bcccd98e34967bf, type: 3}
+  IsBossField: 0
   MonsterNum: 3
   Name: Slime
   YDelta: 0
@@ -10700,6 +10704,34 @@ PrefabInstance:
     - target: {fileID: 3879072798097371089, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
         type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608532027702908704, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
+        type: 3}
+      propertyPath: BGMList.Array.data[0].NormalBGM
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608532027702908704, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
+        type: 3}
+      propertyPath: BGMList.Array.data[0].BossBGM
+      value: 
+      objectReference: {fileID: 8300000, guid: 21048223be8d8cc4e860e8b1f4be989d, type: 3}
+    - target: {fileID: 1608532027702908704, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
+        type: 3}
+      propertyPath: BGMList.Array.data[2].BossBGM
+      value: 
+      objectReference: {fileID: 8300000, guid: 1b197323357862a44b90b0f13b8f26d0, type: 3}
+    - target: {fileID: 1608532027702908704, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
+        type: 3}
+      propertyPath: BGMList.Array.data[3].BossBGM
+      value: 
+      objectReference: {fileID: 8300000, guid: 514571919da484540bdecaf10861b081, type: 3}
+    - target: {fileID: 351825913, guid: a0d682c00f6e5614e95fe64a8c2e6df7, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 351825913, guid: a0d682c00f6e5614e95fe64a8c2e6df7, type: 3}
+      propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
