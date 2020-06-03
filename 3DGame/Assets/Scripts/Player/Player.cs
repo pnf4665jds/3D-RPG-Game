@@ -168,7 +168,7 @@ public class Player : MonoBehaviour
         else if (other.tag == "director")
         {
             temp = other.gameObject;
-            temp.GetComponent<TimeLineManager>().TimeLinePlay();
+            //temp.GetComponent<TimeLineManager>().TimeLinePlay();
             GameSystem.instance.changeModeAnimation();
         }
     }
@@ -439,7 +439,7 @@ public class Player : MonoBehaviour
         if (Active)
         {
             Speed = 0;
-            if (temp.GetComponent<TimeLineManager>().isTimeLineCompleted()) GameSystem.instance.changeModeFollowPlayer();
+            //if (temp.GetComponent<TimeLineManager>().isTimeLineCompleted()) GameSystem.instance.changeModeFollowPlayer();
         }
     }
     public bool GetisInBoss() { return isInBoss; }
