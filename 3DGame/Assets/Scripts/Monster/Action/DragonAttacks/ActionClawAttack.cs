@@ -14,6 +14,7 @@ public class ActionClawAttack : ActionBase
     {
         animator.SetTrigger("ClawAttack");
         alreadyHit = false;
+        SoundSystem.instance.PlaySound(Source, ActionSound, Volume, SoundDelay, false);
     }
 
     public override void Process()
