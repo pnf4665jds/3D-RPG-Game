@@ -22,6 +22,8 @@ TagManager:
   - Shop
   - MainCanvas
   - director
+  - EnterBossFieldAnim
+  - BossDeadAnim
   layers:
   - Default
   - TransparentFX
