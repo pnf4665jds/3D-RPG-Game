@@ -6,25 +6,43 @@ using UnityEngine.Playables;
 public class TimeLineManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    private PlayableDirector Director;
+    public PlayableDirector DirectorEnterBossZone;
+    public PlayableDirector DirectorExistBossZone;
+    private GameObject player;
     [SerializeField]
     private bool entered;
     private void Start()
     {
-        Director = GetComponent<PlayableDirector>();
-        entered = false;
+        player = GameObject.FindGameObjectWithTag("Player");
+        StartCoroutine(ActionStart());
+
     }
     
 
-    public void TimeLinePlay() {
+    public void TimeLinePlay(PlayableDirector temp) {
         if (!entered)
         {
-            Director.Play();
+            temp.Play();
             entered = true;
         }
        
     }
-    public bool isTimeLineCompleted() {
-        return Director.state != PlayState.Playing;
+    private IEnumerator ActionStart() {
+        entered = false;
+        yield return new WaitUntil(() => player.GetComponent<Player>().GetisInBoss());
+        GameSystem.instance.changeModeAnimation();
+        TimeLinePlay(DirectorEnterBossZone);
+        yield return new WaitUntil(() => isTimeLineCompleted(DirectorEnterBossZone));
+        GameSystem.instance.changeModeFollowPlayer();
+        entered = false;
+        yield return new WaitUntil(() => MonsterSystem.instance.IsBossDead);
+        GameSystem.instance.changeModeAnimation();
+        TimeLinePlay(DirectorExistBossZone);
+        yield return new WaitUntil(() => isTimeLineCompleted(DirectorExistBossZone));
+        GameSystem.instance.changeModeFollowPlayer();
+    }
+
+    public bool isTimeLineCompleted(PlayableDirector temp) {
+        return temp.state != PlayState.Playing;
     }
 }
