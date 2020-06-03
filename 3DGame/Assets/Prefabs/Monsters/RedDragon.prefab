@@ -3625,7 +3625,7 @@ MonoBehaviour:
   ActionSound: {fileID: 8300000, guid: ef223243ec9432e4fb07bf54a1154971, type: 3}
   Volume: 0.5
   SoundDelay: 0.7
-  Damage: 4
+  Damage: 3
   FlameObject: {fileID: 1634767862067424, guid: 007c57e2df8e9b144b99f471b84f3d56,
     type: 3}
   Head: {fileID: 3037743098269929874}
