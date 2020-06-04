@@ -264,12 +264,14 @@ public class Player : MonoBehaviour
             {
                 GameSystem.instance.changeModeBackPack();
                 isChangeState = true;
+                ResetAnimation();
                 return;
             }
             else if(Input.GetKeyUp(KeyCode.X) && npc != null)
             {
                 GameSystem.instance.changeModeTalking(npc);
                 isChangeState = true;
+                ResetAnimation();
                 return;
             }
             FrameCount++;
@@ -283,6 +285,7 @@ public class Player : MonoBehaviour
     {
         if (state && !isChangeState)
         {
+
             if (UISystem.instance.getDialogPanel().GetComponentInChildren<Dialog>().detectTheDialogFinish())
             {
                 GameSystem.instance.changeModeShopping();

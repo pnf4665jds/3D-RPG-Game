@@ -5,8 +5,10 @@ using UnityEngine;
 public class PlayerSoundSys : MonoBehaviour
 {
     private AudioSource PlayerSoundSystem;
-    public AudioClip FirstSceneRunning;
-    public AudioClip SecondSceneRunning;
+    public AudioClip FirstSceneRunning_1;
+    public AudioClip FirstSceneRunning_2;
+    public AudioClip SecondSceneRunning_1;
+    public AudioClip SecondSceneRunning_2;
     public AudioClip AttackSound1;
     public AudioClip AttackSound2;
     public AudioClip AttackSound3;
@@ -18,15 +20,26 @@ public class PlayerSoundSys : MonoBehaviour
         PlayerSoundSystem = GetComponentInChildren<AudioSource>();
     }
 
-    void Running()
+    void FirstStepRunning()
     {
         if(GameSceneManager.instance.CurrentSceneName == "GamePlayScene")
         {
-            PlayerSoundSystem.PlayOneShot(FirstSceneRunning);
+            PlayerSoundSystem.PlayOneShot(FirstSceneRunning_1);
         }
         else
         {
-            PlayerSoundSystem.PlayOneShot(SecondSceneRunning);
+            PlayerSoundSystem.PlayOneShot(SecondSceneRunning_1);
+        }
+    }
+    void SecondStepRunning()
+    {
+        if (GameSceneManager.instance.CurrentSceneName == "GamePlayScene")
+        {
+            PlayerSoundSystem.PlayOneShot(FirstSceneRunning_2);
+        }
+        else
+        {
+            PlayerSoundSystem.PlayOneShot(SecondSceneRunning_2);
         }
     }
 

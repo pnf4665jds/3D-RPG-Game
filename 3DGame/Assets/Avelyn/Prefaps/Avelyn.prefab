@@ -406,8 +406,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51bd83f4f45967a469cceadb04cfaf91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirstSceneRunning: {fileID: 8300000, guid: 9c7e082b3a848c440a768241f6caf447, type: 3}
-  SecondSceneRunning: {fileID: 8300000, guid: 74fe1b1e551530e429f626ccfbe2dd1c, type: 3}
+  FirstSceneRunning_1: {fileID: 8300000, guid: 0719f00e789cc324bb5f83da9c43babd, type: 3}
+  FirstSceneRunning_2: {fileID: 8300000, guid: baca8336d221f7e4ca01b08127a1c649, type: 3}
+  SecondSceneRunning_1: {fileID: 8300000, guid: f87832a0822c2504cac04abdce9bcfdf,
+    type: 3}
+  SecondSceneRunning_2: {fileID: 8300000, guid: 3ea2b1d3270b56a45b4d7fbf67311fc2,
+    type: 3}
   AttackSound1: {fileID: 8300000, guid: 2145c470d5857e24781eb62bb78ccee2, type: 3}
   AttackSound2: {fileID: 8300000, guid: e4d6dd1ce44a3b6438f4a02988d2e913, type: 3}
   AttackSound3: {fileID: 8300000, guid: 7016baf3898f92d418e969ac2937ba93, type: 3}
