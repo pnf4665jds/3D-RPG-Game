@@ -128,6 +128,9 @@ public class MonsterInfo : MonoBehaviour
         rigidbody.velocity = Vector3.zero;
         rigidbody.isKinematic = true;
 
+        // 死亡時關閉ActionController
+        GetComponent<ActionController>().enabled = false;
+
         if (animator != null)
             animator.SetBool("Dead", true);
         yield return new WaitForSeconds(DeadWaitTime);
