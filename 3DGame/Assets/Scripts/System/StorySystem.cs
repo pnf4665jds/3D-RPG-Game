@@ -23,30 +23,39 @@ public class StorySystem : Singleton<StorySystem>
 
     // Update is called once per frame
     public IEnumerator StoryFlowControl() {
-        for (int i = 1; i <= SceneManager.sceneCount; i++) {
-            yield return new WaitUntil(() => GameSceneManager.instance.IsLoadingFinish);
 
-            yield return new WaitUntil(() => findObjectInScene());
+        for (int i = 1; i <= SceneManager.sceneCount; i++) {
+
+            
+
+            yield return new WaitUntil(() => GameSceneManager.instance.IsLoadingFinish);
 
             GameSystem.instance.changeModeStory();
             UISystem.instance.getStoryPanel().GetComponent<storyUI>().setloadingFinshFile(i); //設定劇情
 
             yield return new WaitForSecondsRealtime(2);
+            UISystem.instance.getStoryPanel().GetComponent<storyUI>().setSkip(); //顯示skip
             yield return new WaitUntil(() => Input.GetKey(KeyCode.Z)); //關閉劇情
+            UISystem.instance.getStoryPanel().GetComponent<storyUI>().setInit(); //初始化
 
             GameSystem.instance.changeModeFollowPlayer();
 
-            yield return new WaitUntil(() => player.GetComponent<Player>().GetisInBoss()); //進入boss場景
-            yield return new WaitForSeconds(1);
+            if (i != 2)
+            {
+                yield return new WaitUntil(() => findEnterBossTag());
+                yield return new WaitUntil(() => player.GetComponent<Player>().GetisInBoss()); //進入boss場景
+                yield return new WaitForSeconds(1);
 
-            GameSystem.instance.changeModeAnimation();
-            TimeLinePlay(DirectorEnterBossZone);
+                GameSystem.instance.changeModeAnimation();
+                TimeLinePlay(DirectorEnterBossZone);
 
-            yield return new WaitUntil(() => isTimeLineCompleted(DirectorEnterBossZone)); //結束進入boss場景的動畫
+                yield return new WaitUntil(() => isTimeLineCompleted(DirectorEnterBossZone)); //結束進入boss場景的動畫
 
-            GameSystem.instance.changeModeFollowPlayer();
+                GameSystem.instance.changeModeFollowPlayer();
+            }
 
             yield return new WaitUntil(() => MonsterSystem.instance.IsBossDead);
+            yield return new WaitUntil(() => findExitBossTag());
 
             GameSystem.instance.changeModeAnimation();
             TimeLinePlay(DirectorExistBossZone);
@@ -57,8 +66,9 @@ public class StorySystem : Singleton<StorySystem>
             UISystem.instance.getStoryPanel().GetComponent<storyUI>().setbossDeadFile(i);
 
             yield return new WaitForSecondsRealtime(2);
-
+            UISystem.instance.getStoryPanel().GetComponent<storyUI>().setSkip(); //顯示skip
             yield return new WaitUntil(() => Input.GetKey(KeyCode.Z)); //關閉劇情
+            UISystem.instance.getStoryPanel().GetComponent<storyUI>().setInit(); //初始化
 
             GameSystem.instance.changeModeFollowPlayer();
         }
@@ -73,13 +83,21 @@ public class StorySystem : Singleton<StorySystem>
     {
         return temp.state != PlayState.Playing;
     }
-    public bool findObjectInScene()
+    public bool findEnterBossTag()
     {
 
         DirectorEnterBossZone = GameObject.FindGameObjectWithTag("EnterBossFieldAnim").GetComponent<PlayableDirector>();
+
+        return true;
+
+    }
+    public bool findExitBossTag()
+    {
+
         DirectorExistBossZone = GameObject.FindGameObjectWithTag("BossDeadAnim").GetComponent<PlayableDirector>();
 
         return true;
 
     }
+
 }
