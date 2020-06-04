@@ -27,11 +27,19 @@ public abstract class DeciderBase : MonoBehaviour
     }
 
     /// <summary>
-    /// 達成這個Decider並且要離開目前狀態時要做什麼
+    /// 要離開目前狀態時要做什麼
     /// </summary>
-    public virtual void Exit()
+    public virtual void OnStateChange()
     {
         
+    }
+
+    /// <summary>
+    /// 當這個Decider達成，並準備轉移狀態時要做什麼
+    /// </summary>
+    public virtual void OnThisDeciderTaken()
+    {
+
     }
 
     /// <summary>

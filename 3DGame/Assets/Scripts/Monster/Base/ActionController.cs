@@ -64,7 +64,7 @@ public class ActionController : MonoBehaviour
     private IEnumerator WaitChangeState(string newStateName, float delay)
     {
         yield return new WaitForSeconds(delay);
-        ExitAllDeciderInState();
+        AllDeciderOnStateChange();
         CurrentStateName = newStateName;
         foreach (State s in StateList)
         {
@@ -89,10 +89,10 @@ public class ActionController : MonoBehaviour
     }
 
     /// <summary>
-    /// 呼叫目前這個State中所有Decider的Exit()
+    /// 呼叫目前這個State中所有Decider的OnStateChange()
     /// </summary>
-    public void ExitAllDeciderInState()
+    public void AllDeciderOnStateChange()
     {
-        currentState?.TransList.ForEach(t => t.Decider.Exit());
+        currentState?.TransList.ForEach(t => t.Decider.OnStateChange());
     }
 }

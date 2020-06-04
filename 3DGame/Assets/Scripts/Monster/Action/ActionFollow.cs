@@ -7,6 +7,7 @@ public class ActionFollow : ActionBase
 {
     // 這個Action用來讓怪物追玩家
 
+    [Header("Follow")]
     public bool IsFieldLimited = true; // 是否會被領域控制，若否請使用NavMeshAgent
     public bool IsFlyMode;      // 是否是飛行狀態
     public float FlySpeedUp = 1f;

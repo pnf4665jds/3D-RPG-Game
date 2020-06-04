@@ -132,6 +132,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DogPBR
       objectReference: {fileID: 0}
+    - target: {fileID: 8422892626600285392, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8422892626600249584, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -299,7 +304,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &441498609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,10 +317,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b85ac7af25f6ee40b1ca90db565a4f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Monster: {fileID: 5476715494992203673, guid: 701df9ab9b99daf42bde3735d381aae5, type: 3}
+  Monster: {fileID: 1776172154748893145, guid: fdd1dfc9db0304a4e980599f979913d6, type: 3}
+  IsBossField: 0
   MonsterNum: 1
-  Name: Kumata
-  YDelta: 3
+  Name: RedDragon
+  YDelta: 20
 --- !u!4 &441498610
 Transform:
   m_ObjectHideFlags: 0
@@ -324,7 +330,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 441498608}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 19.3}
+  m_LocalPosition: {x: 8.4, y: 0, z: -0.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -341,7 +347,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 15
+  m_Radius: 40
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &443888475
 GameObject:
@@ -589,11 +595,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DontDestroySytems
       objectReference: {fileID: 0}
-    - target: {fileID: 891778373656569683, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6824704989196837911, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -739,14 +740,19 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3049527595183894307, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
+    - target: {fileID: 1608532027702908704, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
+        type: 3}
+      propertyPath: BGMList.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 891778373656569683, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
         type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1608532027702908704, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
+    - target: {fileID: 3049527595183894307, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
         type: 3}
-      propertyPath: BGMList.Array.size
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

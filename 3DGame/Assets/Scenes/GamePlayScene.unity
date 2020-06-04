@@ -896,6 +896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Monster: {fileID: 3823332478208203829, guid: 547ef3da0f58f594cadb9d9880269c64, type: 3}
+  ColliderForPlayer: {fileID: 0}
   IsBossField: 0
   MonsterNum: 1
   Name: golem
@@ -1709,6 +1710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Monster: {fileID: 1713781036754730, guid: 0f8a471e5537f864ebdb454fe82308eb, type: 3}
+  ColliderForPlayer: {fileID: 0}
   IsBossField: 0
   MonsterNum: 3
   Name: StoneMonster
@@ -4403,7 +4405,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 58.9, y: 47, z: 94.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 2133229443}
   m_Father: {fileID: 2073570993}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4419,7 +4422,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b85ac7af25f6ee40b1ca90db565a4f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Monster: {fileID: 3037743098562945547, guid: b63813404ecc18742b0ba2601bd9d9be, type: 3}
+  Monster: {fileID: 1776172154748893145, guid: fdd1dfc9db0304a4e980599f979913d6, type: 3}
+  ColliderForPlayer: {fileID: 2133229442}
   IsBossField: 1
   MonsterNum: 1
   Name: BOSS
@@ -4435,7 +4439,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 34.69
+  m_Radius: 34
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &855649726 stripped
 Transform:
@@ -5739,6 +5743,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Monster: {fileID: 5015241899266592804, guid: 1742e3490a6242141bcccd98e34967bf, type: 3}
+  ColliderForPlayer: {fileID: 0}
   IsBossField: 0
   MonsterNum: 3
   Name: Slime
@@ -10952,6 +10957,50 @@ Transform:
   m_Father: {fileID: 797663380}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2133229442
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2133229443}
+  - component: {fileID: 2133229444}
+  m_Layer: 10
+  m_Name: ColliderForPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2133229443
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133229442}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 854657556}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &2133229444
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133229442}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 34
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &6824704988139735444
 PrefabInstance:
   m_ObjectHideFlags: 0

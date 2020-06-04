@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1634767862067424}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.08715578, y: 0, z: 0, w: 0.9961947}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -33,7 +33,7 @@ Transform:
   - {fileID: 4691803356102260}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
 --- !u!198 &198637950067575458
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -117,7 +117,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.25
+      scalar: 3
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -170,7 +170,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 8
+      scalar: 16
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -867,7 +867,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 30
+      scalar: 100
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -1567,8 +1567,8 @@ ParticleSystem:
           inWeight: 0.16237345
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.86383057
-          value: 1
+          time: 1
+          value: -0.02702713
           inSlope: 5.8340473
           outSlope: 5.8340473
           tangentMode: 0
@@ -3565,7 +3565,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 3
     type: 1
     collisionMode: 0
@@ -3751,7 +3751,7 @@ ParticleSystem:
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
-    enabled: 0
+    enabled: 1
     collisionShape0: {fileID: 0}
     collisionShape1: {fileID: 0}
     collisionShape2: {fileID: 0}

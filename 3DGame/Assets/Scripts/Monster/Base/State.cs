@@ -34,6 +34,7 @@ public class State
                 {
                     hasEval = true;
                     t.Decider.StartPauseTimer();
+                    t.Decider.OnThisDeciderTaken();
                     controller.ChangeState(t.TrueState, t.TransitionDelay);
                 }
             }
@@ -44,6 +45,7 @@ public class State
                 {
                     hasEval = true;
                     t.Decider.StartPauseTimer();
+                    t.Decider.OnThisDeciderTaken();
                     controller.ChangeState(t.FalseState, t.TransitionDelay);
                 }
             }

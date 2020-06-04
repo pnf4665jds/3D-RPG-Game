@@ -7,7 +7,7 @@ public class DeciderWaitTimer : DeciderBase
     // 這個Decider會在"在這個狀態中持續WaitTime秒"後回傳true，反之回傳false
 
     public float WaitTime;
-    public bool KeepPreviousTime = false;
+    public bool KeepTimeUntilTaken = true;   // 保持之前已經等待的時間，直到這個Decider被Taken
 
     private float currentTime = 0;
 
@@ -24,10 +24,10 @@ public class DeciderWaitTimer : DeciderBase
         }
     }
 
-    public override void Exit()
+    public override void OnThisDeciderTaken()
     {
-        base.Exit();
-        if(!KeepPreviousTime)
+        base.OnThisDeciderTaken();
+        if (KeepTimeUntilTaken)
             currentTime = 0;
     }
 }

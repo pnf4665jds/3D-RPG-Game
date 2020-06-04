@@ -5,6 +5,7 @@ using UnityEngine;
 public class MonsterField : MonoBehaviour
 {
     public GameObject Monster;     // 怪物Prefab
+    public GameObject ColliderForPlayer;   // 阻擋玩家的Collider
     public bool IsBossField;    // 是否為Boss的區域
     public int MonsterNum;  // 怪物數量
     public string Name;
@@ -59,5 +60,16 @@ public class MonsterField : MonoBehaviour
                 obj.GetComponent<MonsterInfo>().SetField(center, radius);
             }
         }
+    }
+
+    public void OpenColliderForPlayer()
+    {
+        ColliderForPlayer?.SetActive(true);
+    }
+
+    public void CloseColliderForPlayer()
+    {
+        ColliderForPlayer?.SetActive(false);
+        Destroy(ColliderForPlayer);
     }
 }
