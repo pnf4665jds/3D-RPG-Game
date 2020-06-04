@@ -10,18 +10,8 @@ public class storyUI : MonoBehaviour
     {
         
     }
-    public void setloadingFinshFile(int index)
+    public void setStoryFile(TextAsset file)
     {
-        string filePath = "Story/loadingFinish/0" + index ;
-        TextAsset file = Resources.Load<TextAsset>(filePath);
-        this.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = file.text;
-        
-
-    }
-    public void setbossDeadFile(int index)
-    {
-        string filePath = "Story/bossDead/0" + index ;
-        TextAsset file = Resources.Load<TextAsset>(filePath);
         this.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = file.text;
 
     }

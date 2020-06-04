@@ -5673,6 +5673,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1082220520}
+  - component: {fileID: 1082220524}
+  - component: {fileID: 1082220523}
+  - component: {fileID: 1082220522}
+  - component: {fileID: 1082220521}
   m_Layer: 0
   m_Name: TimeLine
   m_TagString: director
@@ -5698,6 +5702,74 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1082220521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082220519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83ab92917607d824f8f57a6863074d89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayTime: 0
+  storyContents:
+  - {fileID: 4900000, guid: 531d042d9b0cd2e4dac0f1a5a84bea8d, type: 3}
+  Directors:
+  - {fileID: 1990147649}
+--- !u!114 &1082220522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082220519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83ab92917607d824f8f57a6863074d89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayTime: 1
+  storyContents: []
+  Directors:
+  - {fileID: 1859976676}
+--- !u!114 &1082220523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082220519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83ab92917607d824f8f57a6863074d89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayTime: 0
+  storyContents:
+  - {fileID: 4900000, guid: 507f71077a5e5bb48a0b1550e2036081, type: 3}
+  Directors: []
+--- !u!114 &1082220524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082220519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 194bf1f9b1d1eff42bc410be0869dd2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadingFinishStory:
+  - {fileID: 1082220523}
+  enterBossFieldStory:
+  - {fileID: 1082220522}
+  bossDeadStory:
+  - {fileID: 1082220521}
+  emergencyStory: []
 --- !u!1 &1125089946
 GameObject:
   m_ObjectHideFlags: 0

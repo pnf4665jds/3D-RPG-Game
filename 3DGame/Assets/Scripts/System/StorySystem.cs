@@ -31,7 +31,7 @@ public class StorySystem : Singleton<StorySystem>
             yield return new WaitUntil(() => GameSceneManager.instance.IsLoadingFinish);
 
             GameSystem.instance.changeModeStory();
-            UISystem.instance.getStoryPanel().GetComponent<storyUI>().setloadingFinshFile(i); //設定劇情
+            //UISystem.instance.getStoryPanel().GetComponent<storyUI>().setloadingFinshFile(i); //設定劇情
 
             yield return new WaitForSecondsRealtime(2);
             UISystem.instance.getStoryPanel().GetComponent<storyUI>().setSkip(); //顯示skip
@@ -63,7 +63,7 @@ public class StorySystem : Singleton<StorySystem>
             yield return new WaitUntil(() => isTimeLineCompleted(DirectorExistBossZone)); //結束boss死亡後的動畫
 
             GameSystem.instance.changeModeStory();
-            UISystem.instance.getStoryPanel().GetComponent<storyUI>().setbossDeadFile(i);
+            //UISystem.instance.getStoryPanel().GetComponent<storyUI>().setbossDeadFile(i);
 
             yield return new WaitForSecondsRealtime(2);
             UISystem.instance.getStoryPanel().GetComponent<storyUI>().setSkip(); //顯示skip
