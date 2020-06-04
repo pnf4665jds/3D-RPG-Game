@@ -429,7 +429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34e5fea04bb708f4caa36b0ba88885ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 6000
+  MaxHP: 4001
   MoveSpeed: 5
   RotateSpeed: 10
   DeadWaitTime: 5
@@ -437,7 +437,7 @@ MonoBehaviour:
   IdleWhenAnimation: 0
   AttackBuffRate: 1
   mainCollider: {fileID: 2553756348184570534}
-  Offset: 0
+  Offset: 0.3
 --- !u!114 &1053211974381026684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -651,8 +651,10 @@ MonoBehaviour:
   ActionSound: {fileID: 8300000, guid: ef223243ec9432e4fb07bf54a1154971, type: 3}
   Volume: 1
   SoundDelay: 0.5
-  Damage: 0.1
+  Damage: 1
   FlameObject: {fileID: 1634767862067424, guid: 007c57e2df8e9b144b99f471b84f3d56,
+    type: 3}
+  FlameObjectReal: {fileID: 6900941943359791414, guid: 0079a0a3c0b7e3c449d049865855275a,
     type: 3}
   Head: {fileID: 1776172155428684864}
   Offset: {x: 0, y: 0, z: 0}
@@ -712,8 +714,10 @@ MonoBehaviour:
   ActionSound: {fileID: 8300000, guid: ef223243ec9432e4fb07bf54a1154971, type: 3}
   Volume: 1
   SoundDelay: 0.5
-  Damage: 0.1
+  Damage: 1.5
   FlameObject: {fileID: 1634767862067424, guid: 007c57e2df8e9b144b99f471b84f3d56,
+    type: 3}
+  FlameObjectReal: {fileID: 6900941943359791414, guid: 0079a0a3c0b7e3c449d049865855275a,
     type: 3}
   Head: {fileID: 1776172155428684864}
   Offset: {x: 0, y: 0, z: 0}

@@ -9,6 +9,7 @@ public class ActionFlyFlameAttack : ActionBase
     [Header("Flame")]
     public float Damage;            // 傷害
     public GameObject FlameObject;  // 火焰特效物件
+    public GameObject FlameObjectReal;
     public GameObject Head;         // 龍的頭部
     public Vector3 Offset;          // 微調噴火位置用位移
     public float DelayBeforeEffect; // 特效出現的延遲
@@ -16,6 +17,7 @@ public class ActionFlyFlameAttack : ActionBase
     public float AttackDeltaY = 10;
 
     private GameObject flameObject;
+    private GameObject flameObjectReal;
     private GameObject player;
 
     public override void Init()
@@ -46,14 +48,17 @@ public class ActionFlyFlameAttack : ActionBase
         SoundSystem.instance.PlaySound(Source, ActionSound, Volume, SoundDelay, false);
         yield return new WaitForSeconds(DelayBeforeEffect);
         flameObject = Instantiate(FlameObject, Head.transform);
-        ParticleDamager damager = flameObject.AddComponent<ParticleDamager>();
+        flameObjectReal = Instantiate(FlameObjectReal, Head.transform);
+        ParticleDamager damager = flameObjectReal.AddComponent<ParticleDamager>();
         damager.SetValue(gameObject, Damage);
         yield return new WaitForSeconds(KeepTime);
         // 先停止產生粒子，並等待剩餘粒子消失後再破壞物體
         flameObject.GetComponent<ParticleSystem>().Stop();
+        flameObjectReal.GetComponent<ParticleSystem>().Stop();
         StartCoroutine(Move(false));
         yield return new WaitForSeconds(5);
         Destroy(flameObject);
+        Destroy(flameObjectReal);
     }
 
     /// <summary>
@@ -65,6 +70,8 @@ public class ActionFlyFlameAttack : ActionBase
         Vector3 newDirection = Vector3.RotateTowards(transform.forward, finalPos - transform.position, monsterInfo.RotateSpeed * Time.deltaTime, 0.0f);
         if(flameObject != null)
             flameObject.transform.rotation = Quaternion.LookRotation(finalPos - flameObject.transform.position);
+        if (flameObjectReal != null)
+            flameObjectReal.transform.rotation = Quaternion.LookRotation(finalPos - flameObjectReal.transform.position);
         newDirection.y = 0;
         transform.rotation = Quaternion.LookRotation(newDirection);
     }

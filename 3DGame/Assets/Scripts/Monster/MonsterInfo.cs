@@ -120,13 +120,13 @@ public class MonsterInfo : MonoBehaviour
     /// <returns></returns>
     private IEnumerator DeathEvent()
     {
-        Rigidbody rigidbody = GetComponentInChildren<Rigidbody>();
-        rigidbody.velocity = Vector3.zero;
-        rigidbody.isKinematic = true;
-
         Collider[] colliders = GetComponentsInChildren<Collider>();
         foreach (Collider co in colliders)
             co.enabled = false;
+
+        Rigidbody rigidbody = GetComponentInChildren<Rigidbody>();
+        rigidbody.velocity = Vector3.zero;
+        rigidbody.isKinematic = true;
 
         if (animator != null)
             animator.SetBool("Dead", true);
