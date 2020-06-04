@@ -65,6 +65,11 @@ public class Player : MonoBehaviour
     {
         if (isLive)
         {
+            if(!GameSystem.instance.isPlayerNormal())
+            {
+                ResetAnimation();
+                ResetSpeed();
+            }
             isChangeState = false;
             isTalking(GameSystem.instance.isPlayerTalking());
             isShopping(GameSystem.instance.isPlayerShopping());
@@ -211,7 +216,11 @@ public class Player : MonoBehaviour
     {
         if (!isAttack)
         {
-            if (Input.GetKey(KeyCode.W))
+            if (Input.GetKeyUp(KeyCode.S))
+            {
+                isSkilling();
+            }
+            else if (Input.GetKey(KeyCode.W) && !UseSkill)
             {
                 isMove = true;
                 transform.Translate(Vector3.forward * Speed * Time.deltaTime);
@@ -245,10 +254,7 @@ public class Player : MonoBehaviour
             {
                 ResetAnimation();
             }
-            if (Input.GetKeyUp(KeyCode.S))
-            {
-                isSkilling(); 
-            }
+            
         }
     }
     public void ResetSpeed()
@@ -264,14 +270,14 @@ public class Player : MonoBehaviour
             {
                 GameSystem.instance.changeModeBackPack();
                 isChangeState = true;
-                ResetAnimation();
+               // ResetAnimation();
                 return;
             }
             else if(Input.GetKeyUp(KeyCode.X) && npc != null)
             {
                 GameSystem.instance.changeModeTalking(npc);
                 isChangeState = true;
-                ResetAnimation();
+              //  ResetAnimation();
                 return;
             }
             FrameCount++;
@@ -322,6 +328,8 @@ public class Player : MonoBehaviour
     {
         if (SkillAvail && GetSkillCost() <= MP)
         {
+            ResetAnimation();
+            ResetSpeed();
             MPChange(-GetSkillCost());
             UseSkill = true;
             SkillAvail = false;
@@ -349,7 +357,7 @@ public class Player : MonoBehaviour
     }
     public IEnumerator ResetUseSkill()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSecondsRealtime(1.2f);
         UseSkill = false;
         Playerani.SetBool("UseSkill", UseSkill);
 
