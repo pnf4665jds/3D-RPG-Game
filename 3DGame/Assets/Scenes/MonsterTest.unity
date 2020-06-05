@@ -127,16 +127,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8422892626600285392, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
-        type: 3}
-      propertyPath: m_Name
-      value: DogPBR
-      objectReference: {fileID: 0}
-    - target: {fileID: 8422892626600285392, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8422892626600249584, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -191,6 +181,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8422892626600285392, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
+        type: 3}
+      propertyPath: m_Name
+      value: DogPBR
+      objectReference: {fileID: 0}
+    - target: {fileID: 8422892626600285392, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 214e08cd5e5d74c458e2a81b7ec2c84c, type: 3}
@@ -317,7 +317,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b85ac7af25f6ee40b1ca90db565a4f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Monster: {fileID: 1776172154748893145, guid: fdd1dfc9db0304a4e980599f979913d6, type: 3}
+  Monster: {fileID: 5015241899266592804, guid: 1742e3490a6242141bcccd98e34967bf, type: 3}
+  ColliderForPlayer: {fileID: 0}
   IsBossField: 0
   MonsterNum: 1
   Name: RedDragon
@@ -595,6 +596,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DontDestroySytems
       objectReference: {fileID: 0}
+    - target: {fileID: 891778373656569683, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6824704989196837911, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -743,11 +749,6 @@ PrefabInstance:
     - target: {fileID: 1608532027702908704, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
         type: 3}
       propertyPath: BGMList.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 891778373656569683, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
-        type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3049527595183894307, guid: a0d682c00f6e5614e95fe64a8c2e6df7,

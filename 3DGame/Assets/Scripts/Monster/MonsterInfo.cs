@@ -33,6 +33,7 @@ public class MonsterInfo : MonoBehaviour
     private Animator animator;
     private float distanceToTheGround = 0.5f;
     private MonsterBlood monsterBlood;
+    private RaycastHit hit;
 
     /// <summary>
     /// 初始化
@@ -144,8 +145,9 @@ public class MonsterInfo : MonoBehaviour
     /// 判斷是否著地
     /// </summary>
     private void CheckGrounded()
-    {
-        isGrounded = Physics.Raycast(mainCollider.bounds.center, Vector3.down, distanceToTheGround);
+    {   
+        if (Physics.Raycast(mainCollider.bounds.center, Vector3.down, out hit, distanceToTheGround))
+            isGrounded = !hit.collider.isTrigger;
     }
 
     /// <summary>

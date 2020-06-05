@@ -129,8 +129,8 @@ GameObject:
   - component: {fileID: 5238383425548887361}
   - component: {fileID: 6990349621653779293}
   - component: {fileID: 8615519075645821196}
-  - component: {fileID: 3363838438651903583}
   - component: {fileID: 3247980641780687102}
+  - component: {fileID: -5206135465452053112}
   - component: {fileID: 1098975342683760555}
   m_Layer: 0
   m_Name: MySlime
@@ -192,6 +192,7 @@ MonoBehaviour:
   RotateSpeed: 5
   DeadWaitTime: 2
   CoinSum: 200
+  IdleWhenAnimation: 0
   AttackBuffRate: 1
   mainCollider: {fileID: 2118645329}
   Offset: 0.2
@@ -214,25 +215,25 @@ MonoBehaviour:
     Action: {fileID: 9187020749832847826}
     TransList:
     - Order: 0
+      TransitionDelay: 0
       Decider: {fileID: 4251601984095351576}
       TrueState: Follow
       FalseState: 
   - StateName: Follow
     Action: {fileID: 8048760432629561514}
     TransList:
-    - Order: 3
-      Decider: {fileID: 7734224744010699127}
-      TrueState: 
-      FalseState: Patrol
     - Order: 1
+      TransitionDelay: 0
       Decider: {fileID: 6990349621653779293}
       TrueState: Attack
       FalseState: 
-    - Order: 2
+    - Order: 0
+      TransitionDelay: 0
       Decider: {fileID: 8615519075645821196}
       TrueState: Attack2
       FalseState: 
-    - Order: 0
+    - Order: 2
+      TransitionDelay: 0
       Decider: {fileID: 3247980641780687102}
       TrueState: Back
       FalseState: 
@@ -240,6 +241,7 @@ MonoBehaviour:
     Action: {fileID: 355511340387153975}
     TransList:
     - Order: 0
+      TransitionDelay: 0
       Decider: {fileID: 7986170095116804014}
       TrueState: Follow
       FalseState: 
@@ -247,6 +249,7 @@ MonoBehaviour:
     Action: {fileID: 450953652565842710}
     TransList:
     - Order: 0
+      TransitionDelay: 0
       Decider: {fileID: 5238383425548887361}
       TrueState: Follow
       FalseState: 
@@ -254,7 +257,8 @@ MonoBehaviour:
     Action: {fileID: -7018024125801951041}
     TransList:
     - Order: 0
-      Decider: {fileID: 3363838438651903583}
+      TransitionDelay: 0
+      Decider: {fileID: -5206135465452053112}
       TrueState: Patrol
       FalseState: 
 --- !u!114 &9187020749832847826
@@ -270,6 +274,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Patrol
+  Source: {fileID: 0}
+  ActionSound: {fileID: 0}
+  Volume: 1
+  SoundDelay: 0
 --- !u!114 &8048760432629561514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,6 +291,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Follow
+  Source: {fileID: 0}
+  ActionSound: {fileID: 0}
+  Volume: 1
+  SoundDelay: 0
   IsFieldLimited: 1
   IsFlyMode: 0
   FlySpeedUp: 1
@@ -299,6 +311,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Attack
+  Source: {fileID: 0}
+  ActionSound: {fileID: 0}
+  Volume: 1
+  SoundDelay: 0
   Damage: 10
   TriggerName: Attack
 --- !u!114 &450953652565842710
@@ -314,6 +330,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Attack2
+  Source: {fileID: 0}
+  ActionSound: {fileID: 0}
+  Volume: 1
+  SoundDelay: 0
   Damage: 10
   TriggerName: Attack2
 --- !u!114 &-7018024125801951041
@@ -329,6 +349,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Back
+  Source: {fileID: 0}
+  ActionSound: {fileID: 0}
+  Volume: 1
+  SoundDelay: 0
+  ShouldConsiderY: 0
 --- !u!114 &4251601984095351576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -346,7 +371,7 @@ MonoBehaviour:
   ShowInScene: 0
   IsRangeStable: 0
   DetectCenter: {x: 0, y: 0, z: 0}
-  DetectRadius: 10
+  DetectRadius: 15
 --- !u!114 &7734224744010699127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,7 +405,7 @@ MonoBehaviour:
   UseStateName: Attack
   DetectPauseTime: 0
   WaitTime: 1.5
-  KeepPreviousTime: 0
+  KeepTimeUntilTaken: 1
 --- !u!114 &5238383425548887361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -396,7 +421,7 @@ MonoBehaviour:
   UseStateName: Attack2
   DetectPauseTime: 0
   WaitTime: 1.5
-  KeepPreviousTime: 0
+  KeepTimeUntilTaken: 1
 --- !u!114 &6990349621653779293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -435,20 +460,6 @@ MonoBehaviour:
   DetectCenter: {x: 0, y: 0.52, z: 3.93}
   DetectSize: {x: 0.51, y: 0.4, z: 1.95}
   StableRotateY: 0
---- !u!114 &3363838438651903583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5015241899266592804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 369f68d96f0b74d438e303483f5f14cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UseStateName: Back
-  DetectPauseTime: 0
 --- !u!114 &3247980641780687102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -463,6 +474,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UseStateName: Follow
   DetectPauseTime: 0
+--- !u!114 &-5206135465452053112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5015241899266592804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cbad5d095700fa49b94e6d6263e0a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseStateName: Back
+  DetectPauseTime: 0
+  IsDestSpawnOrigin: 1
+  ShouldConsiderX: 1
+  ShouldConsiderY: 0
+  ShouldConsiderZ: 1
+  CustomDestination: {x: 0, y: 0, z: 0}
 --- !u!54 &1098975342683760555
 Rigidbody:
   m_ObjectHideFlags: 0

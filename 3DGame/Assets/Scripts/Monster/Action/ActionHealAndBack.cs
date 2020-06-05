@@ -6,14 +6,15 @@ public class ActionHealAndBack : ActionBase
 {
     // 這個Action用來讓怪物回到初始位置並且回滿血
 
-    private Vector3 initPosition;
-    private Quaternion initRotation;
+    public bool ShouldConsiderY;    // 是否要考慮Y軸座標
+
+    private Vector3 targetPos;
 
     public override void Init()
     {
         animator.SetBool("Walk", true);
-        initPosition = monsterInfo.InitPosition;
-        initRotation = monsterInfo.InitRotation;
+        //initPosition = monsterInfo.InitPosition;
+        targetPos = monsterInfo.InitPosition;
         StartCoroutine(Heal());
     }
 
@@ -25,7 +26,6 @@ public class ActionHealAndBack : ActionBase
     public override void Exit()
     {
         animator.SetBool("Walk", false);
-        StartCoroutine(RotateToOrigin());
         controller.InitAllDecider();   // 初始化所有Decider
     }
 
@@ -34,8 +34,10 @@ public class ActionHealAndBack : ActionBase
     /// </summary>
     private void MoveToOrigin()
     {
-        transform.position = Vector3.MoveTowards(transform.position, initPosition, monsterInfo.MoveSpeed * Time.deltaTime);
-        Vector3 newDirection = Vector3.RotateTowards(transform.forward, initPosition - transform.position, monsterInfo.RotateSpeed * Time.deltaTime, 0.0f);
+        if (!ShouldConsiderY)
+            targetPos.y = transform.position.y;
+        transform.position = Vector3.MoveTowards(transform.position, targetPos, monsterInfo.MoveSpeed * Time.deltaTime);
+        Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetPos - transform.position, monsterInfo.RotateSpeed * Time.deltaTime, 0.0f);
         newDirection.y = 0;
         transform.rotation = Quaternion.LookRotation(newDirection);
     }
@@ -48,7 +50,7 @@ public class ActionHealAndBack : ActionBase
     {
         while(monsterInfo.CurrentHP < monsterInfo.MaxHP)
         {
-            monsterInfo.GetHeal(monsterInfo.MaxHP * 0.05f);
+            monsterInfo.GetHeal(monsterInfo.MaxHP * 0.1f);
             yield return new WaitForSeconds(0.5f);
         }
     }
@@ -57,7 +59,7 @@ public class ActionHealAndBack : ActionBase
     /// 回到初始旋轉
     /// </summary>
     /// <returns></returns>
-    private IEnumerator RotateToOrigin()
+    /*private IEnumerator RotateToOrigin()
     {
         Quaternion from = transform.rotation;
         Quaternion to = initRotation;
@@ -69,5 +71,5 @@ public class ActionHealAndBack : ActionBase
             elapsed += 1;
             yield return null;
         }
-    }
+    }*/
 }
