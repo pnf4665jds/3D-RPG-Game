@@ -41,7 +41,7 @@ public class Portal : MonoBehaviour
                 // 更改成指定的Y軸旋轉角度
                 () => other.gameObject.transform.rotation = Quaternion.Euler(0, DestRotationY, 0),
                 // 重置狀態
-                () => other.GetComponent<Player>().SetSpeed(0)
+                () => other.GetComponent<Player>().ResetAnything()
             });
         }
     }
