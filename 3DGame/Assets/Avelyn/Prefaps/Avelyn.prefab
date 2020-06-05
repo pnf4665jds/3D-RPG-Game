@@ -364,6 +364,7 @@ MonoBehaviour:
   CurCooldown: 0
   Money: 0
   SkillParticle: {fileID: 0}
+  SkillAnim: {fileID: 7400000, guid: 6815cdc5eab7c194b88ddb5af9a29dc6, type: 2}
 --- !u!136 &6026599154206865309
 CapsuleCollider:
   m_ObjectHideFlags: 0
