@@ -160,14 +160,21 @@ public class MonsterInfo : MonoBehaviour
             yield break;
 
         animator.updateMode = AnimatorUpdateMode.UnscaledTime;
-        Debug.Log(gameObject.name);
         MonsterSystem.instance.SetMonsterActionController(MonsterId, false);
         animator.SetBool("Pause", true);
-        yield return new WaitWhile(GameSystem.instance.isAnimation);
+        yield return new WaitWhile(IsIdleState);
         animator.updateMode = AnimatorUpdateMode.Normal;
         MonsterSystem.instance.SetMonsterActionController(MonsterId, true);
         animator.SetBool("Pause", false);
-        Debug.Log(gameObject.name);
+    }
+
+    /// <summary>
+    /// 從GameSystem確認是否需要Idle狀態
+    /// </summary>
+    /// <returns></returns>
+    private bool IsIdleState()
+    {
+        return GameSystem.instance.isAnimation() || GameSystem.instance.isPlayerStory();
     }
 
     private void OnCollisionEnter(Collision collision)
