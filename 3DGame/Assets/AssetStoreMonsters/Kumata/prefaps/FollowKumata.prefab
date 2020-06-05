@@ -406,6 +406,8 @@ MonoBehaviour:
   RotateSpeed: 5
   DeadWaitTime: 5
   CoinSum: 2000
+  IdleWhenAnimation: 1
+  AttackBuffRate: 1
   mainCollider: {fileID: 147804861295525994}
   Offset: 0.2
 --- !u!114 &5049802065022652132
@@ -427,6 +429,7 @@ MonoBehaviour:
     Action: {fileID: 2668671406496023431}
     TransList:
     - Order: 0
+      TransitionDelay: 0
       Decider: {fileID: 7760640169726311602}
       TrueState: Attack
       FalseState: 
@@ -434,6 +437,7 @@ MonoBehaviour:
     Action: {fileID: 3743233989263425285}
     TransList:
     - Order: 0
+      TransitionDelay: 0
       Decider: {fileID: 1462354799800648892}
       TrueState: Follow
       FalseState: 
@@ -441,6 +445,7 @@ MonoBehaviour:
     Action: {fileID: 0}
     TransList:
     - Order: 0
+      TransitionDelay: 0
       Decider: {fileID: 4779000740752631706}
       TrueState: Follow
       FalseState: 
@@ -457,6 +462,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Follow
+  Source: {fileID: 0}
+  ActionSound: {fileID: 0}
+  Volume: 1
+  SoundDelay: 0
   IsFieldLimited: 0
   IsFlyMode: 0
   FlySpeedUp: 1
@@ -473,6 +482,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Attack
+  Source: {fileID: 0}
+  ActionSound: {fileID: 0}
+  Volume: 1
+  SoundDelay: 0
   Damage: 10000
   TriggerName: Attack
   ShowInScene: 1
@@ -516,6 +529,10 @@ MonoBehaviour:
   UseStateName: Attack
   DetectPauseTime: 0
   WaitTime: 2
+  RandomTime: 0
+  MinTime: 0
+  MaxTime: 0
+  KeepTimeUntilTaken: 1
 --- !u!195 &8304818077842746314
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -553,6 +570,10 @@ MonoBehaviour:
   UseStateName: Idle
   DetectPauseTime: 0
   WaitTime: 3
+  RandomTime: 0
+  MinTime: 0
+  MaxTime: 0
+  KeepTimeUntilTaken: 1
 --- !u!1 &805497146806521042
 GameObject:
   m_ObjectHideFlags: 0

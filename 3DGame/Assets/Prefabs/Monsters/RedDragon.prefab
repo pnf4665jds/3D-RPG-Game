@@ -3415,7 +3415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34e5fea04bb708f4caa36b0ba88885ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 4001
+  MaxHP: 6000
   MoveSpeed: 5
   RotateSpeed: 5
   DeadWaitTime: 5
@@ -3628,6 +3628,7 @@ MonoBehaviour:
   Damage: 3
   FlameObject: {fileID: 1634767862067424, guid: 007c57e2df8e9b144b99f471b84f3d56,
     type: 3}
+  FlameObjectReal: {fileID: 0}
   Head: {fileID: 3037743098269929874}
   Offset: {x: 0, y: 0, z: 0}
   DelayBeforeEffect: 0.7
@@ -3685,13 +3686,13 @@ MonoBehaviour:
   Volume: 1
   SoundDelay: 0
   Damage: 10
+  FlameObject: {fileID: 0}
+  FlameObjectReal: {fileID: 0}
   Head: {fileID: 3037743098269929874}
-  FireBallObject: {fileID: 1947871717301538, guid: a990e3ac1318b834488c784d851f42a9,
-    type: 3}
-  BallNum: 8
+  Offset: {x: 0, y: 0, z: 0}
   DelayBeforeEffect: 0.4
-  ShootDeltaTime: 0.5
-  FireBallSpeed: 40
+  KeepTime: 0
+  AttackDeltaY: 10
 --- !u!114 &3037743098562945570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3749,6 +3750,7 @@ MonoBehaviour:
   ActionSound: {fileID: 0}
   Volume: 1
   SoundDelay: 0
+  ShouldConsiderY: 0
 --- !u!114 &8462531119088151216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3877,7 +3879,10 @@ MonoBehaviour:
   UseStateName: ClawAttack
   DetectPauseTime: 0
   WaitTime: 3
-  KeepPreviousTime: 0
+  RandomTime: 0
+  MinTime: 0
+  MaxTime: 0
+  KeepTimeUntilTaken: 1
 --- !u!114 &3037743098562945558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3893,7 +3898,10 @@ MonoBehaviour:
   UseStateName: FlameAttack
   DetectPauseTime: 0
   WaitTime: 4
-  KeepPreviousTime: 0
+  RandomTime: 0
+  MinTime: 0
+  MaxTime: 0
+  KeepTimeUntilTaken: 1
 --- !u!114 &3037743098562945557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3960,7 +3968,10 @@ MonoBehaviour:
   UseStateName: Fly
   DetectPauseTime: 0
   WaitTime: 3
-  KeepPreviousTime: 0
+  RandomTime: 0
+  MinTime: 0
+  MaxTime: 0
+  KeepTimeUntilTaken: 1
 --- !u!114 &3037743098562945574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3976,7 +3987,10 @@ MonoBehaviour:
   UseStateName: FlyFlameAttack
   DetectPauseTime: 0
   WaitTime: 4.5
-  KeepPreviousTime: 0
+  RandomTime: 0
+  MinTime: 0
+  MaxTime: 0
+  KeepTimeUntilTaken: 1
 --- !u!114 &3037743098562945568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4049,7 +4063,10 @@ MonoBehaviour:
   UseStateName: FlyPatrol
   DetectPauseTime: 0
   WaitTime: 20
-  KeepPreviousTime: 1
+  RandomTime: 0
+  MinTime: 0
+  MaxTime: 0
+  KeepTimeUntilTaken: 1
 --- !u!114 &3037743098562945582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4065,7 +4082,10 @@ MonoBehaviour:
   UseStateName: Land
   DetectPauseTime: 0
   WaitTime: 3
-  KeepPreviousTime: 0
+  RandomTime: 0
+  MinTime: 0
+  MaxTime: 0
+  KeepTimeUntilTaken: 1
 --- !u!114 &5266506073864143134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4114,7 +4134,10 @@ MonoBehaviour:
   UseStateName: FlyFollow
   DetectPauseTime: 0
   WaitTime: 4
-  KeepPreviousTime: 0
+  RandomTime: 0
+  MinTime: 0
+  MaxTime: 0
+  KeepTimeUntilTaken: 1
 --- !u!114 &823696519847296390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4149,7 +4172,10 @@ MonoBehaviour:
   UseStateName: IntroLand
   DetectPauseTime: 0
   WaitTime: 9
-  KeepPreviousTime: 0
+  RandomTime: 0
+  MinTime: 0
+  MaxTime: 0
+  KeepTimeUntilTaken: 1
 --- !u!1 &3037743098586715581
 GameObject:
   m_ObjectHideFlags: 0

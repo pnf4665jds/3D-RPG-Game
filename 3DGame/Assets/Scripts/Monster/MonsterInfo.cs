@@ -160,12 +160,14 @@ public class MonsterInfo : MonoBehaviour
             yield break;
 
         animator.updateMode = AnimatorUpdateMode.UnscaledTime;
+        Debug.Log(gameObject.name);
         MonsterSystem.instance.SetMonsterActionController(MonsterId, false);
         animator.SetBool("Pause", true);
         yield return new WaitWhile(GameSystem.instance.isAnimation);
         animator.updateMode = AnimatorUpdateMode.Normal;
         MonsterSystem.instance.SetMonsterActionController(MonsterId, true);
         animator.SetBool("Pause", false);
+        Debug.Log(gameObject.name);
     }
 
     private void OnCollisionEnter(Collision collision)
