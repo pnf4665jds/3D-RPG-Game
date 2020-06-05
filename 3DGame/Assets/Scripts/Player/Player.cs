@@ -51,7 +51,7 @@ public class Player : MonoBehaviour
         isDie = false;
         UseSkill = false;
         Speed = 0;
-        ATK = 50;
+        ATK = 1000;
         isChangeState = false;
         SkillAvail = true;
         FrameCount = 0;
@@ -357,7 +357,7 @@ public class Player : MonoBehaviour
     }
     public IEnumerator ResetUseSkill()
     {
-        yield return new WaitForSecondsRealtime(1.2f);
+        yield return new WaitForSecondsRealtime(1f);
         UseSkill = false;
         Playerani.SetBool("UseSkill", UseSkill);
 
@@ -454,4 +454,12 @@ public class Player : MonoBehaviour
         }
     }
     public bool GetisInBoss() { return isInBoss; }
+    public void ResetAnything()
+    {
+        ResetAnimation();
+        UseSkill = false;
+        Playerani.SetBool("UseSkill",UseSkill);
+        ResetSpeed();
+        SkillParticle.Stop(true,ParticleSystemStopBehavior.StopEmittingAndClear);
+    }
 }
