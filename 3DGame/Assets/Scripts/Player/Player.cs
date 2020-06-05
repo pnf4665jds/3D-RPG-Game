@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
     private Vector3 MouseStartPos;
     private GameObject PositionUI;
     [SerializeField]private ParticleSystem SkillParticle;
+    public AnimationClip SkillAnim;
 
     private void Awake()
     {
@@ -357,10 +358,10 @@ public class Player : MonoBehaviour
     }
     public IEnumerator ResetUseSkill()
     {
-        yield return new WaitForSecondsRealtime(1f);
+        if (this.name == "DogPBR") yield return new WaitForSecondsRealtime(0.5f);
+        else yield return new WaitForSecondsRealtime(SkillAnim.length);
         UseSkill = false;
         Playerani.SetBool("UseSkill", UseSkill);
-
     }
     public IEnumerator FootmanSkill()
     {
