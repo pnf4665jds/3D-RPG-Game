@@ -31,7 +31,12 @@ public class ActionFlameAttack : ActionBase
 
     public override void Exit()
     {
-
+        StopAllCoroutines();
+        if(flameObject)
+            Destroy(flameObject);
+        if(flameObjectReal)
+            Destroy(flameObjectReal);
+        Source.enabled = false;
     }
 
     /// <summary>

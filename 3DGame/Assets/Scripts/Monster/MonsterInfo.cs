@@ -130,7 +130,7 @@ public class MonsterInfo : MonoBehaviour
         rigidbody.isKinematic = true;
 
         // 死亡時關閉ActionController
-        GetComponent<ActionController>().enabled = false;
+        MonsterSystem.instance.SetMonsterActionController(MonsterId, false);
 
         if (animator != null)
             animator.SetBool("Dead", true);

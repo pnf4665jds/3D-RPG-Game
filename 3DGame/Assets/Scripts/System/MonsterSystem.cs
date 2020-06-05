@@ -69,8 +69,9 @@ public class MonsterSystem : Singleton<MonsterSystem>
     {
         ActionController controller = MonsterList[id].GetComponent<ActionController>();
         controller.enabled = isEnable;
-        if (isEnable)
+        if (!isEnable)
         {
+            controller.ExitCurrentAction();
             controller.InitAllDecider();
             controller.ChangeState("Idle", 0);
         }

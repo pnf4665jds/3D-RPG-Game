@@ -56,6 +56,14 @@ public class ActionController : MonoBehaviour
     }
 
     /// <summary>
+    /// 呼叫目前Action的Exit()
+    /// </summary>
+    public void ExitCurrentAction()
+    {
+        currentState?.Action?.Exit();
+    }
+
+    /// <summary>
     /// 等待一個delay後切換狀態
     /// </summary>
     /// <param name="newStateName"></param>
