@@ -429,9 +429,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34e5fea04bb708f4caa36b0ba88885ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 6000
+  MaxHP: 4000
   MoveSpeed: 5
-  RotateSpeed: 10
+  RotateSpeed: 8
   DeadWaitTime: 5
   CoinSum: 1500
   IdleWhenAnimation: 0
@@ -757,6 +757,9 @@ MonoBehaviour:
   UseStateName: IntroLand
   DetectPauseTime: 0
   WaitTime: 9
+  RandomTime: 0
+  MinTime: 0
+  MaxTime: 0
   KeepTimeUntilTaken: 1
 --- !u!114 &1782514155434049043
 MonoBehaviour:
@@ -773,6 +776,9 @@ MonoBehaviour:
   UseStateName: Scream
   DetectPauseTime: 0
   WaitTime: 3
+  RandomTime: 0
+  MinTime: 0
+  MaxTime: 0
   KeepTimeUntilTaken: 1
 --- !u!114 &1286697797140375218
 MonoBehaviour:
@@ -808,6 +814,9 @@ MonoBehaviour:
   UseStateName: ClawAttack
   DetectPauseTime: 0
   WaitTime: 3
+  RandomTime: 0
+  MinTime: 0
+  MaxTime: 0
   KeepTimeUntilTaken: 1
 --- !u!114 &6771910653560188789
 MonoBehaviour:
@@ -843,6 +852,9 @@ MonoBehaviour:
   UseStateName: FlameAttack
   DetectPauseTime: 0
   WaitTime: 5
+  RandomTime: 0
+  MinTime: 0
+  MaxTime: 0
   KeepTimeUntilTaken: 1
 --- !u!114 &8918814419477926915
 MonoBehaviour:
@@ -873,11 +885,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UseStateName: Fly
   DetectPauseTime: 0
-  isDestSpawnOrigin: 1
-  shouldConsiderX: 0
-  shouldConsiderY: 1
-  shouldConsiderZ: 0
-  customDestination: {x: 0, y: 0, z: 0}
+  IsDestSpawnOrigin: 0
+  IsDestAOffset: 1
+  ShouldConsiderX: 0
+  ShouldConsiderY: 1
+  ShouldConsiderZ: 0
+  CustomDestination: {x: 0, y: 20, z: 0}
 --- !u!114 &-8580887973142234090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -893,6 +906,9 @@ MonoBehaviour:
   UseStateName: CircleFly
   DetectPauseTime: 0
   WaitTime: 25
+  RandomTime: 0
+  MinTime: 0
+  MaxTime: 0
   KeepTimeUntilTaken: 1
 --- !u!114 &1615584264119193321
 MonoBehaviour:
@@ -909,6 +925,9 @@ MonoBehaviour:
   UseStateName: CircleFly
   DetectPauseTime: 0
   WaitTime: 10
+  RandomTime: 1
+  MinTime: 8
+  MaxTime: 10
   KeepTimeUntilTaken: 1
 --- !u!114 &1277464098807797775
 MonoBehaviour:
@@ -925,6 +944,9 @@ MonoBehaviour:
   UseStateName: FlyFlameAttack
   DetectPauseTime: 0
   WaitTime: 9
+  RandomTime: 0
+  MinTime: 0
+  MaxTime: 0
   KeepTimeUntilTaken: 1
 --- !u!1 &1776172154766051589
 GameObject:

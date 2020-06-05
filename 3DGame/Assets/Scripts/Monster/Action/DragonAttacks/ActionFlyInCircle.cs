@@ -10,6 +10,7 @@ public class ActionFlyInCircle : ActionBase
 
     private Vector3 targetPos;
     private bool startMove = false;
+    private int clockWise = 1;
 
     public override void Init()
     {
@@ -17,6 +18,7 @@ public class ActionFlyInCircle : ActionBase
         animator.SetBool("FlyForward", true);
         rigid.useGravity = false;
         SoundSystem.instance.PlaySound(Source, ActionSound, Volume, SoundDelay, true);
+        clockWise = Random.Range(0, 2) == 0 ? 1 : -1;
     }
 
     public override void Process()
@@ -41,8 +43,8 @@ public class ActionFlyInCircle : ActionBase
         float val = 0;
         while (true)
         {
-            val += Time.deltaTime;
-            if (val >= 1)
+            val += Time.deltaTime * clockWise;
+            if (val >= 1 || val <= -1)
                 val = 0;
             float theta = val * 2 * Mathf.PI;
             float len = monsterInfo.FieldRadius * 0.9f;

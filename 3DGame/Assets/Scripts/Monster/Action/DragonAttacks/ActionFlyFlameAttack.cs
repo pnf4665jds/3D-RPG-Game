@@ -43,7 +43,7 @@ public class ActionFlyFlameAttack : ActionBase
     /// <returns></returns>
     private IEnumerator StartEffect()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2.5f);
         animator.SetTrigger("FlyFlameAttack");
         SoundSystem.instance.PlaySound(Source, ActionSound, Volume, SoundDelay, false);
         yield return new WaitForSeconds(DelayBeforeEffect);
@@ -79,12 +79,13 @@ public class ActionFlyFlameAttack : ActionBase
     private IEnumerator Move(bool down)
     {
         Vector3 finalPos = transform.position;
-        finalPos.y = down ? transform.position.y - AttackDeltaY : transform.position.y + AttackDeltaY;
+        finalPos.y = down ? finalPos.y - AttackDeltaY : finalPos.y + AttackDeltaY;
 
         while (Mathf.Abs(transform.position.y - finalPos.y) > 0.1f)
         {
             transform.position = Vector3.MoveTowards(transform.position, finalPos, monsterInfo.MoveSpeed * Time.deltaTime);
             yield return null;
         }
+        Debug.Log("X");
     }
 }
