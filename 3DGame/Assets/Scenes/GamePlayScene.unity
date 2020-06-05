@@ -206,7 +206,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 9a8e3c0c787158540acea679dbbf091e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.3320465
+      value: 4.2
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 9a8e3c0c787158540acea679dbbf091e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -214,7 +214,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 9a8e3c0c787158540acea679dbbf091e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 16.37339
+      value: 19.1
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 9a8e3c0c787158540acea679dbbf091e, type: 3}
       propertyPath: m_LocalRotation.x
@@ -5715,6 +5715,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayTime: 0
+  ownCamera: {fileID: 1891798715}
   storyContents:
   - {fileID: 4900000, guid: 531d042d9b0cd2e4dac0f1a5a84bea8d, type: 3}
   Directors:
@@ -5732,6 +5733,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayTime: 1
+  ownCamera: {fileID: 1891798715}
   storyContents: []
   Directors:
   - {fileID: 1859976676}
@@ -5748,6 +5750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayTime: 0
+  ownCamera: {fileID: 1891798715}
   storyContents:
   - {fileID: 4900000, guid: 507f71077a5e5bb48a0b1550e2036081, type: 3}
   Directors: []
@@ -9409,8 +9412,6 @@ PlayableDirector:
     value: {fileID: 1859976675}
   - key: {fileID: -8789803319920876504, guid: b2bae593cdcf2ed408e0b76fe8e4c6af, type: 2}
     value: {fileID: 1891798715}
-  - key: {fileID: 6765376371523524140, guid: b2bae593cdcf2ed408e0b76fe8e4c6af, type: 2}
-    value: {fileID: 50617939}
   - key: {fileID: 583259571605254468, guid: b2bae593cdcf2ed408e0b76fe8e4c6af, type: 2}
     value: {fileID: 1891798719}
   - key: {fileID: 3351149244008899062, guid: b2bae593cdcf2ed408e0b76fe8e4c6af, type: 2}
@@ -9649,7 +9650,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &1891798716
 AudioListener:
   m_ObjectHideFlags: 0

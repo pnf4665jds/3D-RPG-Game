@@ -6,9 +6,15 @@ using UnityEngine.Playables;
 public class storyTypeBase : MonoBehaviour
 {
     public float delayTime;
+    public GameObject ownCamera;
+    private GameObject mainCamera;
     public List<TextAsset> storyContents = new List<TextAsset>();
     public List<PlayableDirector> Directors = new List<PlayableDirector>();
-
+    private void Start()
+    {
+        ownCamera.SetActive(false);
+        mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+    }
     public IEnumerator Play()
     {
 
@@ -18,16 +24,18 @@ public class storyTypeBase : MonoBehaviour
         foreach (PlayableDirector dir in Directors)
         {
             DirectorPlay(dir);
-            yield return new WaitUntil(() => isDirectorCompleted(dir)); //結束進入boss場景的動畫
+            yield return new WaitUntil(() => isDirectorCompleted(dir)); //結束動畫
         }
         //結束動畫，進入劇情UI環節
+        mainCamera.SetActive(true); //開啟主相機
+        ownCamera.SetActive(false); //關閉副相機
         GameSystem.instance.changeModeStory();
 
         foreach (TextAsset file in storyContents)
         {
 
             UISystem.instance.getStoryPanel().GetComponent<storyUI>().setStoryFile(file); //顯示劇情
-            print(file);
+            //print(file);
             yield return new WaitForSecondsRealtime(2);
             UISystem.instance.getStoryPanel().GetComponent<storyUI>().setSkip(); //顯示skip
             yield return new WaitUntil(() => Input.GetKey(KeyCode.Z)); //結束劇情
@@ -45,8 +53,10 @@ public class storyTypeBase : MonoBehaviour
     {
         return Directors.Count == 0;
     }
-    protected void DirectorPlay(PlayableDirector dir) {
-
+    protected void DirectorPlay(PlayableDirector dir)
+    {
+        
+        mainCamera.SetActive(false);
         dir.Play();
 
     }
