@@ -4692,7 +4692,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: c2325397dcd58084594d12a1cc9e9fc2, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -8449,6 +8449,7 @@ GameObject:
   - component: {fileID: 715810144}
   - component: {fileID: 715810146}
   - component: {fileID: 715810145}
+  - component: {fileID: 715810147}
   m_Layer: 0
   m_Name: TimeLine
   m_TagString: Untagged
@@ -8504,11 +8505,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 194bf1f9b1d1eff42bc410be0869dd2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadingFinishStory: []
+  loadingFinishStory:
+  - {fileID: 715810147}
   enterBossFieldStory: []
   bossDeadStory: []
-  emergencyStory:
-  - {fileID: 715810145}
+--- !u!114 &715810147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715810143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83ab92917607d824f8f57a6863074d89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayTime: 0
+  ownCamera: {fileID: 1493722880}
+  storyContents:
+  - {fileID: 4900000, guid: c795bca142f2094438e67f7bf6ebc8ac, type: 3}
+  Directors: []
 --- !u!1001 &720074855
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18993,6 +19010,7 @@ GameObject:
   - component: {fileID: 1493722881}
   - component: {fileID: 1493722883}
   - component: {fileID: 1493722882}
+  - component: {fileID: 1493722884}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -19065,6 +19083,25 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!95 &1493722884
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493722880}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &1499316091 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7667261725211071096, guid: 31ef3e982ef915f43ae1c32a08ec707d,

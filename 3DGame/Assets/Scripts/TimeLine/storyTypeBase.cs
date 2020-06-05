@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using UnityEngine.Playables;
 
 public class storyTypeBase : MonoBehaviour
@@ -12,7 +13,7 @@ public class storyTypeBase : MonoBehaviour
     public List<PlayableDirector> Directors = new List<PlayableDirector>();
     private void Start()
     {
-        ownCamera.SetActive(false);
+        ownCameraClose();
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
     }
     public IEnumerator Play()
@@ -28,7 +29,7 @@ public class storyTypeBase : MonoBehaviour
         }
         //結束動畫，進入劇情UI環節
         mainCamera.SetActive(true); //開啟主相機
-        ownCamera.SetActive(false); //關閉副相機
+        ownCameraClose(); //關閉副相機
         GameSystem.instance.changeModeStory();
 
         foreach (TextAsset file in storyContents)
@@ -63,5 +64,11 @@ public class storyTypeBase : MonoBehaviour
     protected bool isDirectorCompleted(PlayableDirector temp)
     {
         return temp.state != PlayState.Playing;
+    }
+    protected void ownCameraOpen() {
+        ownCamera?.SetActive(true);
+    }
+    protected void ownCameraClose() {
+        ownCamera?.SetActive(false);
     }
 }

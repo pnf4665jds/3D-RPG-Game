@@ -8,11 +8,12 @@ public class StoryContoller : MonoBehaviour
     public List<storyTypeBase> loadingFinishStory = new List<storyTypeBase>();
     public List<storyTypeBase> enterBossFieldStory = new List<storyTypeBase>();
     public List<storyTypeBase> bossDeadStory = new List<storyTypeBase>();
-    public List<storyTriggerType> emergencyStory = new List<storyTriggerType>();
+    
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(StoryFlowControl());
+        
     }
 
     // Update is called once per frame
@@ -30,7 +31,8 @@ public class StoryContoller : MonoBehaviour
         {
             StartCoroutine(story.Play());
         }
-        yield return new WaitUntil(() => MonsterSystem.instance.IsBossDead); //進入boss場景
+        //GameObject.FindGameObjectWithTag("Boss").GetComponent<MonsterInfo>().GetDamage(6000);
+        yield return new WaitUntil(() => MonsterSystem.instance.IsBossDead); //boss死亡
 
         foreach (storyTypeBase story in bossDeadStory)
         {

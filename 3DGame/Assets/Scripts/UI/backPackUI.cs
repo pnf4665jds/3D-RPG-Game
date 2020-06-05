@@ -40,7 +40,7 @@ public class backPackUI : MonoBehaviour
         if (!Inventory.instance.detectEmptyPotion(manaBtn.GetComponent<Image>().sprite))
         {
             Inventory.instance.RemoveItem(manaBtn.GetComponent<Image>().sprite);
-            //player.GetComponent<Player>().;
+            player.GetComponent<Player>().MPChange(20.0f);
         }
     }
     private void recoveryBtnClick() {
