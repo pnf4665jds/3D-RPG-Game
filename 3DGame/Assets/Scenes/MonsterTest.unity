@@ -127,6 +127,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8422892626600285392, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
+        type: 3}
+      propertyPath: m_Name
+      value: DogPBR
+      objectReference: {fileID: 0}
+    - target: {fileID: 8422892626600285392, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8422892626600249584, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -181,16 +191,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8422892626600285392, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
-        type: 3}
-      propertyPath: m_Name
-      value: DogPBR
-      objectReference: {fileID: 0}
-    - target: {fileID: 8422892626600285392, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 214e08cd5e5d74c458e2a81b7ec2c84c, type: 3}
@@ -317,7 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b85ac7af25f6ee40b1ca90db565a4f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Monster: {fileID: 5015241899266592804, guid: 1742e3490a6242141bcccd98e34967bf, type: 3}
+  Monster: {fileID: 5476715494992203673, guid: 701df9ab9b99daf42bde3735d381aae5, type: 3}
   ColliderForPlayer: {fileID: 0}
   IsBossField: 0
   MonsterNum: 1

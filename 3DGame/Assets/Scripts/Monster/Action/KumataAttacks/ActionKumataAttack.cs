@@ -20,7 +20,6 @@ public class ActionKumataAttack : ActionBase
     public GameObject Effect;
     public float EffectDelay;
 
-
     public override void Init()
     {
         animator.SetTrigger(TriggerName);
@@ -50,6 +49,8 @@ public class ActionKumataAttack : ActionBase
         GameObject effect = Instantiate(Effect, transform);
         effect.transform.position = transform.position + new Vector3(-1, 1, 0);
         Destroy(effect, 3);
+        SoundSystem.instance.PlaySound(Source, ActionSound, Volume, SoundDelay, false);
+        SoundSystem.instance.PlaySound(Source, ActionSound, Volume, SoundDelay, false);
     }
 
     /// <summary>

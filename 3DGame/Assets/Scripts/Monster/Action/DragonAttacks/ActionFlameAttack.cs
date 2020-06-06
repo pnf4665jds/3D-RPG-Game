@@ -36,7 +36,7 @@ public class ActionFlameAttack : ActionBase
             Destroy(flameObject);
         if(flameObjectReal)
             Destroy(flameObjectReal);
-        Source.enabled = false;
+        Source.Stop();
     }
 
     /// <summary>
