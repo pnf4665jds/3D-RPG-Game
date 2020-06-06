@@ -174,7 +174,9 @@ public class MonsterInfo : MonoBehaviour
     /// <returns></returns>
     private bool IsIdleState()
     {
-        return GameSystem.instance.isAnimation() || GameSystem.instance.isPlayerStory();
+        return GameSystem.instance.isAnimation()
+                || GameSystem.instance.isPlayerStory()
+                || GameSystem.instance.isPlayerOpenBackPack();
     }
 
     private void OnCollisionEnter(Collision collision)
