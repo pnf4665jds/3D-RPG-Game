@@ -5716,6 +5716,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayTime: 0
   ownCamera: {fileID: 1891798715}
+  mainCamera: {fileID: 0}
   storyContents:
   - {fileID: 4900000, guid: 531d042d9b0cd2e4dac0f1a5a84bea8d, type: 3}
   Directors:
@@ -5734,6 +5735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayTime: 1
   ownCamera: {fileID: 1891798715}
+  mainCamera: {fileID: 0}
   storyContents: []
   Directors:
   - {fileID: 1859976676}
@@ -5751,6 +5753,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayTime: 0
   ownCamera: {fileID: 1891798715}
+  mainCamera: {fileID: 0}
   storyContents:
   - {fileID: 4900000, guid: 507f71077a5e5bb48a0b1550e2036081, type: 3}
   Directors: []

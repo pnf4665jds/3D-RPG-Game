@@ -10,6 +10,8 @@ public class storyTriggerType : storyTypeBase
 
     private void Start()
     {
+        ownCameraClose();
+        mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
         StartCoroutine(EmergencyStart(TriggerTag));
     }
 

@@ -8,7 +8,7 @@ public class storyTypeBase : MonoBehaviour
 {
     public float delayTime;
     public GameObject ownCamera;
-    private GameObject mainCamera;
+    public GameObject mainCamera;
     public List<TextAsset> storyContents = new List<TextAsset>();
     public List<PlayableDirector> Directors = new List<PlayableDirector>();
     private void Start()
