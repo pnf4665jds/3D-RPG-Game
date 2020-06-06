@@ -50,7 +50,6 @@ public class ActionKumataAttack : ActionBase
         effect.transform.position = transform.position + new Vector3(-1, 1, 0);
         Destroy(effect, 3);
         SoundSystem.instance.PlaySound(Source, ActionSound, Volume, SoundDelay, false);
-        SoundSystem.instance.PlaySound(Source, ActionSound, Volume, SoundDelay, false);
     }
 
     /// <summary>

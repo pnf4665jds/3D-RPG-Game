@@ -8487,6 +8487,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayTime: 0
   ownCamera: {fileID: 1493722880}
+  mainCamera: {fileID: 0}
   storyContents: []
   Directors:
   - {fileID: 379015940}
@@ -8523,6 +8524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayTime: 0
   ownCamera: {fileID: 1493722880}
+  mainCamera: {fileID: 0}
   storyContents:
   - {fileID: 4900000, guid: c795bca142f2094438e67f7bf6ebc8ac, type: 3}
   Directors: []
@@ -15781,7 +15783,7 @@ PrefabInstance:
     - target: {fileID: 4371319220165533745, guid: be108c62fe262c34f932abe7e823482a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -66.7
+      value: -68.88
       objectReference: {fileID: 0}
     - target: {fileID: 4371319220165533745, guid: be108c62fe262c34f932abe7e823482a,
         type: 3}
@@ -15791,7 +15793,7 @@ PrefabInstance:
     - target: {fileID: 4371319220165533745, guid: be108c62fe262c34f932abe7e823482a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -332.78
+      value: -328.49
       objectReference: {fileID: 0}
     - target: {fileID: 4371319220165533745, guid: be108c62fe262c34f932abe7e823482a,
         type: 3}
@@ -15832,6 +15834,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371319220165533744, guid: be108c62fe262c34f932abe7e823482a,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371319220165533744, guid: be108c62fe262c34f932abe7e823482a,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371319220165533744, guid: be108c62fe262c34f932abe7e823482a,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4371319220165533759, guid: be108c62fe262c34f932abe7e823482a,
         type: 3}

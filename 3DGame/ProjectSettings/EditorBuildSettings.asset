@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/newMaze.unity
     guid: 416623fef59d7844bb23fcb49faf48ce
+  - enabled: 1
+    path: Assets/Scenes/GamePlaySceneSecond.unity
+    guid: 56f396dc9238dbc47bae80b272e722dd
   m_configObjects: {}
