@@ -42,10 +42,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -175,17 +175,17 @@ MonoBehaviour:
   BGMSource: {fileID: 351825913}
   BGMList:
   - SceneName: GamePlayScene
-    NormalBGM: {fileID: 0}
-    BossBGM: {fileID: 0}
+    NormalBGM: {fileID: 8300000, guid: cb080e7b41c7d454e8dce2869ba0f25f, type: 3}
+    BossBGM: {fileID: 8300000, guid: 21048223be8d8cc4e860e8b1f4be989d, type: 3}
   - SceneName: newMaze
-    NormalBGM: {fileID: 0}
+    NormalBGM: {fileID: 8300000, guid: 8cd550da6c2c6b04f9270b7d9659113d, type: 3}
     BossBGM: {fileID: 0}
   - SceneName: GamePlaySceneSecond
-    NormalBGM: {fileID: 0}
-    BossBGM: {fileID: 0}
+    NormalBGM: {fileID: 8300000, guid: ce91733d453ff104aa46a43f6905d994, type: 3}
+    BossBGM: {fileID: 8300000, guid: 1b197323357862a44b90b0f13b8f26d0, type: 3}
   - SceneName: GamePlaySceneThird
     NormalBGM: {fileID: 0}
-    BossBGM: {fileID: 0}
+    BossBGM: {fileID: 8300000, guid: 514571919da484540bdecaf10861b081, type: 3}
 --- !u!1 &3675570286744846798
 GameObject:
   m_ObjectHideFlags: 0
@@ -1144,41 +1144,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.0012694336
-      objectReference: {fileID: 0}
-    - target: {fileID: 8422892626600249490, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8422892626600249490, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8422892626600249490, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.04006481
-      objectReference: {fileID: 0}
-    - target: {fileID: 8422892626600249490, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9991971
-      objectReference: {fileID: 0}
-    - target: {fileID: 8422892626600249490, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.11615705
-      objectReference: {fileID: 0}
-    - target: {fileID: 8422892626600249490, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.0022835657
-      objectReference: {fileID: 0}
-    - target: {fileID: 8422892626600249490, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.000000058673322
       objectReference: {fileID: 0}
     - target: {fileID: 8422892626600249484, guid: 214e08cd5e5d74c458e2a81b7ec2c84c,
         type: 3}

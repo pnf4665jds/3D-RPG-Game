@@ -63,6 +63,7 @@ public class SoundSystem : Singleton<SoundSystem>
     /// </summary>
     public void PlayBossBGM(float fadeInTime)
     {
+        StopBGM(0);
         foreach (BGM bgm in BGMList)
         {
             if (bgm.SceneName == GameSceneManager.instance.CurrentSceneName && bgm.BossBGM)
@@ -91,6 +92,7 @@ public class SoundSystem : Singleton<SoundSystem>
     {
         float timer = 0;
         source.Play();
+        source.volume = 0;
         while (timer < fadeInTime && source.volume < 1)
         {
             source.volume += 1f / fadeInTime * Time.deltaTime;

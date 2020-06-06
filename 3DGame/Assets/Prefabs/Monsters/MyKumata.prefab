@@ -2348,25 +2348,25 @@ MonoBehaviour:
     Action: {fileID: 0}
     TransList:
     - Order: 0
+      TransitionDelay: 0
       Decider: {fileID: 7072206518181757133}
       TrueState: Follow
       FalseState: 
   - StateName: Follow
     Action: {fileID: 7072206518181757134}
     TransList:
-    - Order: 3
-      Decider: {fileID: 8562010921278365142}
-      TrueState: 
-      FalseState: Idle
     - Order: 2
+      TransitionDelay: 0
       Decider: {fileID: 3215523709812277243}
       TrueState: Attack
       FalseState: 
     - Order: 0
+      TransitionDelay: 0
       Decider: {fileID: 2276874329727302807}
       TrueState: Attack2
       FalseState: 
     - Order: 1
+      TransitionDelay: 0
       Decider: {fileID: 7018463418493112915}
       TrueState: Attack3
       FalseState: 
@@ -2374,6 +2374,7 @@ MonoBehaviour:
     Action: {fileID: 8421207531806522444}
     TransList:
     - Order: 0
+      TransitionDelay: 0
       Decider: {fileID: 6010004412098512885}
       TrueState: Follow
       FalseState: 
@@ -2381,6 +2382,7 @@ MonoBehaviour:
     Action: {fileID: 7010711894866899774}
     TransList:
     - Order: 0
+      TransitionDelay: 0
       Decider: {fileID: 25921462749565881}
       TrueState: Follow
       FalseState: 
@@ -2388,6 +2390,7 @@ MonoBehaviour:
     Action: {fileID: 4677701522284845044}
     TransList:
     - Order: 0
+      TransitionDelay: 0
       Decider: {fileID: 1065243944245600101}
       TrueState: Follow
       FalseState: 
@@ -2404,6 +2407,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Follow
+  Source: {fileID: 0}
+  ActionSound: {fileID: 0}
+  Volume: 1
+  SoundDelay: 0
   IsFieldLimited: 0
   IsFlyMode: 0
   FlySpeedUp: 1
@@ -2420,6 +2427,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Attack
+  Source: {fileID: 0}
+  ActionSound: {fileID: 0}
+  Volume: 1
+  SoundDelay: 0
   Damage: 10
   TriggerName: Attack
   ShowInScene: 0
@@ -2442,6 +2453,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Attack2
+  Source: {fileID: 0}
+  ActionSound: {fileID: 0}
+  Volume: 1
+  SoundDelay: 0
   Damage: 50
   TriggerName: JumpAttack
   ShowInScene: 1
@@ -2467,6 +2482,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Attack3
+  Source: {fileID: 0}
+  ActionSound: {fileID: 0}
+  Volume: 1
+  SoundDelay: 0
   Damage: 20
   TriggerName: RotateAttack
   ShowInScene: 1
@@ -2563,7 +2582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Follow
-  DetectPauseTime: 15
+  DetectPauseTime: 10
   ShowInScene: 1
   IsRangeStable: 0
   DetectCenter: {x: 0, y: 0, z: 0}
@@ -2584,7 +2603,10 @@ MonoBehaviour:
   UseStateName: Attack
   DetectPauseTime: 0
   WaitTime: 2
-  KeepPreviousTime: 0
+  RandomTime: 0
+  MinTime: 0
+  MaxTime: 0
+  KeepTimeUntilTaken: 1
 --- !u!114 &25921462749565881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2600,7 +2622,10 @@ MonoBehaviour:
   UseStateName: Attack2
   DetectPauseTime: 0
   WaitTime: 4
-  KeepPreviousTime: 0
+  RandomTime: 0
+  MinTime: 0
+  MaxTime: 0
+  KeepTimeUntilTaken: 1
 --- !u!114 &1065243944245600101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2616,7 +2641,10 @@ MonoBehaviour:
   UseStateName: Attack3
   DetectPauseTime: 0
   WaitTime: 1.26
-  KeepPreviousTime: 0
+  RandomTime: 0
+  MinTime: 0
+  MaxTime: 0
+  KeepTimeUntilTaken: 1
 --- !u!195 &3777434665746573443
 NavMeshAgent:
   m_ObjectHideFlags: 0

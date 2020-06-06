@@ -70,6 +70,6 @@ public class GameSceneManager : Singleton<GameSceneManager>
     private void DoBeforeLoadScene()
     {
         MonsterSystem.instance.RemoveAllMonster();
-        SoundSystem.instance.PlayBGM(BGMFadeOutTime);   // 淡出對應場景的BGM
+        SoundSystem.instance.StopBGM(BGMFadeOutTime);   // 淡出對應場景的BGM
     }
 }
