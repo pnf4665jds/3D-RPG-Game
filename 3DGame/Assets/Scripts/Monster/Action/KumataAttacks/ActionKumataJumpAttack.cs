@@ -70,6 +70,7 @@ public class ActionKumataJumpAttack : ActionBase
     {
         yield return new WaitForSeconds(AreaDelayTime);
         DamageAreaCreator.instance.CreateCubeArea(jumpStartPos + monsterInfo.GetCenterVector(DamageAreaCenter), transform.rotation, DamageAreaSize, Damage, AreaKeepTime);
+        SoundSystem.instance.PlaySound(Source, ActionSound, Volume, SoundDelay, false);
     }
 
     /// <summary>

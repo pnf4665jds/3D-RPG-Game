@@ -185,7 +185,7 @@ MonoBehaviour:
     BossBGM: {fileID: 8300000, guid: 1b197323357862a44b90b0f13b8f26d0, type: 3}
   - SceneName: GamePlaySceneThird
     NormalBGM: {fileID: 0}
-    BossBGM: {fileID: 8300000, guid: 514571919da484540bdecaf10861b081, type: 3}
+    BossBGM: {fileID: 8300000, guid: 42473177e27deec47a049056af08c108, type: 3}
 --- !u!1 &3675570286744846798
 GameObject:
   m_ObjectHideFlags: 0

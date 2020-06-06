@@ -42,6 +42,7 @@ public class ActionKumataRotateAttack : ActionBase
     {
         yield return new WaitForSeconds(AreaDelayTime);
         DamageAreaCreator.instance.CreateCubeArea(transform.position + monsterInfo.GetCenterVector(DamageAreaCenter), transform.rotation, DamageAreaSize, Damage, AreaKeepTime);
+        SoundSystem.instance.PlaySound(Source, ActionSound, Volume, SoundDelay, false);
     }
 
     public IEnumerator StartEffect()

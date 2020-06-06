@@ -2555,8 +2555,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Attack
-  Source: {fileID: 0}
-  ActionSound: {fileID: 0}
+  Source: {fileID: 1454527425}
+  ActionSound: {fileID: 8300000, guid: 0cd1c8cc3df158f4a8271ca4ca212b01, type: 3}
   Volume: 1
   SoundDelay: 0
   Damage: 10
@@ -2581,8 +2581,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Attack2
-  Source: {fileID: 0}
-  ActionSound: {fileID: 0}
+  Source: {fileID: 1454527425}
+  ActionSound: {fileID: 8300000, guid: b130183aee75cf7498af53bce7f015c0, type: 3}
   Volume: 1
   SoundDelay: 0
   Damage: 50
@@ -2610,8 +2610,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Attack3
-  Source: {fileID: 0}
-  ActionSound: {fileID: 0}
+  Source: {fileID: 1454527425}
+  ActionSound: {fileID: 8300000, guid: 8ea41d4d4f772aa4285b57d26cff8e8c, type: 3}
   Volume: 1
   SoundDelay: 0
   Damage: 20
@@ -2619,7 +2619,7 @@ MonoBehaviour:
   ShowInScene: 1
   DamageAreaCenter: {x: 0, y: 0, z: 0}
   DamageAreaSize: {x: 12, y: 4, z: 12}
-  AreaDelayTime: 0.5
+  AreaDelayTime: 0.2
   AreaKeepTime: 0.5
   Effect: {fileID: 182634, guid: 76ae3b7ddd89afe42a32e5ba576f3ac4, type: 3}
   EffectDelay: 0.2
