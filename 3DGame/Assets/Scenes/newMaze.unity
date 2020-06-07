@@ -8585,8 +8585,6 @@ MonoBehaviour:
   storyContents: []
   Directors:
   - {fileID: 379015940}
-  cancelNavMesh:
-  - {fileID: 1386411534}
   TriggerTag: Player
   TriggerSize: {x: 30, y: 10, z: 4}
   triggerCenterPos: {x: -69.2, y: 464.3, z: -350.17}
@@ -8624,7 +8622,6 @@ MonoBehaviour:
   storyContents:
   - {fileID: 4900000, guid: c795bca142f2094438e67f7bf6ebc8ac, type: 3}
   Directors: []
-  cancelNavMesh: []
 --- !u!1001 &720074855
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15961,17 +15958,22 @@ PrefabInstance:
     - target: {fileID: 4371319220165533759, guid: be108c62fe262c34f932abe7e823482a,
         type: 3}
       propertyPath: DestPosition.x
-      value: -264
+      value: 45.5
       objectReference: {fileID: 0}
     - target: {fileID: 4371319220165533759, guid: be108c62fe262c34f932abe7e823482a,
         type: 3}
       propertyPath: DestPosition.y
-      value: 4.5
+      value: 4.77
       objectReference: {fileID: 0}
     - target: {fileID: 4371319220165533759, guid: be108c62fe262c34f932abe7e823482a,
         type: 3}
       propertyPath: DestPosition.z
-      value: -285
+      value: -9.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371319220165533759, guid: be108c62fe262c34f932abe7e823482a,
+        type: 3}
+      propertyPath: DestRotationY
+      value: 270
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be108c62fe262c34f932abe7e823482a, type: 3}
@@ -16502,12 +16504,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4109981110704684045, guid: 3d0d11962395e1444b7b33569f2a9c85,
     type: 3}
   m_PrefabInstance: {fileID: 1374562173}
-  m_PrefabAsset: {fileID: 0}
---- !u!195 &1386411534 stripped
-NavMeshAgent:
-  m_CorrespondingSourceObject: {fileID: 8304818077842746314, guid: 23c7700f0815a33478f5a9ca2d81df0f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1088939199}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1386607546
 PrefabInstance:
