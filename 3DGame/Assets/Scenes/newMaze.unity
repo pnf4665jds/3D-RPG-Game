@@ -4703,7 +4703,7 @@ PlayableDirector:
     value: {fileID: 379015939}
   - key: {fileID: 1376405124687567618, guid: c2325397dcd58084594d12a1cc9e9fc2, type: 2}
     value: {fileID: 427608943}
-  - key: {fileID: 231407075285450376, guid: c2325397dcd58084594d12a1cc9e9fc2, type: 2}
+  - key: {fileID: -569453559747293639, guid: c2325397dcd58084594d12a1cc9e9fc2, type: 2}
     value: {fileID: 1088939200}
   m_ExposedReferences:
     m_References: []
@@ -8585,6 +8585,8 @@ MonoBehaviour:
   storyContents: []
   Directors:
   - {fileID: 379015940}
+  cancelNavMesh:
+  - {fileID: 1386411534}
   TriggerTag: Player
   TriggerSize: {x: 30, y: 10, z: 4}
   triggerCenterPos: {x: -69.2, y: 464.3, z: -350.17}
@@ -8622,6 +8624,7 @@ MonoBehaviour:
   storyContents:
   - {fileID: 4900000, guid: c795bca142f2094438e67f7bf6ebc8ac, type: 3}
   Directors: []
+  cancelNavMesh: []
 --- !u!1001 &720074855
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16499,6 +16502,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4109981110704684045, guid: 3d0d11962395e1444b7b33569f2a9c85,
     type: 3}
   m_PrefabInstance: {fileID: 1374562173}
+  m_PrefabAsset: {fileID: 0}
+--- !u!195 &1386411534 stripped
+NavMeshAgent:
+  m_CorrespondingSourceObject: {fileID: 8304818077842746314, guid: 23c7700f0815a33478f5a9ca2d81df0f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1088939199}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1386607546
 PrefabInstance:

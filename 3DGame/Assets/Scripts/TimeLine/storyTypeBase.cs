@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
+using UnityEngine.AI;
 using UnityEngine.Playables;
 
 public class storyTypeBase : MonoBehaviour
@@ -11,6 +11,7 @@ public class storyTypeBase : MonoBehaviour
     public GameObject mainCamera;
     public List<TextAsset> storyContents = new List<TextAsset>();
     public List<PlayableDirector> Directors = new List<PlayableDirector>();
+
     private void Start()
     {
         ownCameraClose();
@@ -66,9 +67,15 @@ public class storyTypeBase : MonoBehaviour
         return temp.state != PlayState.Playing;
     }
     protected void ownCameraOpen() {
-        ownCamera?.SetActive(true);
+        if (ownCamera) {
+            ownCamera.SetActive(true);
+        }
+        
     }
     protected void ownCameraClose() {
-        ownCamera?.SetActive(false);
+        if (ownCamera) {
+            ownCamera.SetActive(false);
+        }
+        
     }
 }
