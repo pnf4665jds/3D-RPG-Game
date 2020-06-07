@@ -2431,7 +2431,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &3555187996791058612
 MonoBehaviour:
@@ -2473,7 +2473,7 @@ MonoBehaviour:
     Action: {fileID: 0}
     TransList:
     - Order: 0
-      TransitionDelay: 1
+      TransitionDelay: 0.5
       Decider: {fileID: 3039689882269664855}
       TrueState: Follow
       FalseState: 
@@ -2488,7 +2488,7 @@ MonoBehaviour:
     - Order: 0
       TransitionDelay: 0
       Decider: {fileID: 2276874329727302807}
-      TrueState: 
+      TrueState: Attack2
       FalseState: 
     - Order: 1
       TransitionDelay: 0
@@ -2561,7 +2561,7 @@ MonoBehaviour:
   ShowInScene: 0
   DamageAreaCenter: {x: 0, y: 1.4, z: 6.28}
   DamageAreaSize: {x: 6.6, y: 3.64, z: 6}
-  AreaDelayTime: 0.1
+  AreaDelayTime: 0.3
   AreaKeepTime: 0.5
   Effect: {fileID: 187802, guid: 464e05904335c0641b76c3b8b8365ecd, type: 3}
   EffectDelay: 0.5
@@ -2637,7 +2637,7 @@ MonoBehaviour:
   ShowInScene: 1
   IsRangeStable: 1
   DetectCenter: {x: 17.39, y: 4.07, z: -0.05}
-  DetectSize: {x: 1.45, y: 6.33, z: 7.105}
+  DetectSize: {x: 2.9, y: 12.66, z: 14.21}
   StableRotateY: 0
 --- !u!114 &8562010921278365142
 MonoBehaviour:
