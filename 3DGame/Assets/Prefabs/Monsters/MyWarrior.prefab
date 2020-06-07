@@ -458,10 +458,9 @@ GameObject:
   - component: {fileID: 1136138655215018244}
   - component: {fileID: 349378415412069180}
   - component: {fileID: 2645573179626935691}
-  - component: {fileID: 9055533379744192037}
+  - component: {fileID: 2552985166073154840}
   - component: {fileID: 8774236812468797484}
   - component: {fileID: 4683699850819955661}
-  - component: {fileID: 7849572382076530145}
   - component: {fileID: 242781674712369224}
   - component: {fileID: 3904294891452571286}
   - component: {fileID: 4252274960606231272}
@@ -469,8 +468,9 @@ GameObject:
   - component: {fileID: 5273048472649556343}
   - component: {fileID: 4007145128083157260}
   - component: {fileID: 7404377258790962695}
-  - component: {fileID: 6010466986723172504}
   - component: {fileID: 5918445886750251367}
+  - component: {fileID: 5721986143079056124}
+  - component: {fileID: 51804956}
   m_Layer: 0
   m_Name: MyWarrior
   m_TagString: Boss
@@ -536,10 +536,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHP: 5000
-  MoveSpeed: 10
-  RotateSpeed: 5
+  MoveSpeed: 20
+  RotateSpeed: 10
   DeadWaitTime: 5
   CoinSum: 3000
+  IdleWhenAnimation: 0
   AttackBuffRate: 1
   mainCollider: {fileID: 5285189736933278439}
   Offset: 0.2
@@ -557,7 +558,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &7944108100358672820
 MonoBehaviour:
@@ -577,26 +578,21 @@ MonoBehaviour:
   - StateName: Idle
     Action: {fileID: 0}
     TransList:
-    - Order: 2
-      Decider: {fileID: 9055533379744192037}
-      TrueState: Move
-      FalseState: 
-    - Order: 1
-      Decider: {fileID: 7849572382076530145}
-      TrueState: Storing Energy
-      FalseState: 
     - Order: 0
-      Decider: {fileID: 6010466986723172504}
-      TrueState: Dead
+      TransitionDelay: 0
+      Decider: {fileID: 2552985166073154840}
+      TrueState: Move
       FalseState: 
   - StateName: SingleShoot
     Action: {fileID: 5058495835430281234}
     TransList:
     - Order: 1
+      TransitionDelay: 0
       Decider: {fileID: 8774236812468797484}
       TrueState: Idle
       FalseState: 
     - Order: 0
+      TransitionDelay: 0
       Decider: {fileID: 3904294891452571286}
       TrueState: Storing Energy
       FalseState: 
@@ -604,10 +600,12 @@ MonoBehaviour:
     Action: {fileID: 1136138655215018244}
     TransList:
     - Order: 1
-      Decider: {fileID: 4683699850819955661}
+      TransitionDelay: 0
+      Decider: {fileID: 5721986143079056124}
       TrueState: SingleShoot
       FalseState: 
     - Order: 0
+      TransitionDelay: 0
       Decider: {fileID: 242781674712369224}
       TrueState: Storing Energy
       FalseState: 
@@ -615,14 +613,17 @@ MonoBehaviour:
     Action: {fileID: 349378415412069180}
     TransList:
     - Order: 1
+      TransitionDelay: 0
       Decider: {fileID: 4007145128083157260}
       TrueState: Recover Shield
       FalseState: 
     - Order: 2
+      TransitionDelay: 0
       Decider: {fileID: 9167302145544872929}
       TrueState: Laser Shoot
       FalseState: 
     - Order: 0
+      TransitionDelay: 0
       Decider: {fileID: 5918445886750251367}
       TrueState: Dead
       FalseState: 
@@ -630,15 +631,17 @@ MonoBehaviour:
     Action: {fileID: 2645573179626935691}
     TransList:
     - Order: 0
+      TransitionDelay: 0
       Decider: {fileID: 5273048472649556343}
-      TrueState: Idle
+      TrueState: Recover Shield
       FalseState: 
   - StateName: Recover Shield
     Action: {fileID: 0}
     TransList:
     - Order: 0
+      TransitionDelay: 0
       Decider: {fileID: 7404377258790962695}
-      TrueState: Idle
+      TrueState: Move
       FalseState: 
   - StateName: Dead
     Action: {fileID: 0}
@@ -656,11 +659,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: SingleShoot
+  Source: {fileID: 0}
+  ActionSound: {fileID: 0}
+  Volume: 1
+  SoundDelay: 0
   TriggerName: SingleShoot
   Bullet: {fileID: 105805403729295645, guid: f5dbb8247c8de8747973bde6eb540266, type: 3}
   ShootPosition: {fileID: 6504435582339645441}
   BulletDamage: 10
-  BulletKeepTime: 4
+  BulletKeepTime: 10
   ShootDelayTime: 0.3
   BulletNum: 3
   ShootDeltaTime: 1
@@ -677,10 +684,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Move
+  Source: {fileID: 0}
+  ActionSound: {fileID: 0}
+  Volume: 1
+  SoundDelay: 0
   Points:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  deciderArriveDestination: {fileID: 5721986143079056124}
 --- !u!114 &349378415412069180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -694,6 +706,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Storing Energy
+  Source: {fileID: 0}
+  ActionSound: {fileID: 0}
+  Volume: 1
+  SoundDelay: 0
   StoringTime: 15
   ShootPosition: {fileID: 6504435582339645441}
   StoringObject: {fileID: 174581197432718829, guid: 934f40953986aa44abe596e44abd73e1,
@@ -719,14 +735,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Laser Shoot
+  Source: {fileID: 0}
+  ActionSound: {fileID: 0}
+  Volume: 1
+  SoundDelay: 0
   LaserObject: {fileID: 6110940536516971060, guid: 4d5b86b6c4fd7c740aa3c55ae9b37c31,
+    type: 3}
+  LaserRealObject: {fileID: 6110940536516971060, guid: ffe26b357b17a7b4aa971716ce5c89bb,
     type: 3}
   ExplosionObject: {fileID: 2666541965549815239, guid: 2aabdff952015924bbc30b85c6d6df72,
     type: 3}
   ShootPosition: {fileID: 6504435582339645441}
   LaserKeepTime: 4
   Damage: 0.4
---- !u!114 &9055533379744192037
+--- !u!114 &2552985166073154840
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -735,15 +757,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 5445655434448142861}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b036eb9c8a2b24d479d348662adb17f7, type: 3}
+  m_Script: {fileID: 11500000, guid: ad5935af51adf6c4a967fc77756c7a39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   UseStateName: Idle
   DetectPauseTime: 0
   ShowInScene: 1
-  IsRangeStable: 0
-  DetectCenter: {x: 0, y: 0, z: 0}
-  DetectRadius: 30
+  IsRangeStable: 1
+  DetectCenter: {x: 0, y: 6.63, z: -21.3}
+  DetectSize: {x: 46.19, y: 10.3, z: 45.09}
+  StableRotateY: 0
 --- !u!114 &8774236812468797484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -759,7 +782,10 @@ MonoBehaviour:
   UseStateName: SingleShoot
   DetectPauseTime: 0
   WaitTime: 4
-  KeepPreviousTime: 0
+  RandomTime: 0
+  MinTime: 0
+  MaxTime: 0
+  KeepTimeUntilTaken: 1
 --- !u!114 &4683699850819955661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -774,22 +800,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UseStateName: Move
   DetectPauseTime: 0
-  WaitTime: 3
-  KeepPreviousTime: 0
---- !u!114 &7849572382076530145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5445655434448142861}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76329f1d865954c4d9553084e295baf2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UseStateName: Idle
-  DetectPauseTime: 0
+  WaitTime: 50
+  RandomTime: 0
+  MinTime: 0
+  MaxTime: 0
+  KeepTimeUntilTaken: 1
 --- !u!114 &242781674712369224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -856,7 +871,10 @@ MonoBehaviour:
   UseStateName: Storing Energy
   DetectPauseTime: 0
   WaitTime: 16
-  KeepPreviousTime: 0
+  RandomTime: 0
+  MinTime: 0
+  MaxTime: 0
+  KeepTimeUntilTaken: 1
 --- !u!114 &5273048472649556343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -872,7 +890,10 @@ MonoBehaviour:
   UseStateName: Laser Shoot
   DetectPauseTime: 0
   WaitTime: 5
-  KeepPreviousTime: 0
+  RandomTime: 0
+  MinTime: 0
+  MaxTime: 0
+  KeepTimeUntilTaken: 1
 --- !u!114 &4007145128083157260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -907,22 +928,10 @@ MonoBehaviour:
   UseStateName: Recover Shield
   DetectPauseTime: 0
   WaitTime: 3
-  KeepPreviousTime: 0
---- !u!114 &6010466986723172504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5445655434448142861}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c0ecd4d0816db6418cf321ebdb6c9de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UseStateName: Idle
-  DetectPauseTime: 0
-  DecideHP: 0
+  RandomTime: 0
+  MinTime: 0
+  MaxTime: 0
+  KeepTimeUntilTaken: 1
 --- !u!114 &5918445886750251367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -938,6 +947,48 @@ MonoBehaviour:
   UseStateName: Storing Energy
   DetectPauseTime: 0
   DecideHP: 0
+--- !u!114 &5721986143079056124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5445655434448142861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cbad5d095700fa49b94e6d6263e0a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseStateName: Move
+  DetectPauseTime: 0
+  IsDestSpawnOrigin: 0
+  IsDestAOffset: 0
+  ShouldConsiderX: 1
+  ShouldConsiderY: 0
+  ShouldConsiderZ: 1
+  CustomDestination: {x: 0, y: 0, z: 0}
+--- !u!195 &51804956
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5445655434448142861}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 15
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &5445655434448142863
 GameObject:
   m_ObjectHideFlags: 0

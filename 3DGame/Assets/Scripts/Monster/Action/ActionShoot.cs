@@ -30,11 +30,12 @@ public class ActionShoot : ActionBase
     public override void Exit()
     {
         animator.SetBool("ReadyShoot", false);
+        StopAllCoroutines();
     }
 
     private IEnumerator Shoot()
     {
-        for(int i = 0; i < BulletNum; i++)
+        for (int i = 0; i < BulletNum; i++)
         {
             yield return LookAtPlayer();
             animator.SetTrigger(TriggerName);
@@ -54,7 +55,7 @@ public class ActionShoot : ActionBase
         {
             Vector3 newDirection = Vector3.RotateTowards(transform.forward, playerPos - transform.position, monsterInfo.RotateSpeed * Time.deltaTime, 0.0f);
             newDirection.y = 0;
-            if (transform.rotation == Quaternion.LookRotation(newDirection))
+            if (Vector3.Angle(transform.forward, playerPos - transform.position) < 5)
                 break;
             else
                 transform.rotation = Quaternion.LookRotation(newDirection);

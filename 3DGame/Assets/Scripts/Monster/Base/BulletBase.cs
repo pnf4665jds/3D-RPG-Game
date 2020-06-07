@@ -42,9 +42,5 @@ public abstract class BulletBase : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        else
-        {
-            Debug.Log(other.name);
-        }
     }
 }

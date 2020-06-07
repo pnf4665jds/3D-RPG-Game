@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -6752754055414506789}
   - component: {fileID: -1851165728141628827}
   - component: {fileID: 6134481453031355375}
+  - component: {fileID: 2478460264681659483}
   m_Layer: 0
   m_Name: EnergyPoint
   m_TagString: Monster
@@ -109,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34e5fea04bb708f4caa36b0ba88885ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 1
+  MaxHP: 600
   MoveSpeed: 0
   RotateSpeed: 0
   DeadWaitTime: 0
@@ -147,6 +148,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Shield: {fileID: 0}
+--- !u!114 &2478460264681659483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3664237278242416461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a538505ec681fc4db7d622ade76a19a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentStateName: 
+  FirstStateName: Idle
+  StateList:
+  - StateName: Idle
+    Action: {fileID: 0}
+    TransList: []
 --- !u!1001 &3664237277637207484
 PrefabInstance:
   m_ObjectHideFlags: 0

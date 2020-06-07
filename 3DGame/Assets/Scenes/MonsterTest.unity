@@ -304,7 +304,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &441498609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -863,11 +863,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MyWarrior
       objectReference: {fileID: 0}
-    - target: {fileID: 5445655434448142861, guid: c5c6d5b03f13bb444903118879abbb2f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5445655434447986221, guid: c5c6d5b03f13bb444903118879abbb2f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -923,35 +918,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4252274960606231272, guid: c5c6d5b03f13bb444903118879abbb2f,
-        type: 3}
-      propertyPath: Points.Array.data[0]
-      value: 
-      objectReference: {fileID: 443888476}
-    - target: {fileID: 4252274960606231272, guid: c5c6d5b03f13bb444903118879abbb2f,
-        type: 3}
-      propertyPath: Points.Array.data[1]
-      value: 
-      objectReference: {fileID: 1400946988}
-    - target: {fileID: 4252274960606231272, guid: c5c6d5b03f13bb444903118879abbb2f,
-        type: 3}
-      propertyPath: Points.Array.data[2]
-      value: 
-      objectReference: {fileID: 235841304}
-    - target: {fileID: 1136138655215018244, guid: c5c6d5b03f13bb444903118879abbb2f,
-        type: 3}
-      propertyPath: Points.Array.data[0]
-      value: 
-      objectReference: {fileID: 443888475}
-    - target: {fileID: 1136138655215018244, guid: c5c6d5b03f13bb444903118879abbb2f,
-        type: 3}
-      propertyPath: Points.Array.data[1]
-      value: 
-      objectReference: {fileID: 1400946987}
-    - target: {fileID: 1136138655215018244, guid: c5c6d5b03f13bb444903118879abbb2f,
-        type: 3}
-      propertyPath: Points.Array.data[2]
-      value: 
-      objectReference: {fileID: 235841303}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5c6d5b03f13bb444903118879abbb2f, type: 3}

@@ -41,6 +41,9 @@ public class MonsterField : MonoBehaviour
     /// </summary>
     public void CreateMonster()
     {
+        if (MonsterNum == 0 || Monster)
+            return;
+
         float squareWidth = Mathf.Sqrt(2 * Mathf.Pow(radius, 2));
         squareWidth = Mathf.Floor(squareWidth); // 取整數
         float startX = center.x - squareWidth / 2;

@@ -21,6 +21,11 @@ public class DeciderArriveDestination : DeciderBase
         destination = IsDestSpawnOrigin ? monsterInfo.InitPosition : CustomDestination;
     }
 
+    public void SetDestination(Vector3 dest)
+    {
+        destination = dest;
+    }
+
     public override bool Decide()
     {
         if (IsDestAOffset)
@@ -28,7 +33,7 @@ public class DeciderArriveDestination : DeciderBase
             IsDestAOffset = false;
             destination += transform.position;
         }
-
+        
         return (Mathf.Abs(transform.position.x - destination.x) < 0.1f || !ShouldConsiderX)
                 && (Mathf.Abs(transform.position.y - destination.y) < 0.1f || !ShouldConsiderY)
                 && (Mathf.Abs(transform.position.z - destination.z) < 0.1f || !ShouldConsiderZ);
