@@ -272,7 +272,7 @@ GameObject:
   - component: {fileID: 8649437079577205036}
   - component: {fileID: 6470889981139866040}
   m_Layer: 13
-  m_Name: GameObject
+  m_Name: NoMove
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2488,7 +2488,7 @@ MonoBehaviour:
     - Order: 0
       TransitionDelay: 0
       Decider: {fileID: 2276874329727302807}
-      TrueState: Attack2
+      TrueState: 
       FalseState: 
     - Order: 1
       TransitionDelay: 0
@@ -2636,8 +2636,8 @@ MonoBehaviour:
   DetectPauseTime: 0
   ShowInScene: 1
   IsRangeStable: 1
-  DetectCenter: {x: 17, y: 6.06, z: -2.39}
-  DetectSize: {x: 5, y: 10, z: 10}
+  DetectCenter: {x: 17.39, y: 4.07, z: -0.05}
+  DetectSize: {x: 1.45, y: 6.33, z: 7.105}
   StableRotateY: 0
 --- !u!114 &8562010921278365142
 MonoBehaviour:
