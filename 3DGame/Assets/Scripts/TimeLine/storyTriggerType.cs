@@ -26,7 +26,7 @@ public class storyTriggerType : storyTypeBase
     }
     public bool enterTheTrigger(string tag)
     {
-        Collider[] enterZone = Physics.OverlapBox(triggerCenterPos, TriggerSize, transform.rotation, LayerMask.GetMask(tag));
+        Collider[] enterZone = Physics.OverlapBox(triggerCenterPos, TriggerSize*2, transform.rotation, LayerMask.GetMask(tag));
         if (enterZone.Length > 0)
         {
             return true;
