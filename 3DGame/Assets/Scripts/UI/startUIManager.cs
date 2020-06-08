@@ -23,8 +23,8 @@ public class startUIManager : MonoBehaviour
         character = GameObject.Find("character");
         count = 0 ;
         ActiveCharacter(0);
-        right.onClick.AddListener(Change);
-        left.onClick.AddListener(Change);
+        right.onClick.AddListener(RightClick);
+        left.onClick.AddListener(LeftClick);
         Enter.onClick.AddListener(enterClick);
     }
 
@@ -45,11 +45,21 @@ public class startUIManager : MonoBehaviour
             
         }
     }
-    private void Change() {
+    private void RightClick() {
 
-        count++;
+        count += 1 ;
+        if (count > 2) { count = 0; }
 
-        ActiveCharacter(count % 3);
+        ActiveCharacter(count);
+
+    }
+    private void LeftClick()
+    {
+
+        count -= 1;
+        if (count < 0) { count = 2; }
+
+        ActiveCharacter(count);
 
     }
     private void enterClick() {
