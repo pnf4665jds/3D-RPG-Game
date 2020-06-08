@@ -30,7 +30,9 @@ public class GameSceneManager : Singleton<GameSceneManager>
     /// <param name="actions"></param>
     public void LoadScene(string nextSceneName, List<Action> actions)
     {
-        //DoBeforeLoadScene();
+        if (CurrentSceneName != "StartGameUI")
+            DoBeforeLoadScene();
+
         NextSceneName = nextSceneName;
         ActionOnCompleted = actions;
         IsLoadingFinish = false;
@@ -44,7 +46,8 @@ public class GameSceneManager : Singleton<GameSceneManager>
     /// <param name="mode"></param>
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if(scene.name == "GamePlayScene")        // 一開始的場景先讀取player跟main camera，目前是用GamePlayScene之後可以用MainUI
+        CurrentSceneName = scene.name;
+        if (scene.name == "GamePlayScene")        // 一開始的場景先讀取player跟main camera，目前是用GamePlayScene之後可以用MainUI
         {
             player = FindObjectOfType<Player>()?.gameObject;
             mainCamera = FindObjectOfType<Camera>().gameObject;
@@ -61,7 +64,6 @@ public class GameSceneManager : Singleton<GameSceneManager>
             mainCamera?.SetActive(true);
             SoundSystem.instance.PlayBGM(BGMFadeInTime);   // 淡入對應場景的BGM
         }
-        CurrentSceneName = scene.name;
         IsLoadingFinish = true;
     }
 

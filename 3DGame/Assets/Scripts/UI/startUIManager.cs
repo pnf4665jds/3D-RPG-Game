@@ -17,6 +17,7 @@ public class startUIManager : MonoBehaviour
     private GameObject character;
     [SerializeField]
     private int count;
+    private GameObject createdCharacter;
     void Start()
     {
         character = GameObject.Find("character");
@@ -55,31 +56,36 @@ public class startUIManager : MonoBehaviour
 
         GameSceneManager.instance.LoadScene("GamePlayScene", new List<Action>()
         {
-            Create
+            Create,
+            // 切換場景時將主角移到指定座標
+            () => createdCharacter.transform.position = new Vector3(415, 5, 30),
+            // 更改成指定的Y軸旋轉角度
+            () => createdCharacter.transform.rotation = Quaternion.Euler(0, 340, 0),
+            // 重置狀態
+            () => createdCharacter.GetComponent<Player>().ResetAnything()
         });
     }
 
     private void Create()
     {
         int chooseIndex = count % 3;
-        GameObject character = new GameObject();
         switch (chooseIndex)
         {
             case 0:
-                character = Instantiate(Avelyn);
-                character.name = "Avelyn";
+                createdCharacter = Instantiate(Avelyn);
+                createdCharacter.name = "Avelyn";
                 break;
             case 1:
-                character = Instantiate(DogKnight);
-                character.name = "DogPBR";
+                createdCharacter = Instantiate(DogKnight);
+                createdCharacter.name = "DogPBR";
                 break;
             case 2:
-                character = Instantiate(FootMan);
-                character.name = "Footman";
+                createdCharacter = Instantiate(FootMan);
+                createdCharacter.name = "Footman";
                 break;
         }
         
-        DontDestroyOnLoad(character);
+        DontDestroyOnLoad(createdCharacter);
     }
   
 }
