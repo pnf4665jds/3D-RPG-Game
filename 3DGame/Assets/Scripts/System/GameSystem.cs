@@ -26,7 +26,7 @@ public class GameSystem : Singleton<GameSystem>
     }
     private void Update()
     {
-        print(gs);
+        //print(gs);
     }
     public void changeModeTalking(NPC character)
     {

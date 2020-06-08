@@ -30,7 +30,7 @@ public class GameSceneManager : Singleton<GameSceneManager>
     /// <param name="actions"></param>
     public void LoadScene(string nextSceneName, List<Action> actions)
     {
-        DoBeforeLoadScene();
+        //DoBeforeLoadScene();
         NextSceneName = nextSceneName;
         ActionOnCompleted = actions;
         IsLoadingFinish = false;
@@ -46,21 +46,22 @@ public class GameSceneManager : Singleton<GameSceneManager>
     {
         if(scene.name == "GamePlayScene")        // 一開始的場景先讀取player跟main camera，目前是用GamePlayScene之後可以用MainUI
         {
-            player = FindObjectOfType<Player>().gameObject;
+            player = FindObjectOfType<Player>()?.gameObject;
             mainCamera = FindObjectOfType<Camera>().gameObject;
+            SoundSystem.instance.PlayBGM(BGMFadeInTime);   // 淡入對應場景的BGM
         }
         else if(scene.name == "LoadingScene")     // LoadingScene
         {
-            player.SetActive(false);
-            mainCamera.SetActive(false);
+            player?.SetActive(false);
+            mainCamera?.SetActive(false);
         }
-        else
+        else if (scene.name != "StartGameUI")
         {
-            player.SetActive(true);
-            mainCamera.SetActive(true);
+            player?.SetActive(true);
+            mainCamera?.SetActive(true);
+            SoundSystem.instance.PlayBGM(BGMFadeInTime);   // 淡入對應場景的BGM
         }
         CurrentSceneName = scene.name;
-        SoundSystem.instance.PlayBGM(BGMFadeInTime);   // 淡入對應場景的BGM
         IsLoadingFinish = true;
     }
 
