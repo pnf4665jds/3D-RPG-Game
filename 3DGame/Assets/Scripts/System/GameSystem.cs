@@ -24,7 +24,10 @@ public class GameSystem : Singleton<GameSystem>
     {
         gs = GameState.normal;
     }
-
+    private void Update()
+    {
+        print(gs);
+    }
     public void changeModeTalking(NPC character)
     {
         gs = GameState.talking;
@@ -55,6 +58,7 @@ public class GameSystem : Singleton<GameSystem>
     public void changeModeDead()
     {
         gs = GameState.dead;
+        StartCoroutine(UISystem.instance.getDeadPanel().GetComponent<deadUI>().FindPotion());
     }
     public void changeModeBackPack()
     {

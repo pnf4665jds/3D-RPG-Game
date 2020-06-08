@@ -95,4 +95,8 @@ public class UISystem : Singleton<UISystem>
     public GameObject getStoryPanel() {
         return StoryPanel;
     }
+    public GameObject getDeadPanel()
+    {
+        return DeadPanel;
+    }
 }

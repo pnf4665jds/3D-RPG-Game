@@ -13,15 +13,16 @@ public class deadUI : MonoBehaviour
     {
         use.gameObject.SetActive(false);
         notUse.gameObject.SetActive(false);
-        StartCoroutine(FindPotion());
+        //StartCoroutine(FindPotion());
         use.onClick.AddListener(clickUse);
         notUse.onClick.AddListener(exit);
     }
 
     public IEnumerator FindPotion() {
+
         this.transform.GetChild(1).GetComponent<Text>().text = "";
 
-        yield return new WaitUntil(() => GameSystem.instance.isPlayerDead());
+        //yield return new WaitUntil(() => GameSystem.instance.isPlayerDead());
         this.transform.GetChild(1).GetComponent<Text>().text = "檢測到玩家生命值過低" ;
         yield return new WaitForSecondsRealtime(1);
         this.transform.GetChild(1).GetComponent<Text>().text = "檢測到玩家生命值過低\n搜尋復活藥水中 . . .";

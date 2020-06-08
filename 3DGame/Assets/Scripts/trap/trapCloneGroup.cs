@@ -13,6 +13,7 @@ public class trapCloneGroup :trapGroup
     public float shootDistance;
     public float rotation;
     public int Speed;
+    private IEnumerator pro;
 
     public override IEnumerator switchON()
     {
@@ -24,7 +25,8 @@ public class trapCloneGroup :trapGroup
         yield return new WaitUntil(() => createClone());
 
         trapClone.GetComponent<Animation>().Play();
-        StartCoroutine(process());
+        pro = process();
+        StartCoroutine(pro);
 
         
 
@@ -47,6 +49,7 @@ public class trapCloneGroup :trapGroup
     public override void switchOFF()
     {
         Destroy(trapClone.gameObject);
+        StopCoroutine(pro);
         loop = false;
     }
 
