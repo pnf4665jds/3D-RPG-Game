@@ -34,8 +34,12 @@ public class UISystem : Singleton<UISystem>
         {
             AllSet(false, false, true, false, false);
         }
-        else if (GameSystem.instance.isPlayerStory()) {
+        else if (GameSystem.instance.isPlayerStory())
+        {
             AllSet(false, false, false, false, true);
+        }
+        else if (GameSystem.instance.isPlayerDead()) {
+            AllSet(false, false, false, true, false);
         }
     }
 

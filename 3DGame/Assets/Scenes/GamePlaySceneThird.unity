@@ -137,6 +137,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -40.26
@@ -261,7 +265,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 28259072}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: combinePillar (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -295,6 +299,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -746,7 +754,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -823,7 +831,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -897,6 +905,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1255,7 +1267,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1904250182534334, guid: 3ab9a883bb2728d4ea8e56b33bcea8ba, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1904250182534334, guid: 3ab9a883bb2728d4ea8e56b33bcea8ba, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1324,7 +1336,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1018684808052034, guid: d4a69086e0bd5e440a2bda14734b225c, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1018684808052034, guid: d4a69086e0bd5e440a2bda14734b225c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1569,7 +1581,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 92737572}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: combinePillar (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1909,6 +1921,42 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &106585742
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 106585743}
+  m_Layer: 0
+  m_Name: Room
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &106585743
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106585742}
+  m_LocalRotation: {x: 0.2694765, y: -0, z: -0, w: 0.96300703}
+  m_LocalPosition: {x: 10.1, y: 34.8, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1723544530}
+  - {fileID: 1719546640}
+  - {fileID: 1851668775}
+  - {fileID: 2140663681}
+  - {fileID: 499344011}
+  - {fileID: 355673195}
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &112686378
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1919,6 +1967,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1969,7 +2021,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 116297898}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: combinePillar (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2377,7 +2429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1293296949879540, guid: f60a68fd009415d44bee80b63a157895, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1293296949879540, guid: f60a68fd009415d44bee80b63a157895, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2454,7 +2506,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1293296949879540, guid: f60a68fd009415d44bee80b63a157895, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1293296949879540, guid: f60a68fd009415d44bee80b63a157895, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2769,6 +2821,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3190,7 +3246,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1723544530}
     m_Modifications:
     - target: {fileID: 1062870459301972, guid: b8fc8c3d0e0ff9b4089c4e346ac42ecc, type: 3}
       propertyPath: m_Name
@@ -3198,19 +3254,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4725293624299974, guid: b8fc8c3d0e0ff9b4089c4e346ac42ecc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.13
+      value: -12.87
       objectReference: {fileID: 0}
     - target: {fileID: 4725293624299974, guid: b8fc8c3d0e0ff9b4089c4e346ac42ecc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.01
+      value: -38.64332
       objectReference: {fileID: 0}
     - target: {fileID: 4725293624299974, guid: b8fc8c3d0e0ff9b4089c4e346ac42ecc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -47.62226
+      value: -19.731487
       objectReference: {fileID: 0}
     - target: {fileID: 4725293624299974, guid: b8fc8c3d0e0ff9b4089c4e346ac42ecc, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.2694765
       objectReference: {fileID: 0}
     - target: {fileID: 4725293624299974, guid: b8fc8c3d0e0ff9b4089c4e346ac42ecc, type: 3}
       propertyPath: m_LocalRotation.y
@@ -3218,15 +3274,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4725293624299974, guid: b8fc8c3d0e0ff9b4089c4e346ac42ecc, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4725293624299974, guid: b8fc8c3d0e0ff9b4089c4e346ac42ecc, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.96300703
       objectReference: {fileID: 0}
     - target: {fileID: 4725293624299974, guid: b8fc8c3d0e0ff9b4089c4e346ac42ecc, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4725293624299974, guid: b8fc8c3d0e0ff9b4089c4e346ac42ecc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3250,7 +3306,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4725293624299974, guid: b8fc8c3d0e0ff9b4089c4e346ac42ecc, type: 3}
       propertyPath: m_LocalScale.y
-      value: 12.16
+      value: 12.160001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8fc8c3d0e0ff9b4089c4e346ac42ecc, type: 3}
@@ -3283,7 +3339,7 @@ Transform:
   m_Children:
   - {fileID: 95312282}
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &167791514
 PrefabInstance:
@@ -3379,7 +3435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3453,6 +3509,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3540,6 +3600,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3669,7 +3733,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1115569883794738, guid: 0f6381faceff7bc46983f6f88a736198, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1115569883794738, guid: 0f6381faceff7bc46983f6f88a736198, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3731,6 +3795,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3795,8 +3863,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 208260238}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalRotation: {x: 0.15720992, y: -0.19641648, z: 0.16854629, w: 0.9530466}
+  m_LocalPosition: {x: -10.1, y: -21.991365, z: 25.052341}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 832906449}
@@ -3842,8 +3910,8 @@ Transform:
   - {fileID: 171300807}
   - {fileID: 471610999}
   - {fileID: 1813855162}
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_Father: {fileID: 2140663681}
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &213599280
 GameObject:
@@ -3952,6 +4020,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4075,7 +4147,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1115569883794738, guid: 0f6381faceff7bc46983f6f88a736198, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1115569883794738, guid: 0f6381faceff7bc46983f6f88a736198, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4296,7 +4368,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4373,7 +4445,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1574384237796796, guid: e4d5c0d3d9b21f840a3309933254e833, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1574384237796796, guid: e4d5c0d3d9b21f840a3309933254e833, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4523,6 +4595,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.070001364
@@ -4654,6 +4730,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4947,6 +5027,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 26.520002
@@ -5079,6 +5163,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hale_Wall_01_snaps002
       objectReference: {fileID: 0}
+    - target: {fileID: 1037845487469350, guid: 19275419fedd9184180a5665b0bacd4e, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4511427168459332, guid: 19275419fedd9184180a5665b0bacd4e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -37.86
@@ -5138,7 +5226,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 287785710}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: smallPillar (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5480,7 +5568,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 304212370}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: combinePillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5604,7 +5692,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1904250182534334, guid: 3ab9a883bb2728d4ea8e56b33bcea8ba, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1904250182534334, guid: 3ab9a883bb2728d4ea8e56b33bcea8ba, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5661,7 +5749,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1695523847240770, guid: fc62ef998eb59b346b34d565f38deb3b, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1695523847240770, guid: fc62ef998eb59b346b34d565f38deb3b, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5740,7 +5828,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 323699151}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5754,8 +5842,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 323699150}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 2.43, y: 1, z: -2.2}
+  m_LocalRotation: {x: -0.19054864, y: 0.6809488, z: -0.19054864, w: 0.6809488}
+  m_LocalPosition: {x: -7.67, y: -24.84273, z: 24.209892}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 464438534}
@@ -5779,8 +5867,8 @@ Transform:
   - {fileID: 879139078}
   - {fileID: 175466833}
   - {fileID: 2101399488}
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 1719546640}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &326889893
 PrefabInstance:
@@ -5951,7 +6039,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 332610010}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: combinePillar (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6292,7 +6380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6365,7 +6453,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 347394430}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6379,8 +6467,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 347394429}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.7, y: 1, z: -2.9}
+  m_LocalRotation: {x: -0.2694765, y: -0, z: -0, w: 0.96300703}
+  m_LocalPosition: {x: -11.8, y: -25.20604, z: 23.611555}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1222849625}
@@ -6399,8 +6487,8 @@ Transform:
   - {fileID: 249592237}
   - {fileID: 1817735908}
   - {fileID: 885122862}
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 1719546640}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &349000317
 PrefabInstance:
@@ -6553,7 +6641,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 351317900}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6567,8 +6655,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 351317899}
-  m_LocalRotation: {x: 0.2694765, y: -0, z: -0, w: 0.96300703}
-  m_LocalPosition: {x: 10.1, y: 34.8, z: -10}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 304212370}
@@ -6589,8 +6677,8 @@ Transform:
   - {fileID: 287785710}
   - {fileID: 1626008414}
   - {fileID: 782022124}
-  m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_Father: {fileID: 2140663681}
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &355673194
 GameObject:
@@ -6615,8 +6703,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 355673194}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 4.17}
+  m_LocalRotation: {x: -0.2694765, y: -0, z: -0, w: 0.96300703}
+  m_LocalPosition: {x: -10.1, y: -22.391365, z: 30.17376}
   m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children:
   - {fileID: 962208302}
@@ -6632,8 +6720,8 @@ Transform:
   - {fileID: 358211063}
   - {fileID: 306737144}
   - {fileID: 921768773}
-  m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_Father: {fileID: 106585743}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &356595243
 GameObject:
@@ -6968,6 +7056,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.070001364
@@ -7018,6 +7110,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7616,6 +7712,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -33.41
@@ -8149,6 +8249,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19.860004
@@ -8199,6 +8303,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8353,6 +8461,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8552,6 +8664,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hale_Wall_01_snaps002 (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 1037845487469350, guid: 19275419fedd9184180a5665b0bacd4e, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4511427168459332, guid: 19275419fedd9184180a5665b0bacd4e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -37.9
@@ -8622,6 +8738,10 @@ PrefabInstance:
     - target: {fileID: 1359783617665420, guid: 74fe408f24610144390b3352ca1f7efe, type: 3}
       propertyPath: m_Name
       value: Hale_Wall_01_Corner_snaps002 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1359783617665420, guid: 74fe408f24610144390b3352ca1f7efe, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4841474246680918, guid: 74fe408f24610144390b3352ca1f7efe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9139,8 +9259,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 499344010}
-  m_LocalRotation: {x: 0.2694765, y: -0, z: -0, w: 0.96300703}
-  m_LocalPosition: {x: 10.1, y: 34.8, z: -10}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1001965348}
@@ -9216,8 +9336,8 @@ Transform:
   - {fileID: 1644886239}
   - {fileID: 301465677}
   - {fileID: 228201118}
-  m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_Father: {fileID: 106585743}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &501879634
 PrefabInstance:
@@ -9232,7 +9352,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -9651,7 +9771,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 519475023}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: combinePillar (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9901,7 +10021,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1018684808052034, guid: d4a69086e0bd5e440a2bda14734b225c, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1018684808052034, guid: d4a69086e0bd5e440a2bda14734b225c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -10078,6 +10198,10 @@ PrefabInstance:
     - target: {fileID: 1037845487469350, guid: 19275419fedd9184180a5665b0bacd4e, type: 3}
       propertyPath: m_Name
       value: Hale_Wall_01_snaps002 (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037845487469350, guid: 19275419fedd9184180a5665b0bacd4e, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4511427168459332, guid: 19275419fedd9184180a5665b0bacd4e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10327,6 +10451,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hale_Wall_01_snaps002 (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 1037845487469350, guid: 19275419fedd9184180a5665b0bacd4e, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4511427168459332, guid: 19275419fedd9184180a5665b0bacd4e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -37.9
@@ -10396,7 +10524,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -10557,6 +10685,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10761,7 +10893,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 583894834}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: combinePillar (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10968,6 +11100,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13.43
@@ -11027,7 +11163,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -11237,6 +11373,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11475,7 +11615,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 637904012}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: combinePillar (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12207,7 +12347,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 680207504}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: smallPillar (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12321,7 +12461,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1018684808052034, guid: d4a69086e0bd5e440a2bda14734b225c, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1018684808052034, guid: d4a69086e0bd5e440a2bda14734b225c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -12997,7 +13137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1904250182534334, guid: 3ab9a883bb2728d4ea8e56b33bcea8ba, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1904250182534334, guid: 3ab9a883bb2728d4ea8e56b33bcea8ba, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -13128,6 +13268,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13330,6 +13474,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 26.520002
@@ -13389,7 +13537,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -13472,7 +13620,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1293296949879540, guid: f60a68fd009415d44bee80b63a157895, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1293296949879540, guid: f60a68fd009415d44bee80b63a157895, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -13546,6 +13694,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13752,7 +13904,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 782022124}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: smallPillar (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13877,6 +14029,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -33.41
@@ -13939,6 +14095,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14082,6 +14242,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -26.75
@@ -14210,7 +14374,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1695523847240770, guid: fc62ef998eb59b346b34d565f38deb3b, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1695523847240770, guid: fc62ef998eb59b346b34d565f38deb3b, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -14617,7 +14781,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1018684808052034, guid: d4a69086e0bd5e440a2bda14734b225c, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1018684808052034, guid: d4a69086e0bd5e440a2bda14734b225c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -14697,6 +14861,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14990,6 +15158,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 26.52001
@@ -15040,6 +15212,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15094,7 +15270,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -15173,7 +15349,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 885254861}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: combinePillar (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15368,6 +15544,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13.430006
@@ -15509,6 +15689,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15797,7 +15981,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -16038,6 +16222,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hale_Wall_01_Corner_snaps002 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1359783617665420, guid: 74fe408f24610144390b3352ca1f7efe, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4841474246680918, guid: 74fe408f24610144390b3352ca1f7efe, type: 3}
       propertyPath: m_LocalPosition.x
       value: 42.76
@@ -16107,6 +16295,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -20.09
@@ -16154,7 +16346,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -16403,7 +16595,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1904250182534334, guid: 3ab9a883bb2728d4ea8e56b33bcea8ba, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1904250182534334, guid: 3ab9a883bb2728d4ea8e56b33bcea8ba, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -16711,7 +16903,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1115569883794738, guid: 0f6381faceff7bc46983f6f88a736198, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1115569883794738, guid: 0f6381faceff7bc46983f6f88a736198, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -17167,7 +17359,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -17241,6 +17433,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17550,6 +17746,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -20.09
@@ -17599,7 +17799,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1032856143}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: combinePillar (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17717,7 +17917,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1904250182534334, guid: 3ab9a883bb2728d4ea8e56b33bcea8ba, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1904250182534334, guid: 3ab9a883bb2728d4ea8e56b33bcea8ba, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -17774,7 +17974,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1574384237796796, guid: e4d5c0d3d9b21f840a3309933254e833, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1574384237796796, guid: e4d5c0d3d9b21f840a3309933254e833, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -17849,6 +18049,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 33.18
@@ -17893,6 +18097,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18123,6 +18331,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -39.969997
@@ -18173,6 +18385,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18539,7 +18755,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1075303574}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18553,8 +18769,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1075303573}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -1.71, y: 1, z: -6.56}
+  m_LocalRotation: {x: -0, y: 0.96300703, z: -0.2694765, w: 0}
+  m_LocalPosition: {x: -11.81, y: -27.105637, z: 20.483116}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1258057950}
@@ -18577,8 +18793,8 @@ Transform:
   - {fileID: 1691244121}
   - {fileID: 18351989}
   - {fileID: 1583899366}
-  m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_Father: {fileID: 1719546640}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1001 &1075315373
 PrefabInstance:
@@ -18668,7 +18884,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1018684808052034, guid: d4a69086e0bd5e440a2bda14734b225c, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1018684808052034, guid: d4a69086e0bd5e440a2bda14734b225c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -18751,7 +18967,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -18826,6 +19042,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -26.750008
@@ -18876,6 +19096,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19334,6 +19558,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19885,6 +20113,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20851,6 +21083,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hale_Wall_01_Corner_snaps002
       objectReference: {fileID: 0}
+    - target: {fileID: 1359783617665420, guid: 74fe408f24610144390b3352ca1f7efe, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4841474246680918, guid: 74fe408f24610144390b3352ca1f7efe, type: 3}
       propertyPath: m_LocalPosition.x
       value: -40.84
@@ -20907,6 +21143,10 @@ PrefabInstance:
     - target: {fileID: 1359783617665420, guid: 74fe408f24610144390b3352ca1f7efe, type: 3}
       propertyPath: m_Name
       value: Hale_Wall_01_Corner_snaps002
+      objectReference: {fileID: 0}
+    - target: {fileID: 1359783617665420, guid: 74fe408f24610144390b3352ca1f7efe, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4841474246680918, guid: 74fe408f24610144390b3352ca1f7efe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21048,7 +21288,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -21295,6 +21535,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19.86
@@ -21345,6 +21589,10 @@ PrefabInstance:
     - target: {fileID: 1037845487469350, guid: 19275419fedd9184180a5665b0bacd4e, type: 3}
       propertyPath: m_Name
       value: Hale_Wall_01_snaps002 (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037845487469350, guid: 19275419fedd9184180a5665b0bacd4e, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4511427168459332, guid: 19275419fedd9184180a5665b0bacd4e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21486,6 +21734,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -20.090002
@@ -21539,7 +21791,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1018684808052034, guid: d4a69086e0bd5e440a2bda14734b225c, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1018684808052034, guid: d4a69086e0bd5e440a2bda14734b225c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -21780,6 +22032,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hale_Wall_01_snaps002 (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 1037845487469350, guid: 19275419fedd9184180a5665b0bacd4e, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4511427168459332, guid: 19275419fedd9184180a5665b0bacd4e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -42.6
@@ -21865,7 +22121,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -21940,6 +22196,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13.160002
@@ -21984,6 +22244,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22134,6 +22398,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22716,7 +22984,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1277409711351920, guid: 3682bdd09cd6a6241aa4f9edfff214e8, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1277409711351920, guid: 3682bdd09cd6a6241aa4f9edfff214e8, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -23125,6 +23393,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.59
@@ -23493,7 +23765,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -23573,6 +23845,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23763,6 +24039,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -26.75
@@ -23814,6 +24094,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -20.09
@@ -23858,6 +24142,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24086,6 +24374,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 39.74
@@ -24299,7 +24591,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -24609,6 +24901,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -33.410004
@@ -24665,6 +24961,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -25056,7 +25356,7 @@ PrefabInstance:
     - target: {fileID: 6824704989196837911, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6824704989196837911, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
         type: 3}
@@ -25435,7 +25735,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1904250182534334, guid: 3ab9a883bb2728d4ea8e56b33bcea8ba, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1904250182534334, guid: 3ab9a883bb2728d4ea8e56b33bcea8ba, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -25585,7 +25885,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -25665,6 +25965,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -25786,7 +26090,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1018684808052034, guid: d4a69086e0bd5e440a2bda14734b225c, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1018684808052034, guid: d4a69086e0bd5e440a2bda14734b225c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -26020,7 +26324,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!4 &1522549815 stripped
 Transform:
@@ -26047,7 +26351,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -26233,7 +26537,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -26316,7 +26620,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1054818967009060, guid: 6fb3c3ccbbfe80a40a52c06a792263c7, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1054818967009060, guid: 6fb3c3ccbbfe80a40a52c06a792263c7, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -26468,7 +26772,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1054818967009060, guid: 6fb3c3ccbbfe80a40a52c06a792263c7, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1054818967009060, guid: 6fb3c3ccbbfe80a40a52c06a792263c7, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -26541,7 +26845,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1558451113}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: smallPillar (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26901,6 +27205,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -40.26
@@ -27126,7 +27434,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1695523847240770, guid: fc62ef998eb59b346b34d565f38deb3b, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1695523847240770, guid: fc62ef998eb59b346b34d565f38deb3b, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -27359,7 +27667,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -27529,7 +27837,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1626008414}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: smallPillar (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27565,7 +27873,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1115569883794738, guid: 0f6381faceff7bc46983f6f88a736198, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1115569883794738, guid: 0f6381faceff7bc46983f6f88a736198, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -27627,6 +27935,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -27693,7 +28005,7 @@ Transform:
   - {fileID: 191609678}
   - {fileID: 1767180751}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1631138242
 GameObject:
@@ -27961,7 +28273,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1639397843}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: smallPillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28090,7 +28402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1018684808052034, guid: d4a69086e0bd5e440a2bda14734b225c, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1018684808052034, guid: d4a69086e0bd5e440a2bda14734b225c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -28416,7 +28728,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1666268445}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: combinePillar (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28653,6 +28965,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.0699997
@@ -28864,6 +29180,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 26.52001
@@ -28986,7 +29306,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1904250182534334, guid: 3ab9a883bb2728d4ea8e56b33bcea8ba, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1904250182534334, guid: 3ab9a883bb2728d4ea8e56b33bcea8ba, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -29112,7 +29432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -29187,6 +29507,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -33.410004
@@ -29240,7 +29564,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -29317,7 +29641,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1904250182534334, guid: 3ab9a883bb2728d4ea8e56b33bcea8ba, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1904250182534334, guid: 3ab9a883bb2728d4ea8e56b33bcea8ba, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -29361,6 +29685,41 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ab9a883bb2728d4ea8e56b33bcea8ba, type: 3}
+--- !u!1 &1719546639
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1719546640}
+  m_Layer: 9
+  m_Name: WallGroup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1719546640
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719546639}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 347394430}
+  - {fileID: 1977206642}
+  - {fileID: 323699151}
+  - {fileID: 1858708617}
+  - {fileID: 1075303574}
+  m_Father: {fileID: 106585743}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1720849524 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4519548827744782, guid: 8c39b59b8609eeb41846d53ddd3ce2a8,
@@ -29390,16 +29749,17 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1723544529}
-  m_LocalRotation: {x: 0.2694765, y: -0, z: -0, w: 0.96300703}
-  m_LocalPosition: {x: 18, y: 34.8, z: -10.7}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 7.8999996, y: -0.36331078, z: -0.5983352}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1759136466}
   - {fileID: 1073041595}
   - {fileID: 768873630}
   - {fileID: 1104421451}
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  - {fileID: 1885156310}
+  m_Father: {fileID: 106585743}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1723627265
 GameObject:
@@ -29831,7 +30191,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -29905,6 +30265,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -30031,6 +30395,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -30160,7 +30528,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1115569883794738, guid: 0f6381faceff7bc46983f6f88a736198, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1115569883794738, guid: 0f6381faceff7bc46983f6f88a736198, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -30297,6 +30665,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -30800,6 +31172,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -33.41
@@ -30847,7 +31223,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -31131,7 +31507,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1904250182534334, guid: 3ab9a883bb2728d4ea8e56b33bcea8ba, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1904250182534334, guid: 3ab9a883bb2728d4ea8e56b33bcea8ba, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -31194,7 +31570,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1018684808052034, guid: d4a69086e0bd5e440a2bda14734b225c, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1018684808052034, guid: d4a69086e0bd5e440a2bda14734b225c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -31532,6 +31908,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 33.18
@@ -31583,6 +31963,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 39.74
@@ -31633,6 +32017,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -31762,7 +32150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -31910,7 +32298,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1904250182534334, guid: 3ab9a883bb2728d4ea8e56b33bcea8ba, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1904250182534334, guid: 3ab9a883bb2728d4ea8e56b33bcea8ba, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -31996,6 +32384,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -32202,6 +32594,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -26.75
@@ -32255,7 +32651,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1904250182534334, guid: 3ab9a883bb2728d4ea8e56b33bcea8ba, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1904250182534334, guid: 3ab9a883bb2728d4ea8e56b33bcea8ba, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -32399,7 +32795,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -32642,12 +33038,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1851668771}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.2694765, y: 0, z: -0, w: 0.96300703}
+  m_LocalPosition: {x: -10.1, y: -24.55566, z: 26.609388}
   m_LocalScale: {x: 10, y: 10, z: 15}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_Father: {fileID: 106585743}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1858111637
 GameObject:
@@ -32749,7 +33145,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1858708617}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32763,8 +33159,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1858708616}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: -1.01, y: 1, z: -7}
+  m_LocalRotation: {x: 0.19054864, y: 0.6809488, z: -0.19054864, w: -0.6809488}
+  m_LocalPosition: {x: -11.110001, y: -27.334003, z: 20.10702}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1874099843}
@@ -32788,8 +33184,8 @@ Transform:
   - {fileID: 880223828}
   - {fileID: 1103966701}
   - {fileID: 375428324}
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_Father: {fileID: 1719546640}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
 --- !u!1001 &1866858473
 PrefabInstance:
@@ -32870,6 +33266,10 @@ PrefabInstance:
     - target: {fileID: 1359783617665420, guid: 74fe408f24610144390b3352ca1f7efe, type: 3}
       propertyPath: m_Name
       value: Hale_Wall_01_Corner_snaps002 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1359783617665420, guid: 74fe408f24610144390b3352ca1f7efe, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4841474246680918, guid: 74fe408f24610144390b3352ca1f7efe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -33132,6 +33532,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -39.969997
@@ -33166,6 +33570,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+--- !u!4 &1885156310 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4725293624299974, guid: b8fc8c3d0e0ff9b4089c4e346ac42ecc,
+    type: 3}
+  m_PrefabInstance: {fileID: 164313289}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1892511439
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33315,6 +33725,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.070001364
@@ -33451,6 +33865,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13.160002
@@ -33504,7 +33922,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -34237,6 +34655,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.59
@@ -34287,6 +34709,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -34351,8 +34777,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1954394626}
-  m_LocalRotation: {x: 0.2694765, y: -0, z: -0, w: 0.96300703}
-  m_LocalPosition: {x: 10.1, y: 34.8, z: -10}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 761907567}
@@ -34428,8 +34854,8 @@ Transform:
   - {fileID: 333264840}
   - {fileID: 724254961}
   - {fileID: 1472292832}
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_Father: {fileID: 2140663681}
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1957161608 stripped
 Transform:
@@ -34770,6 +35196,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.0699997
@@ -34819,7 +35249,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1977206642}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34833,8 +35263,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1977206641}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.7, y: 12.8, z: -8}
+  m_LocalRotation: {x: -0.2694765, y: -0, z: -0, w: 0.96300703}
+  m_LocalPosition: {x: -11.8, y: -17.766796, z: 13.127872}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1326494479}
@@ -34851,8 +35281,8 @@ Transform:
   - {fileID: 150815895}
   - {fileID: 2123449006}
   - {fileID: 285749731}
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 1719546640}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1986620820 stripped
 Transform:
@@ -35370,7 +35800,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1904250182534334, guid: 3ab9a883bb2728d4ea8e56b33bcea8ba, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1904250182534334, guid: 3ab9a883bb2728d4ea8e56b33bcea8ba, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -35424,6 +35854,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -35496,7 +35930,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1904250182534334, guid: 3ab9a883bb2728d4ea8e56b33bcea8ba, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1904250182534334, guid: 3ab9a883bb2728d4ea8e56b33bcea8ba, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -35652,7 +36086,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1115569883794738, guid: 0f6381faceff7bc46983f6f88a736198, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1115569883794738, guid: 0f6381faceff7bc46983f6f88a736198, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -35877,7 +36311,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1904250182534334, guid: 3ab9a883bb2728d4ea8e56b33bcea8ba, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1904250182534334, guid: 3ab9a883bb2728d4ea8e56b33bcea8ba, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -36151,6 +36585,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 33.18
@@ -36415,6 +36853,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 39.74001
@@ -36552,6 +36994,10 @@ PrefabInstance:
     - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_Name
       value: GreeblePanelBeveled_01_snaps002 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409135906686212, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4918607461809434, guid: 6f14da1c47b1eba4ca7b676b7b566a5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -36856,7 +37302,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1582933685877556, guid: debcf44c265f4c746983d631b32fa707, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -36933,7 +37379,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1904250182534334, guid: 3ab9a883bb2728d4ea8e56b33bcea8ba, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1904250182534334, guid: 3ab9a883bb2728d4ea8e56b33bcea8ba, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -37239,7 +37685,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2140663681}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: decor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37253,8 +37699,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2140663680}
-  m_LocalRotation: {x: 0.2694765, y: -0, z: -0, w: 0.96300703}
-  m_LocalPosition: {x: 10.1, y: 34.8, z: -10}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 322072541}
@@ -37280,8 +37726,11 @@ Transform:
   - {fileID: 229013343}
   - {fileID: 606175503}
   - {fileID: 1268578605}
-  m_Father: {fileID: 0}
-  m_RootOrder: 17
+  - {fileID: 208260239}
+  - {fileID: 1954394627}
+  - {fileID: 351317900}
+  m_Father: {fileID: 106585743}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2140756740
 PrefabInstance:
@@ -37367,7 +37816,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2144738741}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: combinePillar (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37441,7 +37890,7 @@ PrefabInstance:
     - target: {fileID: 5445655434447986221, guid: c5c6d5b03f13bb444903118879abbb2f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5445655434447986221, guid: c5c6d5b03f13bb444903118879abbb2f,
         type: 3}
