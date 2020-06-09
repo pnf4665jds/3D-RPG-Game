@@ -14,14 +14,10 @@ public class ActionController : MonoBehaviour
 
     private State currentState;
 
-    private void Awake()
+    private void Start()
     {
         ChangeState(FirstStateName, 0);
         OrderingList();
-    }
-
-    private void Start()
-    {
         InitAllDecider();
     }
 

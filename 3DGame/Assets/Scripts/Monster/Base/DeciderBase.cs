@@ -15,16 +15,12 @@ public abstract class DeciderBase : MonoBehaviour
 
     private bool PauseTimeFinish = true;
 
-    private void Start()
-    {
-        controller = GetComponent<ActionController>();
-        monsterInfo = GetComponent<MonsterInfo>();
-    }
-
     public virtual void Init()
     {
         PauseTimeFinish = true;
-
+        controller = gameObject.GetComponent<ActionController>();
+        monsterInfo = gameObject.GetComponent<MonsterInfo>();
+        Debug.Log(controller + " " + monsterInfo);
     }
 
     /// <summary>

@@ -192,7 +192,7 @@ MonoBehaviour:
   RotateSpeed: 5
   DeadWaitTime: 2
   CoinSum: 200
-  IdleWhenAnimation: 0
+  IdleWhenAnimation: 1
   AttackBuffRate: 1
   mainCollider: {fileID: 2118645329}
   Offset: 0.2
@@ -405,6 +405,9 @@ MonoBehaviour:
   UseStateName: Attack
   DetectPauseTime: 0
   WaitTime: 1.5
+  RandomTime: 0
+  MinTime: 0
+  MaxTime: 0
   KeepTimeUntilTaken: 1
 --- !u!114 &5238383425548887361
 MonoBehaviour:
@@ -421,6 +424,9 @@ MonoBehaviour:
   UseStateName: Attack2
   DetectPauseTime: 0
   WaitTime: 1.5
+  RandomTime: 0
+  MinTime: 0
+  MaxTime: 0
   KeepTimeUntilTaken: 1
 --- !u!114 &6990349621653779293
 MonoBehaviour:
@@ -489,6 +495,7 @@ MonoBehaviour:
   UseStateName: Back
   DetectPauseTime: 0
   IsDestSpawnOrigin: 1
+  IsDestAOffset: 0
   ShouldConsiderX: 1
   ShouldConsiderY: 0
   ShouldConsiderZ: 1

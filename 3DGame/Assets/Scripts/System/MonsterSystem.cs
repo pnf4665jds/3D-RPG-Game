@@ -87,7 +87,7 @@ public class MonsterSystem : Singleton<MonsterSystem>
     {
         ActionController controller = MonsterList[id].GetComponent<ActionController>();
         controller.enabled = isEnable;
-        if (!isEnable)
+        if (isEnable == true)
         {
             controller.ExitCurrentAction();
             controller.InitAllDecider();
