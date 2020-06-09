@@ -614,7 +614,7 @@ GameObject:
   - component: {fileID: 33507119115920914}
   - component: {fileID: 23271243881868026}
   - component: {fileID: 731607879708174737}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: sword_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2293,7 +2293,7 @@ GameObject:
   - component: {fileID: 3835381896743137020}
   - component: {fileID: 6476703658233285693}
   - component: {fileID: 7328730620300722863}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -69,7 +69,7 @@ public class TrapWindZone : MonoBehaviour
 
         Vector3 newDir = GetCenterVector();
         Gizmos.matrix = Matrix4x4.TRS(transform.position + newDir, transform.rotation, DetectSize * 2);
-        Gizmos.color = new Color(1, 0, 0, 0.4f);
+        Gizmos.color = new Color(1, 0, 0, 1.0f);
         Gizmos.DrawWireCube(Vector3.zero, Vector3.one);
         
     }
