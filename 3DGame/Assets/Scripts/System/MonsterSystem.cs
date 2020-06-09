@@ -6,6 +6,10 @@ public class MonsterSystem : Singleton<MonsterSystem>
 {
     public Dictionary<int, MonsterInfo> MonsterList { get; set; } = new Dictionary<int, MonsterInfo>();
     public bool IsBossDead { get; set; }    // 回傳Boss是否死亡
+    public int MonsterNum { get; set; } = 0;    // 小怪累積數量
+    public int BossNum { get; set; } = 0;       // Boss累積數量
+    public int DeadMonsterNum { get; set; } = 0;    // 死亡的小怪累積數量
+    public int DeadBossNum { get; set; } = 0;   // 死亡的Boss累積數量
 
     private int monsterId = -1;
 
@@ -18,7 +22,14 @@ public class MonsterSystem : Singleton<MonsterSystem>
         monsterId++;
         MonsterList.Add(monsterId, info);
         if (info.gameObject.tag == "Boss")
+        {
             IsBossDead = false;
+            BossNum++;
+        }
+        else
+        {
+            MonsterNum++;
+        }
 
         return monsterId;
     }
@@ -32,7 +43,14 @@ public class MonsterSystem : Singleton<MonsterSystem>
         if (MonsterList.ContainsKey(id))
         {
             if (MonsterList[id].gameObject.tag == "Boss")
+            {
                 IsBossDead = true;
+                DeadBossNum++;
+            }
+            else
+            {
+                DeadMonsterNum++;
+            }
 
             MonsterList.Remove(id);
         }

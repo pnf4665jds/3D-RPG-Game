@@ -137,7 +137,8 @@ public class MonsterInfo : MonoBehaviour
         yield return new WaitForSeconds(DeadWaitTime);
         DropItemSystem.instance.createMoney(transform.position, CoinSum);
         MonsterSystem.instance.RemoveMonster(MonsterId);    // 取消註冊
-        SoundSystem.instance.StopBGM(3);    // 淡出Boss BGM
+        if(gameObject.tag == "Boss")
+            SoundSystem.instance.StopBGM(3);    // 淡出Boss BGM
         Destroy(gameObject);
     }
 

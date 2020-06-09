@@ -5,8 +5,12 @@ using UnityEngine;
 public class TrapWindZone : MonoBehaviour
 {
     public bool ShowInScene;        // 是否在場景中顯示範圍
-    public float Rate = 1;
-    public float MaxSpeed = 1;
+    public float Rate = 15;
+    public float MaxSpeed = 10;
+    public Animation Anim;
+    public float Delay = 0;
+    public float KeepTime = 3;
+    public float StopTime = 3;
 
     public Vector3 DetectCenter;    // 偵測範圍中心
     public Vector3 DetectSize = new Vector3(1, 1, 1);      // 偵測範圍大小
@@ -14,11 +18,17 @@ public class TrapWindZone : MonoBehaviour
     private Collider[] playerCollider;
     private Rigidbody rigid;
     private bool inZone = false;
+    private bool isWorking = false;
+
+    private void Start()
+    {
+        StartCoroutine(SetAnimation());
+    }
 
     private void Update()
     {
         Detect();
-        if (inZone)
+        if (inZone && isWorking)
             ApplyForce();
     }
 
@@ -68,5 +78,19 @@ public class TrapWindZone : MonoBehaviour
     {
         if(rigid && rigid.velocity.sqrMagnitude < MaxSpeed * MaxSpeed)
             rigid.AddForce(GetCenterVector().normalized * Rate);
+    }
+
+    private IEnumerator SetAnimation()
+    {
+        yield return new WaitForSeconds(Delay);
+        while (true)
+        {
+            isWorking = true;
+            Anim.Play();
+            yield return new WaitForSeconds(KeepTime);
+            isWorking = false;
+            Anim.Stop();
+            yield return new WaitForSeconds(StopTime);
+        }
     }
 }

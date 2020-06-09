@@ -545,6 +545,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.7
       objectReference: {fileID: 0}
+    - target: {fileID: 7374478173378646648, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0d682c00f6e5614e95fe64a8c2e6df7, type: 3}
 --- !u!1 &1421142783 stripped
@@ -568,5 +573,14 @@ MonoBehaviour:
   ShowInScene: 1
   Rate: 15
   MaxSpeed: 10
+  Anim: {fileID: 1421142785}
+  KeepTime: 3
+  StopTime: 3
   DetectCenter: {x: -13.63, y: 0, z: 0}
   DetectSize: {x: 1, y: 11.97, z: 5.13}
+--- !u!111 &1421142785 stripped
+Animation:
+  m_CorrespondingSourceObject: {fileID: 11154864, guid: 28ad6bc8a17e7284d884987726cf5100,
+    type: 3}
+  m_PrefabInstance: {fileID: 1222293642}
+  m_PrefabAsset: {fileID: 0}
