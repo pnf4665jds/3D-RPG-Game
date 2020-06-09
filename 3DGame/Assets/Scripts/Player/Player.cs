@@ -473,4 +473,14 @@ public class Player : MonoBehaviour
         ResetSpeed();
         SkillParticle.Stop(true,ParticleSystemStopBehavior.StopEmittingAndClear);
     }
+	public void Relive()
+    {
+        ResetAnything();
+        isLive = true;
+        isDie = false;
+        Playerani.SetBool("isDie",isDie);
+        CurrentHP = MaxHP;
+        MP = MaxMP;
+        CurCooldown = 0;
+    }
 }
