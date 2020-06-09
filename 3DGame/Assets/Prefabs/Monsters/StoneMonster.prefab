@@ -30,7 +30,7 @@ Transform:
   - {fileID: 4201210078927136}
   m_Father: {fileID: 4966007699546920}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -39.66407}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -34.625996}
 --- !u!1 &1215002072254110
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,7 +148,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4574649352997690}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 5.3532713e-14, y: -3.5997484e-14, z: -7.207346}
+  m_LocalEulerAnglesHint: {x: 5.798162e-14, y: -2.9511942e-14, z: -2.9975185}
 --- !u!1 &1467097521789780
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,7 +178,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4836351918659748}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -7.2073665}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -2.9975176}
 --- !u!1 &1497842698705604
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,9 +188,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4966007699546920}
+  - component: {fileID: 7906301635776354219}
   m_Layer: 0
   m_Name: Bone001
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -209,9 +210,23 @@ Transform:
   - {fileID: 4574649352997690}
   - {fileID: 4372769990449160}
   - {fileID: 4836351918659748}
+  - {fileID: 1534370190474656559}
   m_Father: {fileID: 4788319935855200}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: -147.03308}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: -164.81265}
+--- !u!65 &7906301635776354219
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497842698705604}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: -0.18, y: -0.14, z: 0}
 --- !u!1 &1713781036754730
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,7 +248,6 @@ GameObject:
   - component: {fileID: 7757978349363264088}
   - component: {fileID: 3965253632808350629}
   - component: {fileID: 8650517194863206173}
-  - component: {fileID: 2322792306581674664}
   - component: {fileID: 5235256070794224846}
   m_Layer: 12
   m_Name: StoneMonster
@@ -256,7 +270,6 @@ Transform:
   - {fileID: 4966007699546920}
   - {fileID: 4244191954350522}
   - {fileID: 3110192178524794814}
-  - {fileID: 1534370190474656559}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -298,7 +311,7 @@ MonoBehaviour:
   CoinSum: 100
   IdleWhenAnimation: 1
   AttackBuffRate: 1
-  mainCollider: {fileID: 2322792306581674664}
+  mainCollider: {fileID: 373996879613221729}
   Offset: 0.2
 --- !u!114 &8087613420217389440
 MonoBehaviour:
@@ -512,19 +525,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 3
---- !u!65 &2322792306581674664
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1713781036754730}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0.6, z: 0}
 --- !u!114 &5235256070794224846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -575,7 +575,7 @@ Transform:
   - {fileID: 4337812796121360}
   m_Father: {fileID: 4966007699546920}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 1.1046499e-15, y: 2.814545e-17, z: 1.6055365}
+  m_LocalEulerAnglesHint: {x: 1.1024661e-15, y: 1.6284555e-16, z: 5.815392}
 --- !u!1 &1798525600516028
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,7 +605,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4372769990449160}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -7.2073665}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -2.9975176}
 --- !u!1 &1911034780301212
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,7 +636,7 @@ Transform:
   - {fileID: 4266849179980070}
   m_Father: {fileID: 4966007699546920}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -0.00000030319694, y: 0.0000021110661, z: 144.45593}
+  m_LocalEulerAnglesHint: {x: -0.00000056090164, y: 0.0000020764892, z: 148.66579}
 --- !u!1 &5607495806604877765
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,7 +650,7 @@ GameObject:
   - component: {fileID: 947572089248817915}
   m_Layer: 13
   m_Name: NoMove
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -681,7 +681,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0.6, z: 0}
+  m_Center: {x: -0.11, y: -0.13, z: 0}
 --- !u!54 &947572089248817915
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -722,14 +722,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5848424933783556577}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.043619405, w: 0.9990483}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 629350849416114491}
-  m_Father: {fileID: 4788319935855200}
+  m_Father: {fileID: 4966007699546920}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -5}
 --- !u!65 &373996879613221729
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -742,7 +742,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0.6, z: 0}
+  m_Center: {x: -0.11, y: -0.13, z: 0}
 --- !u!1001 &8310936309354109314
 PrefabInstance:
   m_ObjectHideFlags: 0

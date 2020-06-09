@@ -145,7 +145,6 @@ public class Player : MonoBehaviour
         }
         else if (other.tag == "Monster" || other.tag == "Boss")
         {
-            Debug.Log(other.name);
             if (isAttack || UseSkill) other.gameObject.GetComponentInParent<MonsterInfo>().GetDamage(ATK);
         }
         else if (other.tag == "Organ")
