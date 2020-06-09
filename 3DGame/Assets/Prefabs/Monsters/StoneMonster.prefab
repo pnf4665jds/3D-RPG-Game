@@ -404,6 +404,9 @@ MonoBehaviour:
   UseStateName: Attack
   DetectPauseTime: 0
   WaitTime: 0.8
+  RandomTime: 0
+  MinTime: 0
+  MaxTime: 0
   KeepTimeUntilTaken: 1
 --- !u!114 &7014428941042049743
 MonoBehaviour:
@@ -537,6 +540,7 @@ MonoBehaviour:
   UseStateName: Back
   DetectPauseTime: 0
   IsDestSpawnOrigin: 1
+  IsDestAOffset: 0
   ShouldConsiderX: 1
   ShouldConsiderY: 0
   ShouldConsiderZ: 1

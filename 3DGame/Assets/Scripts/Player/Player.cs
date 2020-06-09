@@ -39,10 +39,6 @@ public class Player : MonoBehaviour
         Playerani = GetComponent<Animator>();
         MaxHP = 100;
         MaxMP = 100;
-<<<<<<< HEAD
-=======
-        
->>>>>>> b301ca59a195fe44f1cc591dd7b772ace4bb8a80
     }
     // Start is called before the first frame update
     void Start()

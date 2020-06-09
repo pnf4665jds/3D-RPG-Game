@@ -24,6 +24,7 @@ public abstract class DeciderBase : MonoBehaviour
     public virtual void Init()
     {
         PauseTimeFinish = true;
+
     }
 
     /// <summary>
