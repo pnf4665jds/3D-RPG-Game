@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
         Playerani = GetComponent<Animator>();
         MaxHP = 100;
         MaxMP = 100;
-        SetCooldown();
+        
     }
     // Start is called before the first frame update
     void Start()
@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
         CurCooldown = 0;
         SkillParticle = GetComponentInChildren<ParticleSystem>();
         SkillParticle.Stop();
-     
+        SetCooldown();
     }
 
     // Update is called once per frame
@@ -82,19 +82,15 @@ public class Player : MonoBehaviour
         CheckCooldown();
     }
     public void GetHurt(float damage) {
-        if (GameSystem.instance.isPlayerNormal())
+        CurrentHP -= damage;
+        if (CurrentHP <= 0)
         {
-            CurrentHP -= damage;
-            if (CurrentHP <= 0)
-            {
-                ResetAnimation();
-                isLive = false;
-                isDie = true;
-                Playerani.SetBool("isDie", isDie);
-                GameSystem.instance.changeModeDead();
-            }
+            ResetAnimation();
+            isLive = false;
+            isDie = true;
+            Playerani.SetBool("isDie", isDie);
+            GameSystem.instance.changeModeDead();
         }
-        
     }
     public void Healing(float healing)
     {
@@ -467,15 +463,5 @@ public class Player : MonoBehaviour
         Playerani.SetBool("UseSkill",UseSkill);
         ResetSpeed();
         SkillParticle.Stop(true,ParticleSystemStopBehavior.StopEmittingAndClear);
-    }
-    public void Relive()
-    {
-        ResetAnything();
-        isLive = true;
-        isDie = false;
-        Playerani.SetBool("isDie",isDie);
-        CurrentHP = MaxHP;
-        MP = MaxMP;
-        CurCooldown = 0;
     }
 }
