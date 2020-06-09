@@ -39,7 +39,10 @@ public class Player : MonoBehaviour
         Playerani = GetComponent<Animator>();
         MaxHP = 100;
         MaxMP = 100;
-        SetCooldown();
+<<<<<<< HEAD
+=======
+        
+>>>>>>> b301ca59a195fe44f1cc591dd7b772ace4bb8a80
     }
     // Start is called before the first frame update
     void Start()
@@ -59,7 +62,7 @@ public class Player : MonoBehaviour
         CurCooldown = 0;
         SkillParticle = GetComponentInChildren<ParticleSystem>();
         SkillParticle.Stop();
-     
+        SetCooldown();
     }
 
     // Update is called once per frame
@@ -82,19 +85,15 @@ public class Player : MonoBehaviour
         CheckCooldown();
     }
     public void GetHurt(float damage) {
-        if (GameSystem.instance.isPlayerNormal())
+        CurrentHP -= damage;
+        if (CurrentHP <= 0)
         {
-            CurrentHP -= damage;
-            if (CurrentHP <= 0)
-            {
-                ResetAnimation();
-                isLive = false;
-                isDie = true;
-                Playerani.SetBool("isDie", isDie);
-                GameSystem.instance.changeModeDead();
-            }
+            ResetAnimation();
+            isLive = false;
+            isDie = true;
+            Playerani.SetBool("isDie", isDie);
+            GameSystem.instance.changeModeDead();
         }
-        
     }
     public void Healing(float healing)
     {
@@ -150,7 +149,8 @@ public class Player : MonoBehaviour
         }
         else if (other.tag == "Monster" || other.tag == "Boss")
         {
-            if (isAttack) other.gameObject.GetComponentInParent<MonsterInfo>().GetDamage(ATK);
+            Debug.Log(other.name);
+            if (isAttack || UseSkill) other.gameObject.GetComponentInParent<MonsterInfo>().GetDamage(ATK);
         }
         else if (other.tag == "Organ")
         {
@@ -230,7 +230,6 @@ public class Player : MonoBehaviour
             {
                 isMove = true;
                 transform.Translate(Vector3.forward * Speed * Time.deltaTime);
-                //Cc.SimpleMove(transform.forward * Speed * Time.deltaTime);
                 Playerani.SetBool("isMove", isMove);
             }
             if (Input.GetKey(KeyCode.D))
@@ -251,7 +250,7 @@ public class Player : MonoBehaviour
                     isTurn = true;
                 }
             }
-            if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
+            else if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
             {
                 MaxSpeedChange(4);
                 isTurn = false;
@@ -363,8 +362,18 @@ public class Player : MonoBehaviour
     }
     public IEnumerator ResetUseSkill()
     {
-        if (this.name == "DogPBR") yield return new WaitForSecondsRealtime(0.5f);
-        else yield return new WaitForSecondsRealtime(SkillAnim.length);
+        switch (this.name)
+        {
+            case "DogPBR":
+                yield return new WaitForSecondsRealtime(0.5f);
+                break;
+            case "Avelyn":
+                yield return new WaitForSecondsRealtime(SkillAnim.length/2);
+                break;
+            case "Footman":
+                yield return new WaitForSecondsRealtime(SkillAnim.length);
+                break;
+        }
         UseSkill = false;
         Playerani.SetBool("UseSkill", UseSkill);
     }
@@ -378,7 +387,7 @@ public class Player : MonoBehaviour
     public IEnumerator AvelynSkill()
     {
         ATK *= 2;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(SkillAnim.length/2);
         ATK /= 2;
         Healing(MaxHP/4);
         SkillParticle.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
@@ -467,15 +476,5 @@ public class Player : MonoBehaviour
         Playerani.SetBool("UseSkill",UseSkill);
         ResetSpeed();
         SkillParticle.Stop(true,ParticleSystemStopBehavior.StopEmittingAndClear);
-    }
-    public void Relive()
-    {
-        ResetAnything();
-        isLive = true;
-        isDie = false;
-        Playerani.SetBool("isDie",isDie);
-        CurrentHP = MaxHP;
-        MP = MaxMP;
-        CurCooldown = 0;
     }
 }

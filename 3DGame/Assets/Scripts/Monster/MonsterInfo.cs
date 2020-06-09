@@ -61,7 +61,6 @@ public class MonsterInfo : MonoBehaviour
     /// <param name="value"></param>
     public void GetDamage(float value)
     {
-        Debug.Log(CurrentHP);
         if (isInvincible || isDead)
             return;
         if(animator != null)

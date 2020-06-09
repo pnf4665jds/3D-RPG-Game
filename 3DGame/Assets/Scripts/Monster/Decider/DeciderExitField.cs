@@ -18,6 +18,7 @@ public class DeciderExitField : DeciderBase
 
     public override bool Decide()
     {
-        return Vector3.Distance(transform.position, fieldCenter) > fieldRadius;
+        fieldCenter.y = transform.position.y;
+        return Vector3.Distance(transform.position, fieldCenter) > fieldRadius * 0.95f;
     }
 }
