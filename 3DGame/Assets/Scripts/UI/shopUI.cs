@@ -15,6 +15,7 @@ public class shopUI : MonoBehaviour
     public Button Exit;
     public GameObject HealthPotion;
     public GameObject ManaPotion;
+    public GameObject RecoveryPotion;
     private GameObject player;
     private enum BuyItem{
         none ,
@@ -95,9 +96,9 @@ public class shopUI : MonoBehaviour
         else if (chooseItem == BuyItem.healthItem)
         {
             
-            if (canBuy(1000)) {
-                DropItemSystem.instance.AddPotionToPack(HealthPotion);
-                player.GetComponent<Player>().MoneyChange(-1000);
+            if (canBuy(0)) {
+                DropItemSystem.instance.AddPotionToPack(RecoveryPotion);
+                player.GetComponent<Player>().MoneyChange(0);
                 this.transform.GetChild(4).GetComponentInChildren<Text>().text = "謝謝惠顧";
                 isBuy = true;
             }

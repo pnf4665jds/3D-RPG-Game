@@ -8,12 +8,13 @@ public class deadUI : MonoBehaviour
     public Button use;
     public Button notUse;
     public Sprite RecoveryPotion;
+    private GameObject player;
     // Start is called before the first frame update
     void Start()
     {
         use.gameObject.SetActive(false);
         notUse.gameObject.SetActive(false);
-        //StartCoroutine(FindPotion());
+        player = GameObject.FindGameObjectWithTag("Player");
         use.onClick.AddListener(clickUse);
         notUse.onClick.AddListener(exit);
     }
@@ -67,7 +68,8 @@ public class deadUI : MonoBehaviour
     }
     public void clickUse()
     {
-
+        GameSystem.instance.changeModeFollowPlayer();
+        player.GetComponent<Player>().Relive();
     }
     public void exit() {
 
