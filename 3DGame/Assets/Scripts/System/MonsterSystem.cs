@@ -91,7 +91,7 @@ public class MonsterSystem : Singleton<MonsterSystem>
         {
             controller.ExitCurrentAction();
             controller.InitAllDecider();
-            controller.ChangeState("Idle", 0);
+            controller.ChangeState(controller.FirstStateName, 0);
         }
     }
 

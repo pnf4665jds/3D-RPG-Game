@@ -20,7 +20,6 @@ public abstract class DeciderBase : MonoBehaviour
         PauseTimeFinish = true;
         controller = gameObject.GetComponent<ActionController>();
         monsterInfo = gameObject.GetComponent<MonsterInfo>();
-        Debug.Log(controller + " " + monsterInfo);
     }
 
     /// <summary>
