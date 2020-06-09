@@ -238,7 +238,7 @@ MonoBehaviour:
   temp: {fileID: 0}
   CurCooldown: 0
   Money: 0
-  SkillParticle: {fileID: 0}
+  SkillParticle: {fileID: 8092256078127759597}
   SkillAnim: {fileID: 7400000, guid: d86b89518600f714596f24f9667be5c5, type: 2}
 --- !u!136 &5784548781798360159
 CapsuleCollider:
@@ -282,8 +282,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51bd83f4f45967a469cceadb04cfaf91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirstSceneRunning_1: {fileID: 8300000, guid: 0719f00e789cc324bb5f83da9c43babd, type: 3}
-  FirstSceneRunning_2: {fileID: 8300000, guid: baca8336d221f7e4ca01b08127a1c649, type: 3}
+  FirstSceneRunning_1: {fileID: 8300000, guid: baca8336d221f7e4ca01b08127a1c649, type: 3}
+  FirstSceneRunning_2: {fileID: 8300000, guid: 0719f00e789cc324bb5f83da9c43babd, type: 3}
   SecondSceneRunning_1: {fileID: 8300000, guid: f87832a0822c2504cac04abdce9bcfdf,
     type: 3}
   SecondSceneRunning_2: {fileID: 8300000, guid: 3ea2b1d3270b56a45b4d7fbf67311fc2,
@@ -553,7 +553,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 135822}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 145.3623, y: 23.928715, z: 5.3749027}

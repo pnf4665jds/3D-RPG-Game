@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
         Playerani = GetComponent<Animator>();
         MaxHP = 100;
         MaxMP = 100;
-        SetCooldown();
+        
     }
     // Start is called before the first frame update
     void Start()
@@ -59,6 +59,7 @@ public class Player : MonoBehaviour
         CurCooldown = 0;
         SkillParticle = GetComponentInChildren<ParticleSystem>();
         SkillParticle.Stop();
+        SetCooldown();
     }
 
     // Update is called once per frame
