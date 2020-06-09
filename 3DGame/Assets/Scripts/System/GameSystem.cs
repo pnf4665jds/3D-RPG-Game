@@ -33,7 +33,7 @@ public class GameSystem : Singleton<GameSystem>
         gs = GameState.talking;
         changeTheWorldTime(1);
         UISystem.instance.changeToTalkingMode(character);
-
+        MonsterSystem.instance.IdleAllMonsterOnAnimation();
 
     }
     public void changeModeStory()
@@ -54,11 +54,13 @@ public class GameSystem : Singleton<GameSystem>
     public void changeModeShopping()
     {
         gs = GameState.shopping;
+        MonsterSystem.instance.IdleAllMonsterOnAnimation();
     }
     public void changeModeDead()
     {
         gs = GameState.dead;
         StartCoroutine(UISystem.instance.getDeadPanel().GetComponent<deadUI>().FindPotion());
+        MonsterSystem.instance.IdleAllMonsterOnAnimation();
     }
     public void changeModeBackPack()
     {

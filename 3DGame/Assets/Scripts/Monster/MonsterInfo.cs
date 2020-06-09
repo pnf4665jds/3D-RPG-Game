@@ -176,7 +176,10 @@ public class MonsterInfo : MonoBehaviour
     {
         return GameSystem.instance.isAnimation()
                 || GameSystem.instance.isPlayerStory()
-                || GameSystem.instance.isPlayerOpenBackPack();
+                || GameSystem.instance.isPlayerOpenBackPack()
+                || GameSystem.instance.isPlayerShopping()
+                || GameSystem.instance.isPlayerTalking()
+                || GameSystem.instance.isPlayerDead();
     }
 
     private void OnCollisionEnter(Collision collision)
