@@ -40,30 +40,29 @@ public class deadUI : MonoBehaviour
         yield return new WaitForSecondsRealtime(1);
         if (!Inventory.instance.GetComponent<Inventory>().detectEmptyPotion(RecoveryPotion))
         {
-            StartCoroutine(havePotion());
+            havePotion();
         }
         else
         {
-            StartCoroutine(zeroPotion());
+            zeroPotion();
         }
         
 
 
     }
-    public IEnumerator havePotion() {
+    public void havePotion() {
 
         this.transform.GetChild(1).GetComponent<Text>().text = "搜尋復活藥水中 . . .\n搜索成功，請選擇是否使用。";
         use.gameObject.SetActive(true);
         notUse.gameObject.SetActive(true);
-        yield return null;
+
 
     }
-    public IEnumerator zeroPotion()
+    public void zeroPotion()
     {
 
         this.transform.GetChild(1).GetComponent<Text>().text = "搜尋復活藥水中 . . .\n搜索失敗，將於一秒後離開。";
 
-        yield return null;
 
     }
     public void clickUse()

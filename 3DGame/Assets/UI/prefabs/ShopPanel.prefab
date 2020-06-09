@@ -527,6 +527,8 @@ MonoBehaviour:
   HealthPotion: {fileID: 1000012970591572, guid: 7cafb89b5a0f61f479d0a748962abbbc,
     type: 3}
   ManaPotion: {fileID: 1000013317980782, guid: 2cf6690298568294cb6b655c0a3aeb87, type: 3}
+  RecoveryPotion: {fileID: 1000013846074356, guid: 11e31a2ebb4e6e246bcf8c0ba034a031,
+    type: 3}
 --- !u!1 &3819206960273402742
 GameObject:
   m_ObjectHideFlags: 0
