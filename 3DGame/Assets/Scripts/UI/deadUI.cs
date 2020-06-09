@@ -22,7 +22,8 @@ public class deadUI : MonoBehaviour
     public IEnumerator FindPotion() {
 
         this.transform.GetChild(1).GetComponent<Text>().text = "";
-
+        use.gameObject.SetActive(false);
+        notUse.gameObject.SetActive(false);
         //yield return new WaitUntil(() => GameSystem.instance.isPlayerDead());
         this.transform.GetChild(1).GetComponent<Text>().text = "檢測到玩家生命值過低" ;
         yield return new WaitForSecondsRealtime(1);
