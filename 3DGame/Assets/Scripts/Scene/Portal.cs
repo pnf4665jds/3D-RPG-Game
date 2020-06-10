@@ -34,6 +34,7 @@ public class Portal : MonoBehaviour
     {
         if (other.gameObject.tag == "Player" && ConditionMeet())
         {
+            GameSceneManager.instance.PassSceneNum++;   // 通關場景數+1
             GameSceneManager.instance.LoadScene(SceneName, new List<Action>()
             {
                 // 切換場景時將主角移到指定座標
