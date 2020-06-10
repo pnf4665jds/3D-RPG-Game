@@ -8,6 +8,7 @@ public class ActionController : MonoBehaviour
 
     public string CurrentStateName;     // 當前狀態
     public string FirstStateName;       // 第一個狀態名稱
+    public string StateNameAfterPlayerDead;     // 玩家死亡後的狀態名稱
 
     [Header("State List")]
     public List<State> StateList;       // 狀態列表

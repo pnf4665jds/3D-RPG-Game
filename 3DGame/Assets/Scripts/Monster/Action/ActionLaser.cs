@@ -40,7 +40,12 @@ public class ActionLaser : ActionBase
 
     public override void Exit()
     {
-        
+        if (laserObject)
+            Destroy(laserObject);
+        if (laserRealObject)
+            Destroy(laserRealObject);
+        if (explosionObject)
+            Destroy(explosionObject);
     }
 
     private void ShootPlayer()
@@ -74,8 +79,11 @@ public class ActionLaser : ActionBase
     {
         yield return new WaitForSeconds(LaserKeepTime);
         isFinished = true;
-        Destroy(laserObject);
-        Destroy(laserRealObject);
-        Destroy(explosionObject);
+        if(laserObject)
+            Destroy(laserObject);
+        if(laserRealObject)
+            Destroy(laserRealObject);
+        if(explosionObject)
+            Destroy(explosionObject);
     }
 }
