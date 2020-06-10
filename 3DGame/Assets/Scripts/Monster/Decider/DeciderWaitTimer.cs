@@ -11,6 +11,7 @@ public class DeciderWaitTimer : DeciderBase
     public float MinTime;       // 隨機最小等待時間
     public float MaxTime;       // 隨機最大等待時間
     public bool KeepTimeUntilTaken = true;   // 保持之前已經等待的時間，直到這個Decider被Taken
+    public bool KeepTimeUntilStateChange = false;   // 保持之前已經等待的時間，直到這個狀態被切換
 
     private float currentTime = 0;
 
@@ -41,5 +42,12 @@ public class DeciderWaitTimer : DeciderBase
             currentTime = 0;
         if (RandomTime)
             WaitTime = Random.Range(MinTime, MaxTime);
+    }
+
+    public override void OnStateChange()
+    {
+        base.OnStateChange();
+        if (KeepTimeUntilStateChange)
+            currentTime = 0;
     }
 }

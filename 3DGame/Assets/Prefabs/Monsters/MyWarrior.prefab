@@ -574,6 +574,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentStateName: 
   FirstStateName: Idle
+  StateNameAfterPlayerDead: Recover Shield
   StateList:
   - StateName: Idle
     Action: {fileID: 0}
@@ -786,6 +787,7 @@ MonoBehaviour:
   MinTime: 0
   MaxTime: 0
   KeepTimeUntilTaken: 1
+  KeepTimeUntilStateChange: 0
 --- !u!114 &4683699850819955661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -805,6 +807,7 @@ MonoBehaviour:
   MinTime: 0
   MaxTime: 0
   KeepTimeUntilTaken: 1
+  KeepTimeUntilStateChange: 0
 --- !u!114 &242781674712369224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -874,7 +877,8 @@ MonoBehaviour:
   RandomTime: 0
   MinTime: 0
   MaxTime: 0
-  KeepTimeUntilTaken: 1
+  KeepTimeUntilTaken: 0
+  KeepTimeUntilStateChange: 1
 --- !u!114 &5273048472649556343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -894,6 +898,7 @@ MonoBehaviour:
   MinTime: 0
   MaxTime: 0
   KeepTimeUntilTaken: 1
+  KeepTimeUntilStateChange: 0
 --- !u!114 &4007145128083157260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -932,6 +937,7 @@ MonoBehaviour:
   MinTime: 0
   MaxTime: 0
   KeepTimeUntilTaken: 1
+  KeepTimeUntilStateChange: 0
 --- !u!114 &5918445886750251367
 MonoBehaviour:
   m_ObjectHideFlags: 0

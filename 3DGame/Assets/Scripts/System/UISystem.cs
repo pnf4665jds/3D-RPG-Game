@@ -41,6 +41,7 @@ public class UISystem : Singleton<UISystem>
         else if (GameSystem.instance.isPlayerDead()) {
             AllSet(false, false, false, true, false);
         }
+
     }
 
     // Update is called once per frame

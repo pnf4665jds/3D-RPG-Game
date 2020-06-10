@@ -9,19 +9,24 @@ public class feedBackUI : MonoBehaviour
     public Button Exit;
     [SerializeField]
     private Text[] feedBacks ;
-    public TextAsset EndStoryRes;
+    private TextAsset EndStoryRes;
     [SerializeField]
     private string[] subString;
 
     private void Start()
     {
+
+        EndStoryRes = Resources.Load<TextAsset>("Story/EndStory");
+        EndStoryRes = Resources.Load<TextAsset>("Story/Escape");
         feedBacks = this.transform.GetChild(0).GetComponentsInChildren<Text>();
         if (EndStoryRes != null)
         {
             subString = EndStoryRes.text.Split('\n');
         }
         closeTexts();
+
         StartCoroutine(showTheEndStory());
+
 
     }
     private IEnumerator showTheEndStory() {
@@ -50,8 +55,7 @@ public class feedBackUI : MonoBehaviour
         for (int i = 3; i < feedBacks.Length; i++)
         {
             feedBacks[i].gameObject.SetActive(true);
-            StartCoroutine(counting(feedBacks[i], 50));
-            yield return new WaitForSeconds(5);
+            yield return counting(feedBacks[i], 50);
 
         }
     }
