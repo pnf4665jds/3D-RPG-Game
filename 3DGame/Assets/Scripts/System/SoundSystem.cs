@@ -55,7 +55,7 @@ public class SoundSystem : Singleton<SoundSystem>
         {
             if(bgms.SceneName == GameSceneManager.instance.CurrentSceneName && (clip = bgms.GetClip(type)))
             {
-                FadeBGM(clip);
+                StartCoroutine(FadeBGM(clip));
             }
         }
     }
@@ -70,7 +70,8 @@ public class SoundSystem : Singleton<SoundSystem>
 
     private IEnumerator FadeBGM(AudioClip clip)
     {
-        yield return SoundFadeOut(BGMSource);
+        if(BGMSource.isPlaying)
+            yield return SoundFadeOut(BGMSource);
         BGMSource.clip = clip;
         yield return SoundFadeIn(BGMSource);
     }
