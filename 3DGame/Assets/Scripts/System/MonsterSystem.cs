@@ -83,15 +83,19 @@ public class MonsterSystem : Singleton<MonsterSystem>
     /// Enable或Disable怪物的ActionController
     /// </summary>
     /// <param name="isActive"></param>
-    public void SetMonsterActionController(int id, bool isEnable)
+    public void SetMonsterActionController(int id, bool isStop)
     {
         ActionController controller = MonsterList[id].GetComponent<ActionController>();
-        controller.enabled = isEnable;
-        if (isEnable == true)
+        if (isStop == true)
         {
-            controller.ExitCurrentAction();
+            controller.Stop = false;
             controller.InitAllDecider();
             controller.ChangeState(controller.FirstStateName, 0);
+        }
+        else
+        {
+            controller.Stop = true;
+            controller.ExitCurrentAction();
         }
     }
 

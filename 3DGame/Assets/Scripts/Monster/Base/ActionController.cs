@@ -12,6 +12,8 @@ public class ActionController : MonoBehaviour
     [Header("State List")]
     public List<State> StateList;       // 狀態列表
 
+    public bool Stop { get; set; } = false; // 是否暫停ActionController
+
     private State currentState;
 
     private void Start()
@@ -23,7 +25,7 @@ public class ActionController : MonoBehaviour
 
     private void Update()
     {
-        if (currentState != null)
+        if (currentState != null && !Stop)
         {
             currentState.Action?.Process();     // Update目前狀態的Action的Process函式
             currentState.EvalTransition();      // Update判斷是否需要切換狀態
