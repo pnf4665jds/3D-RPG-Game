@@ -13,6 +13,7 @@ public class GameSceneManager : Singleton<GameSceneManager>
     public string NextSceneName { get; private set; }
     public List<Action> ActionOnCompleted { get; private set; }
     public bool IsLoadingFinish { get; private set; }    // 回傳場景是否載入完畢
+    public int PassSceneNum { get; private set; } = 0;   // 通過的場景數量
 
     private GameObject player;
     private GameObject mainCamera;
@@ -63,6 +64,7 @@ public class GameSceneManager : Singleton<GameSceneManager>
             player?.SetActive(true);
             mainCamera?.SetActive(true);
             SoundSystem.instance.PlayBGM(BGMFadeInTime);   // 淡入對應場景的BGM
+            PassSceneNum++;
         }
         IsLoadingFinish = true;
     }

@@ -90,7 +90,7 @@ public class MonsterSystem : Singleton<MonsterSystem>
         {
             controller.Stop = false;
             controller.InitAllDecider();
-            controller.ChangeState(controller.FirstStateName, 0);
+            controller.ChangeState(controller.CurrentStateName, 0);
         }
         else
         {

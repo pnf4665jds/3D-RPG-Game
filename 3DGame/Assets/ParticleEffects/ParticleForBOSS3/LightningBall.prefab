@@ -28268,7 +28268,7 @@ MonoBehaviour:
   MaxSpeed: 8
   DestroyMask:
     serializedVersion: 2
-    m_Bits: 513
+    m_Bits: 33280
   Effect: {fileID: 1329845292236604, guid: 9bba9cf244c53c5439505dfc96fdd11c, type: 3}
 --- !u!135 &4445248950759203572
 SphereCollider:
