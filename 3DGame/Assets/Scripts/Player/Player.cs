@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
         isDie = false;
         UseSkill = false;
         Speed = 0;
-        ATK = 1000;
+        ATK = 75;
         isChangeState = false;
         SkillAvail = true;
         FrameCount = 0;
