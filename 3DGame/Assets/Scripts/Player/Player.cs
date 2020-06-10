@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
     private GameObject PositionUI;
     [SerializeField]private ParticleSystem SkillParticle;
     public AnimationClip SkillAnim;
+    public TextAsset PlayerDetail;
 
     private void Awake()
     {
