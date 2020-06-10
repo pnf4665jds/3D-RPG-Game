@@ -26,19 +26,15 @@ public class deadUI : MonoBehaviour
         notUse.gameObject.SetActive(false);
         //yield return new WaitUntil(() => GameSystem.instance.isPlayerDead());
         this.transform.GetChild(1).GetComponent<Text>().text = "檢測到玩家生命值過低" ;
-        yield return new WaitForSecondsRealtime(1);
+        yield return new WaitForSeconds(1);
         this.transform.GetChild(1).GetComponent<Text>().text = "檢測到玩家生命值過低\n搜尋復活藥水中 . . .";
-        yield return new WaitForSecondsRealtime(1);
+        yield return new WaitForSeconds(1);
         this.transform.GetChild(1).GetComponent<Text>().text = "檢測到玩家生命值過低\n搜尋復活藥水中 . . .\n. . .";
-        yield return new WaitForSecondsRealtime(1);
+        yield return new WaitForSeconds(1);
         this.transform.GetChild(1).GetComponent<Text>().text = "檢測到玩家生命值過低\n搜尋復活藥水中 . . .\n. .";
-        yield return new WaitForSecondsRealtime(1);
+        yield return new WaitForSeconds(1);
         this.transform.GetChild(1).GetComponent<Text>().text = "檢測到玩家生命值過低\n搜尋復活藥水中 . . .\n. ";
-        yield return new WaitForSecondsRealtime(1);
-        this.transform.GetChild(1).GetComponent<Text>().text = "檢測到玩家生命值過低\n搜尋復活藥水中 . . .\n. .";
-        yield return new WaitForSecondsRealtime(1);
-        this.transform.GetChild(1).GetComponent<Text>().text = "檢測到玩家生命值過低\n搜尋復活藥水中 . . .\n. . .";
-        yield return new WaitForSecondsRealtime(1);
+        yield return new WaitForSeconds(1);
         if (!Inventory.instance.GetComponent<Inventory>().detectEmptyPotion(RecoveryPotion))
         {
             havePotion();
