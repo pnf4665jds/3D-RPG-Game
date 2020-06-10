@@ -129,6 +129,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7199100121038783519}
     m_Modifications:
+    - target: {fileID: 2882985514777247425, guid: 1b36a30007fda084e81d34b81f22fb57,
+        type: 3}
+      propertyPath: m_Name
+      value: DeadPanel
+      objectReference: {fileID: 0}
     - target: {fileID: 2882985514777247426, guid: 1b36a30007fda084e81d34b81f22fb57,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -234,11 +239,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 2882985514777247425, guid: 1b36a30007fda084e81d34b81f22fb57,
-        type: 3}
-      propertyPath: m_Name
-      value: DeadPanel
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b36a30007fda084e81d34b81f22fb57, type: 3}
 --- !u!1 &1770933325502544410 stripped
@@ -260,6 +260,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7199100121038783519}
     m_Modifications:
+    - target: {fileID: 2512224707655235730, guid: b1f6eead09817d04f9014bfdb9cbd485,
+        type: 3}
+      propertyPath: m_Name
+      value: PlayerDetailPanel
+      objectReference: {fileID: 0}
     - target: {fileID: 2512224707655235731, guid: b1f6eead09817d04f9014bfdb9cbd485,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -380,11 +385,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 2512224707655235730, guid: b1f6eead09817d04f9014bfdb9cbd485,
-        type: 3}
-      propertyPath: m_Name
-      value: PlayerDetailPanel
-      objectReference: {fileID: 0}
     - target: {fileID: 2512224707655235732, guid: b1f6eead09817d04f9014bfdb9cbd485,
         type: 3}
       propertyPath: m_Color.a
@@ -501,6 +501,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7199100121038783519}
     m_Modifications:
+    - target: {fileID: 3819206959942102576, guid: 458fb933c07635845b0486bbe95c1f1d,
+        type: 3}
+      propertyPath: m_Name
+      value: ShopPanel
+      objectReference: {fileID: 0}
     - target: {fileID: 3819206959942102577, guid: 458fb933c07635845b0486bbe95c1f1d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -606,11 +611,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 3819206959942102576, guid: 458fb933c07635845b0486bbe95c1f1d,
-        type: 3}
-      propertyPath: m_Name
-      value: ShopPanel
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 458fb933c07635845b0486bbe95c1f1d, type: 3}
 --- !u!1 &6262496162726068378 stripped
@@ -632,6 +632,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7199100121038783519}
     m_Modifications:
+    - target: {fileID: 1871793064438831902, guid: 8187c1da7fe9778498d319b53032f98e,
+        type: 3}
+      propertyPath: m_Name
+      value: DialogPanel
+      objectReference: {fileID: 0}
     - target: {fileID: 3074960005531095358, guid: 8187c1da7fe9778498d319b53032f98e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -736,11 +741,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1871793064438831902, guid: 8187c1da7fe9778498d319b53032f98e,
-        type: 3}
-      propertyPath: m_Name
-      value: DialogPanel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8187c1da7fe9778498d319b53032f98e, type: 3}
