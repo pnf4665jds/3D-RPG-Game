@@ -13,6 +13,7 @@ public class startUIManager : MonoBehaviour
     public GameObject DogKnight;
     public GameObject Avelyn;
     public GameObject FootMan;
+    public Text skillDescription;
     [SerializeField]
     private GameObject character;
     [SerializeField]
@@ -38,6 +39,8 @@ public class startUIManager : MonoBehaviour
             if (i == index)
             {
                 character.transform.GetChild(i).gameObject.SetActive(true);
+                showSkill(index);
+                
             }
             else {
                 character.transform.GetChild(i).gameObject.SetActive(false);
@@ -96,6 +99,21 @@ public class startUIManager : MonoBehaviour
         }
         
         DontDestroyOnLoad(createdCharacter);
+    }
+    private void showSkill(int index) {
+
+        switch (index)
+        {
+            case 0:
+                skillDescription.text = Avelyn.GetComponent<Player>().PlayerDetail.text;
+                break;
+            case 1:
+                skillDescription.text = DogKnight.GetComponent<Player>().PlayerDetail.text;
+                break;
+            case 2:
+                skillDescription.text = FootMan.GetComponent<Player>().PlayerDetail.text;
+                break;
+        }
     }
   
 }

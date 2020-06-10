@@ -6189,6 +6189,7 @@ MonoBehaviour:
   Money: 0
   SkillParticle: {fileID: 3129901504795766028}
   SkillAnim: {fileID: 0}
+  PlayerDetail: {fileID: 4900000, guid: d718c0a3d96e632439180d3294250564, type: 3}
 --- !u!136 &6856482291752146625
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -8881,8 +8881,6 @@ PlayableDirector:
     value: {fileID: 1990147648}
   - key: {fileID: 2824860496764103501, guid: 637f15b148add474685f53e6f07d8dc1, type: 2}
     value: {fileID: 1891798715}
-  - key: {fileID: 7257841908063052906, guid: 637f15b148add474685f53e6f07d8dc1, type: 2}
-    value: {fileID: 0}
   - key: {fileID: 1570196814965189493, guid: 637f15b148add474685f53e6f07d8dc1, type: 2}
     value: {fileID: 1891798719}
   - key: {fileID: -5699742550209438733, guid: 637f15b148add474685f53e6f07d8dc1, type: 2}
