@@ -82,15 +82,18 @@ public class Player : MonoBehaviour
         CheckCooldown();
     }
     public void GetHurt(float damage) {
-        CurrentHP -= damage;
-        if (CurrentHP <= 0)
-        {
-            ResetAnimation();
-            isLive = false;
-            isDie = true;
-            Playerani.SetBool("isDie", isDie);
-            GameSystem.instance.changeModeDead();
+        if (GameSystem.instance.isPlayerNormal()) {
+            CurrentHP -= damage;
+            if (CurrentHP <= 0)
+            {
+                ResetAnimation();
+                isLive = false;
+                isDie = true;
+                Playerani.SetBool("isDie", isDie);
+                GameSystem.instance.changeModeDead();
+            }
         }
+        
     }
     public void Healing(float healing)
     {
