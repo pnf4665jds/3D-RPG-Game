@@ -144,7 +144,6 @@ public class Player : MonoBehaviour
             if (other.gameObject.GetComponent<MonsterField>().IsBossField)
             {
                 isInBoss = true;
-                SoundSystem.instance.PlayBossBGM(3f);
             }
         }
         else if (other.tag == "Monster" || other.tag == "Boss")
@@ -189,7 +188,6 @@ public class Player : MonoBehaviour
             if (other.gameObject.GetComponent<MonsterField>().IsBossField)
             {
                 isInBoss = false;
-                SoundSystem.instance.PlayBGM(3);
             }
         }
     }

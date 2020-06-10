@@ -5,7 +5,9 @@ using UnityEngine;
 public class SoundSystem : Singleton<SoundSystem>
 {
     public AudioSource BGMSource;
-    public List<BGM> BGMList;     // 每一關使用的BGM列表
+    public List<BGMs> LevelBGMList;     // 每一關使用的BGM列表
+    public float FadeInTime;
+    public float FadeOutTime;
 
     /// <summary>
     /// 播放音效
@@ -43,33 +45,17 @@ public class SoundSystem : Singleton<SoundSystem>
     ///////////////////////////////////////////////////////////////////////////////////
 
     /// <summary>
-    /// 播放BGM
+    /// 呼叫並播放BGM
     /// </summary>
-    /// <param name="sceneName"></param>
-    public void PlayBGM(float fadeInTime)
+    /// <param name="type"></param>
+    public void PlayBGM(BGMType type)
     {
-        foreach(BGM bgm in BGMList)
+        AudioClip clip;
+        foreach(BGMs bgms in LevelBGMList)
         {
-            if (bgm.SceneName == GameSceneManager.instance.CurrentSceneName && bgm.NormalBGM)
+            if(bgms.SceneName == GameSceneManager.instance.CurrentSceneName && (clip = bgms.GetClip(type)))
             {
-                BGMSource.clip = bgm.NormalBGM;
-                StartCoroutine(SoundFadeIn(BGMSource, fadeInTime));
-            }
-        }
-    }
-
-    /// <summary>
-    /// 播放BOSS BGM
-    /// </summary>
-    public void PlayBossBGM(float fadeInTime)
-    {
-        StopBGM(0);
-        foreach (BGM bgm in BGMList)
-        {
-            if (bgm.SceneName == GameSceneManager.instance.CurrentSceneName && bgm.BossBGM)
-            {
-                BGMSource.clip = bgm.BossBGM;
-                StartCoroutine(SoundFadeIn(BGMSource, fadeInTime));
+                FadeBGM(clip);
             }
         }
     }
@@ -77,9 +63,16 @@ public class SoundSystem : Singleton<SoundSystem>
     /// <summary>
     /// 停止播放BGM
     /// </summary>
-    public void StopBGM(float fadeOutTime)
+    public void StopBGM()
     {
-        StartCoroutine(SoundFadeOut(BGMSource, fadeOutTime));
+        BGMSource.Stop();
+    }
+
+    private IEnumerator FadeBGM(AudioClip clip)
+    {
+        yield return SoundFadeOut(BGMSource);
+        BGMSource.clip = clip;
+        yield return SoundFadeIn(BGMSource);
     }
 
     /// <summary>
@@ -88,14 +81,14 @@ public class SoundSystem : Singleton<SoundSystem>
     /// <param name="source"></param>
     /// <param name="fadeInTime"></param>
     /// <returns></returns>
-    private IEnumerator SoundFadeIn(AudioSource source, float fadeInTime)
+    private IEnumerator SoundFadeIn(AudioSource source)
     {
         float timer = 0;
         source.Play();
         source.volume = 0;
-        while (timer < fadeInTime && source.volume < 1)
+        while (timer < FadeInTime && source.volume < 1)
         {
-            source.volume += 1f / fadeInTime * Time.deltaTime;
+            source.volume += 1f / FadeInTime * Time.deltaTime;
             yield return null;
         }
     }
@@ -106,12 +99,12 @@ public class SoundSystem : Singleton<SoundSystem>
     /// <param name="source"></param>
     /// <param name="fadeOutTime"></param>
     /// <returns></returns>
-    private IEnumerator SoundFadeOut(AudioSource source, float fadeOutTime)
+    private IEnumerator SoundFadeOut(AudioSource source)
     {
         float timer = 0;
-        while (timer < fadeOutTime && source.volume > 0)
+        while (timer < FadeOutTime && source.volume > 0)
         {
-            source.volume -= 1f / fadeOutTime * Time.deltaTime;
+            source.volume -= 1f / FadeOutTime * Time.deltaTime;
             yield return null;
         }
         source.Stop();
@@ -119,9 +112,34 @@ public class SoundSystem : Singleton<SoundSystem>
 }
 
 [System.Serializable]
-public class BGM
+public class BGMs
 {
     public string SceneName;    // 播放場景名
-    public AudioClip NormalBGM;      // 場景BGM
-    public AudioClip BossBGM;       // Boss BGM
+    public List<BGM> BGMList;   // 所有BGM列表
+
+    public AudioClip GetClip(BGMType type)
+    {
+        foreach (BGM bgm in BGMList)
+        {
+            if (bgm.Type == type && bgm.BGMClip != null)
+            {
+                return bgm.BGMClip;
+            }
+        }
+
+        return null;
+    }
+}
+
+[System.Serializable]
+public class BGM
+{
+    public BGMType Type;    // BGM類型
+    public AudioClip BGMClip;   // BGM clip
+}
+
+public enum BGMType
+{
+    Normal,
+    Boss
 }

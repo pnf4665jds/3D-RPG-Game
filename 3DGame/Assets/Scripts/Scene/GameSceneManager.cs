@@ -52,7 +52,7 @@ public class GameSceneManager : Singleton<GameSceneManager>
         {
             player = FindObjectOfType<Player>()?.gameObject;
             mainCamera = FindObjectOfType<Camera>().gameObject;
-            SoundSystem.instance.PlayBGM(BGMFadeInTime);   // 淡入對應場景的BGM
+            SoundSystem.instance.PlayBGM(BGMType.Normal);   // 淡入對應場景的BGM
         }
         else if(scene.name == "LoadingScene")     // LoadingScene
         {
@@ -63,7 +63,7 @@ public class GameSceneManager : Singleton<GameSceneManager>
         {
             player?.SetActive(true);
             mainCamera?.SetActive(true);
-            SoundSystem.instance.PlayBGM(BGMFadeInTime);   // 淡入對應場景的BGM
+            SoundSystem.instance.PlayBGM(BGMType.Normal);   // 淡入對應場景的BGM
             PassSceneNum++;
         }
         IsLoadingFinish = true;
@@ -75,6 +75,6 @@ public class GameSceneManager : Singleton<GameSceneManager>
     private void DoBeforeLoadScene()
     {
         MonsterSystem.instance.RemoveAllMonster();
-        SoundSystem.instance.StopBGM(BGMFadeOutTime);   // 淡出對應場景的BGM
+        SoundSystem.instance.StopBGM();   // 停止對應場景的BGM
     }
 }
