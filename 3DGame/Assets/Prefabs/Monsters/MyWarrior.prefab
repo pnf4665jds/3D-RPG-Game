@@ -540,7 +540,7 @@ MonoBehaviour:
   RotateSpeed: 10
   DeadWaitTime: 5
   CoinSum: 3000
-  IdleWhenAnimation: 0
+  IdleWhenAnimation: 1
   AttackBuffRate: 1
   mainCollider: {fileID: 5285189736933278439}
   Offset: 0.2
@@ -589,7 +589,7 @@ MonoBehaviour:
     - Order: 1
       TransitionDelay: 0
       Decider: {fileID: 8774236812468797484}
-      TrueState: Idle
+      TrueState: Move
       FalseState: 
     - Order: 0
       TransitionDelay: 0
@@ -747,7 +747,7 @@ MonoBehaviour:
     type: 3}
   ShootPosition: {fileID: 6504435582339645441}
   LaserKeepTime: 4
-  Damage: 0.4
+  Damage: 1
 --- !u!114 &2552985166073154840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -764,8 +764,8 @@ MonoBehaviour:
   DetectPauseTime: 0
   ShowInScene: 1
   IsRangeStable: 1
-  DetectCenter: {x: 0, y: 6.63, z: -21.3}
-  DetectSize: {x: 46.19, y: 10.3, z: 45.09}
+  DetectCenter: {x: 0.1, y: 6.61, z: -18.74}
+  DetectSize: {x: 10, y: 10, z: 5}
   StableRotateY: 0
 --- !u!114 &8774236812468797484
 MonoBehaviour:
@@ -3515,7 +3515,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6504435582339645441}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.25, y: 1.45, z: 1.5}
+  m_LocalPosition: {x: 0.25, y: 1, z: 1.5}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 5445655434447986221}

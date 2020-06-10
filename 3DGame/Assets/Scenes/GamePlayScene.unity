@@ -4857,7 +4857,7 @@ MonoBehaviour:
   SceneName: newMaze
   DestPosition: {x: 22.9, y: 462.7, z: -661.4}
   DestRotationY: 0
-  Condition: 0
+  Condition: 1
   PortalEffect: {fileID: 100010, guid: a087aa2c7016d2042a3b744b2afc4fb0, type: 3}
 --- !u!65 &988345880
 BoxCollider:

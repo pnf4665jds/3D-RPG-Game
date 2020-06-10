@@ -6,6 +6,7 @@ public abstract class BulletBase : MonoBehaviour
 {
     public float Damage;
     public float MaxSpeed;
+    public LayerMask DestroyMask;
 
     protected GameObject shooter;  // 發射者
     protected GameObject player;
@@ -38,7 +39,7 @@ public abstract class BulletBase : MonoBehaviour
 
             Destroy(gameObject);
         }
-        else if(other.gameObject.layer == LayerMask.NameToLayer("Terrain"))
+        else if(other.gameObject.layer == DestroyMask)
         {
             Destroy(gameObject);
         }

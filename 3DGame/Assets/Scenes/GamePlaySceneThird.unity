@@ -13332,7 +13332,7 @@ MonoBehaviour:
   - {fileID: 666485690}
   TriggerTag: Player
   TriggerSize: {x: 10, y: 10, z: 5}
-  triggerCenterPos: {x: -2.2, y: 7.566326, z: 10.89}
+  triggerCenterPos: {x: -2.2, y: 7.5, z: 2}
 --- !u!114 &705974603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19349,11 +19349,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4253130704306064, guid: b413dae45c2f5d348b385a3796210966, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -50.50028
+      value: -51.2
       objectReference: {fileID: 0}
     - target: {fileID: 4253130704306064, guid: b413dae45c2f5d348b385a3796210966, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.962679
+      value: -14.5
       objectReference: {fileID: 0}
     - target: {fileID: 4253130704306064, guid: b413dae45c2f5d348b385a3796210966, type: 3}
       propertyPath: m_LocalRotation.x
@@ -19373,7 +19373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4253130704306064, guid: b413dae45c2f5d348b385a3796210966, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4253130704306064, guid: b413dae45c2f5d348b385a3796210966, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -39106,11 +39106,6 @@ PrefabInstance:
       propertyPath: Points.Array.data[2]
       value: 
       objectReference: {fileID: 1767180750}
-    - target: {fileID: 2645573179626935691, guid: c5c6d5b03f13bb444903118879abbb2f,
-        type: 3}
-      propertyPath: Damage
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4252274960606231272, guid: c5c6d5b03f13bb444903118879abbb2f,
         type: 3}
       propertyPath: Points.Array.data[0]
@@ -39126,10 +39121,5 @@ PrefabInstance:
       propertyPath: Points.Array.data[2]
       value: 
       objectReference: {fileID: 1287948389}
-    - target: {fileID: 1117771993495014955, guid: c5c6d5b03f13bb444903118879abbb2f,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5c6d5b03f13bb444903118879abbb2f, type: 3}
