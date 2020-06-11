@@ -36,6 +36,7 @@ public class GameSceneManager : Singleton<GameSceneManager>
 
         NextSceneName = nextSceneName;
         ActionOnCompleted = actions;
+        ActionOnCompleted.AddRange(new List<Action> { SetObjectOnComplete });
         IsLoadingFinish = false;
         SceneManager.LoadScene("LoadingScene");
     }
@@ -48,24 +49,27 @@ public class GameSceneManager : Singleton<GameSceneManager>
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         CurrentSceneName = scene.name;
-        if (scene.name == "GamePlayScene")        // 一開始的場景先讀取player跟main camera，目前是用GamePlayScene之後可以用MainUI
-        {
-            player = FindObjectOfType<Player>()?.gameObject;
-            mainCamera = FindObjectOfType<Camera>().gameObject;
-            SoundSystem.instance.PlayBGM(BGMType.Normal);   // 淡入對應場景的BGM
-        }
-        else if(scene.name == "LoadingScene")     // LoadingScene
+        if(scene.name == "LoadingScene" || scene.name == "FinalScene")     // LoadingScene
         {
             player?.SetActive(false);
             mainCamera?.SetActive(false);
         }
-        else if (scene.name != "StartGameUI" && scene.name != "FinalScene")
+        else if (scene.name != "StartGameUI")
         {
             player?.SetActive(true);
             mainCamera?.SetActive(true);
             SoundSystem.instance.PlayBGM(BGMType.Normal);   // 淡入對應場景的BGM
         }
         IsLoadingFinish = true;
+    }
+
+    /// <summary>
+    /// 設置player與mainCamera
+    /// </summary>
+    private void SetObjectOnComplete()
+    {
+        player = FindObjectOfType<Player>()?.gameObject;
+        mainCamera = FindObjectOfType<Camera>().gameObject;
     }
 
     /// <summary>
