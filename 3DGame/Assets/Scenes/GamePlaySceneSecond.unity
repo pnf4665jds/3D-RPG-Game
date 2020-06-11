@@ -18667,21 +18667,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7374478173378743896, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -70.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7374478173378743896, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 106.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7374478173378646648, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3879072796684512264, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -18771,6 +18756,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7374478173378743896, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -70.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7374478173378743896, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 106.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7374478173378646648, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0d682c00f6e5614e95fe64a8c2e6df7, type: 3}
@@ -31677,6 +31677,7 @@ MonoBehaviour:
   delayTime: 0
   ownCamera: {fileID: 0}
   mainCamera: {fileID: 0}
+  isBoss: 0
   storyContents:
   - {fileID: 4900000, guid: f58be2986f04f644a8378ed152423ce1, type: 3}
   Directors: []
@@ -31695,6 +31696,7 @@ MonoBehaviour:
   delayTime: 0
   ownCamera: {fileID: 1961748431}
   mainCamera: {fileID: 0}
+  isBoss: 1
   storyContents:
   - {fileID: 4900000, guid: 40f2ce6689a006a4b8c5a4bad61f2459, type: 3}
   Directors:
@@ -31702,6 +31704,7 @@ MonoBehaviour:
   TriggerTag: Player
   TriggerSize: {x: 2.9, y: 12.66, z: 14.21}
   triggerCenterPos: {x: -621.01, y: 3, z: 41.24}
+  triggerCenterRot: {x: 0, y: 0, z: 0}
 --- !u!114 &1401484145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31716,7 +31719,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingFinishStory:
   - {fileID: 1401484143}
-  enterBossFieldStory: []
   bossDeadStory:
   - {fileID: 1401484147}
 --- !u!4 &1401484146
@@ -31754,6 +31756,7 @@ MonoBehaviour:
   delayTime: 0
   ownCamera: {fileID: 1961748431}
   mainCamera: {fileID: 0}
+  isBoss: 0
   storyContents:
   - {fileID: 4900000, guid: a1c095dda4c4a124c83bef94035fc4ed, type: 3}
   Directors:

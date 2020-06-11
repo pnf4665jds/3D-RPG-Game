@@ -9,6 +9,7 @@ public class storyTypeBase : MonoBehaviour
     public float delayTime;
     public GameObject ownCamera;
     public GameObject mainCamera;
+    public bool isBoss = false;
     public List<TextAsset> storyContents = new List<TextAsset>();
     public List<PlayableDirector> Directors = new List<PlayableDirector>();
 
@@ -21,6 +22,9 @@ public class storyTypeBase : MonoBehaviour
     {
 
         yield return new WaitForSeconds(delayTime); //delay the Animation
+        if (isBoss) {
+            SoundSystem.instance.PlayBGM(BGMType.Boss);
+        }
 
         GameSystem.instance.changeModeAnimation();
         foreach (PlayableDirector dir in Directors)
@@ -43,6 +47,10 @@ public class storyTypeBase : MonoBehaviour
             yield return new WaitUntil(() => Input.GetKey(KeyCode.Z)); //結束劇情
             UISystem.instance.getStoryPanel().GetComponent<storyUI>().setInit(); //初始化
 
+        }
+        if (isBoss)
+        {
+            SoundSystem.instance.PlayBGM(BGMType.Normal);
         }
         GameSystem.instance.changeModeFollowPlayer();
 

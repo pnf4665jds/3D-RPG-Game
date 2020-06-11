@@ -7,6 +7,7 @@ public class storyTriggerType : storyTypeBase
     public string TriggerTag;
     public Vector3 TriggerSize;
     public Vector3 triggerCenterPos;
+    public Vector3 triggerCenterRot;
 
 
     private void Start()
@@ -27,7 +28,7 @@ public class storyTriggerType : storyTypeBase
     }
     public bool enterTheTrigger(string tag)
     {
-        Collider[] enterZone = Physics.OverlapBox(triggerCenterPos, TriggerSize, transform.rotation, LayerMask.GetMask(tag));
+        Collider[] enterZone = Physics.OverlapBox(triggerCenterPos, TriggerSize, Quaternion.Euler(triggerCenterRot), LayerMask.GetMask(tag));
         if (enterZone.Length > 0)
         {
             return true;
@@ -40,7 +41,8 @@ public class storyTriggerType : storyTypeBase
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(triggerCenterPos , TriggerSize*2);
+        Gizmos.matrix = Matrix4x4.TRS(triggerCenterPos, Quaternion.Euler(triggerCenterRot), TriggerSize * 2);
+        Gizmos.DrawWireCube(Vector3.zero , Vector3.one);
     }
 
 }

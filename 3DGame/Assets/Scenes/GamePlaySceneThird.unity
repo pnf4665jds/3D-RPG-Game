@@ -13483,12 +13483,14 @@ MonoBehaviour:
   delayTime: 0
   ownCamera: {fileID: 1578348869}
   mainCamera: {fileID: 0}
+  isBoss: 1
   storyContents: []
   Directors:
   - {fileID: 666485690}
   TriggerTag: Player
   TriggerSize: {x: 10, y: 10, z: 5}
   triggerCenterPos: {x: -2.2, y: 7.5, z: 2}
+  triggerCenterRot: {x: 0, y: 0, z: 0}
 --- !u!114 &705974603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13504,6 +13506,7 @@ MonoBehaviour:
   delayTime: 0
   ownCamera: {fileID: 1578348869}
   mainCamera: {fileID: 0}
+  isBoss: 0
   storyContents:
   - {fileID: 4900000, guid: 2898494c5a81d33489e8efdb3feb8417, type: 3}
   Directors:
@@ -13522,7 +13525,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingFinishStory:
   - {fileID: 705974603}
-  enterBossFieldStory: []
   bossDeadStory:
   - {fileID: 705974606}
 --- !u!114 &705974605
@@ -13540,12 +13542,14 @@ MonoBehaviour:
   delayTime: 0
   ownCamera: {fileID: 1578348869}
   mainCamera: {fileID: 0}
+  isBoss: 0
   storyContents: []
   Directors:
   - {fileID: 1180424391}
   TriggerTag: Player
   TriggerSize: {x: 44.41, y: 10, z: 2.9}
   triggerCenterPos: {x: -0.3, y: 7.566326, z: -26.64}
+  triggerCenterRot: {x: 0, y: 0, z: 0}
 --- !u!114 &705974606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13561,6 +13565,7 @@ MonoBehaviour:
   delayTime: 0
   ownCamera: {fileID: 0}
   mainCamera: {fileID: 0}
+  isBoss: 0
   storyContents:
   - {fileID: 4900000, guid: 706942eb43c8b4340b2dfb2d5fc7df73, type: 3}
   Directors: []
