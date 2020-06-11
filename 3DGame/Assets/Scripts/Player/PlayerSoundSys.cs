@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerSoundSys : MonoBehaviour
 {
-    private AudioSource PlayerSoundSystem;
+    [SerializeField]private AudioSource PlayerSoundSystem;
     public AudioClip FirstSceneRunning_1;
     public AudioClip FirstSceneRunning_2;
     public AudioClip SecondSceneRunning_1;
@@ -24,22 +24,22 @@ public class PlayerSoundSys : MonoBehaviour
     {
         if(GameSceneManager.instance.CurrentSceneName == "GamePlayScene")
         {
-            PlayerSoundSystem.PlayOneShot(FirstSceneRunning_1);
+            PlayerSoundSystem.PlayOneShot(FirstSceneRunning_1,.2f);
         }
         else
         {
-            PlayerSoundSystem.PlayOneShot(SecondSceneRunning_1);
+            PlayerSoundSystem.PlayOneShot(SecondSceneRunning_1,.2f);
         }
     }
     void SecondStepRunning()
     {
         if (GameSceneManager.instance.CurrentSceneName == "GamePlayScene")
         {
-            PlayerSoundSystem.PlayOneShot(FirstSceneRunning_2);
+            PlayerSoundSystem.PlayOneShot(FirstSceneRunning_2, .2f);
         }
         else
         {
-            PlayerSoundSystem.PlayOneShot(SecondSceneRunning_2);
+            PlayerSoundSystem.PlayOneShot(SecondSceneRunning_2, .2f);
         }
     }
 
