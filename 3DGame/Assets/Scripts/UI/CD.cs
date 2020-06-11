@@ -16,14 +16,21 @@ public class CD : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player");
         CDBar = this.GetComponent<Image>();
-        MaxCD = player.GetComponent<Player>().GetCooldown();
     }
 
     // Update is called once per frame
     void Update()
     {
-        curCD = player.GetComponent<Player>().GetCurCooldown();
+        if (MaxCD > 0) {
+            curCD = player.GetComponent<Player>().GetCurCooldown();
+            CDBar.fillAmount = (MaxCD - curCD) / MaxCD;
+        }
+
         
-        CDBar.fillAmount = (MaxCD - curCD) / MaxCD;
+    }
+    public void setMaxCD(int Cd) {
+        MaxCD = Cd;
+        curCD = Cd;
+
     }
 }
