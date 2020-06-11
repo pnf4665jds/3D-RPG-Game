@@ -48,10 +48,7 @@ public class storyTypeBase : MonoBehaviour
             UISystem.instance.getStoryPanel().GetComponent<storyUI>().setInit(); //初始化
 
         }
-        if (isBoss)
-        {
-            SoundSystem.instance.PlayBGM(BGMType.Normal);
-        }
+
         GameSystem.instance.changeModeFollowPlayer();
 
     }

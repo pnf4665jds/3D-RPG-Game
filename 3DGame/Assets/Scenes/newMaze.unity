@@ -9238,7 +9238,7 @@ MonoBehaviour:
   delayTime: 0
   ownCamera: {fileID: 1493722880}
   mainCamera: {fileID: 0}
-  isBoss: 1
+  isBoss: 0
   storyContents:
   - {fileID: 4900000, guid: c795bca142f2094438e67f7bf6ebc8ac, type: 3}
   Directors:

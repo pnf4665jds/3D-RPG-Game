@@ -21,6 +21,7 @@ public class CD : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        MaxCD = player.GetComponent<Player>().GetCooldown();
         if (MaxCD > 0) {
             curCD = player.GetComponent<Player>().GetCurCooldown();
             CDBar.fillAmount = (MaxCD - curCD) / MaxCD;
