@@ -6,7 +6,6 @@ public class StoryContoller : MonoBehaviour
 {
     private GameObject player;
     public List<storyTypeBase> loadingFinishStory = new List<storyTypeBase>();
-    public List<storyTypeBase> enterBossFieldStory = new List<storyTypeBase>();
     public List<storyTypeBase> bossDeadStory = new List<storyTypeBase>();
     
     void Start()
@@ -24,15 +23,6 @@ public class StoryContoller : MonoBehaviour
         foreach (storyTypeBase story in loadingFinishStory) {
             StartCoroutine(story.Play());
         }
-
-        yield return new WaitUntil(() => player.GetComponent<Player>().GetisInBoss()); //進入boss場景
-
-        foreach (storyTypeBase story in enterBossFieldStory)
-        {
-            StartCoroutine(story.Play());
-        }
-        //GameObject.FindGameObjectWithTag("Boss").GetComponent<MonsterInfo>().GetDamage(6000);
-        
 
     }
     private IEnumerator BossDeadControl()
