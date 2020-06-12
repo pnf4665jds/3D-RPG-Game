@@ -100,9 +100,9 @@ public class MonsterSystem : Singleton<MonsterSystem>
             {
                 controller.ChangeState(controller.StateNameAfterPlayerDead, 0);
             }
-            else
+            else if (GameSystem.instance.isAnimation() && controller.StateNameAfterAnimation != "")
             {
-                controller.ChangeState(controller.CurrentStateName, 0);
+                controller.ChangeState(controller.StateNameAfterAnimation, 0);
             }
         }
     }

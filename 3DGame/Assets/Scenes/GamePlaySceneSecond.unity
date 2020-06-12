@@ -1670,36 +1670,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8421207531806522444, guid: 701df9ab9b99daf42bde3735d381aae5,
-        type: 3}
-      propertyPath: AreaDelayTime
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3039689882269664855, guid: 701df9ab9b99daf42bde3735d381aae5,
-        type: 3}
-      propertyPath: DetectCenter.x
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3039689882269664855, guid: 701df9ab9b99daf42bde3735d381aae5,
-        type: 3}
-      propertyPath: DetectCenter.y
-      value: 1.48
-      objectReference: {fileID: 0}
-    - target: {fileID: 3039689882269664855, guid: 701df9ab9b99daf42bde3735d381aae5,
-        type: 3}
-      propertyPath: DetectSize.x
-      value: 21
-      objectReference: {fileID: 0}
-    - target: {fileID: 3039689882269664855, guid: 701df9ab9b99daf42bde3735d381aae5,
-        type: 3}
-      propertyPath: DetectSize.z
-      value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 3039689882269664855, guid: 701df9ab9b99daf42bde3735d381aae5,
-        type: 3}
-      propertyPath: ShowInScene
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 701df9ab9b99daf42bde3735d381aae5, type: 3}
 --- !u!1001 &90728125
@@ -24006,6 +23976,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549649014181198977, guid: eab0de17fe98e0e4bbb57d29d9d89d0e,
+        type: 3}
+      propertyPath: ManaItemNum
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1168057670076989386, guid: eab0de17fe98e0e4bbb57d29d9d89d0e,
+        type: 3}
+      propertyPath: Money
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1468544773778004335, guid: eab0de17fe98e0e4bbb57d29d9d89d0e,
+        type: 3}
+      propertyPath: ManaItemNum
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9136012377511169791, guid: eab0de17fe98e0e4bbb57d29d9d89d0e,
+        type: 3}
+      propertyPath: Money
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1741641391598504042, guid: eab0de17fe98e0e4bbb57d29d9d89d0e,
+        type: 3}
+      propertyPath: HealthItemNum
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3541107729871866010, guid: eab0de17fe98e0e4bbb57d29d9d89d0e,
+        type: 3}
+      propertyPath: HealthItemNum
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eab0de17fe98e0e4bbb57d29d9d89d0e, type: 3}

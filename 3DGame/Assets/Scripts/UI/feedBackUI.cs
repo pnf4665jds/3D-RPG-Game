@@ -70,8 +70,6 @@ public class feedBackUI : MonoBehaviour
         yield return counting(feedBacks[4], MonsterSystem.instance.DeadBossNum);
         feedBacks[5].gameObject.SetActive(true);
         yield return counting(feedBacks[5], GameSceneManager.instance.PassSceneNum);
-        feedBacks[6].gameObject.SetActive(true);
-        yield return counting(feedBacks[6], calculateMissionScore());
 
         showExitButton();
 
@@ -88,14 +86,7 @@ public class feedBackUI : MonoBehaviour
         
 
     }
-    private int calculateMissionScore() {
-        float sum = MonsterSystem.instance.DeadMonsterNum * 0.2f / MonsterSystem.instance.MonsterNum
-            + MonsterSystem.instance.DeadBossNum * 0.4f / 3
-            + GameSceneManager.instance.PassSceneNum * 0.4f / 4;
-
-        return (int)sum;
-
-    }
+    
     private void showExitButton() {
         Exit.gameObject.SetActive(true);
         

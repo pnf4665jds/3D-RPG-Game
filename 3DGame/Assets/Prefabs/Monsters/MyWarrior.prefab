@@ -575,6 +575,7 @@ MonoBehaviour:
   CurrentStateName: 
   FirstStateName: Idle
   StateNameAfterPlayerDead: Recover Shield
+  StateNameAfterAnimation: Idle
   StateList:
   - StateName: Idle
     Action: {fileID: 0}

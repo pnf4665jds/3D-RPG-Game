@@ -2468,6 +2468,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentStateName: 
   FirstStateName: Idle
+  StateNameAfterPlayerDead: Idle
+  StateNameAfterAnimation: Idle
   StateList:
   - StateName: Idle
     Action: {fileID: 0}
@@ -2561,7 +2563,7 @@ MonoBehaviour:
   ShowInScene: 0
   DamageAreaCenter: {x: 0, y: 1.4, z: 6.28}
   DamageAreaSize: {x: 6.6, y: 3.64, z: 6}
-  AreaDelayTime: 0.3
+  AreaDelayTime: 0.5
   AreaKeepTime: 0.5
   Effect: {fileID: 187802, guid: 464e05904335c0641b76c3b8b8365ecd, type: 3}
   EffectDelay: 0.5
@@ -2636,8 +2638,8 @@ MonoBehaviour:
   DetectPauseTime: 0
   ShowInScene: 1
   IsRangeStable: 1
-  DetectCenter: {x: 17.39, y: 4.07, z: -0.05}
-  DetectSize: {x: 2.9, y: 12.66, z: 14.21}
+  DetectCenter: {x: 0.4, y: 1.48, z: -0.05}
+  DetectSize: {x: 21, y: 12.66, z: 22}
   StableRotateY: 0
 --- !u!114 &8562010921278365142
 MonoBehaviour:
@@ -2733,6 +2735,7 @@ MonoBehaviour:
   MinTime: 0
   MaxTime: 0
   KeepTimeUntilTaken: 1
+  KeepTimeUntilStateChange: 0
 --- !u!114 &25921462749565881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2752,6 +2755,7 @@ MonoBehaviour:
   MinTime: 0
   MaxTime: 0
   KeepTimeUntilTaken: 1
+  KeepTimeUntilStateChange: 0
 --- !u!114 &1065243944245600101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2771,6 +2775,7 @@ MonoBehaviour:
   MinTime: 0
   MaxTime: 0
   KeepTimeUntilTaken: 1
+  KeepTimeUntilStateChange: 0
 --- !u!195 &3777434665746573443
 NavMeshAgent:
   m_ObjectHideFlags: 0

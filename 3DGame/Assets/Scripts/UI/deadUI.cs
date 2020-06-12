@@ -41,7 +41,7 @@ public class deadUI : MonoBehaviour
         }
         else
         {
-            zeroPotion();
+            StartCoroutine(zeroPotion());
         }
         
 
@@ -55,11 +55,12 @@ public class deadUI : MonoBehaviour
 
 
     }
-    public void zeroPotion()
+    public IEnumerator zeroPotion()
     {
 
-        this.transform.GetChild(1).GetComponent<Text>().text = "搜尋復活藥水中 . . .\n搜索失敗，將於一秒後離開。";
-
+        this.transform.GetChild(1).GetComponent<Text>().text = "搜尋復活藥水中 . . .\n搜索失敗，一秒後跳轉結算畫面。";
+        yield return new WaitForSeconds(1);
+        GameSceneManager.instance.LoadScene("FinalScene" , null);
 
     }
     public void clickUse()
