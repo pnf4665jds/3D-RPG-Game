@@ -17,6 +17,7 @@ public class GameSceneManager : Singleton<GameSceneManager>
 
     private GameObject player;
     private GameObject mainCamera;
+    private GameObject mainCanvas;
 
     public override void Awake()
     {
@@ -53,6 +54,7 @@ public class GameSceneManager : Singleton<GameSceneManager>
         {
             player?.SetActive(false);
             mainCamera?.SetActive(false);
+            mainCanvas?.SetActive(false);
         }
         else if (scene.name != "StartGameUI")
         {
@@ -68,8 +70,9 @@ public class GameSceneManager : Singleton<GameSceneManager>
     /// </summary>
     private void SetObjectOnComplete()
     {
-        player = FindObjectOfType<Player>()?.gameObject;
-        mainCamera = FindObjectOfType<Camera>().gameObject;
+        player = GameObject.FindWithTag("Player");
+        mainCamera = GameObject.FindWithTag("MainCamera");
+        mainCanvas = GameObject.FindWithTag("MainCanvas");
     }
 
     /// <summary>
