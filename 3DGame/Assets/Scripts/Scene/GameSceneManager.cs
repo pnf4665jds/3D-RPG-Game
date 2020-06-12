@@ -60,6 +60,7 @@ public class GameSceneManager : Singleton<GameSceneManager>
         {
             player?.SetActive(true);
             mainCamera?.SetActive(true);
+            mainCanvas?.SetActive(true);
             //SoundSystem.instance.PlayBGM(BGMType.Normal);   // 淡入對應場景的BGM
         }
         IsLoadingFinish = true;
