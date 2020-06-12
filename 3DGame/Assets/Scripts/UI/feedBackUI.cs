@@ -16,6 +16,8 @@ public class feedBackUI : MonoBehaviour
 
     private void Start()
     {
+        
+        
         if (GameSceneManager.instance.PassSceneNum == 4)
         {
             EndStoryRes = Resources.Load<TextAsset>("Story/EndStory");
@@ -23,14 +25,16 @@ public class feedBackUI : MonoBehaviour
         else {
             EndStoryRes = Resources.Load<TextAsset>("Story/Escape");
         }
-        
-        
+
+
         feedBacks = this.transform.GetChild(0).GetComponentsInChildren<Text>();
         if (EndStoryRes != null)
         {
             subString = EndStoryRes.text.Split('\n');
         }
         closeTexts();
+        Exit.gameObject.SetActive(false);
+        Exit.onClick.AddListener(ExitTheGame);
 
         StartCoroutine(showTheEndStory());
 
@@ -69,7 +73,7 @@ public class feedBackUI : MonoBehaviour
         feedBacks[6].gameObject.SetActive(true);
         yield return counting(feedBacks[6], calculateMissionScore());
 
-
+        showExitButton();
 
     }
     private IEnumerator counting(Text temp , int goal) {
@@ -91,5 +95,14 @@ public class feedBackUI : MonoBehaviour
 
         return (int)sum;
 
+    }
+    private void showExitButton() {
+        Exit.gameObject.SetActive(true);
+        
+
+    }
+    private void ExitTheGame() {
+        print("cancel");
+        Application.Quit();
     }
 }
