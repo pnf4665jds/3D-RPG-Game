@@ -11849,7 +11849,7 @@ Transform:
   m_GameObject: {fileID: 1177138162511950092}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -61.17001, y: -4.1099987, z: 10.77}
-  m_LocalScale: {x: 2.500001, y: 2.5, z: 2.500001}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 3875507680338926207}
   - {fileID: 806439406433172109}
@@ -11924,7 +11924,7 @@ MonoBehaviour:
   Money: 0
   HealthItemNum: 0
   ManaItemNum: 0
-  ReliveItemnum: 0
+  RecoveryItemnum: 0
 --- !u!1 &1282397326077983606
 GameObject:
   m_ObjectHideFlags: 0
@@ -28326,7 +28326,7 @@ Transform:
   m_GameObject: {fileID: 2306110119627007721}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -30.370007, y: -4.1099987, z: 13.500006}
-  m_LocalScale: {x: 2.500001, y: 2.5, z: 2.500001}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 3774891751831978213}
   - {fileID: 1896853049533068438}
@@ -28401,7 +28401,7 @@ MonoBehaviour:
   Money: 0
   HealthItemNum: 0
   ManaItemNum: 0
-  ReliveItemnum: 0
+  RecoveryItemnum: 0
 --- !u!1 &2364182290042323832
 GameObject:
   m_ObjectHideFlags: 0
@@ -39236,7 +39236,7 @@ Transform:
   m_GameObject: {fileID: 2897678710521104094}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -61.170013, y: -4.1099987, z: 18.060001}
-  m_LocalScale: {x: 2.500001, y: 2.5, z: 2.500001}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 4379911729215939668}
   - {fileID: 1144105173980646760}
@@ -39311,7 +39311,7 @@ MonoBehaviour:
   Money: 0
   HealthItemNum: 0
   ManaItemNum: 0
-  ReliveItemnum: 0
+  RecoveryItemnum: 0
 --- !u!1 &2918974777859193644
 GameObject:
   m_ObjectHideFlags: 0
@@ -77163,7 +77163,7 @@ Transform:
   m_GameObject: {fileID: 5927369126671846098}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -35.98001, y: -4.1099987, z: 13.510006}
-  m_LocalScale: {x: 2.500001, y: 2.5, z: 2.500001}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 5811084994516067358}
   - {fileID: 1356951588727482414}
@@ -77238,7 +77238,7 @@ MonoBehaviour:
   Money: 0
   HealthItemNum: 0
   ManaItemNum: 0
-  ReliveItemnum: 0
+  RecoveryItemnum: 0
 --- !u!1 &5970649213409130309
 GameObject:
   m_ObjectHideFlags: 0
@@ -120890,7 +120890,7 @@ Transform:
   m_GameObject: {fileID: 8395327895179566097}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -53.830017, y: -4.1099987, z: 13.5}
-  m_LocalScale: {x: 2.500001, y: 2.5, z: 2.500001}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 2832815141974173956}
   - {fileID: 5861059696029226206}
@@ -120965,7 +120965,7 @@ MonoBehaviour:
   Money: 0
   HealthItemNum: 0
   ManaItemNum: 0
-  ReliveItemnum: 0
+  RecoveryItemnum: 0
 --- !u!1 &8469894137090705168
 GameObject:
   m_ObjectHideFlags: 0
@@ -127328,7 +127328,7 @@ Transform:
   m_GameObject: {fileID: 9162759847173225726}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -32.6, y: -4.1099987, z: 20.54}
-  m_LocalScale: {x: 2.500001, y: 2.5, z: 2.500001}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 8848955542973463093}
   - {fileID: 6120485215522063630}
@@ -127403,7 +127403,7 @@ MonoBehaviour:
   Money: 0
   HealthItemNum: 0
   ManaItemNum: 0
-  ReliveItemnum: 0
+  RecoveryItemnum: 0
 --- !u!1 &9206273075516042252
 GameObject:
   m_ObjectHideFlags: 0
@@ -127493,11 +127493,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1107001548394227680}
     m_Modifications:
-    - target: {fileID: 7104608729291855679, guid: 333a03e45ad3aa14ca8adc63d36e745d,
-        type: 3}
-      propertyPath: m_Name
-      value: SecretPassage
-      objectReference: {fileID: 0}
     - target: {fileID: 7104608729291855678, guid: 333a03e45ad3aa14ca8adc63d36e745d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -127553,6 +127548,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7104608729291855679, guid: 333a03e45ad3aa14ca8adc63d36e745d,
+        type: 3}
+      propertyPath: m_Name
+      value: SecretPassage
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 333a03e45ad3aa14ca8adc63d36e745d, type: 3}
 --- !u!1001 &7705320263305874779
@@ -127562,11 +127562,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1107001548394227680}
     m_Modifications:
-    - target: {fileID: 5975508363198952230, guid: 3464af4ee221adc4090494208d076a3c,
-        type: 3}
-      propertyPath: m_Name
-      value: Room
-      objectReference: {fileID: 0}
     - target: {fileID: 5975508363198952231, guid: 3464af4ee221adc4090494208d076a3c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -127621,6 +127616,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5975508363198952230, guid: 3464af4ee221adc4090494208d076a3c,
+        type: 3}
+      propertyPath: m_Name
+      value: Room
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3464af4ee221adc4090494208d076a3c, type: 3}

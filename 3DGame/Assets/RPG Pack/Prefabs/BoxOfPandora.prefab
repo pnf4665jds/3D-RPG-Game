@@ -15715,7 +15715,7 @@ Transform:
   m_GameObject: {fileID: 1000014038691284}
   m_LocalRotation: {x: -0, y: 0.23970485, z: -0, w: 0.9708458}
   m_LocalPosition: {x: 10.72, y: 6.763029e-19, z: -0.30457976}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 4000011684221606}
   - {fileID: 4000013874342526}
@@ -15783,6 +15783,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aef8e9ab91e63fa4d8f56df015986ed3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Money: 0
+  HealthItemNum: 0
+  ManaItemNum: 0
+  RecoveryItemnum: 0
 --- !u!1 &1000014199803242
 GameObject:
   m_ObjectHideFlags: 0
@@ -15878,7 +15882,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4000013874342526
 Transform:
   m_ObjectHideFlags: 0
