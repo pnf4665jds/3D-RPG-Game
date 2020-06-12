@@ -1675,6 +1675,31 @@ PrefabInstance:
       propertyPath: AreaDelayTime
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3039689882269664855, guid: 701df9ab9b99daf42bde3735d381aae5,
+        type: 3}
+      propertyPath: DetectCenter.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3039689882269664855, guid: 701df9ab9b99daf42bde3735d381aae5,
+        type: 3}
+      propertyPath: DetectCenter.y
+      value: 1.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 3039689882269664855, guid: 701df9ab9b99daf42bde3735d381aae5,
+        type: 3}
+      propertyPath: DetectSize.x
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 3039689882269664855, guid: 701df9ab9b99daf42bde3735d381aae5,
+        type: 3}
+      propertyPath: DetectSize.z
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 3039689882269664855, guid: 701df9ab9b99daf42bde3735d381aae5,
+        type: 3}
+      propertyPath: ShowInScene
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 701df9ab9b99daf42bde3735d381aae5, type: 3}
 --- !u!1001 &90728125
@@ -20887,6 +20912,69 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 822853527}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &944181321
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 944181322}
+  - component: {fileID: 944181324}
+  - component: {fileID: 944181323}
+  m_Layer: 0
+  m_Name: WarriorField
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &944181322
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944181321}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -638.4, y: 1.52, z: 41.29}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_Children: []
+  m_Father: {fileID: 994886714}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &944181323
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944181321}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 39.49
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &944181324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944181321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b85ac7af25f6ee40b1ca90db565a4f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Monster: {fileID: 0}
+  ColliderForPlayer: {fileID: 944181321}
+  IsBossField: 1
+  MonsterNum: 0
+  Name: Kumata
+  YDelta: 0
 --- !u!1001 &946018147
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24207,6 +24295,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cd7440ceab5bd244aad79580a2f7817, type: 3}
+--- !u!1 &994886713
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 994886714}
+  m_Layer: 0
+  m_Name: MonsterField (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &994886714
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994886713}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 944181322}
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &997577794 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000011267722752, guid: 93ca6f6fb03c06240842b5705b0a1a10,
@@ -43707,6 +43826,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Portal (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371319220165533758, guid: be108c62fe262c34f932abe7e823482a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4371319220165533745, guid: be108c62fe262c34f932abe7e823482a,
         type: 3}
