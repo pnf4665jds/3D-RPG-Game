@@ -29,7 +29,7 @@ public class ActionFlyInCircle : ActionBase
 
     public override void Exit()
     {
-        StopCoroutine(Calculate());
+        StopAllCoroutines();
         //rigid.useGravity = true;
     }
 

@@ -429,7 +429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34e5fea04bb708f4caa36b0ba88885ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 6000
+  MaxHP: 1
   MoveSpeed: 5
   RotateSpeed: 8
   DeadWaitTime: 5
@@ -452,6 +452,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentStateName: 
   FirstStateName: IntroFly
+  StateNameAfterPlayerDead: 
   StateList:
   - StateName: IntroFly
     Action: {fileID: 3968580396204882829}
@@ -761,6 +762,7 @@ MonoBehaviour:
   MinTime: 0
   MaxTime: 0
   KeepTimeUntilTaken: 1
+  KeepTimeUntilStateChange: 0
 --- !u!114 &1782514155434049043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -780,6 +782,7 @@ MonoBehaviour:
   MinTime: 0
   MaxTime: 0
   KeepTimeUntilTaken: 1
+  KeepTimeUntilStateChange: 0
 --- !u!114 &1286697797140375218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -818,6 +821,7 @@ MonoBehaviour:
   MinTime: 0
   MaxTime: 0
   KeepTimeUntilTaken: 1
+  KeepTimeUntilStateChange: 0
 --- !u!114 &6771910653560188789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -856,6 +860,7 @@ MonoBehaviour:
   MinTime: 0
   MaxTime: 0
   KeepTimeUntilTaken: 1
+  KeepTimeUntilStateChange: 0
 --- !u!114 &8918814419477926915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -910,6 +915,7 @@ MonoBehaviour:
   MinTime: 0
   MaxTime: 0
   KeepTimeUntilTaken: 1
+  KeepTimeUntilStateChange: 0
 --- !u!114 &1615584264119193321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -929,6 +935,7 @@ MonoBehaviour:
   MinTime: 8
   MaxTime: 10
   KeepTimeUntilTaken: 1
+  KeepTimeUntilStateChange: 0
 --- !u!114 &1277464098807797775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -948,6 +955,7 @@ MonoBehaviour:
   MinTime: 0
   MaxTime: 0
   KeepTimeUntilTaken: 1
+  KeepTimeUntilStateChange: 0
 --- !u!1 &1776172154766051589
 GameObject:
   m_ObjectHideFlags: 0
