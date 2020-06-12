@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4000013696795442}
   - component: {fileID: 33000010396214378}
   - component: {fileID: 23000011785460764}
+  - component: {fileID: 7373465773086530874}
   m_Layer: 0
   m_Name: Idol 5
   m_TagString: Untagged
@@ -78,3 +79,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &7373465773086530874
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000012046017158}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: 2874a1ebf27d87042ae81508c53de81b, type: 3}
