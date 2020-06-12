@@ -32517,7 +32517,7 @@ MonoBehaviour:
   delayTime: 0
   ownCamera: {fileID: 0}
   mainCamera: {fileID: 0}
-  isBoss: 0
+  bgmType: 1
   storyContents:
   - {fileID: 4900000, guid: f58be2986f04f644a8378ed152423ce1, type: 3}
   Directors: []
@@ -32536,7 +32536,7 @@ MonoBehaviour:
   delayTime: 0
   ownCamera: {fileID: 1961748431}
   mainCamera: {fileID: 0}
-  isBoss: 1
+  bgmType: 2
   storyContents:
   - {fileID: 4900000, guid: 40f2ce6689a006a4b8c5a4bad61f2459, type: 3}
   Directors:
@@ -32596,7 +32596,7 @@ MonoBehaviour:
   delayTime: 0
   ownCamera: {fileID: 1961748431}
   mainCamera: {fileID: 0}
-  isBoss: 0
+  bgmType: 1
   storyContents:
   - {fileID: 4900000, guid: a1c095dda4c4a124c83bef94035fc4ed, type: 3}
   Directors:

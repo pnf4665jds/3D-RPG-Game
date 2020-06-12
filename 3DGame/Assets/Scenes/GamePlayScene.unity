@@ -2559,6 +2559,36 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1608532027702908704, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
+        type: 3}
+      propertyPath: LevelBGMList.Array.data[0].BGMList.Array.data[0].Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608532027702908704, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
+        type: 3}
+      propertyPath: LevelBGMList.Array.data[0].BGMList.Array.data[1].Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608532027702908704, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
+        type: 3}
+      propertyPath: LevelBGMList.Array.data[1].BGMList.Array.data[0].Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608532027702908704, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
+        type: 3}
+      propertyPath: LevelBGMList.Array.data[2].BGMList.Array.data[0].Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608532027702908704, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
+        type: 3}
+      propertyPath: LevelBGMList.Array.data[2].BGMList.Array.data[1].Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608532027702908704, guid: a0d682c00f6e5614e95fe64a8c2e6df7,
+        type: 3}
+      propertyPath: LevelBGMList.Array.data[3].BGMList.Array.data[0].Type
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0d682c00f6e5614e95fe64a8c2e6df7, type: 3}
 --- !u!1001 &499085234
@@ -5641,7 +5671,7 @@ MonoBehaviour:
   delayTime: 0
   ownCamera: {fileID: 1891798715}
   mainCamera: {fileID: 0}
-  isBoss: 0
+  bgmType: 1
   storyContents:
   - {fileID: 4900000, guid: 531d042d9b0cd2e4dac0f1a5a84bea8d, type: 3}
   Directors:
@@ -5661,7 +5691,7 @@ MonoBehaviour:
   delayTime: 0
   ownCamera: {fileID: 1891798715}
   mainCamera: {fileID: 0}
-  isBoss: 1
+  bgmType: 2
   storyContents: []
   Directors:
   - {fileID: 1859976676}
@@ -5684,7 +5714,7 @@ MonoBehaviour:
   delayTime: 0
   ownCamera: {fileID: 0}
   mainCamera: {fileID: 0}
-  isBoss: 0
+  bgmType: 1
   storyContents:
   - {fileID: 4900000, guid: 507f71077a5e5bb48a0b1550e2036081, type: 3}
   Directors: []

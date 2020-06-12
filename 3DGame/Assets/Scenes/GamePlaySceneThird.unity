@@ -13483,7 +13483,7 @@ MonoBehaviour:
   delayTime: 0
   ownCamera: {fileID: 1578348869}
   mainCamera: {fileID: 0}
-  isBoss: 1
+  bgmType: 2
   storyContents: []
   Directors:
   - {fileID: 666485690}
@@ -13506,7 +13506,7 @@ MonoBehaviour:
   delayTime: 0
   ownCamera: {fileID: 1578348869}
   mainCamera: {fileID: 0}
-  isBoss: 0
+  bgmType: 0
   storyContents:
   - {fileID: 4900000, guid: 2898494c5a81d33489e8efdb3feb8417, type: 3}
   Directors:
@@ -13542,7 +13542,7 @@ MonoBehaviour:
   delayTime: 0
   ownCamera: {fileID: 1578348869}
   mainCamera: {fileID: 0}
-  isBoss: 0
+  bgmType: 0
   storyContents: []
   Directors:
   - {fileID: 1180424391}
@@ -13565,7 +13565,7 @@ MonoBehaviour:
   delayTime: 0
   ownCamera: {fileID: 0}
   mainCamera: {fileID: 0}
-  isBoss: 0
+  bgmType: 0
   storyContents:
   - {fileID: 4900000, guid: 706942eb43c8b4340b2dfb2d5fc7df73, type: 3}
   Directors: []
@@ -39669,5 +39669,10 @@ PrefabInstance:
       propertyPath: Points.Array.data[2]
       value: 
       objectReference: {fileID: 1287948389}
+    - target: {fileID: 2552985166073154840, guid: c5c6d5b03f13bb444903118879abbb2f,
+        type: 3}
+      propertyPath: ShowInScene
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5c6d5b03f13bb444903118879abbb2f, type: 3}

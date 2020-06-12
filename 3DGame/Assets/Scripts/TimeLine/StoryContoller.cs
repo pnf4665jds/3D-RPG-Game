@@ -33,7 +33,7 @@ public class StoryContoller : MonoBehaviour
         {
             StartCoroutine(story.Play());
         }
-        SoundSystem.instance.PlayBGM(BGMType.Normal);
+
     }
 
 

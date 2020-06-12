@@ -50,12 +50,18 @@ public class SoundSystem : Singleton<SoundSystem>
     /// <param name="type"></param>
     public void PlayBGM(BGMType type)
     {
+        if (type == BGMType.None)
+            return;
+
         AudioClip clip;
         foreach(BGMs bgms in LevelBGMList)
         {
-            if(bgms.SceneName == GameSceneManager.instance.CurrentSceneName && (clip = bgms.GetClip(type)))
+            if(bgms.SceneName == GameSceneManager.instance.CurrentSceneName)
             {
-                StartCoroutine(FadeBGM(clip));
+                if (clip = bgms.GetClip(type))  // 如果有設定該種類的BGM
+                    StartCoroutine(FadeBGM(clip));
+                else
+                    break;
             }
         }
     }
@@ -141,6 +147,7 @@ public class BGM
 
 public enum BGMType
 {
+    None,
     Normal,
     Boss
 }

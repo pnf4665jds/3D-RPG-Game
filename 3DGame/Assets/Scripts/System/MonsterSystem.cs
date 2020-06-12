@@ -90,7 +90,13 @@ public class MonsterSystem : Singleton<MonsterSystem>
         {
             controller.Stop = false;
             controller.InitAllDecider();
-            controller.ChangeState(controller.StateNameAfterPlayerDead == "" ? controller.CurrentStateName : controller.StateNameAfterPlayerDead, 0);
+            if (GameSystem.instance.isPlayerDead() && controller.StateNameAfterPlayerDead != "") {
+                controller.ChangeState(controller.StateNameAfterPlayerDead, 0);
+            }
+            else
+            {
+                controller.ChangeState(controller.CurrentStateName, 0);
+            }
         }
         else
         {
