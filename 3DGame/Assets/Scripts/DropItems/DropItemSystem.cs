@@ -66,6 +66,15 @@ public class DropItemSystem : Singleton<DropItemSystem>
         }
 
     }
+    public void createRecoveryItem(Vector3 pos, int number)
+    {
+
+        for (int i = 0; i < number; i++)
+        {
+            Instantiate(RecoveryPref, pos, Quaternion.identity);
+        }
+
+    }
     public void AddPotionToPack(GameObject temp) {
         if (temp == HealthPref)
         {
