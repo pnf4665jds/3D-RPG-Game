@@ -76,15 +76,16 @@ public class DropItemSystem : Singleton<DropItemSystem>
 
     }
     public void AddPotionToPack(GameObject temp) {
-        if (temp == HealthPref)
+        //print(temp) ;
+        if (temp.tag == HealthPref.tag)
         {
             Inventory.instance.addItem(HealthPotion);
         }
-        else if (temp == ManaPref)
+        else if (temp.tag == ManaPref.tag)
         {
             Inventory.instance.addItem(ManaPotion);
         }
-        else if (temp == RecoveryPref)
+        else if (temp.tag == RecoveryPref.tag)
         {
             Inventory.instance.addItem(RecoveryPotion);
         }

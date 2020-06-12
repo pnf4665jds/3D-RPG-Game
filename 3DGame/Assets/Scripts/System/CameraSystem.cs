@@ -52,13 +52,13 @@ public class CameraSystem :Singleton<CameraSystem>
         else if (GameSystem.instance.isPlayerTalking())
         {
             this.GetComponent<Camera>().fieldOfView = 40;
-            print("Talking");
+            //print("Talking");
         }
         else if (GameSystem.instance.isPlayerOpenBackPack())
         {
 
            
-            print("BackPack");
+            //print("BackPack");
         }
         else if (GameSystem.instance.isPlayerShopping()) {
 
