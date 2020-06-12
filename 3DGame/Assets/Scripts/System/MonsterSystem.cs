@@ -90,18 +90,20 @@ public class MonsterSystem : Singleton<MonsterSystem>
         {
             controller.Stop = false;
             controller.InitAllDecider();
-            if (GameSystem.instance.isPlayerDead() && controller.StateNameAfterPlayerDead != "") {
+        }
+        else
+        {
+            controller.Stop = true;
+            //controller.ExitCurrentAction();
+            // 怪物被停止時切換成指定狀態
+            if (GameSystem.instance.isPlayerDead() && controller.StateNameAfterPlayerDead != "")
+            {
                 controller.ChangeState(controller.StateNameAfterPlayerDead, 0);
             }
             else
             {
                 controller.ChangeState(controller.CurrentStateName, 0);
             }
-        }
-        else
-        {
-            controller.Stop = true;
-            controller.ExitCurrentAction();
         }
     }
 

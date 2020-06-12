@@ -20924,8 +20924,8 @@ GameObject:
   - component: {fileID: 944181324}
   - component: {fileID: 944181323}
   m_Layer: 0
-  m_Name: WarriorField
-  m_TagString: Untagged
+  m_Name: KumataField
+  m_TagString: MonsterField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
