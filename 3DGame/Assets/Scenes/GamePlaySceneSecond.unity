@@ -1670,36 +1670,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8421207531806522444, guid: 701df9ab9b99daf42bde3735d381aae5,
-        type: 3}
-      propertyPath: AreaDelayTime
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3039689882269664855, guid: 701df9ab9b99daf42bde3735d381aae5,
-        type: 3}
-      propertyPath: DetectCenter.x
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3039689882269664855, guid: 701df9ab9b99daf42bde3735d381aae5,
-        type: 3}
-      propertyPath: DetectCenter.y
-      value: 1.48
-      objectReference: {fileID: 0}
-    - target: {fileID: 3039689882269664855, guid: 701df9ab9b99daf42bde3735d381aae5,
-        type: 3}
-      propertyPath: DetectSize.x
-      value: 21
-      objectReference: {fileID: 0}
-    - target: {fileID: 3039689882269664855, guid: 701df9ab9b99daf42bde3735d381aae5,
-        type: 3}
-      propertyPath: DetectSize.z
-      value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 3039689882269664855, guid: 701df9ab9b99daf42bde3735d381aae5,
-        type: 3}
-      propertyPath: ShowInScene
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 701df9ab9b99daf42bde3735d381aae5, type: 3}
 --- !u!1001 &90728125
