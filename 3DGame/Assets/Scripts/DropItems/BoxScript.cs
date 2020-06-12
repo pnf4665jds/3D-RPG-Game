@@ -10,7 +10,7 @@ public class BoxScript : MonoBehaviour
     public int Money;
     public int HealthItemNum;
     public int ManaItemNum;
-    public int ReliveItemnum;
+    public int RecoveryItemnum;
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -38,6 +38,6 @@ public class BoxScript : MonoBehaviour
         DropItemSystem.instance.createMoney(transform.position,Money);
         DropItemSystem.instance.createHealthItem(transform.position, HealthItemNum);
         DropItemSystem.instance.createManaItem(transform.position,ManaItemNum);
-        //DropItemSystem.instance.createRecoveryItem(transform.position,ReliveItemnum);
+        DropItemSystem.instance.createRecoveryItem(transform.position,RecoveryItemnum);
     }
 }
