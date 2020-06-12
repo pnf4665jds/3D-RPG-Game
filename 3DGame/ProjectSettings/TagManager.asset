@@ -24,6 +24,7 @@ TagManager:
   - director
   - EnterBossFieldAnim
   - BossDeadAnim
+  - RecoveryPotion
   layers:
   - Default
   - TransparentFX

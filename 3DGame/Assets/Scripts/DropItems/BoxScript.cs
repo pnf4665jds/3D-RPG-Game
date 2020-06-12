@@ -10,6 +10,7 @@ public class BoxScript : MonoBehaviour
     public int Money;
     public int HealthItemNum;
     public int ManaItemNum;
+    public int ReliveItemnum;
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -17,9 +18,6 @@ public class BoxScript : MonoBehaviour
     }
     private void Start()
     {
-        Money = UnityEngine.Random.Range(1, 3) * 1000 + UnityEngine.Random.Range(1,9)*100;
-        HealthItemNum = UnityEngine.Random.Range(1,3);
-        ManaItemNum = UnityEngine.Random.Range(1, 3);
     }
     private void OnCollisionStay(Collision collision)
     {
@@ -40,5 +38,6 @@ public class BoxScript : MonoBehaviour
         DropItemSystem.instance.createMoney(transform.position,Money);
         DropItemSystem.instance.createHealthItem(transform.position, HealthItemNum);
         DropItemSystem.instance.createManaItem(transform.position,ManaItemNum);
+        //DropItemSystem.instance.createRecoveryItem(transform.position,ReliveItemnum);
     }
 }

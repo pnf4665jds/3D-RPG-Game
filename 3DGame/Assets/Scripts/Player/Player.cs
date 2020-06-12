@@ -154,7 +154,7 @@ public class Player : MonoBehaviour
         {
             other.gameObject.GetComponent<GroundMove>().Triggered();
         }
-        else if (other.tag == "goldCoin" || other.tag == "silverCoin" || other.tag == "copperCoin" || other.tag == "HealthPotion" || other.tag == "ManaPotion" || other.tag == "")
+        else if (other.tag == "goldCoin" || other.tag == "silverCoin" || other.tag == "copperCoin" || other.tag == "HealthPotion" || other.tag == "ManaPotion" || other.tag == "RecoveryPotion")
         {
             switch (other.tag)
             {
@@ -169,6 +169,7 @@ public class Player : MonoBehaviour
                     break;
                 case "HealthPotion":
                 case "ManaPotion":
+                case "RecoveryPotion":
                     DropItemSystem.instance.AddPotionToPack(other.gameObject);
                     break;
             }
