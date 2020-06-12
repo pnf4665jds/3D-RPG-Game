@@ -377,9 +377,14 @@ public class Player : MonoBehaviour
     }
     public IEnumerator FootmanSkill()
     {
-        ATKChange(25);
-        yield return new WaitForSeconds(10);
-        ATKChange(-25);
+        ATKChange(45);
+        MaxSpeedChange(2);
+        yield return new WaitForSeconds(5);
+        Healing(25);
+        yield return new WaitForSeconds(5);
+        Healing(25);
+        MaxSpeedChange(-2);
+        ATKChange(-45);
         SkillParticle.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
     }
     public IEnumerator AvelynSkill()
@@ -387,12 +392,12 @@ public class Player : MonoBehaviour
         ATK *= 2;
         yield return new WaitForSeconds(SkillAnim.length/2);
         ATK /= 2;
-        Healing(MaxHP/4);
+        Healing(MaxHP/5);
         SkillParticle.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
     }
     public IEnumerator DogKnightSkill()
     {
-        MaxSpeedChange(4);
+        MaxSpeedChange(6);
         GetComponent<PlayerSoundSys>().Skill();
         Healing(5);
         yield return new WaitForSeconds(1);
@@ -405,7 +410,10 @@ public class Player : MonoBehaviour
         GetComponent<PlayerSoundSys>().Skill();
         Healing(5);
         yield return new WaitForSeconds(1);
-        MaxSpeedChange(-4);
+        GetComponent<PlayerSoundSys>().Skill();
+        Healing(5);
+        yield return new WaitForSeconds(1);
+        MaxSpeedChange(-6);
         SkillParticle.Stop(true,ParticleSystemStopBehavior.StopEmittingAndClear);
     }
     public IEnumerator SkillCooldown()
@@ -420,9 +428,9 @@ public class Player : MonoBehaviour
             case "DogPBR":
                 return 50;
             case "Avelyn":
-                return 30;
-            case "Footman":
                 return 40;
+            case "Footman":
+                return 70;
             default:
                 return 0 ;
         }
@@ -432,13 +440,13 @@ public class Player : MonoBehaviour
         switch (this.name)
         {
             case "DogPBR":
-                Cooldown = 10;
+                Cooldown = 9;
                 break;
             case "Avelyn":
-                Cooldown = 8;
+                Cooldown = 10;
                 break;
             case "Footman":
-                Cooldown = 14;
+                Cooldown = 18;
                 break;
         }
     }
