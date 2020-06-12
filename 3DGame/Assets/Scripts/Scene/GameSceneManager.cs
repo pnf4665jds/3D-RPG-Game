@@ -36,7 +36,9 @@ public class GameSceneManager : Singleton<GameSceneManager>
             DoBeforeLoadScene();
 
         NextSceneName = nextSceneName;
-        ActionOnCompleted = actions;
+        if (actions != null) {
+            ActionOnCompleted = actions;
+        } 
         ActionOnCompleted.AddRange(new List<Action> { SetObjectOnComplete });
         IsLoadingFinish = false;
         SceneManager.LoadScene("LoadingScene");
