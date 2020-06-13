@@ -43825,13 +43825,19 @@ PrefabInstance:
     - target: {fileID: 4371319220165533758, guid: be108c62fe262c34f932abe7e823482a,
         type: 3}
       propertyPath: m_Name
-      value: Portal (1)
+      value: GamePlaySceneThirdPortal
       objectReference: {fileID: 0}
     - target: {fileID: 4371319220165533758, guid: be108c62fe262c34f932abe7e823482a,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4371319220165533758, guid: be108c62fe262c34f932abe7e823482a,
+        type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000,
+        type: 0}
     - target: {fileID: 4371319220165533745, guid: be108c62fe262c34f932abe7e823482a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -43911,6 +43917,11 @@ PrefabInstance:
         type: 3}
       propertyPath: SceneName
       value: GamePlaySceneThird
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371319220165533759, guid: be108c62fe262c34f932abe7e823482a,
+        type: 3}
+      propertyPath: ShowEffect
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be108c62fe262c34f932abe7e823482a, type: 3}

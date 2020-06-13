@@ -13,6 +13,7 @@ public class Portal : MonoBehaviour
     public float DestRotationY;   // 傳送後Y軸旋轉
     public PortalCondition Condition;   // 傳送條件
     public GameObject PortalEffect;     // 傳送點特效
+    public bool ShowEffect = true;     // 是否要顯示特效
 
     private void Start()
     {
@@ -50,7 +51,8 @@ public class Portal : MonoBehaviour
     private IEnumerator WaitEffectSet()
     {
         yield return new WaitUntil(ConditionMeet);
-        Instantiate(PortalEffect, transform);
+        if(ShowEffect)
+            Instantiate(PortalEffect, transform);
     }
 }
 
