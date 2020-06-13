@@ -7846,6 +7846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51bd83f4f45967a469cceadb04cfaf91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerSoundSystem: {fileID: 0}
   FirstSceneRunning_1: {fileID: 8300000, guid: baca8336d221f7e4ca01b08127a1c649, type: 3}
   FirstSceneRunning_2: {fileID: 8300000, guid: 0719f00e789cc324bb5f83da9c43babd, type: 3}
   SecondSceneRunning_1: {fileID: 8300000, guid: f87832a0822c2504cac04abdce9bcfdf,
@@ -10528,6 +10529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51bd83f4f45967a469cceadb04cfaf91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerSoundSystem: {fileID: 0}
   FirstSceneRunning_1: {fileID: 8300000, guid: 0719f00e789cc324bb5f83da9c43babd, type: 3}
   FirstSceneRunning_2: {fileID: 8300000, guid: baca8336d221f7e4ca01b08127a1c649, type: 3}
   SecondSceneRunning_1: {fileID: 8300000, guid: f87832a0822c2504cac04abdce9bcfdf,
@@ -10551,6 +10553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51bd83f4f45967a469cceadb04cfaf91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerSoundSystem: {fileID: 0}
   FirstSceneRunning_1: {fileID: 8300000, guid: 0719f00e789cc324bb5f83da9c43babd, type: 3}
   FirstSceneRunning_2: {fileID: 8300000, guid: baca8336d221f7e4ca01b08127a1c649, type: 3}
   SecondSceneRunning_1: {fileID: 8300000, guid: f87832a0822c2504cac04abdce9bcfdf,
