@@ -232,7 +232,7 @@ public class Player : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.D))
             {
-                transform.Rotate(transform.up * 1.5f);
+                transform.Rotate(transform.up * .5f);
                 if (!isTurn)
                 {
                     MaxSpeedChange(-4);
@@ -241,7 +241,7 @@ public class Player : MonoBehaviour
             }
             else if (Input.GetKey(KeyCode.A))
             {
-                transform.Rotate(transform.up * -1.5f);
+                transform.Rotate(transform.up * -.5f);
                 if (!isTurn)
                 {
                     MaxSpeedChange(-4);
